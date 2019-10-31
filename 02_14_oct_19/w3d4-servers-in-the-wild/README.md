@@ -3,6 +3,8 @@ Real World HTTP Servers with Hafiz
 
 Hey crew! Congrats! You're becoming web developers. Thanks for an awesome class today; hopefully we could make the Live Share more fun in subsequent lectures - let me have your thoughts on that please.
 
+<a href="https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w3d4-servers-in-the-wild">Link to code and notes repo here.</a>
+
 ## HTTP Review
 We reviewed HTTP as protocol between clients (e.g. browser, curl, Postman etc) and server.
 
