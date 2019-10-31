@@ -5,6 +5,8 @@ Hey crew! Congrats! You're becoming web developers. Thanks for an awesome class 
 
 <a href="https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w3d4-servers-in-the-wild">Link to code and notes repo here.</a>
 
+Oh and I manage to mess the video recording up - the whole two hours is fixed on the start screen again, sorry 😟. I've attached the video anyways for the audio (we had good laughs ;))
+
 ## HTTP Review
 We reviewed HTTP as protocol between clients (e.g. browser, curl, Postman etc) and server.
 
