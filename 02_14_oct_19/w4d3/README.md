@@ -3,9 +3,9 @@ AJAX; developing Slogram MVP.
 
 Hey crew, thanks again for today's class. Today we used AJAX, to `GET` and `POST` `json` data from/to an API. We used the data from the API to render dynamic template, with the help of `jQuery`.
 
-In class demo code here
+[In class demo code here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/slogram)
 
-Prewritten code here
+[Prewritten code here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/prewritten)
 
 > #### To run the demos
 > `cd` into the appropriate folder (`prewritten` or `slogram`);
