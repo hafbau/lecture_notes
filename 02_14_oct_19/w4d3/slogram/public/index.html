@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles.css">
+  
+  <title>Slogram</title>
+</head>
+<body>
+  <nav>
+    <h1>Slogram FTW!</h1>
+  </nav>
+
+  <header>
+    <form id="new-post">
+      <label for="title">Title</label>
+      <input type="text" id="text" name="title" placeholder="Post text" />
+      <br />
+      <label for="body">Body</label>
+      <input type="text" id="body" name="body" placeholder="Photo url" />
+      <br />
+      <label for="user-id">UserId</label>
+      <input type="number" id="user-id" name="userId" value=2 style="display: none;" />
+      <br />
+      <button type="submit">Create New Post</button>
+    </form>
+  </header>
+
+  <section id="container">
+    <article class="post">
+      <header>
+        <img src="https://picsum.photos/id/1/60" alt="" class="avatar">
+        <strong>samIsCool??</strong>
+      </header>
+      <img src="https://picsum.photos/id/1/536/354" alt="" class="photo">
+      <div class="actions">
+        <a href="#like">Like</a>
+        <a href="#like">Share</a>
+        <a href="#comment">Comment</a>
+      </div>
+      <a href="##" class="comment-count">View all 0 comments</a>
+
+      <div class="comments"></div>
+    </article>
+  </section>
+
+  <button id="load-more">Load More Grams</button>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="components.js" async></script>
+  <script type="text/javascript" src="handlers.js" async></script>
+  <script type="text/javascript" src="index.js" async></script>
+</body>
+</html>

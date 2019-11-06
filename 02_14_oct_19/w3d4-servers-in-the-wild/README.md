@@ -11,7 +11,9 @@ Oh and I manage to mess the video recording up - the whole two hours is fixed on
 We reviewed HTTP as protocol between clients (e.g. browser, curl, Postman etc) and server.
 
 - HTTP has a request / response cycle
+
 *Request*
+
 - method
 - action
 - data
