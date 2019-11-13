@@ -1,12 +1,14 @@
 SQL in our apps
 ===
 
+Thanks crew! Here's a link to [code and notes](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w5d3)
+
 ### Review of Slogram's code
 
 - modularizing
 - declarative / abstraction
 
-We moved away from having a giant `index.js` file to having multiple but focussed `.js` files in our `./public` folder. Why is this better? ~Because Hafiz said so!~ The reasons you guys came up with are *Readability* and *Maintability* - spot on!
+We moved away from having a giant `index.js` file to having multiple but focussed `.js` files in our `./public` folder. Why is this better? ~~Because Hafiz said so!~~ The reasons you guys came up with are *Readability* and *Maintability* - spot on!
 
 
 ### Moving to a database
@@ -22,7 +24,7 @@ const connectOptions = {
   user: '<database user, uses default if not specified>,
   database: '<database name that you have created with "CREATE DATABASE database name">',
   password: '<database user password>',
-  port: '<port where the postgres server is running e.g. 5432>,
+  port: '<port where the postgres server is running e.g. 5432>',
 };
 
 const pgClient = new Client(connectOptions);
@@ -52,7 +54,7 @@ const connectOptions = {
   port: process.env.PGPORT,
 };
 
-// ...
+// ... redacted code
 ```
 
 ### Querying the DB
@@ -64,12 +66,62 @@ const connectOptions = {
 
 Have a look at `dataAccess/index.js` file, where we wrote basically `selects` and `inserts` queries. Also, this is a summary of the CRUD syntax for a table:
 
+### SQL Syntax Review
 
-[credits to Andy's notes.]
+[Credits to Andy's notes](https://github.com/andydlindsay/12weekW5D3/blob/master/README.md)
 
-- SQL Injection - we cannot trust any data coming from the user, so we moved away from using template strings to insert values into our database and used *prepared statements* instead.
-- Separation of data access functions/modules from logic
+#### Browse
 
+```sql
+SELECT * FROM <table>;
+```
+
+#### Read
+
+```sql
+SELECT * FROM <table> WHERE id = <id>;
+```
+
+#### Edit
+
+```sql
+UPDATE <table> SET <column> = <value> WHERE id = <id>;
+```
+
+#### Add
+
+```sql
+INSERT INTO <table> (<column1>, <column2>) VALUES (<value1>, <value2>);
+```
+
+#### Delete
+
+```sql
+DELETE FROM <table> WHERE id = <id>;
+```
+
+### SQL Injection
+
+It is unsafe to trust any data coming from the user, so we stopped using template strings to insert values into our database and used *prepared statements* instead.
+
+**Changed from:**
+
+```js
+db.query(`
+  INSERT INTO posts(title, photo)
+  VALUES ('${post.title}', '${post.photo}') RETURNING *;
+`)
+```
+
+**To this:**
+
+```js
+db.query(`
+  INSERT INTO posts(title, photo)
+  VALUES ($1, $2)
+  RETURNING *;
+`, ['title here', 'photo url here'])
+```
 
 ### Modularizing (How we did it!)
 
@@ -131,8 +183,6 @@ app.use('/comments', commentRoutes);
 - use data helpers in your routes
 - have fun doing it all :)
 
-
-### Useful links from Andy ;)
 
 Thanks for today's class!
 
