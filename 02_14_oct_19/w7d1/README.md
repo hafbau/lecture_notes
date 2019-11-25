@@ -3,11 +3,11 @@ Component Based UI with React
 
 Hey crew, thanks for sitting through today's lecture and I'm sorry to have forgotten your bathroom break for an additional 20mins!!
 
-[Here's the code on github]()
+[Here's the code on github](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d1)
 
-- [Live demo of react is in `demo_tweeter` folder]()
-- [amyTweeter folder contains Amy's Tweeter project clone]()
-- [amyTweeterGUI folder]() - is an experiment to build component based UI that is separated from its back end, using jQeury and no react. This is only to drive home the fact that React is not just about modularization / composition with components.
+- [Live demo of react is in `demo_tweeter` folder](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d1/demo_tweeter)
+- [amyTweeter folder contains Amy's Tweeter project clone](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d1/amyTweeter)
+- [amyTweeterGUI folder](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d1/amyTweeterGUI) - is an experiment to build component based UI that is separated from its back end, using jQeury and no react. This is only to drive home the fact that React is not just about modularization / composition with components.
 
 Here are some of the points we talked about:
 
