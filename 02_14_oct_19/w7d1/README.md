@@ -12,6 +12,7 @@ Hey crew, thanks for sitting through today's lecture and I'm sorry to have forgo
 Here are some of the points we talked about:
 
 [x] Review Reading - What is react and why questions?
+
   - [Not just components](https://reactjs.org/docs/web-components.html)
   - [It's more about Performance](https://reactjs.org/docs/rendering-elements.html#react-only-updates-whats-necessary) - recall how we _unperformantly_ (not sure that's a word), re-render tweets when a new tweet is created? React makes that re-render performant.
   - [Declarative vs Imperative](https://web.compass.lighthouselabs.ca/days/w06e/activities/984)
@@ -21,7 +22,7 @@ Here are some of the points we talked about:
     - [x] All JSX expressions must result in one root level element
     - [x] No HTML comments
 
-[x] React.pdf - tampered Karl's slides to show component hierarchy design and data model.
+[x] [React.pdf - tampered Karl's slides to show component hierarchy design and data model.](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d1/react.pdf)
 
 [x] Design to Components - Design breakdown excercise.
   - [x] Tweeter
