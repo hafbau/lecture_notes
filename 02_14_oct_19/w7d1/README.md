@@ -56,3 +56,7 @@ Here are some of the points we talked about:
     - [] Managing state
     - [] Controlled inputs
     - [] Conditional rendering
+
+#### Resources
+
+VS code Snippets: https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets

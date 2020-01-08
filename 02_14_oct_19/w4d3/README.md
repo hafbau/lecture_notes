@@ -1,4 +1,4 @@
-AJAX; developing Slogram MVP.
+AJAX; developing Slogram's MVP.
 ===
 
 Hey crew, thanks again for today's class. Today we used AJAX, to `GET` and `POST` `json` data from/to an API. We used the data from the API to render dynamic template, with the help of `jQuery`.
