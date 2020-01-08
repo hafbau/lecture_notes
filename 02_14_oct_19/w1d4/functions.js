@@ -1,4 +1,4 @@
-const array = [1, 2, 3];
+const items = [1, 2, 3];
 for (const item of items) {
   console.log(item);
 };
@@ -18,3 +18,5 @@ const forEach = function (items, action) {
     action(item);
   }
 };
+
+declaredFunk = 'not a funk'

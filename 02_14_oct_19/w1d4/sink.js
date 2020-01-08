@@ -5,7 +5,7 @@ function declaredFunk() {
 }
 
 // Not hoisted
-expressedFunk(); // TypeError: expressedFunk is not a function
+// expressedFunk(); // TypeError: expressedFunk is not a function
 
 var expressedFunk = function () {
   console.log('Im expressed');
