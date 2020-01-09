@@ -1,7 +1,7 @@
 # Fun with Callbacks
 Hey crew! Welcome again to LHL! It's been four days already. Thanks for your attention and engagement today, I'll expect more :)
 
-[Code we worked on are here.]()
+[Code we worked on are here.](https://github.com/hafbau/lecture_notes/tree/06_jan_20/02_14_oct_19/w1d4)
 
 ## Life here at the bootcamp
 
