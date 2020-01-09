@@ -1,6 +1,8 @@
 # Fun with Callbacks
 Hey crew! Welcome again to LHL! It's been four days already. Thanks for your attention and engagement today, I'll expect more :)
 
+[Code we worked on are here.]()
+
 ## Life here at the bootcamp
 
 - Be aware when you're being stressed out
@@ -14,7 +16,7 @@ Hey crew! Welcome again to LHL! It's been four days already. Thanks for your att
 
 - Use equality operator `===` instead of assignment operator `=`
 - Prefer something like `if (hungry) {` to `if (hungry === true) {` when all you want is a truthiness check
-- Return within an `if` statement, make sure you know you're returning out of the function.
+- Return within an `if` statement, make sure you know that you're returning out of the function.
 
 *Objects* - we talked about objects creation, storing values and accessing values.
 
@@ -35,9 +37,9 @@ food['name']; // Nigerian Jollof Rice
 
 *Arrays* - reviewed how they are different from objects. They are index based.
 
-*Loops* - reviewed at `for`, `while`, `for of` and `for in` loops.
+*Loops* - reviewed at `for`, `for of` and `for in` loops.
 
-*Side Note* - How to read MDN; we did not get to do this :( !
+*Side Note* - How to read MDN.
 
 ## Life without functions
 - does multiple things
@@ -45,6 +47,7 @@ food['name']; // Nigerian Jollof Rice
 - not extensible
 
 Consider the below snippet;
+
 ```js
 // code that logs 1, 2 and 3 to console
 const items = [1, 2, 3];
@@ -52,6 +55,7 @@ for (const item of items) {
   console.log(item);
 };
 ```
+
 - We are looping through the array, and
 - logging (printing) to console
 
@@ -91,20 +95,50 @@ How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our
 
   ```js
   // definition
-  function makeFoodWith(ingredient, hgfhgf, ghfhg, utensil, cleaner) {
+  function makeFoodWith(optionsObj) {
     // instructions to make food - the recipe
-    // - use utensil to cook ingredient
+    // - use utensil to cook ingredient options.u
     // - use cleaner to wash utensil
     // - return food;
   };
 
   // execution
-  makeFood({ food: 'rice', utensil: 'pressurePot', 'soap', true}); // flip the arguments order at your own risk 🤷‍
+  makeFoodWith({ ingredient: 'rice', utensil: 'pressurePot', 'soap'); // flip the arguments order at your own risk 🤷‍
+
+  // VERSION 2 With More than three parameters => definition
+  function makeFoodWith(optionsObj) {
+    // instructions to make food - the recipe
+    // - use optionsObj.utensil to cook optionsObj.ingredient
+    // - use optionsObj.cleaner to wash optionsObj.utensil
+    // - return food;
+  };  
+  makeFoodWith({ ingredient: 'rice', utensil: 'pressurePot', cleaner: 'soap' }); // this cleans things up, especially when needing more arguments
   ```
+
+  > Prefer to use object parameter / argument when you need to pass more than 3 inputs.
 
 - function signature (I/O): this is the answer to two questions; what (arguments - data types and number of) inputs does the function take and what does it (data type) output.
 
-## More functions [40 - 50]
+## More functions
+
+- no-name (anonymous) functions?? When / why might we use those?
+  + function expression
+  + inline callbacks (examples of this below)
+  + Immediately Invoked Function Expression (IIFE) - (do not bother too much about this, yet.)
+- arrow functions: they are cool anonymous functions defined without the `function` keyword but with a `fat arrow`
+- function call vs function reference - console.logging experiment
+
+  ```js
+  const funk = function () { return 2; };
+
+  // Called
+  console.log(funk()); // 2
+
+  // Referenced
+  console.log(funk); // [Function: funk]
+  console.log('log with text: ', funk); // log with text: function () { return 2; }
+  ```
+
 - function declaration vs function expression
   + complete hoisting happens for declaration
   + hoisting makes it possible to call (execute) a function before it's been declared
@@ -125,32 +159,12 @@ How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our
   }
   ```
 
-- no-name (anonymous) functions?? When / why might we use those?
-  + function expression
-  + inline callbacks (examples of this below)
-  + Immediately Invoked Function Expression (IIFE) - (do not bother too much about this, yet.)
-- arrow functions: they are cool anonymous functions defined without the `function` keyword but with a `fat arrow`
-- function call vs function reference - console.logging experiment
-
-  ```js
-  const funk = function () { return 2; };
-
-  // Called
-  console.log(funk()); // 2
-
-  // Referenced
-  console.log(funk); // [Function: funk]
-  console.log('log with text: ', funk); // log with text: function () { return 2; }
-  ```
-
 - functions as values:
   + basically function expression
 - functions are first class citizens in Javascript, which means they have these privileges:
   + they can be assigned to a variable
   + they can be passed into another function as argument
   + they can be returned from another function call
-
-## Break [50 - 60]
 
 ## DRY the W.E.T. logic
 
@@ -196,9 +210,9 @@ Using the second privilege of being a first class object,the function passed in 
 
 ```js
 // Higher order function
-const forEach = function (items, action {
+const forEach = function (items, action) {
   for (const item of items) {
-    action(item);
+    action(item, items);
   }
 }
 
@@ -209,10 +223,8 @@ const logSquare = (number) => console.log(number * number);
 //   return console.log(num * num);
 // }
 
-forEach(numbers, console.log); // 1, 2, 3
-forEach(numbers, function(num) {
-  return console.log(num * num);
-}); // 1, 4, 9
+forEach(numbers, console.log); // 1, 2, 3, 
+forEach(numbers, logSquare); // 1, 4, 9
 
 // built in method on an Array
 items.forEach(logSquare)
