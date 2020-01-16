@@ -5,14 +5,6 @@ Hey crew, thanks for another awesome class today. Hopefully today was as fun for
 
 <a href="https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w2d4-promises">Link to code repo here.</a>
 
-### Temparature Check
-
-- feedback on TCP
-- self awareness
-- last week's test
-- tomorrow's test
-
-
 ### Review
 
 - What is asynchronous and why in Node?
@@ -25,6 +17,10 @@ Hey crew, thanks for another awesome class today. Hopefully today was as fun for
 Lets review the [Profile Generator](https://web.compass.lighthouselabs.ca/c583c1da-f7c8-478b-81a9-9497579a8ac2) as our first introduction to _callback hell_.
 
 
+#### >NOTE
+> We did not do the below in class, however, feel free to have a look at the `old/`
+> from previous class
+
 As another example problem, lets read the [Agile manifesto](https://agilemanifesto.org/) from disk, which, for us is broken into four parts / files: p1.txt, p2.txt, p3.txt, and p4.txt.
 
 
@@ -35,8 +31,8 @@ We discussed an hypothetical `.then` (or `.next`?) function to deal with callbac
   - should take the return value of the current task and pass it to the next one
   - will have to be given (pass in) a function to execute next
   - chainable
-  - should be able to catch police
-  - should be able to exit finally
+  - should be able to catch / police errors
+  - should be able to exit finally <we did not get to this>
 
 
 ### Promises
@@ -85,8 +81,6 @@ functionOneReturningPromise()
   - However, if we return a promise, then it actually passes the results/resolution of the promise into the next callback
 
 
-*Things we did not get to in class*
----
 ### Error Handling
 
 - A lot of Node callbacks use an _error-first_ approach where the first argument to the callback function is an error (if any) or null, and the second argument is the data. This can result in duplicated error handling logic in each callback in the chain.
@@ -124,13 +118,43 @@ functionOneReturningPromise()
     // do something
   })
   .catch((error) => {
+    // re throwing the error!
     throw error;
   });
 ```
 
 - What if we want to handle specific errors in a specific way?
-  + Come talk to me about this.
+  + We saw that `.then` can take a second callback which will handle specific error of the particular `.then` branch. Like so:
 
+```js
+  functionOneReturningPromise()
+  .then(
+    // the callback below is for success (resolving)
+    () => {
+      return functionTwoReturningPromise();
+    },
+    // this second callback catches error specific to this .then
+    (error) => {
+      // Catches only the error caused by this .then
+      // re throwing the error!
+      console.log('error caused by functionTwoReturningPromise', error);
+    }
+  )
+  .then(() => {
+    return functionThreeReturningPromise();
+  })
+  .then(() => {
+    // do another something
+  })
+  .catch((error) => {
+    // Catches any error that has not being caught thus far
+    // re throwing the error! We usually want to handle the error though.
+    throw error;
+  });
+
+```
+
+  + Feel free to come talk to me more about this.
 
 ### Running Async Operations in Parallel
 
