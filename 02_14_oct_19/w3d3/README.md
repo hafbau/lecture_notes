@@ -1,9 +1,13 @@
 HTTP Cookies & User Authentication
 ===
 
-Thanks for today! We took our `Coffee Runs` application further by implementing authentication. Here are the things we covered:
+Thanks for today! We took our `Coffee Runs` application further by implementing authentication.
 
-(Shout out to Francis (instructor from Montreal) for the original notes that I adapted.)
+[Code we wrote is here.](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w3d3)
+
+Here are the things we covered:
+
+(Shout out to Francis (instructor from Montreal) for [the original notes](https://github.com/FrancisBourgouin/lhl-12-w3d3/blob/master/README.md) that I adapted.)
 
 ## Review of W3D2 code
 - Focus on modularization and error driven development.
