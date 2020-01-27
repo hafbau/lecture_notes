@@ -1,0 +1,27 @@
+body {
+  background-image: url(https://www.dagusa.com/img/header.jpg);
+  color: white;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid grey;
+}
+.menu {
+  display: flex;
+}
+
+.menu-item {
+  margin: 0 10px;
+}
+
+.main {
+  margin: 0 auto;
+  width: 600px;
+  background-color: indigo;
+}
+
+.tagline {
+  font-size: 3em;
+}

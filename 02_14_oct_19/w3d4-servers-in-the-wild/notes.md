@@ -1,78 +1,83 @@
 # Real world HTTP Servers
 
 ## HTTP Review
-Request / Response
+Architecture
+  - Client / Server
 
-What a req looks like?
-- where (action / path)
-- what (method)
-- data
-  + body
-  + headers (Content-type, cookies)
-  + params (/urls/:id)
-  + query (/urls/?userId=dkjfdghjfdgsjkhfgru4374874871)
+Request
+  - method
+  - url / path
+  - data
+    - headers (cookies)
+    - URL
+      + params /noun/:noun_id
+      + query /nouns?name=somevalue e.g. Get /articles?page=1&author=hafiz
+    - body
+      email=myema@ema&password=supersecret
+      {
+        email: 
+      }
+       PUT / POST
 
-What response looks like?
-- status code
-- data (xml, json, string) /  error
-- headers Content-type, cookies)
+```js
+req.query
 
-## TinyApp Have nots
-- not hosted / no https
-- no real db
-- no CSS
-- only uses get / post
-- secret in open
+{
+  page: '1',
+  author: 'hafiz'
+}
+```
+
+Response
+  - status
+  - body / data (json / html / error?)
+  - error
+
+## TA vs the world
+
+Not real world
+- no persistent databases
+- backdoor endpoint
+- proper validation / sanitization of user inputs
+- automated testing
 - error handling
-- testing
+- logging
+- no deployment (https)
 
-Have
-- uses bcrypt
+Haves
 - email auth
-- real stack
+- bcrypt
+- encrypted cookies
 
-Elements of TA
-- template (views)
-- Routing
-- Data store (Models)
-- Middlewares
+## Rest
 
-## App idea (slogram - do you even share photos?)
+user stories
+- users can see all photos [GET /photos]
+- users can see one photo [GET /photos/:id]
+- users can comment on a photo [POST /photos/:id/comments]
+- users can have an account [PU(OS)T /users] /register
+- users can login [PU(OST)T /sessions] => /login
+- users can have reactions on their photot
+- users can upload
 
-- user sees login page
-- user can register
-- upload photos
-- view your photsos
-- view one photo
-- edit and share photo
-- delete photo
-- categories photos into albums
-- friends comment on photos
+extract nouns and verbs
+
+**Nouns**
+- users (accounts)
+- photos
+- comments
+- reactions
+
+**Verbs**
+- 
 
 
-photo => see all photos
-photo => see one photo of all photos
-photo => add one photo
-photo => edit one photo of all photos
-photo => delete one photo of all photos
-photo => share one photo of all photos
+## API
 
-albums => create an album
-albums => add
+## Middleware
 
-CRUD the resources
-BREAD the resources
+## Modularization (Refactor)
 
-IDEMPOTENT
-
-Get Register form => GET /register
-Add User => PUT /users (Nirali)
-
-CREATE photo => POST /photos (Sushantkumar)
-READ ALL photos => GET /photos (Layth)
-READ One photo => GET /photos/:photoId (Hayder)
-Edit One photo => PUT /photos/:photoId (Hafiz)
-Delete One photo => DELETE /photos/:photoId (Hafiz)
 
 
 

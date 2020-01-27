@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Selectors</title>
+    <style>
+      /* tag selectors */
+
+      body {
+        
+      }
+
+      h1 {
+        color: royalblue;
+        font-size: 2.5em;
+      }
+
+    
+     
+      /* class selector color of sub-titles*/
+      h2.sub-titles {
+        background-color: lightgreen;
+      }
+  
+
+      h2 {
+        background-color: lightgray;
+      }
+
+
+    
+
+      /* id selector */
+
+      #id-selector {
+        border: 1px solid aquamarine;
+        padding: 1em;
+        background-color: lightpink;
+      }
+
+      /* descendent selectors make boxes out of a list*/
+
+      #id-selector li {
+        border: 1px solid red;
+      }
+     
+
+      /* attribute selectors li active-item*/
+
+      li[data-item="active"] { 
+        font-weight: bold;
+        color: green;
+        background-color: lightyellow;
+      }
+    
+      /* ol descendent selector */
+
+      ol li {
+        color: mediumblue;
+      }
+
+      /* ol direct child */
+
+      ol > li {
+        color: mediumorchid;
+      }
+
+      /* adjacent sibling .list-item */
+   
+      .list-item + li {
+        background-color: lightseagreen;
+      }
+
+      /* attribute selector & :checked pseudo-class & adjacent sibling selector */
+  
+      input[type="checkbox"]:checked + label {
+        text-decoration: line-through;
+      } 
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Selectors</h1>
+
+    <h2 class="sub-titles">Basic Selectors</h2>
+
+    <h2 class="sub-titles">Attribute Selectors</h2>
+
+    <p>Based on the attributes of the element:</p>
+
+    <ul id="id-selector">
+      <li data-item="active">ID</li>
+      <li>Class</li>
+      <li>Other attributes</li>
+    </ul>
+
+    <h2>Relational Selectors and Combinators</h2>
+
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>
+        item 3
+        <ul>
+          <li>item a</li>
+          <li>item b</li>
+          <li>item c</li>
+        </ul>
+      </li>
+      <li class="list-item">item 4 - list-item class</li>
+      <li>item 5</li>
+      <li>item 6</li>
+      <li>item 7</li>
+    </ol>
+
+    <form action="">
+      <div>
+        <input id="canada" type="checkbox" value="Canada" />
+        <label for="canada">Canada</label>
+      </div>
+      <div>
+        <input type="checkbox" value="US" />
+        <label for="us">US</label>
+      </div>
+      <div>
+        <input type="checkbox" value="UK" />
+        <label for="uk">UK</label>
+      </div>
+    </form>
+  </body>
+</html>

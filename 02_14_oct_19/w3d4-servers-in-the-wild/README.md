@@ -1,11 +1,9 @@
 Real World HTTP Servers with Hafiz
 ===
 
-Hey crew! Congrats! You're becoming web developers. Thanks for an awesome class today; hopefully we could make the Live Share more fun in subsequent lectures - let me have your thoughts on that please.
+Hey crew! Congrats! You're becoming web developers. Thanks for an awesome class today.
 
 <a href="https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w3d4-servers-in-the-wild">Link to code and notes repo here.</a>
-
-Oh and I manage to mess the video recording up - the whole two hours is fixed on the start screen again, sorry 😟. I've attached the video anyways for the audio (we had good laughs ;))
 
 ## HTTP Review
 We reviewed HTTP as protocol between clients (e.g. browser, curl, Postman etc) and server.
@@ -28,7 +26,7 @@ We reviewed HTTP as protocol between clients (e.g. browser, curl, Postman etc) a
 - status code
 - headers (set-cookie, format etc)
 
-*Response Methods that end the request/response cycle*
+*ExpressJS Response Methods that end the request/response cycle*
 
 When you call any of the following functions, the request / response cycle is complete, and no more responses can be sent.
 
@@ -45,16 +43,32 @@ When you call any of the following functions, the request / response cycle is co
 | res.sendStatus()  |	Set the response status code and send its string representation as the response body. |
 
 ## Tiny App vs the world
-We talked about the `have nots` and `haves` in TinyApp:
 
-
-## Tiny App workflow / Elements of TinyApp
+**Tiny App workflow / Elements of TinyApp**
 Basic elements of TinyApp (webserver):
 
 - Routing
 - Middlewares
 - Views (Templates)
 - Data stores (someone mentioned Models??)
+
+
+We talked about the `have nots` and `haves` in TinyApp:
+
+**TinyApp Have nots**
+- not hosted / no https
+- no real db
+- no CSS
+- only uses get / post
+- secret in open
+- error handling
+- testing
+
+**Have**
+- uses bcrypt
+- email auth
+- real stack
+
 
 ## RESTful Routing
 
@@ -106,8 +120,8 @@ Here's what we came up with for the design of our end points:
 | --------------------------------------- | --------- | ------------------------- |
 | List all photos                         | GET       | get '/photos'             |
 | Get a specific photo                     | GET       | get '/photos/:id'         |
-| Display the new form                    | GET       | get '/photos/new          |
-| Create a new photo                      | photo      | photo '/photos           |
+| Display the new form                    | GET       | get '/photos/new         |
+| Create a new photo                      | POST      | post '/photos           |
 | Display the form for updating a photo   | GET       | get '/photos/:id/update'  |
 | Update the photos                       | PUT       | put '/photos/:id          |
 | Deleting a specific photo                | DELETE    | delete '/photos:id'       |
@@ -120,6 +134,48 @@ We needed to access a nested resources. For example, add a photo to an album.
 | ----------------------- | --------- | -------------------------- |
 | Add a photo to an album | POST      | post '/albums/:albumId/photos  |
 
+## Back-End API
+
+- An API will only deliver data, typically in JSON
+- The routes will add a version of the API
+
+For example, if we were building an API, our routes would be modified.
+
+- `GET /api/1.0/posts`
+- `GET /api/1.0/posts/1`
+  ...
+
+### Conventional Data Format
+
+In the case of an API, what do we expect when we do
+
+GET users => a list of users
+
+```
+[
+  {id: 1,
+  first_name: 'Clark',
+  last_name: 'Ken',
+  ...},
+  {id: 2,
+  first_name: 'Bruce',
+  last_name: 'Wayne',
+  ...},
+]
+```
+
+## Alternatives
+### REST alternatives
+
+- GraphQL
+
+GraphQL is an open-source data query and manipulation language for APIs, and a runtime for fulfilling queries with existing data. GraphQL was developed internally by Facebook in 2012 before being publicly released in 2015.
+
+### Alternatives to Express
+
+Koa.js (Javascript) - https://koajs.com/
+Sinatra (Ruby) - http://sinatrarb.com/
+Flask (Python) - http://flask.pocoo.org/
 
 ## Middlewares
 

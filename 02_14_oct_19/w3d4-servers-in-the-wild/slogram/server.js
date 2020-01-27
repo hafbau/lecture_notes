@@ -2,6 +2,7 @@ const express = require('express');
 const fakeHandler = require("../demo/fakeHandler");
 const photoRouter = require("./routes/photos");
 
+
 const app = express();
 
 app.get('/register', fakeHandler());

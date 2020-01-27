@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>CSS: Float, Inline-block and Box-sizing</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="normalize.css" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto';
+      background-color: #1A3333;
+      font-size: 2rem;
+    }
+
+    div {
+      border: 6px solid #EBEDE5;
+      color: #EBEDE5;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .float {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+    div.clear {
+    clear: left;
+    }
+
+    div.row {
+      overflow: auto;
+    }
+
+    /* div.row::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+
+
+    div.inline {
+      display: inline-block;
+    } */
+  </style>
+</head>
+
+<body>
+  <!-- <div>
+    <div class="float box">Float Box</div>
+    <div class="float box right">Float Box</div>
+    <div class="box">No clear Box</div>
+    <div class="box clear">Box</div>
+  </div> -->
+  <!-- <div class="float box">Float Box</div> -->
+  <!-- <div class="clear">Clear Fix</div> -->
+  <div class="row">
+    <div class="float box">Float Box</div>
+    <div class="float box">Float Box</div>
+    <div class="float box">Float Box</div>
+  </div>
+  <div class="box">Block Box</div>
+  <div class="box">Block Box</div>
+  <!-- <div class="inline box">Inline-block Box</div>
+  <div class="inline box">Inline-block Box</div>
+  <div class="inline box">Inline-block Box</div>
+  <div class="box">Block Box</div>
+  <div class="box">Block Box</div> -->
+</body>
+
+</html>

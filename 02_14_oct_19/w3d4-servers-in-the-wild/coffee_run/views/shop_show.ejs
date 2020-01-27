@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <title>Coffee Run</title>
+  <style>
+    article.shop {
+      display: flex;
+      height: 400px;
+      width: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h1 class="brand">CRuns</h1>
+  </nav>
+  <main>
+    <% console.log('Shop', shop) %>
+      <article class="shop">
+        <img src="<%= shop.photo %>" alt="<%= shop.name %> photo" srcset="">
+        <div class="detes-wrapper">
+          <h2><%= shop.name %></h2>
+          <em><%= shop.rating * 5 %> / 5</em>
+          <span><%= shop.location %></span>
+        </div>
+      </article>
+  </main>
+</body>
+
+</html>
