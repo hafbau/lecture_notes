@@ -2,6 +2,8 @@
 
 Today's notes is courtesy of Dominic from Montreal and Karl from Vancouver. Check out some of the resources below and enjoy styling!
 
+[notes and code are here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d1)
+
 ## Agenda
 
 - Writing semantic HTML
@@ -286,7 +288,7 @@ There are a lot of resources for CSS. It is very easy to fall into the habit of 
 
 Just like anything it will take time, and just like anything it feels more complicated than it actually is.
 
-- [Karl Jensen's CSS PDF](./karl_jensen_css.pdf)
+- [Karl Jensen's CSS PDF](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w4d1/karl_jensen_css.pdf)
 - https://css-tricks.com/
   + https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - http://guyroutledge.github.io/box-model/
