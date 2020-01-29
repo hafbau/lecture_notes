@@ -1,0 +1,35 @@
+/*
+- The header should have a height of 400px and be 100% the width of it's parent container
+- The avatar should be centered vertically and horizontally (Hint: you may have to play around with position: relative - and position: absolute to properly position the avatar)
+- The name should be centered below the avatar
+- The background should be a different colour than the nav and the body
+*/
+
+
+.staticLogo {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  margin-top: 120px;
+  text-align: center;
+  background-color:#6bd6b8;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+  color: white;
+  
+}
+
+
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.name {
+  margin-top: 20px;
+  font-family: "Source Sans Pro";
+  font-size: 30px;
+  
+}

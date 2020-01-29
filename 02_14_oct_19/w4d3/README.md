@@ -1,21 +1,25 @@
-AJAX; developing Slogram's MVP.
+AJAX.
 ===
 
 Hey crew, thanks again for today's class. Today we used AJAX, to `GET` and `POST` `json` data from/to an API. We used the data from the API to render dynamic template, with the help of `jQuery`.
 
-[In class demo code here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/slogram)
+[kevin's code that we worked on today is here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/kevin)
 
-[Prewritten code here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/prewritten)
+[Old demo codes are here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/slogram)
+
+[.. and here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d3/prewritten)
+
+The below is my old notes, please reference [Travis' notes here for the considerations we talked about after the demos](https://github.com/tborsa/lectures/blob/master/week4/day3/notes.md)
 
 > #### To run the demos
-> `cd` into the appropriate folder (`prewritten` or `slogram`);
-> run `npm install` to install dependencies (just `express`);
+> `cd` into the appropriate folder (`prewritten` or `slogram` or `kevin`);
+> run `npm install` to install dependencies;
 > run `npm start`
 
 E.g.
 
 ```bash
-cd slogram
+cd appropriate-directory< slogram | prewritten | kevin >
 npm install
 npm start
 ```
@@ -42,6 +46,8 @@ AJAX is implemented using the `XMLHttpRequest` (`XHR`) object
 Modern libraries (such as `jQuery` or `axios`) provide us with easy-to-use wrappers for the `XHR` object. There is also `fetch` that's being implemented into browsers to be used in place of `XHR`.
 
 ### jQuery AJAX Example
+
+_This uses a slightly different variation of the `$.ajax({})` input (settings) object. This on uses `success` and `error` callbacks while our demo used the promise (`.then`) version. And to a different url.
 
 ```js
 $.ajax({

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <link rel="icon" type="image/png"
+    href="https://cdn2.iconfinder.com/data/icons/funtime-animals-humans/60/004_019_parrot_bird_animal_pet-512.png">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
+    rel="stylesheet">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header/header.css" type="text/css" />
+
+
+</head>
+
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav class="fixed-top">
+    <span class="brand">tweeter</span>
+    <span class="compose"><strong>Write</strong> a new tweet</span>
+  </nav>
+
+
+  <header class="staticLogo">
+    <div>
+      <img class="logo" src="/images/profile-hex.png">
+    </div>
+
+    <div class="name">
+      <span><strong>Alexander</strong> Bica</span>
+    </div>
+  </header>
+
+
+
+  <!-- Page-specific (main) content here -->
+  <main class="">
+    <section class="newTweet">
+      <form action="/tweets/" method="POST">
+        <textarea class="tweetText" name="text" placeholder="What are you humming about?"></textarea>
+        <div class="flexBox">
+          <input class="tweet" type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </div>
+
+      </form>
+    </section>
+
+    <section class="container"></section>
+    <!-- <article class="article">
+      <header class="tweetCardTop">
+        <div class="leftHeader">
+
+          <div class="leftHeader">
+            <img src="https://i.imgur.com/73hZDYK.png">
+            <div class="username">Newton</div>
+          </div>
+        </div>
+        <div class="rightHeader">
+          <div class="handle">@Isaac</div>
+        </div>
+      </header>
+
+      <div class="tweetCardBottom">
+        <span class="tweetBody">Today I discovered that computers are not our friends. Today</span>
+      </div>
+
+      <footer class="tweetFooter">
+        <div class="footerLeft">
+          <span>2 days ago</span>
+        </div>
+        <div class="footerRight">
+          <span>Social</span>
+        </div>
+      </footer>
+    </article>
+
+    <article class="article">
+      <header class="tweetCardTop">
+        <div class="leftHeader">
+
+          <div class="leftHeader">
+            <img src="https://i.imgur.com/73hZDYK.png">
+            <div class="username">Newton</div>
+          </div>
+        </div>
+        <div class="rightHeader">
+          <div class="handle">@Isaac</div>
+        </div>
+      </header>
+
+      <div class="tweetCardBottom">
+        <span class="tweetBody">Today I discovered that computers are not our friends. Today</span>
+      </div>
+
+      <footer class="tweetFooter">
+        <div class="footerLeft">
+          <span>2 days ago</span>
+        </div>
+        <div class="footerRight">
+          <span>Social</span>
+        </div>
+      </footer>
+    </article> -->
+
+  </main>
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/templates.js"></script>
+  <script type="text/javascript" src="/scripts/handlers.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/tweet-container.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</body>
+
+</html>
