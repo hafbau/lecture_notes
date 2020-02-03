@@ -174,7 +174,7 @@ app.use('/comments', commentRoutes);
 
 ### Summary
 
-- created database using `psql` - `CREATE DATABASE slogram`
+- created database using `psql` - `CREATE DATABASE slogram;`
 - connect to the database - `\c slogram`
 - defined the tables creation logic in `migrations/index.sql`
 - create tables using `psql` by running the migration file - `\i migrations/index.sql`

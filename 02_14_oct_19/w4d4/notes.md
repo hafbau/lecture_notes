@@ -1,6 +1,17 @@
 ## Responsive Design
 
-- The problem: examples of unresponsive; pick on someone's tweeter
+- The problem: examples of unresponsive - spacejam; pick on someone's tweeter
+- Show a responsive website; github.com, healthgig.com
+  + what make these responsive?
+- CSS Features that can help:
+  + media-queries
+  + percentages
+  + ems
+  + max-width, min-width
+  + viewport
+  + border-box
+- Flexbox
+- Grid Systems
 
 ## Sass [30]
 
