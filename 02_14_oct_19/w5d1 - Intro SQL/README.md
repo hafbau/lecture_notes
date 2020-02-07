@@ -3,7 +3,7 @@ SQL INTRODUCTION
 
 ![Jokes](https://res.cloudinary.com/practicaldev/image/fetch/s--zqHC2NpH--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/x43m8xsus78o3uehowcp.jpg)
 
-Notes and code [here](https://github.com/tborsa/LighthouseLabs/tree/master/lectures/Week4/Day1/Lecture)
+Notes and code [here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w5d1%20-%20Intro%20SQL)
 
 ---
 
