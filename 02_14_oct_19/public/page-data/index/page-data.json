@@ -1,0 +1,1 @@
+{"componentChunkName":"component---node-modules-gatsby-theme-blog-core-src-templates-posts-query-js","path":"/","result":{"errors":[{"message":"Cannot return null for non-nullable field MdxBlogPost.date.","locations":[{"line":20,"column":9}],"path":["allBlogPost","edges",0,"node","date"]}],"data":null,"pageContext":{}}}
