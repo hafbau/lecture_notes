@@ -1,10 +1,11 @@
 import React from 'react'
 import './tweetlist.css';
 import Tweet from '../Tweet';
-import { tweets as fakeTweets } from './tweets_list.stories';
+// import { tweets as fakeTweets } from './tweets_list.stories';
 
 export default function TweetsList(props) {
-  const { tweets = fakeTweets } = props;
+  // const { tweets = fakeTweets } = props;
+  const { tweets = [] } = props;
   console.log('tweets :', tweets);
   // const tweets = props.tweets
   const renderTweets = tweets.map(tweet => <Tweet key={tweet.created_at} {...tweet} />)
