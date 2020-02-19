@@ -3,6 +3,8 @@ Data Fetching and Other Side Effects
 
 Hey folks, I manage to mess up the recordings for today, sorry :(
 
+[Link to repo here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d2)
+
 Topics
 
 - Run multiple servers

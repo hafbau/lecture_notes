@@ -1,27 +1,26 @@
 Custom Hooks and Immutable data pattern
 ===
 
+Thanks for today! We went through some reviews of common errors I've seen:
+
+[here]()
+[and here]()
+
 ## Agenda
 
+- [] Custom Hooks
 - [] Immutable data patterns with Objects and Arrays
-- [] Separate rendering from logic
-- [] Create a custom Hook
 
 ## Recap - Rules of Hooks
 
-- Only call Hooks from the top-level of a function component or a custom Hook.
-
-  - Cannot be called in React class components, loops, if statement, regular function, in event handlers
-
-- A custom Hook must start with the keyword "use"
-
-  - a custom Hook can call other custom or built-in Hooks.
-
 ```js
-
 // allowed?
 const TweetList = () => {
   const [user, setUser] = useState(null);
+  // if (somCond) {
+  //   const [pet, setPet] = useState(null);
+  // }
+  // const [thing, setThing] = useState(null);
 
   if (user) {
     useEffect(() => {
@@ -38,8 +37,8 @@ class Tweet extends React.component {
   render(){
     const [tweets, setTweets] = useState([])
 
-    return(
-      <div><h1>Tweets</h1>
+    return (
+      <h1>Tweets</h1>
     )
   }
 }
@@ -53,8 +52,16 @@ const useData = () => {
 const getTodo = (id) => {
   const [todo, setTodo] = useState([]);
 }
-
 ```
+
+- Only call Hooks from the top-level of a function component or a custom Hook.
+
+  - Cannot be called in React class components, loops, if statement, regular function, in event handlers
+
+- A custom Hook must start with the keyword "use"
+
+  - a custom Hook can call other custom or built-in Hooks.
+
 
 ## Custom Hooks
 
@@ -62,13 +69,13 @@ const getTodo = (id) => {
 - Sometimes we just want to use some code logic without tying it to a particular UI
 - Custom Hooks allow us to do that
 
-Example of custom hook
+Demos of custom hook
+- [Use mouse position](https://codesandbox.io/s/use-mouse-position-dxgmv-dxgmv)
+- [Custom Hook - Browser Dimensions](https://codesandbox.io/s/custom-hooks-exercise-browser-dimensions-d5tv7)
 
-- [Custom Hook - Browser Dimensions](https://codesandbox.io/s/custom-hooks-exercise-browser-dimensions-j80xw)
+An example with data fetching
+[api request](https://codesandbox.io/s/api-request-customhook-exercise-o7hbb)
 
-In the example where we used `useEffect` to perform a request to Github and pull out the contributors to the Tweeter repo, the request is actually tied to the component itself. What about is we want to reuse the request?
-
-[api request](https://codesandbox.io/s/api-request-customhook-exercise-pnje8)
 
 ## Immutable Data Patterns with Arrays and Objects
 
@@ -82,6 +89,43 @@ In other words...
 
 - Don’t mutate data, and if you have to – create a clone and mutate it.
 - Reuse unchanged parts. Only changed parts should be changed.
+
+### Why might immutable state make sense in React?
+
+```js
+// Ex.1 How might React know the difference
+const state = {};
+const diffState = (newState) => {
+  const oldState = state;
+  if (oldState === newState) {
+    console.log('state is the same, no re-render')
+  } else console.log('different state, re-renders')
+}
+
+state.a = 4;
+diffState(state);
+
+// Ex. 2
+const TheComponent = () => {
+  const [state, setState] = useState({ a: 2 });
+  const [arrState, setArrState] = useState([3, 2 ]);
+
+  const handleObjClick = () => {
+    state.b = 5;
+    // setState(state)
+  }
+  const handleArrClick = () => {
+    arrState.push(5);
+    // setArrarrState(arrState)
+  }
+
+  return ([
+    <a href='#' onClick={handleObjClick}>{JSON.stringify(state)}</a>,
+    <br />,
+    <a href='#' onClick={handleArrClick}>{JSON.stringify(arrState)}</a>
+  ])
+}
+```
 
 ### Benefits of immutability
 
@@ -98,15 +142,23 @@ Some libraries enforce immutability
 
 ### Arrays
 
-- Arrays mutable in JavaScript
+- Arrays are mutable in JavaScript
 - we need to use only the pure array methods and the spread operator
 - The pure array methods are the ones that create a new array when something changes
 
   - pop(), push() and splice() are not pure
   - concat(), slice() are pure
 
-[Immutable Arrays](https://codesandbox.io/s/strange-neumann-j5g5y)
+[Immutable Arrays](https://codesandbox.io/s/mutable-bush-728of)
 
 ### Objects
 
-[Immutable Objects](https://codesandbox.io/s/modest-pare-28lgm)
+[Immutable Objects](https://codesandbox.io/s/aged-water-0kt4p)
+
+
+### Some Custom hooks reference
+
+https://usehooks.com/
+https://nikgraf.github.io/react-hooks/
+https://github.com/rehooks/awesome-react-hooks
+
