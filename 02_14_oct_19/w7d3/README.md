@@ -3,8 +3,12 @@ Custom Hooks and Immutable data pattern
 
 Thanks for today! We went through some reviews of common errors I've seen:
 
-[here]()
-[and here]()
+[here](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w7d3/review-component.md)
+
+
+[and here](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w7d3/review-export.md)
+
+[This note is also on Github](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w7d3)
 
 ## Agenda
 
@@ -71,7 +75,7 @@ const getTodo = (id) => {
 
 Demos of custom hook
 - [Use mouse position](https://codesandbox.io/s/use-mouse-position-dxgmv-dxgmv)
-- [Custom Hook - Browser Dimensions](https://codesandbox.io/s/custom-hooks-exercise-browser-dimensions-d5tv7)
+- [Custom Hook - Browser Dimensions](https://codesandbox.io/s/custom-hooks-exercise-browser-dimensions-d5tv7)  - we did not do this in class but, it is meant to be a classwork. So, please feel free to read through.
 
 An example with data fetching
 [api request](https://codesandbox.io/s/api-request-customhook-exercise-o7hbb)
