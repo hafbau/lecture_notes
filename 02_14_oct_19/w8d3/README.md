@@ -1,18 +1,18 @@
 React => Next Steps
 ===
 
-Hey gang! Today we discussed next steps after React and looked at CI/CD and what our role as web developers.
+Hey gang! Today we discussed next steps after React and looked at CI/CD..
 
-Here is the note; sorry I'm getting this to you late - better late than never ;)
+[Here is the notes and code repo too.](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w8d3)
 
 Reviewed Scheduler in light of:
 
-- [ ] Components
-- [ ] Data and global state management
-- [ ] Transitioning / routing
-- [ ] Testing
-- [ ] Deployment
-- [ ] CI / CD
+- [ x ] Components
+- [ x ] Data and global state management
+- [ x ] Transitioning / routing
+- [ x ] Testing
+- [ x ] Deployment
+- [ x ] CI / CD
 
 #### Components
 
