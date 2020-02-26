@@ -1,3 +1,11 @@
 node_modules
 **/node_modules
 01_22_jul_19/
+.env
+.env.test
+.env.development
+.env.production
+**/.env
+**/.env.test
+**/.env.development
+**/.env.production

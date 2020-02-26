@@ -1,6 +1,12 @@
 Unit && Integration Tests
 ===
 
+[Code here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w8d1)
+
+[Videos Part 1](https://youtu.be/lRatI_WvhPc)
+
+[Videos Part 2](https://youtu.be/_kuUivMxo3A)
+
 ### To Do
 - [x] Review: Different types of testing
 - [x] Review: Test-Driven Development
