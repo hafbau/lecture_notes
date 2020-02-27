@@ -1,6 +1,10 @@
 Intro to Ruby
 ===
 
+As always, thanks for today - the engagement is awesome!
+
+[Here's link to the code with wrote; I included our irb command history as well](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w8d3)
+
 ## What have we learnt so far?
 
 - Programming Language is overrated

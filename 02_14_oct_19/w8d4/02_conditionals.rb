@@ -6,12 +6,14 @@ else
   p "who cares"
 end
 
-# puts 'no sweat!' if true
+puts 'no sweat!' if true
 
-# tooPacked = nil;
-# p 'no biggie' unless tooPacked
+# console.log(name && name.length)
 
-# val = tooPacked.nil? ? 'somefn' : 'nofn'
+tooPacked = nil;
+p 'no biggie' unless tooPacked
+
+val = tooPacked.nil? ? 'somefn' : 'nofn'
 
 # p val
 
@@ -25,3 +27,4 @@ truth = "true"
 falsehood = "false"
 
 truth and falsehood or false
+truth && falsehood && false
