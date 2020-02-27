@@ -5,6 +5,13 @@ As always, thanks for today - the engagement is awesome!
 
 [Here's link to the code with wrote; I included our irb command history as well](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w8d3)
 
+I lost internet in the middle of the lecture and video stream was interrupted :(
+
+Here are the parts recorded; about 45mins is lost :( :(
+
+  [Part I](https://youtu.be/YCqGN_BFzEw)
+  [Part II](https://youtu.be/q-8YmYYdVIs)
+
 ## What have we learnt so far?
 
 - Programming Language is overrated
