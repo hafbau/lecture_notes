@@ -33,7 +33,7 @@ test:
 Also, do not forget [the cheat sheet!!](https://devhints.io/capybara)
 
 
-Our `registers_spec.rb` [code is on github here;]() and also below:
+Our `registers_spec.rb` [code is on github here;](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w10d2) and also below:
 
 ```rb
 require 'rails_helper'
