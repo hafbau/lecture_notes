@@ -1,6 +1,8 @@
 Advance Topics - ES2020 && Microservices
 ===
 
+[Notes, microservices slide and Rust code here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w10d3)
+
 ## ES2020 What's new
 
 [es2020 experiments](https://codesandbox.io/s/zealous-meadow-nxnz9)
@@ -95,7 +97,7 @@ Others features from the future
 
 - Also, it seems the convention for entry into the server is `main.rs`
 
-- See my copy/paste endeavor in the [rust_authoring directory](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w10d2/rust_authoring)
+- See my copy/paste endeavor in the [rust_authoring directory](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w10d3/rust_authoring)
 
 To run the rust `hello_world`, run the following on the command line:
 
