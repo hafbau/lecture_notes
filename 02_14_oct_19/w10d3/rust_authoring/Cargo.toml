@@ -1,0 +1,10 @@
+[package]
+name = "hello_world"
+version = "0.1.0" 
+
+[dependencies]
+rocket = "0.4.4"
+
+[[bin]]
+name = "myapp"
+path = "src/myapp/main.rs"
