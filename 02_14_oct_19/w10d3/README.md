@@ -3,7 +3,7 @@ Advance Topics - ES2020 && Microservices
 
 ## ES2020 What's new
 
-[]3(https://codesandbox.io/s/zealous-meadow-nxnz9)
+[es2020 experiments](https://codesandbox.io/s/zealous-meadow-nxnz9)
 
 ➡️ [BigInt](https://v8.dev/features/bigint)
 ➡️ Optional Chaining
@@ -82,11 +82,6 @@ Others features from the future
 
 [CMS architecture breakdown](https://docs.google.com/presentation/d/1DsLwnZarDFv-cV_HL3QgTyAtj3uBiYSj43RAoLzSbrw/edit#slide=id.g814d667b86_0_30)
 
-## References
-
-- [Antipatterns](ibm.com/cloud/learn/microservices)
-- [Why_What](microservices.io)
-
 
 ### Our Rust Rocket Experiment
 
@@ -100,4 +95,20 @@ Others features from the future
 
 - Also, it seems the convention for entry into the server is `main.rs`
 
-- See my copy/paste endeavor in the [rust_authoring directory]()
+- See my copy/paste endeavor in the [rust_authoring directory](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w10d2/rust_authoring)
+
+To run the rust `hello_world`, run the following on the command line:
+
+```sh
+docker build -t my-rust-app .
+docker run -p 8000:8000 my-rust-app
+```
+
+And the beautiful app is up on `localhost:8000`
+
+## References
+
+- [Antipatterns](ibm.com/cloud/learn/microservices)
+- [Why_What](microservices.io)
+
+Thank you crew!

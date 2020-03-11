@@ -7,4 +7,4 @@ rocket = "0.4.4"
 
 [[bin]]
 name = "myapp"
-path = "src/myapp/main.rs"
+path = "./main.rs"
