@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-success">
+    <a class="navbar-brand" href="/urls">TinyApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/urls">My URLs</a>
+        <a class="nav-item nav-link" href="/urls/new">Create New URL</a>
+      </div>
+    </div>
+
+    
+    <div name="myLogin" style="position: absolute; right: 200px;">
+      <% if(typeof user === 'undefined') {%>
+      <a href="/login">Login</a>
+      <% } %>
+    </div>
+     
+
+    <div name="myLogin" style="position: absolute; right: 110px;">
+      <% if(typeof user !== 'object') {%>
+      <a href="/register">Register</a>
+      <% } %>
+    </div>
+
+    
+    <form action="/logout" method="POST">
+    <div name="myLogin" style="position: relative; right: 0px;">
+      <% if(typeof user === 'object'){ %>
+      <button type="submit" class="btn btn-primary">Logout</button>
+      <% } %>
+    </div>
+    </form>
+
+
+    <div name="myLogin" style="position: absolute; right: 100px; top: 16px;">
+      <% if(typeof user === 'object'){ %>
+       <label for="username">Logged In As: <%= user['email'] %>!</label>
+      <% } %>
+    </div>
+
+
+
+
+
+
+   
+
+
+<!--
+    <% if(typeof user === 'object') {%>
+    <div name="myLogin" style="position: absolute; right: 10px;">
+        <div class="form-group mb-2">
+          <form class="form-inline" action="/logout" method="POST">
+          <label for="username">Logged In As: <%= user['email'] %>!</label>
+          <button type="submit" style="margin:1em" class="btn btn-outline-secondary">Logout</button>
+          </form>
+        </div>
+    </div> 
+    <% } %>
+  -->
+
+   
+
+
+
+  </nav>
+</header>
+
+
+
+
+
+      
