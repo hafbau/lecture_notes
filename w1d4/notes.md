@@ -2,20 +2,22 @@
 
 W1D4 with Hafiz Suara
 
-## About You
+## About You [5m]
 
 - Why?
+  + why are we here
+  + why are coding without
 - Don't violate your brain
-- Appreciate you wins
+- Appreciate your wins
 - Communicate
 
-## About the bootcamp
+## About the bootcamp [10m]
 
 - It's methodical
 - It's a lot and little time
 - It's about the process
 
-## About me
+## About me [12m]
 
 - Fun fact, I'm hilarious!
 - My style
@@ -23,52 +25,16 @@ W1D4 with Hafiz Suara
 
 ## Agenda Today
 
-- Review of so far
-- Life without functions
+- Review functions
 - More functions
+- Life without functions
 - HOF / Callbacks
 - forEach
 - filter / map exercise
 
-## Review of F.O.C.A.L || COALF?
+## Review functions [32m]
 
-*Conditionals*
-
-- Use equality operator `===` instead of assignment operator `=`
-- Prefer something like `if (hungry) {` to `if (hungry === true) {` when all you want is a truthiness check
-- Return within an `if` statement, make sure you know that you're returning out of the function.
-
-*Objects*
-
-- Storing and accessing:
-
-```js
-// Objects
-// - storage
-const food = {};
-food.name = 'Nigerian Jollof Rice';
-food['isTasty'] = true;
-
-// - access
-food.isTasty; // true
-food['name']; // Nigerian Jollof Rice
-```
-
-*Arrays*
-
-- how they are different from objects. They are index based.
-
-*Loops*
-
-- `for`,
-- `for of` and
-- `for in` loops.
-
-*Side Note* - How to read MDN.
-
-## Function refresher
-
-- functions and variables similarities - two phases
+- functions - two phases
   + Definition phase - think when writing the recipe.
   + Execution phase - think when making the food.
 
@@ -89,9 +55,9 @@ food['name']; // Nigerian Jollof Rice
 
   ```js
   // definition
-  function makeFoodWith(ingredient, utensil, cleaner) {
+  function makeFoodWith(ingredient, utensil, cleaner, gas) {
     // instructions to make food - the recipe
-    // - use utensil to cook ingredient options.u
+    // - use utensil to cook ingredient
     // - use cleaner to wash utensil
     // - return food;
   };
@@ -106,20 +72,18 @@ food['name']; // Nigerian Jollof Rice
     // - use optionsObj.cleaner to wash optionsObj.utensil
     // - return food;
   };  
-  makeFoodWith({ ingredient: 'rice', utensil: 'pressurePot', cleaner: 'soap' }); // this cleans things up, especially when needing more arguments
+  const cookingObj = { ingredient: 'rice', utensil: 'pressurePot', cleaner: 'soap' }
+  makeFoodWith(cookingObj); // this cleans things up, especially when needing more arguments
   ```
 
   > Prefer to use object parameter / argument when you need to pass more than 3 inputs.
 
-- function signature (I/O): this is the answer to two questions; what (arguments - data types and number of) inputs does the function take and what does it (data type) output.
+- function signature (I/O): this is the answer to two questions; 
+  + what (arguments - data types and number of) inputs does the function take and
+  + what does it (data type) output.
 
-## More functions
+## More functions [52m]
 
-- no-name (anonymous) functions?? When / why might we use those?
-  + function expression
-  + inline callbacks (examples of this below)
-  + Immediately Invoked Function Expression (IIFE) - (do not bother too much about this, yet.)
-- arrow functions: they are cool anonymous functions defined without the `function` keyword but with a `fat arrow`
 - function call vs function reference - console.logging experiment
 
   ```js
@@ -134,35 +98,45 @@ food['name']; // Nigerian Jollof Rice
   ```
 
 - function declaration vs function expression
-  + complete hoisting happens for declaration
-  + hoisting makes it possible to call (execute) a function before it's been declared
-
-  ```js
-  // Hoisted
-  declaredFunk(); // called before being defined, works!
-
-  function declaredFunk() {
-    console.log('Im declared');
-  }
-
-  // Not completely hoisted
-  expressedFunk(); // TypeError: expressedFunk is not a function
-
-  var expressedFunk = function () {
-    console.log('Im expressed');
-  }
-  ```
 
 - functions as values:
-  + basically function expression
+  + what can we do to values in JS?
 
 - functions are first class citizens in Javascript, which means they have these privileges:
   + they can be assigned to a variable
   + they can be passed into another function as argument
+
+  ```js
+  const anotherFunk = function(innerFunk) {
+    return function() {}
+  }
+
+  const justinFunk = function () {}
+
+  another(justinFunk)
+  ```
+
   + they can be returned from another function call
 
+- no-name (anonymous) functions?? When / why might we use those?
+  + function expression
+  + inline callbacks (examples of this below)
+  + Immediately Invoked Function Expression (IIFE) - (do not bother too much about this, yet.)
 
-## Life without functions
+- arrow functions: they are cool anonymous functions defined without the `function` keyword but with a `fat arrow`. Disclaimer: actually more than just a cool cousin - consequences around context.
+
+```js
+const myFunk = () => {
+  // do stuff
+  return {
+    key: 'some val'
+  }
+}
+
+const myFunkImplicitReturn = () => ({})
+```
+
+## Life without functions [57m]
 
 - w.e.t. and not reusable
 - does multiple things
@@ -194,7 +168,7 @@ Nice! What if we want to do this with a hundred different arrays, or a thousand?
 
 How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our code? You guessed it, FUNCTIONS!
 
-## DRY the W.E.T. logic
+## DRY the W.E.T. logic [67m]
 
 Now that we remember functions, let's make our previous logic reusable
 
@@ -222,6 +196,8 @@ const logEach = function(items) {
 }
 ```
 
+## Higher Order Function && Callbacks
+
 > When it has multiple responsibilities;
 > it is hard to extend.
 
@@ -234,7 +210,7 @@ How might we solve this? If only we can create a generic function that just loop
 Using the second privilege of being a first class object,the function passed in to another function is a *CALLBACK*. And the function that executes (calls) a callback is the *HIGHER ORDER FUNCTION*
 
 
-## forEach
+## forEach [72m]
 
 ```js
 // Higher order function
@@ -258,7 +234,7 @@ forEach(numbers, logSquare); // 1, 4, 9
 items.forEach(logSquare)
 ```
 
-## forEachInReverse
+## forEachInReverse [77m]
 
 ```js
 // We did not implement this in class but here's an idea
@@ -272,6 +248,10 @@ forEachInReverse(['hello', 'Lighthouse Labs', 'and', 'world'], (word) => {
   console.log(word);
 });
 ```
+
+## Group work [92m / 107m]
+
+## Questions [120m]
 
 - closure / currying: when a function is returned from another function. Just a mention for completeness of being first class.
 

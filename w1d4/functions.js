@@ -1,40 +1,64 @@
-// const items = [1, 2, 3];
-// console.log('funk',
-//   function noahTalks (items) {
-//     for (const item of items) {
-//       console.log(item);
-//     }
-// })
+// console.log('Starts funk', myExpressedFunk);
 
-// function hafizSaysNoahTalks(items) {
-//   for (const item of items) {
-//     console.log(item);
-//   }
-//   return 'somefn'
+// myExpressedFunk()
+
+// const myExpressedFunk = function() {
+//   console.log('Rance is herre');
 // }
 
-// const hafizSaysNoahTalks = (items) => {
-//   for (const item of items) {
-//     console.log(item);
-//   }
-//   return 'somefn'
-// }
-// const myFunk = () => console.log('wait...')
-// myFunk()
-// can be rewritten as:
-
-// (function (items) {
-//   for (const item of items) {
-//     console.log(item);
-//   }
-// })();
-
-// but if we want something more abstract and single-purpose
-
-// const forEach = function (items, action) {
-//   for (const item of items) {
-//     action(item);
-//   }
+const items = [1, 2, 3];
+// for (const item of items) {
+//   console.log(item);
 // };
 
-// declaredFunk = 'not a funk'
+// const logEach = (items) => {
+//   for (const item of items) {
+//     console.log(item);
+//   };
+// }
+
+// const logSquareEach = (items) => {
+//   for (const item of items) {
+//     console.log(item * item);
+//   };
+// }
+
+// HIGHER ORDER FUNCTION
+const forEach = (items, action) => {
+  for (const item of items) {
+    action(item);
+    console.log('item in HOF', item)
+  };
+}
+
+// const logProductTen = (num, secondArg) => console.log(num * 10, secondArg);
+
+// forEach(items, logProductTen)
+
+// const rating = 10
+// theaFunk(rating)
+
+forEach(items, (num) => {
+  // item = 30;
+  console.log(num * 10)
+})
+
+// A difference between arrow function and regular function with the 'function' keyword
+// const al = {
+//   name: 'Andy',
+//   greet: function() {
+//     console.log(this.name);
+//   }
+// }
+
+// al.greet(); // prints Andy
+
+// Arrow function
+// const al = {
+//   name: 'Andy',
+//   greet: () => {
+//     console.log(this.name);
+//   }
+// }
+
+// al.greet(); // prints undefined
