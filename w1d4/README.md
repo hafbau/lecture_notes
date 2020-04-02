@@ -3,7 +3,7 @@ Hey crew! Welcome again to LHL! It's been four days already. Thanks for your att
 
 Also, sorry for our troubled start today.
 
-[Code we worked on are here.]()
+[Code we worked on are here.](https://github.com/hafbau/lecture_notes/tree/master/w1d4)
 
 The classwork is in the `breakout/` folder.
 
