@@ -8,7 +8,7 @@ Thanks crew! Here are some notes of things we covered today. As talked about, pa
 ## Today's Agenda
 
 - Getting ready for finals
-  - backend alternative
+  - backend alternatives
     + Koa / Happi / FeatherJS - Javascript
     + django / flask - Python
     + laravel / Yii - PHP

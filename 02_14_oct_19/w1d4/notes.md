@@ -1,26 +1,45 @@
 # Fun with Callbacks
-Hey crew! Welcome again to LHL! It's been four days already. Thanks for your attention and engagement today, I'll expect more :)
 
-[Code we worked on are here.](https://github.com/hafbau/lecture_notes/tree/06_jan_20/02_14_oct_19/w1d4)
+W1D4 with Hafiz Suara
 
-## Life here at the bootcamp
+## About You
 
-- Be aware when you're being stressed out
-- Not having the full conceptual picture can feel inundating
-- Sometimes take a step back to ask yourself why. E.g Why am I doing this to myself? Why am I writing this line of code? Why this bug? Why am I coding without coffee or beer?
--  Talk to mentors when you can't answer any of the whys (maybe not the coffee/beer one 🤷‍)
+- Why?
+- Don't violate your brain
+- Appreciate you wins
+- Communicate
+
+## About the bootcamp
+
+- It's methodical
+- It's a lot and little time
+- It's about the process
+
+## About me
+
+- Fun fact, I'm hilarious!
+- My style
+- My accent
+
+## Agenda Today
+
+- Review of so far
+- Life without functions
+- More functions
+- HOF / Callbacks
+- forEach
+- filter / map exercise
 
 ## Review of F.O.C.A.L || COALF?
 
-*Conditionals* - we talked about the patterns I've observed in the past days:
+*Conditionals*
 
 - Use equality operator `===` instead of assignment operator `=`
 - Prefer something like `if (hungry) {` to `if (hungry === true) {` when all you want is a truthiness check
 - Return within an `if` statement, make sure you know that you're returning out of the function.
 
-*Objects* - we talked about objects creation, storing values and accessing values.
+*Objects*
 
-- `{}` vs `new Object` no surface difference but if you're curious and adventurous check <a href="https://stackoverflow.com/a/13874088/5039404">this SO answer out.</a>
 - Storing and accessing:
 
 ```js
@@ -35,45 +54,20 @@ food.isTasty; // true
 food['name']; // Nigerian Jollof Rice
 ```
 
-*Arrays* - reviewed how they are different from objects. They are index based.
+*Arrays*
 
-*Loops* - reviewed at `for`, `for of` and `for in` loops.
+- how they are different from objects. They are index based.
+
+*Loops*
+
+- `for`,
+- `for of` and
+- `for in` loops.
 
 *Side Note* - How to read MDN.
 
-## Life without functions
-- does multiple things
-- w.e.t. and not reusable
-- not extensible
-
-Consider the below snippet;
-
-```js
-// code that logs 1, 2 and 3 to console
-const items = [1, 2, 3];
-for (const item of items) {
-  console.log(item);
-};
-```
-
-- We are looping through the array, and
-- logging (printing) to console
-
-What if we wanted to do similar stuff but with a different array of numbers i.e `[4, 6, 8, 10, 5]`
-Well, we can write the code above again...:
-
-```js
-const anotherItems = [4, 6, 8, 10, 5];
-for (const item of anotherItems) {
-  console.log(item);
-};
-```
-
-Nice! What if we want to do this with a hundred different arrays, or a thousand? Would we have to Write it Every Time? That would be so W.E.T! See what I did there :P.
-
-How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our code? You guessed it, FUNCTIONS!
-
 ## Function refresher
+
 - functions and variables similarities - two phases
   + Definition phase - think when writing the recipe.
   + Execution phase - think when making the food.
@@ -161,10 +155,44 @@ How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our
 
 - functions as values:
   + basically function expression
+
 - functions are first class citizens in Javascript, which means they have these privileges:
   + they can be assigned to a variable
   + they can be passed into another function as argument
   + they can be returned from another function call
+
+
+## Life without functions
+
+- w.e.t. and not reusable
+- does multiple things
+- not extensible
+
+Consider the below snippet;
+
+```js
+// code that logs 1, 2 and 3 to console
+const items = [1, 2, 3];
+for (const item of items) {
+  console.log(item);
+};
+```
+
+What two things are we doing here?
+
+What if we wanted to do similar stuff but with a different array of numbers i.e `[4, 6, 8, 10, 5]`
+Well, we can write the code above again...:
+
+```js
+const anotherItems = [4, 6, 8, 10, 5];
+for (const item of anotherItems) {
+  console.log(item);
+};
+```
+
+Nice! What if we want to do this with a hundred different arrays, or a thousand? Would we have to Write it Every Time? That would be so W.E.T! See what I did there :P.
+
+How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our code? You guessed it, FUNCTIONS!
 
 ## DRY the W.E.T. logic
 
