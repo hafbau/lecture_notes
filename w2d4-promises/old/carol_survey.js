@@ -33,27 +33,3 @@ rl.question('What\'s your name? Nicknames are also acceptable :) ', (answer) => 
 });
 
 // would it not be cool, if we could implement something that handles async better?
-// THIS IS NOT REAL CODE
-rl.question('djsdh')
-.next(ans => rl.question2)
-.next(ask another ques)
-.police(err)
-.finally( close)
-
-// The class' attempts to clean up this original callback waterfall (hell!)
-// By refactoring each callbacks into their own functions: still nested though, buh cleaner.
-// Have a look at the old/ directory for a complete implementation of this refactoring: old/01_survey_cleaned.js
-const doLast = (answer) => {
-  // TODO: Log the answer in a database
-  variable += " over any other sport, and is amazing at " + answer;
-  console.log(`Thank you for your valuable feedback: ${variable}`)
-  rl.close();
-}
-
-const doSport = (answer) => {
-  // TODO: Log the answer in a database
-  variable += ", prefers " + answer;
-  // console.log(`Thank you for your valuable feedback: ${variable}`)
-  rl.question('What is your superpower? In a few words, tell us what you are amazing at! ', doLast);
-
-}

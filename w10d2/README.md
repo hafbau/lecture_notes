@@ -1,14 +1,39 @@
+Feature tests using RSpec / Capybara / Poltergeist / Phantomjs
+===
+
 We started the lecture with a review of all things testing, and ended it by looking at feature testing with Rails. For our feature tests we used rspec + capybara + phantomJS
 
 The notes below are courtesy of Karl!
 
-Slides and notes are available at https://github.com/jensen/rspec-notes/. The old lecture from monday has slides and notes as well https://github.com/jensen/testing-notes.
+Slides (Thank you Karl Jensen!) and notes are available at https://github.com/jensen/rspec-notes/. The old lecture from monday has slides and notes as well https://github.com/jensen/testing-notes.
 
-### Some things to note
+[Video here](https://zoom.us/rec/play/v5F7de-hqD03TNbGtASDA6RxW9S8J_-s1yUd-aAJmh7gVHAHZlKnYOMUNObxD-NQsMTd-X05E8C1K5n5?continueMode=true&_x_zm_rtaid=qyRGVD2FQNuSZjrRTJgSPg.1586288616564.7504d4b6b8b5b92088b06dd3a58a8a71&_x_zm_rhtaid=261)
 
-- ensure your `secrets.yml` has configuration for the `test` environment as well as the `development`. For example:
+Also, do not forget [the cheat sheet!!](https://devhints.io/capybara)
 
-```yml
+## Agenda Today:
+
+- [x] Review Testing concepts (slides)
+- [x] Feature Testing - more concepts (slides)
+- [x] Rspec Set up walkthrough
+- [x] Jungle Registration
+- [] Classwork?
+  + Groups of three
+  + One typist
+  + One feature test
+    - Login
+    - Product Details
+    - Add to cart
+  
+
+## RSpec Set up walkthrough
+
+In addition to Compass walkthrough, we did these steps:
+
+- Added test configuration in our `config/secrets.yml` file. So that file now looks like:
+
+```rb
+# in ./config.secrets.yml
 development:
   secret_token: "my_secret_token"
   secret_key_base: "abcdef0123456789"
@@ -16,6 +41,33 @@ test:
   secret_token: "my_secret_token"
   secret_key_base: "abcdef0123456789"
 ```
+
+- Included **Simplecov** for insights into test coverage
+
+  1. Add this to `Gemfile` under group test. Test group in our `Gemfile` looks like:
+
+  ```rb
+  group :test do
+    gem 'capybara'
+    gem 'poltergeist'
+    gem 'database_cleaner'
+    gem 'simplecov', '0.13.0'# Added line, this version works for my ruby version 2.3.0
+  end
+  ```
+
+  2. Run `bundle install` to install the new dependencies.
+
+  3. Add the below to the top of `rails_helper` as per documention from _simplecov_. Ensure this block of code is before any other `require`s in this file.
+
+  ```rb
+  if ENV['RAILS_ENV'] == 'test'
+    require 'simplecov'
+    SimpleCov.start 'rails'
+    puts "required simplecov"
+  end
+  ```
+
+## About waiting...
 
 - Even though Capybara is decent in _waiting_ for asynchronous logics like page load etc; we found that sometimes you still needed to manually enforce waiting.
 
@@ -30,60 +82,64 @@ test:
     end
     ```
 
-Also, do not forget [the cheat sheet!!](https://devhints.io/capybara)
-
+## Jungle Registration
 
 Our `registers_spec.rb` [code is on github here;](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w10d2) and also below:
 
 ```rb
 require 'rails_helper'
 
-RSpec.feature "Registers", type: :feature do
+# Helper function to DRY our tests
+def fill_and_submit_registration_form(user_data)
+  within 'form' do
+    fill_in id: 'user_first_name', with: user_data[:first_name]
+    fill_in id: 'user_last_name', with: user_data[:last_name]
+    fill_in id: 'user_email', with: user_data[:email]
+    fill_in id: 'user_password', with: user_data[:password]
+    fill_in id: 'user_password_confirmation', with: user_data[:password_confirmation]
+
+    click_on 'Register'
+  end
+end
+
+user_deets = {
+  first_name: 'Jamz',
+  last_name: 'Buble',
+  email: 'jamz@buble.io',
+  password: 'password',
+  password_confirmation: 'password'
+}
+
+RSpec.feature "Registers", type: :feature, js: true do
   scenario "should register a new user with all details" do
+  # Action
     visit root_path
-
     click_on 'register'
-    sleep(1)
+    fill_and_submit_registration_form user_deets
 
-    within 'form' do
-      fill_in id: 'user_first_name', with: 'Thiago'
-      fill_in id: 'user_last_name', with: 'Thiago'
-      fill_in id: 'user_email', with: 'Thiago@fake.fake'
-      fill_in id: 'user_password', with: 'Thiago'
-      fill_in id: 'user_password_confirmation', with: 'Thiago'
+  # Verify
+    expect(page).to have_text("logged in as #{user_deets[:first_name]}")
 
-      click_on 'Register'
-    end
-
-    sleep(1)
-    
-    save_page
-    expect(page).to have_text('logged in as Thiago')
-
+  # Debug
+    save_screenshot
   end
 
   scenario "should fail with inadequate details" do
     visit root_path
-
     click_on 'register'
-    sleep(1)
-
-    within 'form' do
-      fill_in id: 'user_first_name', with: '<script>alert("HAcker!!")'
-      fill_in id: 'user_last_name', with: '; DROP table products; --'
-      fill_in id: 'user_email', with: ''
-      fill_in id: 'user_password', with: 'Thiago'
-      fill_in id: 'user_password_confirmation', with: 'Thiago'
-
-      click_on 'Register'
-    end
-
-    sleep(1)
+    missing_deets = user_deets
+    missing_deets[:email] = ''
+    fill_and_submit_registration_form missing_deets
     
-    save_page
     expect(page).to have_text('The following errors prevented saving')
 
+    save_screenshot
   end
 end
-
 ```
+
+
+## Classwork
+We did not get to this :(, I'm trusting Compass will give you more practice.
+
+Thank you, till next time.

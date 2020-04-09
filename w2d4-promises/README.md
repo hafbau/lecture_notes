@@ -5,6 +5,26 @@ Hey crew, thanks for another awesome class today. Hopefully today was as fun for
 
 <a href="https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w2d4-promises">Link to code repo here.</a>
 
+[Recorded Video here]()
+
+## Agenda Today
+
+- [ x ] Review of Callbacks (Sync / Async) [5m]
+- [ x ] Classwork Agile Manifesto [3 + 10 + 5m](https://github.com/hafbau/w2d4_classwork)
+      + Individual breakout rooms
+      + Fork and clone this repo
+      + Solve only `01_classwork.js`
+- [ x ] Callback waterfall (Hell) [5m]
+- [ x ] Intro to promises a.k.a would it not be cool, specifications [10m]
+- [ x ] Refactor Classwork Agile to Promises [15m]
+- [ x ] More Promises [20m]
+      + Error handling
+      + Make a promise
+      + Promise.all / Promise.race
+- [ - ] Classworks [40]
+      - [Quiz](https://gist.github.com/hafbau/d6a023b7aff7f0dae80c11d4c23ec026)[10m]
+      - 02_classwork [3m + 15m + 7m]
+
 ### Review
 
 - What is asynchronous and why in Node?
@@ -12,16 +32,9 @@ Hey crew, thanks for another awesome class today. Hopefully today was as fun for
 - Quick check on what and why a callback?
 
 
-### Asynchronous Callbacks
+###  More Asynchronous Callbacks
 
-Lets review the [Profile Generator](https://web.compass.lighthouselabs.ca/c583c1da-f7c8-478b-81a9-9497579a8ac2) as our first introduction to _callback hell_.
-
-
-#### >NOTE
-> We did not do the below in class, however, feel free to have a look at the `old/`
-> from previous class
-
-As another example problem, lets read the [Agile manifesto](https://agilemanifesto.org/) from disk, which, for us is broken into four parts / files: p1.txt, p2.txt, p3.txt, and p4.txt.
+Lets review by reading the [Agile manifesto](https://agilemanifesto.org/) from disk, which, for us is broken into four parts / files: p1.txt, p2.txt, p3.txt, and p4.txt. Check code repo for `/01_agile_callback.js`
 
 
 *Wouldn't it be cool to clean this ~hell~ waterfall up? Ideas?*

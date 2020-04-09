@@ -7,6 +7,8 @@ Also, sorry for our troubled start today.
 
 The classwork is in the `breakout/` folder.
 
+Here's my previous note, tweaked a bit to today, I hope you like it.
+
 ## Life here at the bootcamp
 
 - Be aware when you're being stressed out
