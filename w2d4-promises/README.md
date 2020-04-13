@@ -3,9 +3,9 @@ Promises with Hafiz
 
 Hey crew, thanks for another awesome class today. Hopefully today was as fun for you all as it was for me. Promises are awesome, keep an open mind, be patient and happy with your progress. You will get a lot of practice with promises going forward.
 
-<a href="https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w2d4-promises">Link to code repo here.</a>
+<a href="https://github.com/hafbau/lecture_notes/tree/master/w2d4-promises">Link to code repo here.</a>
 
-[Recorded Video here]()
+_Video recording is being uploaded, I'll update once complete_
 
 ## Agenda Today
 

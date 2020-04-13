@@ -5,9 +5,12 @@ import Tweet from '../Tweet';
 
 export default function TweetsList(props) {
   const { tweets = [] } = props;
-  console.log('tweets :', tweets);
+  // console.log('tweets :', tweets);
   // const tweets = props.tweets
-  const renderTweets = tweets.map(tweet => <Tweet key={tweet.created_at} {...tweet} />)
+  const renderTweets = tweets.map(tweet => <Tweet key={tweet.created_at} user={tweet.user} content={tweet.content} created_at={tweet.created_at} />
+    // <Tweet key={tweet.created_at} {...tweet} />
+  )
+
   // const renderTweets = tweets.map(tweet => <Tweet key={tweet.created_at} user={tweet.user} content={tweet.content} />)
   return (
     <section className="tweets-container">
