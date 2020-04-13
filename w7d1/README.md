@@ -3,7 +3,7 @@ Component Based UI with React
 
 Hey crew, thanks for sitting through today's lecture. Sorry for rushing the last bits through! Please check the `./demo_tweeter` directory for a more complete version of our demo.
 
-[Videos for today are in two parts:](https://zoom.us/rec/share/49AsMIDo_HhOT52Qq1GBS6R5IIfaaaa8hCUW-vUKzxwZGgkckKqW-FfHjvt2Chpv?startTime=1586795150000)
+[Videos for today is here:](https://zoom.us/rec/share/49AsMIDo_HhOT52Qq1GBS6R5IIfaaaa8hCUW-vUKzxwZGgkckKqW-FfHjvt2Chpv?startTime=1586795150000)
 
 [Here's the code on github](https://github.com/hafbau/lecture_notes/tree/master/w7d1)
 
