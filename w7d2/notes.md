@@ -1,28 +1,17 @@
 Immutable Data Patterns
 ===
 
-Hey folks, I manage to mess up the recordings for today, sorry :(
+## Agenda Today
 
-[Link to repo here](https://github.com/hafbau/lecture_notes/tree/master/w7d2)
-
-Topics
-
-- [ x ] Review Components [5m]
-- [ x ] Review Export / Imports [5m]
-- [ x ] Review useState [20m]
-- [ x ] Immutability as a concept [5m]
-- [ x ] Why immutable data in React [10m]
-- [ x ] Immutable Data Patterns
+- [ ] Review Components [5m]
+- [ ] Review Export / Imports [5m]
+- [ ] Review useState [20m]
+- [ ] Immutability as a concept [5m]
+- [ ] Why immutable data in React [10m]
+- [ ] Immutable Data Patterns
       + Arrays (https://codesandbox.io/s/mutable-bush-728of) [20m]
       + Objects (https://codesandbox.io/s/aged-water-0kt4p) [20m]
-- [ x ] More Demo
-
-
-## Run multiple servers
-- run api on a port
-- client on another
-
-## State & React Hooks
+- [ ] More Demo
 
 ### State
 State as a concept: the remembered information about a system.
@@ -43,17 +32,9 @@ A new value of state is created every time the component runs and renders. Each 
 
 `[value, updateFunction] = useState(initialValue);`
 
-*Example demo*
+*Example demo walkthrough*
 
-[Todo Demo](https://codesandbox.io/s/usestate-practice-todos-48v4l)
-
-### Rules of Hooks
-
-**Rule #1**
-Don't call Hooks inside loops, conditions, or nested functions.
-
-**Rule #2**
-Only call Hooks from the top-level of a function component or a custom Hook.
+[Todo Demo Walkthrough](https://codesandbox.io/s/usestate-practice-todos-48v4l)
 
 ## Immutable Data Patterns with Arrays and Objects
 
@@ -119,7 +100,7 @@ const TheComponent = () => {
 - The pure array methods are the ones that create a new array when something changes
 
   - pop(), push() and splice() are not pure
-  - concat(), slice() are pure
+  - concat(), slice(), filter, map are pure
 
 [Immutable Arrays](https://codesandbox.io/s/mutable-bush-728of)
 
