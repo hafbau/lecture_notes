@@ -1,0 +1,38 @@
+{
+  "1": {
+    "id": 1,
+    "avatar": "https://picsum.photos/seed/1/60",
+    "name": "Donna Hodkiewicz",
+    "email": "Al_Volkman@gmail.com"
+  },
+  "2": {
+    "id": 2,
+    "avatar": "https://picsum.photos/seed/2/60",
+    "name": "Glenda Lang",
+    "email": "Eduardo.Luettgen@hotmail.com"
+  },
+  "3": {
+    "id": 3,
+    "avatar": "https://picsum.photos/seed/3/60",
+    "name": "Carleton Murphy",
+    "email": "Brenna36@yahoo.com"
+  },
+  "4": {
+    "id": 4,
+    "avatar": "https://picsum.photos/seed/4/60",
+    "name": "Jovani Cassin",
+    "email": "Dante62@gmail.com"
+  },
+  "5": {
+    "id": 5,
+    "avatar": "https://picsum.photos/seed/5/60",
+    "name": "Diego Farrell",
+    "email": "Jabari.Russel@yahoo.com"
+  },
+  "6": {
+    "id": 6,
+    "avatar": "https://picsum.photos/seed/6/60",
+    "name": "Haskell Mosciski",
+    "email": "Johann.Feeney46@gmail.com"
+  }
+}

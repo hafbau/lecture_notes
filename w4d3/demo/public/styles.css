@@ -1,0 +1,14 @@
+article {
+  border: 2px dotted orange;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px 0;
+}
+
+article header {
+  color: darkorchid;
+}
+
+article footer {
+  color: darkred;
+}

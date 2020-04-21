@@ -1,11 +1,18 @@
-# W03D3 - Cookies 
+HTTP Cookies & User Authentication
+===
+
+Thanks for today! We talked about girls guide cookies and where you could access them. Also, we discussed http cookies and implemented user authentication wit expressjs.
+
+[Code we wrote is here.](https://github.com/hafbau/lecture_notes/tree/master/w03d3-new)
+
+Here are the things we covered:
 
 With Hafiz Suara
 - April 14, 2020
 
 ## Journey So far [5m]
 
-- Tiny App
+- Tiny App requirements
 - Pay attention to stressed
 
 
