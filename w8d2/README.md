@@ -2,7 +2,7 @@
 
 Hey gang, thanks for an awesome class today. Here are the things we covered today:
 
-[Link to our code]()
+[Link to our code](https://github.com/hafbau/lecture_notes/tree/master/w8d2)
 
 [Link to video will be here once upload is done - thanks!](#)
 
