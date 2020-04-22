@@ -12,3 +12,9 @@ article header {
 article footer {
   color: darkred;
 }
+
+
+.photo {
+  height: 200px;
+  width: 450px;
+}

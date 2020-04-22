@@ -4,9 +4,10 @@ Hey gang, thanks for an awesome class today. Here are the things we covered toda
 
 [Link to our code](https://github.com/hafbau/lecture_notes/tree/master/w8d2)
 
-[Link to video will be here once upload is done - thanks!](#)
+[Link to video will be here once upload is done - thanks!](https://zoom.us/rec/share/-5A2LZug8ltIGqPq9Gb8ZfcFG5rfaaa81nBK__YNmEzEq4HtfNr3WqKHB5U-DWJF)
 
- ### Things we're taking away
+### Things we're taking away
+  
  - Router in one page (Routing in a Single page application)
  - The prebuilt components are definitely useful! Use component libraries e.g material-ui.com, ant-design
  - Libraries to use with React e.g React router, Styled components

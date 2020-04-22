@@ -4,28 +4,21 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 4337;
 const users = require('./data/users.json');
-const posts = require('./data/posts-without-user.json');
-
+const posts = require('./data/posts.json');
+// bodyParser.json()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-app.get('/api/users', (req, res) => {
-  res.json(users);
-});
-
-app.get('/api/users/:id', (req, res) => {
-  res.json(users[req.params.id]);
-});
-
 app.get('/api/posts', (req, res) => {
+  console.log('Gettin posts', posts.length);
   res.json(posts);
 });
 
 app.post('/api/posts', (req, res) => {
   const post = req.body;
-  console.log(post);
-  // post.user = users[post.userId]
+  post.user = users[post.userId]
   posts.push(post);
+  console.log('new post saved', post);
   res.status(201).send();
 });
 
