@@ -4,7 +4,7 @@ Hi crew, thanks for sitting through today's lecture on Responsive web design, fl
 
 [Code repo is here](https://github.com/hafbau/lecture_notes/tree/master/w4d4)
 
-[Video will be here](https://zoom.us/rec/share/7MVcBIDx-0pJTp3y9hzmaL8mJbb9X6a81yBIqKILzkZM8vuxjnhCuLJ8IqV3scZ_)
+[Video is here](https://zoom.us/rec/share/7MVcBIDx-0pJTp3y9hzmaL8mJbb9X6a81yBIqKILzkZM8vuxjnhCuLJ8IqV3scZ_)
 
 Notes below covers the things we talked about.
 
