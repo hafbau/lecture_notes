@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  height: 50px;
+  background-color: purple;
+}
+
+footer {
+  height: 30px;
+  background-color: yellow;
+}
+
+main {
+  border: 2px solid;
+  /* width: 300px; */
+  font-size: 36px;
+  height: 500px;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: flex-end;
+  justify-content: center;
+  /* flex-wrap: wrap; */
+}
+
+@media screen and (min-width: 1500px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+main div {
+  height: 50px;
+  width: 2.5rem;
+  min-width: 300px;
+  margin: 10px;
+  line-height: 1;
+  text-align: center;
+  background-color: aqua;
+  /* display: inline-block; */
+}

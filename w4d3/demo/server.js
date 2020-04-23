@@ -19,7 +19,7 @@ app.post('/api/posts', (req, res) => {
   post.user = users[post.userId]
   posts.push(post);
   console.log('new post saved', post);
-  res.status(201).send();
+  res.status(201).send(post);
 });
 
 app.listen(port, () => {

@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.light, header {
+  color: black;
+  background-color: #fff;
+}
+
+header {
+  height: 15px;
+}
+
+footer {
+  height: 30px;
+  color: white;
+  background-color: #000000;
+  font-size: 230px;
+}
+
+@media screen and (min-width: 500px) {
+  header {
+    background-color: limegreen;
+  }
+
+  footer {
+    background-color: #006090;
+  }
+}
+main {
+  border: 3px solid purple;
+  /* width: 300px; */
+  font-size: 36px;
+}
+main div {
+  height: 15px;
+  width: 10%;
+  min-width: 300px;
+  margin: 10px;
+  line-height: 1;
+  text-align: center;
+  background-color: aqua;
+  display: inline-block;
+}
+main div .nuclass {
+  color: papayawhip;
+}
+
+/*# sourceMappingURL=sassy.css.map */

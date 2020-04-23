@@ -1,5 +1,6 @@
 // ON PAGE LOAD GET ALL POSTS
 loadPosts();
+// Generic ajax syntax for jQuery
 // $.ajax({
 //   type: 'POST',
 //   data: ,

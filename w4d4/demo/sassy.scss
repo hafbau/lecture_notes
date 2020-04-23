@@ -1,0 +1,66 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.light {
+  color: black;
+  background-color: #fff;
+}
+
+@mixin dark($param, $d) {
+  color: white;
+  background-color: #000000;
+  font-size: $param * $d;
+}
+
+header {
+  height: $height;
+  @extend .light;
+  // background-color: purple;
+}
+
+footer {
+  height: 30px;
+  @include dark(10, 23px)
+  // background-color: yellow;
+}
+@media screen and (min-width: 500px) {
+  header {
+    background-color: limegreen;
+  }
+
+  footer {
+    background-color: #006090;
+  }
+
+}
+
+main {
+  border: $border;
+  /* width: 300px; */
+  font-size: 36px;
+  div {
+    height: $height;
+    width: 10%;
+    min-width: 300px;
+    margin: 10px;
+    line-height: 1;
+    text-align: center;
+    background-color: aqua;
+    display: inline-block;
+
+    & .nuclass {
+      color: papayawhip;
+    }
+  }
+}
