@@ -12,7 +12,7 @@
 // num = 8
 
 let string = 'changeable?'
-string[2] = 'FAg'
+string[2] = 'FA'
 
 
 function changechar(string) {
