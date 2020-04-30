@@ -5,5 +5,11 @@ const f = function () {
 };
 
 const anotherFunc = function (func) {
-  console.log(func)
+  console.log(func())
 }
+
+anotherFunc(f)
+
+// The below two are equivalent and the resulted is `func is not a function` error
+// anotherFunc(f())
+// anotherFunc(5)

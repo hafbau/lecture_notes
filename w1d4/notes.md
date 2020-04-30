@@ -7,19 +7,22 @@ W1D4 with Hafiz Suara
 - Bootcamp life
 
 - Software parts
+ + Logic
+ <!-- + Syntax -->
+ + Data
 
 ## Agenda Today
 
-- [ ] Review Object / functions: Challenge
-- [ ] Functions as values
-- [ ] Callbacks
-- [ ] forEachInReverse
-- [ ] map exercise
+- [x] Review Object / functions: Challenge
+- [x] Functions as values
+- [x] Callbacks
+- [x] forEachInReverse exercise
+- [x] map
 
 ## Object Challenge [20m]
 
 - Paste question on slack
-- Put teams in breakrooms (max 6 groups)
+- Put teams in breakrooms
 - 10mins to get done
 - 8mins to review (1min p grp)
 
@@ -27,17 +30,40 @@ W1D4 with Hafiz Suara
 
 ## Callback Intro -> forEach [10m]
 
-## forEachInReverse Or map [15m]
+## Group work (forEachInReverse) [25m]
 
-## Group work (forEachInReverse Or map) [30m]
+[forEachInReverse](https://gist.github.com/hafbau/895ce779fd3b74d51941159a7bf341ae)
 
-- Paste question on slack
-- Put teams in breakrooms (max 6 groups)
-- 15mins to get done
-- 12mins to review (2min p grp)
+Breakout Challenge [25m]
+Split into groups and pair program this as a group.
+One person starts a VSCode live share and share with the team via the chats or slack.
+
+15m breakout
+
+10m takeup
+
+Each group will be called upon to present their solution. One person will be sharing the screen.
+
+You may run the code to see if it works with the supplied test cases.
+
+I'll check in and give more time if needed.
+
+No need to fork and/or clone this gist. Just copy / paste it into your VSCode
+
+Decide on who will present the answer when called upon for your group
+
+
+## map [15m]
 
 ## Questions [5m]
 
 ## Things we learned [10m]
+
+- forEach helps us abstract away the repeatable looping logic
+- Higher order functions are functions that takes in other functions as arguments
+- We can use inline callbacks especially if it's a one-time use case; otherwise it's better to define the callback function separately
+- Functions are first class citizens and can be treated as any other values in javascript
+- const / let are block scoped and are not hoisted
+- Callback functions caan have any number of arguments for example forEach passes in the index of the current item and the original array
 
 Thank you till next time!

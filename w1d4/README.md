@@ -1,22 +1,48 @@
 # Fun with Callbacks
 Hey crew! Welcome again to LHL! It's been four days already. Thanks for your attention and engagement today, I'll expect more :)
 
-Also, sorry for our troubled start today.
+Please leave your feedback -  thanks ;)
+
+## Agenda Today
+
+- [x] Review Object / functions: Challenge
+- [x] Functions as values
+- [x] Callbacks
+- [x] forEachInReverse exercise
+- [x] map
+
+## Things we learned summary in our words
+
+- forEach helps us abstract away the repeatable looping logic
+- Higher order functions are functions that takes in other functions as arguments
+- We can use inline callbacks especially if it's a one-time use case; otherwise it's better to define the callback function separately
+- Functions are first class citizens and can be treated as any other values in javascript
+- const / let are block scoped and are not hoisted
+- Callback functions caan have any number of arguments for example forEach passes in the index of the current item and the original array
+
+## Code
 
 [Code we worked on are here.](https://github.com/hafbau/lecture_notes/tree/master/w1d4)
 
 The classwork is in the `breakout/` folder.
 
+## Video
+
+[Video will be here once upload is finished](#)
+
+
+## Notes
+
 Here's my previous note, tweaked a bit to today, I hope you like it.
 
-## Life here at the bootcamp
+### Life here at the bootcamp
 
 - Be aware when you're being stressed out
 - Not having the full conceptual picture can feel inundating
 - Sometimes take a step back to ask yourself why. E.g Why am I doing this to myself? Why am I writing this line of code? Why this bug? Why am I coding without coffee or beer?
 -  Talk to mentors when you can't answer any of the whys (maybe not the coffee/beer one 🤷‍)
 
-## Review of F.O.C.A.L || COALF?
+### Review of F.O.C.A.L || COALF?
 
 *Conditionals* - we talked about the patterns I've observed in the past days:
 
@@ -47,7 +73,7 @@ food['name']; // Nigerian Jollof Rice
 
 *Side Note* - How to read MDN.
 
-## Life without functions
+### Life without functions
 - does multiple things
 - w.e.t. and not reusable
 - not extensible
@@ -79,7 +105,7 @@ Nice! What if we want to do this with a hundred different arrays, or a thousand?
 
 How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our code? You guessed it, FUNCTIONS!
 
-## Function refresher
+### Function refresher
 - functions and variables similarities - two phases
   + Definition phase - think when writing the recipe.
   + Execution phase - think when making the food.
@@ -125,7 +151,7 @@ How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our
 
 - function signature (I/O): this is the answer to two questions; what (arguments - data types and number of) inputs does the function take and what does it (data type) output.
 
-## More functions
+### More functions
 
 - no-name (anonymous) functions?? When / why might we use those?
   + function expression
@@ -172,7 +198,7 @@ How do we make sure that you Don't Repeat Yourselves - essentially DRYing up our
   + they can be passed into another function as argument
   + they can be returned from another function call
 
-## DRY the W.E.T. logic
+### DRY the W.E.T. logic
 
 Now that we remember functions, let's make our previous logic reusable
 
@@ -212,7 +238,7 @@ How might we solve this? If only we can create a generic function that just loop
 Using the second privilege of being a first class object,the function passed in to another function is a *CALLBACK*. And the function that executes (calls) a callback is the *HIGHER ORDER FUNCTION*
 
 
-## forEach
+### forEach
 
 ```js
 // Higher order function
@@ -236,7 +262,7 @@ forEach(numbers, logSquare); // 1, 4, 9
 items.forEach(logSquare)
 ```
 
-## forEachInReverse
+### forEachInReverse
 
 ```js
 // We did not implement this in class but here's an idea

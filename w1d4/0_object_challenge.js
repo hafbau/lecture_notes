@@ -11,3 +11,23 @@ const yeetMap = {
   l: 1,
   o: 0
 }
+
+function yeetSpeak(word) {
+  let convertedWord = '';
+  for (const letter of word) {
+    if (letter in yeetMap) {
+      convertedWord += yeetMap[letter];
+    } else {
+      convertedWord += letter;
+    }
+  }
+  return convertedWord;
+}
+
+console.log(yeetSpeak('hello')); // h3110
+console.log(yeetSpeak('daniel z'));
+console.log(yeetSpeak('mikhail'));
+console.log(yeetSpeak('daniel h'));
+console.log(yeetSpeak('emily'));
+console.log(yeetSpeak('lucas'));
+console.log(yeetSpeak('hafiz'));

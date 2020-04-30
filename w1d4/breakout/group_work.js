@@ -1,24 +1,21 @@
 /**
- * map(inputArray, transformerCallback)
- * return new transformed array
+ * forEachInReverse(inputArray, callback)
+ * Calls the supplied callback with each item in the input array starting from the last index
  */
-const map = function(inputArr, callback) {
+const forEachInReverse = function(inputArr, callback) {
   // Your code here
 }
 
 
  // Test case 1
 const input1 = [1, 2, 3];
-const squareNum = (num) => num * num
-console.log(map(input1, squareNum)); // [1, 4, 9]
+const logNum = (num) => console.log(num)
+forEachInReverse(input1, logNum); // [3, 2, 1]
 
 // Test case 2
-const out2 = map(['yo', 'hey', 'wazaaa'], function(str) {
-  return str.length
-});
-
-console.log('output of test 2 :', out2); // [2, 3, 6]
-
+forEachInReverse(['yo', 'hey', 'wazaaa'], function(str) {
+  console.log(str.length)
+}); // [6, 3, 2]
 
 //============================================
 // STRETCH: DO NOT DO THIS UNLESS YOU'RE BORED
@@ -45,3 +42,26 @@ console.log('output of test 2 :', out2); // [2, 3, 6]
 // });
 
 // console.log('output of test 2 :', out2); // ['hey', 'wazaaa']
+
+
+// DO NOT DO THE BELOW
+/**
+ * map(inputArray, transformerCallback)
+ * return new transformed array
+ */
+// const map = function (inputArr, callback) {
+//   // Your code here
+// }
+
+
+// // Test case 1
+// const input1 = [1, 2, 3];
+// const squareNum = (num) => num * num
+// console.log(map(input1, squareNum)); // [1, 4, 9]
+
+// // Test case 2
+// const out2 = map(['yo', 'hey', 'wazaaa'], function (str) {
+//   return str.length
+// });
+
+// console.log('output of test 2 :', out2); // [2, 3, 6]
