@@ -24,7 +24,11 @@ Please leave your feedback -  thanks ;)
 
 [Code we worked on are here.](https://github.com/hafbau/lecture_notes/tree/master/w1d4)
 
-The classwork is in the `breakout/` folder.
+The two classworks are in `0_object_challenge.js` and the `breakout/` folder.
+
+The forEachInReverse breakout question is also here:
+[forEachInReverse](https://gist.github.com/hafbau/895ce779fd3b74d51941159a7bf341ae)
+
 
 ## Video
 

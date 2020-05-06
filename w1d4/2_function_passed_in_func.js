@@ -10,6 +10,6 @@ const anotherFunc = function (func) {
 
 anotherFunc(f)
 
-// The below two are equivalent and the resulted is `func is not a function` error
-// anotherFunc(f())
+// The below two are equivalent and the result is
+anotherFunc(f())
 // anotherFunc(5)
