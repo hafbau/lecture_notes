@@ -7,42 +7,22 @@ const rlp = readline.createInterface({
 
 const answers = [];
 
-// r.q('q1').then(() => { }).then().then()
+const promise1 = rlp.questionAsync('What do you think of Node.js? ');
 
-rlp.questionAsync('What do you think of Node.js? ')
-  .then((answer) => {
-    answers.push(answer);
-    return rlp.questionAsync('What\'s your name? ');
-  }) // => NEW promise
-  .then((answer) => {
-    answers.push(answer);
-    return rlp.questionAsync('What\'s your favourite activity? ');
-  }) // => NEW promise
-  .then((answer) => {
-    answers.push(answer);
-    return rlp.questionAsync('What do you listen to while doing that? ');
-  }) // => NEW promise
-  .then((answer) => {
-    answers.push(answer);
-    return rlp.questionAsync('Which meal is your favourite? ');
-  })
-  .then((answer) => {
-    answers.push(answer);
-    return rlp.questionAsync('What\'s your favourite thing to eat for that meal? ');
-  })
-  .then((answer) => {
-    answers.push(answer);
-    return rlp.questionAsync('Which sport is your absolute favourite? ');
-  })
-  .then((answer) => {
-    answers.push(answer);
-    rlp.close();
-    const [node, name, activity, music, meal, food, sport] = answers;
+const chain = promise1
+.then((resolvedP1) => {
+  answers.push(resolvedP1);
+  return rlp.questionAsync("What's your name? ");
+})
+.then((somefn) => {
+  answers.push(somefn)
+  console.log('somefn', somefn)
+  return rlp.questionAsync("What's an activity you like doing?");
+})
+.then((answer3) => {
+  console.log('answer3', answer3)
+  return 'Lucas wuz ere'
+})
+.then(result => console.log('result', result))
 
-    console.log();
-    console.log('Your profile is ready!!');
-    console.log(`My name is ${name} and I really like ${activity}! I listen to ${music} while eating ${food} during ${meal} and playing ${sport}... and I think Node is ${node}!!`);
-  });
-
-
-console.log('all done');
+console.log('all done', chain);

@@ -1,14 +1,14 @@
 Networking with TCP and HTTP
 ===
 
-Hey crew! Thank you for sitting through today's lecture and for your attentiveness.
+Hey crew! Sorry for the late notes - Compass was having some issues earlier. Thank you for sitting through today's lecture and for your attentiveness.
 
 Today, we talked about networking and machine to machine communication, focusing on TCP and HTTP.
 
 
-[The code we wrote is here]()
+[The code we wrote is here](https://github.com/hafbau/lecture_notes/tree/master/w2d3)
 
-[Video will be here once uploaded](#)
+[Video will be here once uploaded](https://us02web.zoom.us/rec/share/-pFpILrN5GNJH53TtGLhZJ85T6Tqeaa823VMrKcIz007qICuWkJUFlaXA6MuAbEP)
 
 For a refresher of HTTP, have a look at the `http.md` file on the Github repo liked above.
 

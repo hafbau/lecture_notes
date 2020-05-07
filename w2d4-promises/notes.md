@@ -3,16 +3,22 @@ Promises with Hafiz
 
 ## Agenda Today
 
-- [ ] Review of Callbacks (Sync / Async) [5m]
+- [x] Review of Callbacks (Sync / Async) [5m]
 
 - [ ] Classwork Agile Manifesto [15m](https://github.com/hafbau/w2d4_classwork)
-      + Individual breakout rooms
-      + Fork and clone this repo
-      + Solve only `01_classwork.js`
+      + Fork & Clone this repo - All of you
+      + Breakout rooms
+      + Write your code in the `01_classwork.js`
 
 - [ ] Callback waterfall (Hell) [5m]
 
 - [ ] Intro to promises: Profile Generator promises [10m]
+
+      - Promises are JS objects that are handle used to handle asynch flow
+      - They have 3 states
+      - pending - this is the initial state
+      - resolved - to resolve a promise, we have to wait aka we have to call `.then` method with a callback of what to do with the resolved value
+      - rejected - bad things happen. Not expected result
 
 - [ ] Refactor Classwork Agile to Promises [15m]
 
@@ -25,3 +31,8 @@ Promises with Hafiz
 
 
 ### What we learned
+
+- Promises have three state (pending, resolve, rejected)
+- They are valid JS objects. Created from a `Promise` blueprint different from object literals e.g. `{}`
+- We could include both `.then` and `.catch` calls in a `promise chain`
+- reviewed difference between async callbacks vs synchronous callbacks.

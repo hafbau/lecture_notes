@@ -1,47 +1,40 @@
-// SETUP
-// DO NOT CHANGE ANYTHING HERE!
-const generateMultipleRandomPromises = (numOfPromisesToGenerate) => {
-  if (numOfPromisesToGenerate < 1) return Promise.reject('Bad things! Your fault!!')
-  const randomPromises = [];
-  for(let i = 0; i < numOfPromisesToGenerate; i++) {
-    const randPromise = new Promise((resolve) => {
-      setTimeout(() => resolve(i + 1), (i % 2) * 100)
-    })
-    randomPromises.push(randPromise)
-  }
-  return randomPromises;
-}
+// COPY PASTE A STUDENT'S SURVEY SOLUTION
+// Mikhail's survey.js
+const readline = require('readline');
 
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-/**
- * IMPLEMENT ME:
- * Question 01
- * This function prints the sum of all resolved values of an array of promises
- */
-const printSumOfResolvedValues = (arrayOfPromises) => {
-  // Your code here
-  
-}
+let name = '';
+let activity = '';
+let music = '';
+let meal = '';
+let food = '';
+let sport = '';
+let superpower = '';
 
-// test
-const manyPromises = generateMultipleRandomPromises(5);
-printSumOfResolvedValues(manyPromises); // 15
-
-
-// STRETCH
-/**
- * IMPLEMENT ME:
- * Question 02
- * This function takes two argumenst: 1. an array of promises and 2. a callback
- * And calls the callback with the sum of all resolved values of the array of promises
- */
-// Hint: it is an extension of Question 1 above
-const calcSumOfResolvedValuesWithCallback = (arrayOfPromises, cb) => {
-  // Your code here
-  
-}
-
-// test
-// const manyPromises = generateMultipleRandomPromises(5);
-const testCallback = (sum) => console.log('Test passed:', sum === 15)
-calcSumOfResolvedValuesWithCallback(manyPromises, testCallback); // Test passed: true
+rl.question("What's your name? ", (answer) => {
+    name = answer;
+    rl.question("What's an activity you like doing? ", (answer) => {
+        activity = answer;
+        rl.question("What do you listen to while doing that? ", (answer) => {
+            music = answer;
+            rl.question("Which meal is your favourite (eg: dinner, brunch, etc.)? ", (answer) => {
+                meal = answer;
+                rl.question("What's your favourite thing to eat for that meal? ", (answer) => {
+                    food = answer;
+                    rl.question("Which sport is your absolute favourite? ", (answer) => {
+                        sport = answer;
+                        rl.question("What is your superpower? In a few words, tell us what you are amazing at! ", (answer) => {
+                          superpower = answer;
+                          console.log(`${name} loves listening to ${music} while ${activity}, devouring ${food} for ${meal}, prefers ${sport} over any other sport, and is amazing at ${superpower}.`);
+                          rl.close();
+                        });
+                      });
+                });
+            });
+        });
+    });
+});

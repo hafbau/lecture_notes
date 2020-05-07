@@ -7,23 +7,31 @@ Hey crew, thanks for another awesome class today. Hopefully today was as fun for
 
 _Video recording is being uploaded, I'll update once complete_
 
+
+### What we learned
+
+- Promises have three states (pending, resolve, rejected)
+- They are valid JS objects. Created from a `Promise` blueprint different from object literals e.g. `{}`
+- We could include both `.then` and `.catch` calls in a `promise chain`
+- reviewed difference between async callbacks vs synchronous callbacks.
+
+
 ## Agenda Today
 
-- [ x ] Review of Callbacks (Sync / Async) [5m]
-- [ x ] Classwork Agile Manifesto [3 + 10 + 5m](https://github.com/hafbau/w2d4_classwork)
+- [x] Review of Callbacks (Sync / Async) [5m]
+- [x] Classwork Agile Manifesto [3 + 10 + 5m](https://github.com/hafbau/w2d4_classwork)
       + Individual breakout rooms
       + Fork and clone this repo
       + Solve only `01_classwork.js`
-- [ x ] Callback waterfall (Hell) [5m]
-- [ x ] Intro to promises a.k.a would it not be cool, specifications [10m]
-- [ x ] Refactor Classwork Agile to Promises [15m]
-- [ x ] More Promises [20m]
+- [x] Callback waterfall (Hell) [5m]
+- [x] Intro to promises a.k.a would it not be cool, specifications [10m]
+- [x] Refactor Classwork Agile to Promises [15m]
+- [x] More Promises [20m]
       + Error handling
       + Make a promise
       + Promise.all / Promise.race
-- [ - ] Classworks [40]
-      - [Quiz](https://gist.github.com/hafbau/d6a023b7aff7f0dae80c11d4c23ec026)[10m]
-      - 02_classwork [3m + 15m + 7m]
+- [x] [Quiz](https://gist.github.com/hafbau/d6a023b7aff7f0dae80c11d4c23ec026)[10m]
+
 
 ### Review
 
@@ -34,7 +42,7 @@ _Video recording is being uploaded, I'll update once complete_
 
 ###  More Asynchronous Callbacks
 
-Lets review by reading the [Agile manifesto](https://agilemanifesto.org/) from disk, which, for us is broken into four parts / files: p1.txt, p2.txt, p3.txt, and p4.txt. Check code repo for `/01_agile_callback.js`
+Lets review by reading the [Agile manifesto](https://agilemanifesto.org/) from disk, which, for us is broken into four parts / files: p1.txt, p2.txt, p3.txt, and p4.txt. Check code repo for `/1_classwork.js`
 
 
 *Wouldn't it be cool to clean this ~hell~ waterfall up? Ideas?*
@@ -45,7 +53,6 @@ We discussed an hypothetical `.then` (or `.next`?) function to deal with callbac
   - will have to be given (pass in) a function to execute next
   - chainable
   - should be able to catch / police errors
-  - should be able to exit finally <we did not get to this>
 
 
 ### Promises

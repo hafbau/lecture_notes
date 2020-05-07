@@ -3,7 +3,8 @@ const cbSync = (cb) => {
   cb(1);
 }
 
-cbSync((x) => console.log('x is', x))
+const fn = (x) => console.log('x is', x)
+cbSync(fn)
 
 console.log('all done');
 /**

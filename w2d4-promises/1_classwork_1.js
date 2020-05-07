@@ -30,7 +30,6 @@ fs.readFile('data/p1.txt', 'utf8', (err, p1) => {
                     // stop 
                     return console.log('YIKES. Failed to read p4: ', err);
                 }
-                console.log('p4: ', p4);
                 finalDoc.push(p4);
                 console.log(finalDoc.join('\n'));
             });
