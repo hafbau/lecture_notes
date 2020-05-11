@@ -1,14 +1,68 @@
 Web servers 101
 ===
 
-Thanks crew! Here are we talked about today in bullets:
+## Agenda Today
 
-- Review of stuffs; promises, asynchronousity etc.
-- Intro to Web Servers (Express-less demo)
-- Intro to Express
-- What is "middleware?"
-- Intro to Server-side view templates with EJS
+- [x] HTTP Review
+- [x] HTTP Servers - Demo
+  + [x] Routing
+  + [x] Templating
+- [x] Express Servers - Demo
+  + [x] EJS
+  + [x] Middleware (stretch!)
 
-[Code we wrote are here.](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w3d1) Have a look in the [`old/express_demo/server.js`](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w3d1/old/express_demo/server.js) and [`old/express_demo/views/index.ejs`](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w3d1/old/express_demo/views/index.ejs) for EJS (Embedded Javascript).
+> Promises have 3 states: Pending / resolved / rejected
 
-[I want to put Travis' Note here as well, I think they are great.](https://web.compass.lighthouselabs.ca/activities/178/lectures/3133)
+### HTTP Review [10m]
+
+**What are the most important things about HTTP?**
+
+- HTTP is request / response cycle based. It cannot respond without a request
+- Request
+  + URL akas / Path / Address
+  + HTTP methods e.g. GET, POST
+  + They are asynchronous
+  + url + method === endpoints
+
+- Response
+  + Status codes  e.g 200 / 300 / 400 / 500
+  + Body
+  + Headers
+
+- HTTP is stateless
+
+
+### HTTP Servers - Demo [40m]
+
+
+
+#### Routing
+
+
+
+#### Templating
+
+
+
+# B R E A K
+
+
+### Express [40m]
+
+
+
+#### EJS
+
+
+
+#### Middleware
+
+
+
+### Things we learned
+
+- Using Express module vs using the native `http` module. With its clean routing ..er.. middlewares
+- Using EJS for templating. Interspersing logic (JS code) with markup (html code). Makes dynamic templating smooth. This uses alligator tags `<% %>` and `<%= %>`
+- Learned that we could build web application with the `http` from scratch but routing was tedious.
+- Learned refactoring `routeHandlers` into their own files (module)
+- We saw `nodemon` for restarting our servers when we make changes. On vagrant, you'll be doing `npx nodemon -L`. Feel free to talk to a mentor about that.
