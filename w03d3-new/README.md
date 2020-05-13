@@ -3,7 +3,7 @@ HTTP Cookies & User Authentication
 
 Hey gang, thanks for sitting through today's lecture about user authentication and cookies ... yum!
 
-[The code we wrote is linked here](https://github.com/hafbau/lecture_notes/tree/master/w3d3)
+[The code we wrote is linked here](https://github.com/hafbau/lecture_notes/tree/master/w03d3-new)
 
 [Video upload will be here once done](#)
 
