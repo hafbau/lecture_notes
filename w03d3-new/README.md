@@ -1,77 +1,97 @@
 HTTP Cookies & User Authentication
 ===
 
-Thanks for today! We talked about girls guide cookies and where you could access them. Also, we discussed http cookies and implemented user authentication wit expressjs.
+Hey gang, thanks for sitting through today's lecture about user authentication and cookies ... yum!
 
-[Code we wrote is here.](https://github.com/hafbau/lecture_notes/tree/master/w03d3-new)
+[The code we wrote is linked here](https://github.com/hafbau/lecture_notes/tree/master/w3d3)
 
-Here are the things we covered:
+[Video upload will be here once done](#)
 
-With Hafiz Suara
-- April 14, 2020
+## Things we learned.
+
+- Cookies are ways to deal with HTTP statelessness but they are not the only way and may not be right for all scenarios e.g. our lang preferences due to shareability.
+- Cookies are not secure
+- CookieParser (the library) just helps us to parse cookies. We would have to parse cookies manually without it.
+- `res.cookie...` for setting cookie. `req.cookies.` when fetching
+- Don't just check cookie's existence, check if you(server) recognize what the cookie represents e.g. in your database
+- Get `morgan` for HTTP logging to console.
+- Nodemon is nice - it helps restarts `.js` files by default
 
 ## Journey So far [5m]
 
-- Tiny App requirements
-- Pay attention to stressed
+- Pay attention to stress
+- Pay attention to Tiny App requirements before submitting
 
 
 ## 1 - Problem Definition [5m]
 
 > What problem do cookies try to solve?
 
-What the problem with HTTP does cookies solve:
-
-Saves data (session) so it knows when you come back - remembers who you are (in the case of authentication)
-- http server cannot maintain session
+Statelessness of HTTP - session persistence
 
 [xkcd](https://xkcd.com/869/)
-
-> Server has amnesia
 
 
 ## 2 - Sans Cookies [10m]
 
 > Can we solve this problem without cookies?
 
-Yes, using the query parameters.
-
-1. User requests /my/profile
-2. Server couldn't find info about (e.g cookie), asks client (user) to login
+1. user request /my/profile
+2 Server couldn't find info about, asks client (user) to login
 3. redirects to login
-4. user filled login form and send to server
-5. server checks `req.body` and finds cred combo that works i.e. that matches a record in the database (we used a fake `users` object as our db)
-6. server redirects /my/profile?user=amy
-7. user goes to /my/profile?user=1&lang=es
-8. server will GET who you are from the query params
-9. lets you access the resource / page
+4. user filled login form and submit
+5. server checks req.body and find creds combo tha works -  checks through db
+6. redirect to /my/profile?user_id=2
+7. user goes to /my/profile/?user_id=2
+8. server fetches user details from query params
 
-Problems with this approach for authentication
-- not secure / changeable
-- limited shareabilty e.g on SM, twitter etc.
-- if user navigates elsewhere, they lose the query params
-- new tab will lose session
+Problems about this strtategy
+
+- security
+- shareability
+- user navigates to a different link on the website, they loose authentication
+- new tab looses authentication
 
 ## 3 - Cookies Demo 1- Language Switcher [20m]
 
-We learned cookie might not be the solution to our language preference use case - majorly due to shareability
+### Our workflow
 
-## BREAK [10m]
+- click on the preferred page to set preference
+- server sets your preference and redirects to home
+- which renders the correct home page
+
+Summary: We learned that while cookies are great (or yumm!), they might not be the right solution to our language preference use case. Majorly due to shareability.
+
+## BREAK [5m]
 
 ## 4 - Cookies Demo 2 - User Auth [20m]
+
+### POST /login workflow
+
++ get credentials from req.body
++ check if user is in our db
++ check if user's password match submitted
++ set cookie and redirect home
++ ELSE show user some error e.g. res.send('error message')
+
+
+### Protecting the treasure workflow
+
++ extract the previously set `username` cookie -> req.cookies.username
++ check if username is in db
++ if yes show them the treasure
++ ELSE send them home? or login?
 
 
 ## 5 - Recap & Takeaways [5m]
 
-- Don't just check cookie's existence, check if you recognize what the cookie represents e.g in your db
-- When it might be inappropriate to use cookies e.g language preference. It can be useful to use url params instead due to shareability
-- Get morgan for logging to console! Yes do it!
-- Use dev tools to monitor request / response and their headers
-- Cookies are not secure and can be easily modified
-- Protecting authenticated routes e.g `/treasure`
-- Nodemon is nice! `nodemon -L <server.js>` for if you're on vagrant
-- Cookier Parser just parses - we could access cookies without it i.e from `req.headers.cookie`
-- Also, `req.cookies` when trying to access cookie (note the plural and `req` not `res`)
+- Cookies are ways to deal with HTTP statelessness but they are not the only way and may not be right for all scenarios e.g. our lang preferences due to shareability.
+- Don't just check cookie's existence, check if you(server) recognize what the cookie represents e.g. in your database
+- Get `morgan` for HTTP logging to console.
+- Cookies are not secure
+- Nodemon is nice - it helps restarts `.js` files by default
+- Cookies just helps us to parse cookies. We would have to parse cookies manually without it.
+- `res.cookie...` for setting cookie. `req.cookies.` when fetching
 
 ## 6 - Closing Comments [5m]
 

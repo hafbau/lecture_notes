@@ -40,6 +40,7 @@ app.get('/', (request, response, next) => {
   next()
 })
 app.get('/', routeHandlers.getHome)
+
 app.get('/daniel', routeHandlers.getDaniel)
 
 // listening
