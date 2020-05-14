@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import useMousePosition from '../../hooks/useMousePosition';
 
 const customMouseStyle = {
   height: 50,
   width: 50,
   borderRadius: '50%',
   border: '1px solid black',
-  position: 'absolute'
+  position: 'absolute',
+  backgroundImage: 'url("https://i.dlpng.com/static/png/6396612_preview.png")',
+  backgroundSize: "cover",
+  backgroundPosition: "center",
 };
 
 export default function ShowMousePosition() {
-  const [x, setX] = useState(0);
-  const [y, setYCoord] = useState(0);
-
-  useEffect(() => {
-    document.addEventListener('mousemove', event => {
-      setX(event.clientX);
-      setYCoord(event.clientY);
-    });
-    return () => {
-      document.removeEventListener('mousemove');
-    };
-  }, []);
+  const [x, y] = useMousePosition();
 
   return (
     <div style={{ ...customMouseStyle, top: y - 25, left: x - 25 }} />
   );
 }
+
+

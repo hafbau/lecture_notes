@@ -1,9 +1,31 @@
 import React from 'react';
-import useInput from '../hooks/useInput';
+import useInput from '../../hooks/useInput';
+
+const useForm = (defaultVal) => {
+  const [formValues, setFormVals] = React.useState(defaultVal);
+
+  const onChange = (event) => {
+    const { target: { value, name } } = event;
+    // const newState = { ...formValues };
+    // newState[name] = value;
+    setFormVals({
+      ...formValues,
+      [name]: value
+    })
+  }
+
+  return [formValues, onChange];
+}
 
 const Input = () => {
-  const [username, onChangeUsername] = useInput('hafiz');
-  const [password, onChangePassword] = useInput('');
+  const [formValues, onChange] = useForm({
+    username: '',
+    password: '123'
+  })
+  
+  const { username, password } = formValues;
+  // const [username, onChangeUsername] = useInput('hafiz');
+  // const [password, onChangePassword] = useInput('');
 
   const onSubmit = () => {
     alert(`Thanks for logging in ${username} with password ${password}`);
@@ -16,16 +38,18 @@ const Input = () => {
         <label htmlFor="username">Username:</label>
         <input
           type="text"
+          name="username"
           value={username}
-          onChange={onChangeUsername}
+          onChange={onChange}
           id="username"
         />
         <br/>
         <label htmlFor="password">Password:</label>
         <input
           type="password"
+          name="password"
           value={password}
-          onChange={onChangePassword}
+          onChange={onChange}
           id="password"
         />
         <br/>

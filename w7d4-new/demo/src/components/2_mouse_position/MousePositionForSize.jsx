@@ -7,9 +7,6 @@ export default function ShowMousePosition() {
     document.addEventListener("mousemove", event => {
       setX(event.clientX);
     });
-    return () => {
-      document.removeEventListener("mousemove");
-    };
   }, []);
 
   return (
