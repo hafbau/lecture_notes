@@ -36,10 +36,10 @@ Here's some things we learned:
 
 - **What are the most important things we know about hooks?**
 
-- rule 1: only use inside of components
-- Can’t be in a any statement e.g conditional or a loop
+- Rule 1: only use inside of components
+- Can’t be embedded a any statement e.g conditional or a loop
 - They allow functional components to not be dumb anymore i.e to include state
-- No more class components
+- No more class components :)
 - We've seen `useEffect` and `useState`
 
 
