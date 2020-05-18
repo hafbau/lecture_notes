@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-image: url('https://www.dagusa.com/img/header.jpg');
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+      padding: 0px 40px;
+      align-items: center;
+      text-transform: uppercase;
+      border: 0.5px solid grey;
+      color: gray;
+      font-weight: bolder;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      width: 400px;
+    }
+
+    #header {
+      height: calc(100vh - 60px);
+      text-align: center;
+      display: flex;
+      flex-direction: column; /** row */
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .button {
+      text-decoration: none;
+      background-color: tomato;
+      color: white;
+      /* width: 100px; */
+      padding: 20px 40px;
+      border-radius: 56px;
+      margin: 40px;
+    }
+
+    .title {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      font-size: 2.5rem;
+      color: tomato;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo">The logo</div>
+    <ul class="menu">
+      <li class="menu-item">menu 1</li>
+      <li class="menu-item">menu 2</li>
+      <li class="menu-item">menu 3</li>
+      <li class="menu-item">menu 4</li>
+    </ul>
+  </nav>
+
+  <header id="header" class="one-column">
+    <h1 class="title">Hey Look! Its every boostrap website ever</h1>
+    <div class="divider">___</div>
+    <p class="text">Take a look around at the same fucking bootstrap page you've seen ten million times before! Featuring all the same things as those pages!
+    </p>
+    <a href="#" class="button">This button makes the page scroll</a>
+  </header>
+</body>
+</html>

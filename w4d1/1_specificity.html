@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /* SPECIFICITY */
+      #input-id {
+        background-color: lightgreen;
+      }
+      input[type='text'] {
+        background-color: blue;
+      }
+
+      .input-class {
+        background-color: rebeccapurple;
+      }
+
+      body > input {
+        background-color: black;
+      }
+
+      body input {
+        background-color: red;
+      }
+      
+      label + input {
+        background-color: green;
+      }
+
+      input {
+        background-color: tomato;
+        width: 500px;
+        height: 40px;
+      }
+
+      body {
+        /* background-color: blue; */
+      }
+     
+    </style>
+  </head>
+  <body>
+    <label for="">The label</label>
+    <input type="text" name="input-name" id="input-id" class="input-class" style="background-color: aliceblue;">
+  </body>
+</html>

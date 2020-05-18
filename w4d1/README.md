@@ -2,22 +2,36 @@
 
 Today's notes is courtesy of Dominic from Montreal and Karl from Vancouver. Check out some of the resources below and enjoy styling!
 
-[notes and code are here](https://github.com/hafbau/lecture_notes/tree/master/02_14_oct_19/w4d1)
+[notes and code are here](https://github.com/hafbau/lecture_notes/tree/master/w4d1)
+
+[Video will be here](#)
+
+## What we learned [5m]
+
+- Learned about the Cascading nature of CSS - i.e. it inherits parents' styles and file is read top down
+
+- Specificity and how different selectors fair on the spectrum
+
+- We learned about CSS Box model and how we might style them using the TRBL shorthand
+
+- Learned about flexbox and the properties we could set on a parent element
+
 
 ## Agenda
 
-- Writing semantic HTML
-- Intro to CSS
-  - Box model
-  - block level elements vs inline elements
-  - Box sizing: border-box (non-default)
-  - CSS Specificity
+- [x] Tips / Housekeeping
+- [x] Demo final App
+- [x] HTML review
+- [x] CSS review
+- [x] The Box Model
+- [x] Flexbox Intro - CSS Tricks
+- [x] Flexbox layout - Every Funny Website Ever
 
 ## Tweeter Project
 
 - [Tweeter Project](https://web.compass.lighthouselabs.ca/projects/w3-tweeter?day_number=w04d1)
 
-## Approach
+## Tips / Housekeeping
 
 - As the weeks progress there is lesser emphasis on giving you all the resources, functions, tips that you need to complete an activity
 - You're expected to research some topics on your own
@@ -51,7 +65,10 @@ Today's notes is courtesy of Dominic from Montreal and Karl from Vancouver. Chec
 
 
 ## CSS
+
 It Cascades!
+  + CSS files are read top-down including HTML `<link>` for css files
+  + Parent element styles are inherited by its nested children
 
 ### Default styles / Dev tools
 
