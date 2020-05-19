@@ -1,29 +1,53 @@
 # W8D2 Real World React
 
 ### Agenda today
-- [x] React Router
+- [x] Routing with React Router
 - [x] Advanced Routing
 - [x] Styled Components
 - [x] `useContext`
 - [x] `useRef`
-- [x] Component Libraries
+- [ ] Component Libraries
 
-## Routing === Transitioning
+### Routing
 
-Stage of routing
- - When you define the routes
+- Why routing in SPA?
 
- - When you match the route
+- How did we do it in Scheduler?
+  + routing === transitioning
+  + useVisualMode
 
- ## Context
+https://reacttraining.com/react-router/web/guides/quick-start
 
- // Redux
+### Advanced Routing
+* It is possible to nest `Router` components
+  - we used useParams to fetch dynamic params from a nested `Product` component
+  - we use useRouteMatch to make our nested routes dynamic and future proof.
 
- // useContext
+
+### Styled Components
+* Styled components allow us to embed our styles inside our JavaScript
+https://styled-components.com/docs/basics
 
 
- ## Things we're taking away
- - Router in one page (Routing in a Single page application)
- - The prebuilt components are definitely useful! Use component libraries e.g material-ui.com, ant-design
- - Libraries to use with React e.g React router, Styled components
- - The ability to easily pass state values across components without props drilling.
+### `useContext`
+* `useContext` can be used to share state without having to pass props from parent to child
+
+
+
+### `useRef`
+* Allows us to programmatically make reference to an element or value
+* `useRef` returns the same object on every render so we have a consistent reference
+
+
+
+### Component Libraries
+* Why build it yourself if someone else already has??
+
+
+
+### Things we learned today
+
+- Styled Components looks pretty awesome. Dynamic styling is fun.
+- How useRef actually works. The name `ref` for `reference` makes more sense, since it is a reference to an object that persists through rerenders.
+- The process of creating routes seemed super easy (x2).
+- The ability to easily pass state values across components without props drilling.

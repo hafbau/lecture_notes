@@ -1,4 +1,4 @@
-import React, { createContext , useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 const defaultState = [
   {
@@ -10,7 +10,20 @@ const defaultState = [
     text: 'Inside of message two'
   }
 ]
+
+// returns a context wrapped value
 const MessageContext = createContext(defaultState);
 
+export const MessageContextProvider = ({ children }) => {
+  const [state, setState] = useState(defaultState)
+
+  return (
+    <MessageContext.Provider
+      value={[state, setState]}
+    >
+      {children}
+    </MessageContext.Provider>
+  )
+}
 
 export default MessageContext;

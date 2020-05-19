@@ -4,27 +4,29 @@ Hey gang, thanks for an awesome class today. Here are the things we covered toda
 
 [Link to our code](https://github.com/hafbau/lecture_notes/tree/master/w8d2)
 
-[Link to video will be here once upload is done - thanks!](https://zoom.us/rec/share/-5A2LZug8ltIGqPq9Gb8ZfcFG5rfaaa81nBK__YNmEzEq4HtfNr3WqKHB5U-DWJF)
+[Link to video will be here once upload is done - thanks!](#)
 
-### Things we're taking away
-  
- - Router in one page (Routing in a Single page application)
- - The prebuilt components are definitely useful! Use component libraries e.g material-ui.com, ant-design
- - Libraries to use with React e.g React router, Styled components
- - The ability to easily pass state values across components without props drilling.
 
- The notes below are courtesy of Andy Lindsay (Thank you Andy!).
+### Things we learned today
+
+- Styled Components looks pretty awesome. Dynamic styling is fun.
+- How useRef actually works. The name `ref` for `reference` makes more sense, since it is a reference to an object that persists through rerenders.
+- The process of creating routes seemed super easy (x2).
+- The ability to easily pass state values across components without props drilling.
+
 
 ### Agenda today
-- [x] React Router
-- [x] Advanced Routing
+- [x] Basic Routing (with React router)
+- [x] Advanced Routing (with React router)
 - [x] Styled Components
 - [x] `useContext`
 - [x] `useRef`
 - [x] Component Libraries
 
 
+
 ### React Router
+
 * Uses the `react-router-dom` package
 * Inside of a `Router` component, you can use `Link` components to provide clickable links to the user
 * Inside of a `Switch`, the first `Route` whose `path` attribute matches the path the user is trying to visit gets rendered
@@ -48,7 +50,9 @@ Hey gang, thanks for an awesome class today. Here are the things we covered toda
 <Router>
 ```
 
+
 ### Advanced Routing
+
 * It is possible to nest `Router` components
 * So that we can programmatically have access to the url the user has visited and any parameters (eg. `productId`), `react-router-dom` gives us a couple of _custom hooks_
 * `useRouteMatch` gives us the `url`, `path`, and `params` of the current url
@@ -94,7 +98,9 @@ const Product = () => {
 };
 ```
 
+
 ### Styled Components
+
 * Styled components allow us to embed our styles inside our JavaScript
 * Uses the `styled-components` package
 * Syntax is kinda weird...
@@ -127,7 +133,9 @@ const Custom = styled.h2`
 <Custom electric>I'm Electric!!!</Custom>
 ```
 
+
 ### `useContext`
+
 * `useContext` can be used to share state without having to pass props from parent to child
 * Any component that needs access to the shared state can simply import the context and pass it to `useContext`
 
@@ -143,7 +151,9 @@ const message = React.useContext(MessageContext);
 const { example } = React.useContext(MessageContext);
 ```
 
+
 ### `useRef`
+
 * Allows us to programmatically make reference to an element or value
 * `useRef` returns the same object on every render so we have a consistent reference
 * References are attached to elements using the `ref` attribute
@@ -195,15 +205,22 @@ const UseRef = () => {
 };
 ```
 
+
 ### Component Libraries
+
 * Why build it yourself if someone else already has??
 * Component libraries give us easy access to ready-built components that we can plug into our application
 * We can use as much or as little of the component library as we want
 * Some examples are [Material-UI](https://material-ui.com/) and [Ant Design](https://ant.design/) 
 
+
 ### Useful Links
+
 * [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 * [Styled Components](https://styled-components.com/docs/basics)
 * [Top React UI Frameworks (opinionated)](https://www.codeinwp.com/blog/react-ui-component-libraries-frameworks/)
 * [State Reducer Pattern](https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks)
 * [Tagged Template Literals](https://codeburst.io/javascript-es6-tagged-template-literals-a45c26e54761)
+
+
+ The notes below are adapted from Andy Lindsay's (Thank you Andy!).
