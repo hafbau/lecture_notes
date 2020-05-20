@@ -4,39 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css" />
-  <!-- <script>
-    console.log('weere here')
-  </script> -->
 
   <title>Fun With Ajax</title>
+
+  <style>
+    body {
+      text-align: center;
+    }
+
+    input.text, button {
+      padding: 20px 40px;
+      border-radius: 56px;/* padding-top + padding-bottom + font-size (default on chrome is 16px*/
+      border: none;
+    }
+
+    .text {
+      width: 500px;
+    }
+
+    button:hover {
+      background-color: tomato;
+    }
+    label {
+      display: none;
+    }
+    form {
+      margin-bottom: 60px
+    }
+  </style>
 </head>
 <body>
   <h1>AJAX!!</h1>
 
   <form>
-    <label for="userId">UserId</label>
-    <input type="number" id="userId" name="userId" />
-    <br/>
-    <label for="photo">Photo Url</label>
-    <input type="text" id="photo" name="photo" />
-    <br/>
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" />
-    <br/>
-    <label for="body">Body</label>
-    <input type="text" id="body" name="body" />
-    <br/>
+    <label for="text">Put your text</label>
+    <input type="text" id="text" class="text" name="text" placeholder="say something smart" />
     <button type="submit">Create New Post</button>
   </form>
 
-  <section id="container">
+  <main class="masonry-wrapper">
+    <section id="container" class="masonry">
+      
+    </section>
+  </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     
-  </section>
+    <script src="helpers.js"></script>
+    <script src="app.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
-    crossorigin="anonymous"></script>
-
-  <script src="helpers.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>

@@ -7,6 +7,15 @@ Hey crew, thanks again for today's class. Today we used AJAX, to `GET` and `POST
 
 [Video will be here when upload is done](#)
 
+
+## What we learrned
+
+- We learned how to fetch data from an API server using jQuery
+- We learned front end sanization of users input.
+- A show of using XMLHTTPRequests and as it compares to jQuery Ajax. jQuery is syntactically nicer and also `polyfills` browsers quirks.
+- XML and JSON are both data serialization formats used for data transfer. They are also both key/value pair datastructure
+
+
 ## To run the demos
 
 ```bash
@@ -21,19 +30,12 @@ npm start
 - [x] Use AJAX to retrieve data from an API
 - [x] Use jQuery to update the DOM with the retrieved data
 - [x] Use AJAX to submit data to an API
+- [x] Refactoring
 
-## Take aways
-
-- Refresh to see changes to your code
-- Reminder of promises syntax
-- Refactor chunky code to resuable functions
-- don't trust any user inputs - sanitize all the things
-- save the value of `this` in a variable
-- jquery makes ajax requests a lot simpler than vanilla JS
 
 ## Steps we took
 
- - to load all posts (viralGrams); we did this in two steps
+ - to load all posts (betterGrams); we did this in two steps
     + make ajax get request to the server
 
     ```js
@@ -43,48 +45,27 @@ npm start
     })
     ```
 
-    + rendered all posts (viralGrams); we did this in multiple steps as well
+    + rendered all posts (betterGrams); we did this in multiple steps as well
       - loop through the posts we got back from server
       - for each one of the posts, create an html string that will represent the post. Using a predetermined template.
       Our template with data looked like so:
 
       ```js
       `
-      <article>
-        <img src="${post.photo}" alt="">
-        <h3 class="title">${post.title}</h3>
-        <p class="body">${post.body}</p>
-        <footer>
-          <strong class="username">${post.user.name}</strong>
-          <img class="avatar" src="${post.user.avatar}" alt="">
-        </footer>
+      <article class='post'>
+        <div className="content">
+          <img src="${data.image}" alt="" className="post-photo"/>
+          <p className="text">${sanitize(data.text)}</p>
+          <footer>
+            <img src="${data.owner.avatar}" alt="" className="avatar"/>
+            <em>${data.owner.name}</em>
+          </footer>
+        </div>
       </article>
       `
       ```
 
       - then append that html string to the post container in the DOM. Ours was `<section id='container'></section>`
-      
-      - all together; rendering all posts looked like
-
-      ```js
-      //... previous code cut off for brevity; checkout ./demo/public/helpers.js file for complete loadPosts code
-      const $postContainer = $('#container');
-      for (const post of posts) {
-        const postHtml = `
-          <article>
-            <img src="${escape(post.photo)}" alt="">
-            <h3 class="title">${escape(post.title)}</h3>
-            <p class="body">${escape(post.body)}</p>
-            <footer>
-              <strong class="username">${escape(post.user.name)}</strong>
-              <img class="avatar" src="${escape(post.user.avatar)}" alt="">
-            </footer>
-          </article>
-          `
-        $postContainer.append(postHtml);
-        }
-      ```
-
 
 - to make a post, here are the things we did:
   + add a listener on the form on submit
@@ -102,9 +83,9 @@ npm start
 
   + we extracted data from the form using `$(this).serialize()`
   + make the post request
-    on post success (.then) reset the form AND rerender the posts (loadPosts())
+    on post success (.then) AND rerender the posts (loadBGram())
 
-  + checkout complete code in `./demo/public/app.js` from line #11
+  + checkout complete code in `./demo/public/app.js` and `./demo/public/helpers.js`
 
 
 ### What is AJAX?

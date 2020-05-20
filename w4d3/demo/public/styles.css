@@ -1,20 +1,77 @@
-article {
-  border: 2px dotted orange;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 10px 0;
+body {
+  background-color: #cccccc;
+  color: #333333;
 }
 
-article header {
-  color: darkorchid;
+.masonry-wrapper {
+  padding: 1.5em;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-article footer {
-  color: darkred;
+.masonry {
+  columns: 1;
+  column-gap: 10px;
 }
 
+.post {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
 
-.photo {
-  height: 200px;
-  width: 450px;
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    columns: 2;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    columns: 5;
+  }
+}
+
+.post,
+.content {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.post {
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, .3));
+  transition: filter .25s ease-in-out;
+}
+
+.post:hover {
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+}
+
+.content {
+  overflow: hidden;
+}
+
+.post {
+  color: #111111;
+  background-color: #f9f9f9;
+}
+.post, .content > img {
+  width: 350px
+}
+
+.text,
+.post-footer {
+  margin: 0;
+}
+
+.text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 1.5rem;
+}
+
+.post-footer {
+  padding: 1.5rem;
+  font-size: .75rem;
+  border-top: 1px solid rgba(0, 0, 0, .05);
 }

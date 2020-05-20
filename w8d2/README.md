@@ -1,6 +1,6 @@
 # W8D2 Real World React
 
-Hey gang, thanks for an awesome class today. Here are the things we covered today:
+Hey gang, thanks for an awesome class today. Here are the things we covered:
 
 [Link to our code](https://github.com/hafbau/lecture_notes/tree/master/w8d2)
 

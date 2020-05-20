@@ -6,14 +6,15 @@ AJAX with jQuery
 - [x] XMLHttpRequest (XHR) Object
 - [x] Use AJAX to retrieve data from an API
 - [x] Use jQuery to update the DOM with the retrieved data
-- [x] Use AJAX to submit data to an API
+- [ ] Use AJAX to submit data to an API
 
 
 
 ## AJAX
-Asynchronous Javascript and XML
 
 long polling
+
+Asynchronous Javascript and XML
 
 eXtensible markup language
   key value
@@ -26,91 +27,28 @@ eXtensible markup language
 
 
 ## Demo
-the viralGram
+betterGram
+
+Goals of this app
+
+Using AJAX
+- when you load the page; you see a list of bGrams (post) that have been created before
+  + fetch data from api ✔️
+  + show the user that data - by templating what a post looks like
+- you can create your own post by entering a text
+  - listening to onSubmit event on the form
+    - prevent the browser from submitting
+    - retrieve the data from the form
+    - submit the form
+    - decide what to do
 
 ## Refactoring
 
 
-## Take aways
+## What we've learrned
 
-- Refresh to see changes to your code
-- Reminder of promises syntax
-- Refactor chunky code to resuable functions
-- don't trust any user inputs - sanitize all the things
-- save the value of `this` in a variable
-- jquery makes ajax requests a lot simpler than vanilla JS
+- We learned how to fetch data from an API server using jQuery
+- We learned front end sanization of users input.
+- A show of using XMLHTTPRequests and as it compares to jQuery Ajax. jQuery is syntactically nicer and also `polyfills` browsers quirks.
+- XML and JSON are both data serialization formats used for data transfer. They are also both key/value pair datastructure
 
-## Steps we took
-
- - to load all posts (viralGrams); we did this in two steps
-    + make ajax get request to the server
-
-    ```js
-    $.getJSON('/api/posts)
-    .then(posts => {
-      // first step done; second step begins
-    })
-    ```
-
-    + rendered all posts (viralGrams); we did this in multiple steps as well
-      - loop through the posts we got back from server
-      - for each one of the posts, create an html string that will represent the post. Using a predetermined template.
-      Our template with data looked like so:
-
-      ```js
-      `
-      <article>
-        <img src="${post.photo}" alt="">
-        <h3 class="title">${post.title}</h3>
-        <p class="body">${post.body}</p>
-        <footer>
-          <strong class="username">${post.user.name}</strong>
-          <img class="avatar" src="${post.user.avatar}" alt="">
-        </footer>
-      </article>
-      `
-      ```
-
-      - then append that html string to the post container in the DOM. Ours was `<section id='container'></section>`
-      
-      - all together; rendering all posts looked like
-
-      ```js
-      //... previous code cut off for brevity; checkout ./demo/public/helpers.js file for complete loadPosts code
-      const $postContainer = $('#container');
-      for (const post of posts) {
-        const postHtml = `
-          <article>
-            <img src="${escape(post.photo)}" alt="">
-            <h3 class="title">${escape(post.title)}</h3>
-            <p class="body">${escape(post.body)}</p>
-            <footer>
-              <strong class="username">${escape(post.user.name)}</strong>
-              <img class="avatar" src="${escape(post.user.avatar)}" alt="">
-            </footer>
-          </article>
-          `
-        $postContainer.append(postHtml);
-        }
-      ```
-
-
-- to make a post, here are the things we did:
-  + add a listener on the form on submit
-  ```js
-  $('form').submit(function (event) {
-
-  })
-  ```
-
-  + within the handler, we prevented event default so that the form does not submit as it would normally.
-
-  ```js
-  event.preventDefault()
-  ```
-
-  + we extracted data from the form using `$(this).serialize()`
-  + make the post request
-    on post success (.then) reset the form AND rerender the posts (loadPosts())
-
-  + checkout complete code in `./demo/public/app.js` from line #11

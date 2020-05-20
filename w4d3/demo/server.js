@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { getRandomUser, getGif } = require('./data');
+const posts = require('./data/posts.json').slice(0, 15);
 
 const app = express();
 const port = process.env.PORT || 4337;
-const users = require('./data/users.json');
-const posts = require('./data/posts.json');
-// bodyParser.json()
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
@@ -14,12 +14,16 @@ app.get('/api/posts', (req, res) => {
   res.json(posts);
 });
 
-app.post('/api/posts', (req, res) => {
+app.post('/api/posts', async (req, res) => {
   const post = req.body;
-  post.user = users[post.userId]
+  if (!post.text) res.status(400).send('No text? Seriously? 🙄')
+
+  post.owner = getRandomUser();
+  post.image = await getGif(post.text);
+
   posts.push(post);
   console.log('new post saved', post);
-  res.status(201).send(post);
+  res.status(201).send();
 });
 
 app.listen(port, () => {
