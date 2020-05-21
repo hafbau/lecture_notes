@@ -6,7 +6,7 @@ AJAX with jQuery
 - [x] XMLHttpRequest (XHR) Object
 - [x] Use AJAX to retrieve data from an API
 - [x] Use jQuery to update the DOM with the retrieved data
-- [ ] Use AJAX to submit data to an API
+- [x] Use AJAX to submit data to an API
 
 
 

@@ -6,7 +6,18 @@ Hi crew, thanks for sitting through today's lecture on Responsive web design, fl
 
 [Video is here](https://zoom.us/rec/share/7MVcBIDx-0pJTp3y9hzmaL8mJbb9X6a81yBIqKILzkZM8vuxjnhCuLJ8IqV3scZ_)
 
-Notes below covers the things we talked about.
+## What we learned today
+
+- We learned about the awesome .scss where we could create variables, extend and mixins (like a function)
+- Flexbox especially about how to create proportions on chioldren elements with `flex` shorthand. To read up more on CSS tricks
+- Learned about media queries and how to set views based the device (medium e.g screen, print etc)
+- Always ... ALWAYS add the viewport meta tag for device-width and scaling.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+Notes below covers the things we talked about. No, not TigerKing!
 
 Also, I included some reference links to checkout. The links are themed by topics of today.
 
@@ -99,7 +110,8 @@ p.relative {
 }
 ```
 
-### Flexbox
+### Flexbox - review
+
 * [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) is a great tool for creating one-dimensional designs (eg. left-to-right, top-to-bottom)
 * We create **flex containers** by adding the property `display: flex;` or `display: inline-flex;` to an element
 * The direct children of the _flex container_ are referred to as **flex items**

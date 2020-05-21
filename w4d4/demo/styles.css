@@ -1,48 +1,67 @@
 * {
+  margin: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
-
-body {
-  margin: 0;
-}
-
 header {
-  height: 50px;
-  background-color: purple;
+  background-color: aliceblue;
+  height: 80px;
 }
 
-footer {
-  height: 30px;
-  background-color: yellow;
-}
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
   header {
-    background-color: limegreen;
+    background-color: hotpink;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
   }
+}
 
-  footer {
-    background-color: #006090;
+
+@media screen and (max-width: 560px) {
+  main > div:last-child {
+    display: none;
   }
+}
 
+@media screen and (max-width: 500px) {
+  header {
+    background-color: hotpink;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 501px) {
+  header {
+    background-color: brown;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
 }
 
 main {
-  border: 2px solid;
-  /* width: 300px; */
-  font-size: 36px;
+  width: 100%;
+  background-color: gray;
+  height: 500px;
+}
+main div {
+  height: 100px;
+  width: 30%;
+  min-width: 100px;
+  max-width: 200px;
+  background-color: rebeccapurple;
+  text-align: center;
+  font-size: 32px;
+  border: 2px solid white;
+  display: inline-block;
 }
 
-main div {
-  height: 50px;
-  width: 10%;
-  min-width: 300px;
-  margin: 10px;
-  line-height: 1;
-  text-align: center;
-  background-color: aqua;
-  display: inline-block;
+section > div {
+  font-size: 16px;
 }

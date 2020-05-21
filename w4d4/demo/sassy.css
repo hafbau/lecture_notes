@@ -1,57 +1,52 @@
-* {
-  box-sizing: border-box;
+section {
+  display: flex;
 }
 
-html {
-  font-size: 16px;
+.sub-section, .home-page {
+  flex-grow: 5;
+  line-height: 1.4;
 }
 
-body {
-  margin: 0;
+.top,
+.bottom {
+  display: flex;
 }
 
-.light, header {
-  color: black;
-  background-color: #fff;
+.home-page {
+  color: green;
+}
+.home-page img {
+  font-size: 20px;
+}
+.home-page section {
+  color: purple;
+}
+.home-page section span {
+  color: red;
+}
+.home-page section span:hover {
+  color: tomato;
+}
+.home-page section span.some-class {
+  padding: 200px;
 }
 
-header {
-  height: 15px;
+.two {
+  flex: 2;
+  text-decoration: underline;
 }
 
-footer {
-  height: 30px;
-  color: white;
-  background-color: #000000;
-  font-size: 230px;
+.one-half {
+  flex: 1.5;
+  text-decoration: underline;
+  font-size: 12px;
+  line-height: 13;
 }
 
-@media screen and (min-width: 500px) {
-  header {
-    background-color: limegreen;
-  }
-
-  footer {
-    background-color: #006090;
-  }
-}
-main {
-  border: 3px solid purple;
-  /* width: 300px; */
-  font-size: 36px;
-}
-main div {
-  height: 15px;
-  width: 10%;
-  min-width: 300px;
-  margin: 10px;
-  line-height: 1;
-  text-align: center;
-  background-color: aqua;
-  display: inline-block;
-}
-main div .nuclass {
-  color: papayawhip;
+img {
+  width: 200px;
+  border-radius: 5px;
+  border: 11px dashed white;
 }
 
 /*# sourceMappingURL=sassy.css.map */

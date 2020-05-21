@@ -1,2 +1,3 @@
-$height: 15px;
-$border: $height / 5 solid purple;
+$border-width: 11px;
+$border-style: dashed;
+$border: $border-width $border-style white;

@@ -142,6 +142,8 @@ $.post('https://jsonplaceholder.typicode.com/posts', formData);
 ```
 
 ### Useful Links
+
+* [You might not need jQuery](http://youmightnotneedjquery.com/)
 * [Blog post coining AJAX](https://web.archive.org/web/20160305044414/http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)
 * [Post/Redirect/Get (PRG)](https://en.wikipedia.org/wiki/Post/Redirect/Get)
 * [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming))
