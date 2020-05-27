@@ -1,14 +1,14 @@
 const hs = {
   name: 'Hafiz Suara',
-  slack: '@hafbau',
-  location: 'Calgary',
-  langs: ['JS', 'Ruby', 'Python', 'Java', 'C#', 'VB']
+  handle: '@hafbau',
+  location: 'Calgary'
 };
 
 const kv = {
-  name: 'K V',
-  slack: '@kvirani',
+  name: 'Khurram Virani',
   location: 'Vancouver',
+  handle: '@kvirani',
+  langs: ['Ruby', 'JS', 'Elixir', 'Python'],
 };
 
 const instructors = [
@@ -16,14 +16,25 @@ const instructors = [
   kv
 ];
 
-console.log('hs.name :>> ', hs.name);
-const varKey = 'slack'
-console.log('hs.name :>> ', hs['name']);
-console.log('hs.name :>> ', hs[varKey]);
-console.log('hs.name :>> ', hs['slack']);
+// for (const { name, location, handle } of instructors) {
+//   console.log(`${name} lives in ${location} and goes by ${handle}`);
+// }
 
-hs.name = 'Mikhail'
+// for (const instructor of instructors) {
+//   console.log(`${instructor.name} lives in ${location} and goes by ${handle}`);
+// }
 
-for (const instructor of instructors) {
-  console.log(`${instructor.name} lives in ${instructor.location} and goes by ${instructor.slack}`)
-}
+// // accessing the values
+hs.name
+hs['name']
+
+// setting the values
+const key = 'location'
+hs.name = 'H S'
+hs['name'] = 'The Best, seriously'
+
+hs.key = 'H S'
+hs['key'] = 'The Best, seriously'
+hs[key] = 'The Best, seriously'
+
+console.log(hs['hobby']);

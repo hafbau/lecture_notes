@@ -10,12 +10,14 @@ You folks are ... THE BEST! Thanks for that fun class today. We went over the ag
 - [x] Objects
 - [x] Classwork
 
+
 ### Take aways today
 
-- Understanding the difference between `for .. in` and `for .. loop`. A thing to research for some of us.
-- Learned about `this` within objects or in a function property of an object.
-- The importance of learning to practice. Focus on how the JS interpreter will read code - starting from executions points e.g. function calls
-- Primitives are copied by value while non-primitives (arrays / objects) are copied by reference
+- learned that the `for .. in` can loop through both arrays and objects. In case of an array, we get indexes while for objects we get the keys
+- defining a function (method) inside an object.
+- do not define a variable without the keywords const / let. Even if you can. Not sure why? Please speak to a mentor.
+- console.log extension and commenting hotkeys (`CMD + /`)
+- arrays and objects within other arrays are referenced rather copied by value. Primitives are copied by value while non-primitives (arrays / objects) are copied by reference
 - Arrays are good for grouping heterogenous data while objects are suited for data grouped around a peculiar business thing (object).
 
 [Breakout gist is here, courtesy of KV - thanks KV ;)](https://gist.github.com/hafbau/ffc28b276c621127c4c6b80e51e86e69)

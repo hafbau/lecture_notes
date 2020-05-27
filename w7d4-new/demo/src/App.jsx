@@ -9,8 +9,8 @@ function App() {
     <div className="App">
      {/* <HasTitle /> */}
      {/* <HasMousePosition /> */}
-     {/* <HasRequests /> */}
-     <HasInputs />
+     <HasRequests />
+     {/* <HasInputs /> */}
     </div>
   );
 }

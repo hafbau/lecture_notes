@@ -1,7 +1,7 @@
 W01D3 - Objects
 ===
 
-Hafiz Suara on April 29, 2020
+Hafiz Suara on May 27, 2020
 
 ## Today
 
@@ -11,8 +11,11 @@ Hafiz Suara on April 29, 2020
 ## Review [20m]
 
 - Reading Code
-- Functions
+  + working with legacy code
+  + refactoring and debugging
+  + using external library
 - Arrays
+- Functions
 
 ## Objects Intro [15m]
 
@@ -21,8 +24,8 @@ Hafiz Suara on April 29, 2020
 - Benefits of kv data structure?
 
 
-### Breakouts today
-- Share the gist in slack
+### Breakouts today [30m]
+- Share the gist in slack (https://gist.github.com/hafbau/ffc28b276c621127c4c6b80e51e86e69)
 - We take 15m
 - Come back when you're done
 - We'll do 10m takeup
@@ -30,8 +33,9 @@ Hafiz Suara on April 29, 2020
 
 ### Take aways today
 
-- Understanding the difference between for .. in and for .. loop.
-- learned about `this` within objects or in a function property of an object.
-- the importance of learning to practice. Focus on how the JS interpreter will read code - starting from executions points e.g. function calls
-- primitives are copied by value while non-primitives (arrays / objects) are copied by reference
-- Arrays are good for grouping heterogenous data while objects are suited for data grouped around a peculiar business thing (object).
+- learned that the `for .. in` can loop through both arrays and objects. In case of an array, we get indexes while for objects we get the keys
+- defining a function (method) inside an object.
+- do not define a variable without the keywords const / let. Even if you can. Not sure why? Please speak to a mentor.
+- console.log extension and commenting hotkeys (`CMD + /`)
+- arrays and objects within other arrays are referenced rather copied by value
+
