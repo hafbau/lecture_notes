@@ -3,30 +3,48 @@ Rails review
 
 Thanks crew! Here are some notes of things we covered today. As talked about, paying attention to the process pays *(see what I did there? 😉👉👉)*
 
-[code here](https://github.com/hafbau/lecture_notes/w10d1/mvd)
+[code here](https://github.com/hafbau/lecture_notes/w10d1/demo)
 
-[video link](https://us02web.zoom.us/rec/share/ucZHFYjK7nhOW6PryGX6U6kFWam5eaa82nIc-vcLykmJLHuLQtfKgMh7p_p5TMjs) *Only the first half here :(; hopefully will update the second part soon*
-
-## Today's Agenda
-
-- Lessons learned Ruby / Rails / Jungle
-- MVC rails
-- Scaffold a Rails API
-  + with a React frontend
+[previous video link](https://us02web.zoom.us/rec/share/ucZHFYjK7nhOW6PryGX6U6kFWam5eaa82nIc-vcLykmJLHuLQtfKgMh7p_p5TMjs)
 
 
 ### Some new things we learned
 
-- we can use jsx with rails
-- using the scaffold command
-- css library / component libraries save time in the frontend
+- Learned about the `rails g scaffold` command that generates controllers, models, views(if not using the api flag), migrations and tests
+- learned about scafolding a new rails app with the `--api` flag
+- react / rails sample configuration, where we separate the frontend from the backend completely
 
+
+## Today's Agenda
+
+- [x] Lessons learned Ruby / Rails / Jungle
+- [x] MVC rails
+- [x] Scaffold a Rails API
+  + [x] with a React frontend
+
+
+## Rails Lessons learned
+
+What lessons have we learned about Rails?
+
+- Rails is too magic... incantations. Mixed feelings around likeness
+  + Easy to pick up
+- Ruby code is easy to read. `do stuff unless condition`
+- ActiveRecord is awesome. Makes data layer a breeze to work with
+- Generators makes scaffolding a lot faster.
+- Migrations are interesting. Makes DB Management easy - ability to rollback is awesome.
+  + it makes database structure easily scalable.
+- Working with legacy code can be daunting but it also helps to boilerplate pre-existing code base
+
+## MVC Rails
+
+[!MVC Rails diagram](./mvc-rails.png)
 
 ## Creating a Rails / React stack for finals
 
-### Lets build airBnB but for home office sharing. [10m]
+### Lets build airBnB but for home office sharing.
 
-Name of our patent pending app: **officeSpace / fishSpace**
+Name of our patent pending app: **homoffBnb**
 
 #### User stories
 
@@ -34,10 +52,10 @@ Name of our patent pending app: **officeSpace / fishSpace**
 - book a space
 - list your space
 - remove your space
-- listing must have a title, photos, description, location, price, date posted, capacity, available_days
+- listing must have a title, photos, description, address, price, date posted, if pets are allowed, available_days
 - listings should have reviews
-- reviews have rating and comment
-- user will email, first name , last, password, avatar
+- reviews have rating and text content
+- user will email, first name , last name, password, avatar
 
 - We didn't get to build all the above, but the goal is that we're going to build a Rails API
     + And a React frontend; if we have enough time
@@ -48,7 +66,11 @@ Name of our patent pending app: **officeSpace / fishSpace**
 
 1. **Install rails:** 
 
-2. **Scaffold:**
+2. **Scaffold the rails API**
+
+  `rails new homoffBnb --api`
+
+  We use the `--api` flag to let rails know we won't be needing `erb` templates and that we'll be rendering `json`
 
 3. **Allow Cross Origin requests:** Put `gem 'rack-cors', :require => 'rack/cors'` in your `Gemfile`
 
@@ -62,20 +84,23 @@ In our app we had three entities:
 Altogether our API scaffold code looks like so:
 
 ```sh
+rails new homoffBnb-api --api
+cd homoffBnb-api
 rails generate scaffold user first_name last_name email password avatar
-rails generate scaffold listing title photos description:text location price:decimal user:references
+rails generate scaffold listing title photos description:text address price:decimal user:references
 rails generate scaffold review rating:integer content:text user:references listing:references
-
 ```
+
+> For fun, copy / paste the above snippet and watch the rails genie get to work!
 
 5. **Run the migration:** This will create the database and the tables. `rails db:migrate`
 
 ####> Note about the db
-> sqlite3 is the default installed database. We could change this to postgres.
+> sqlite3 is the default installed database. We could change this to postgres for example.
 
-7. Inspect the files starting from the `./config/routes.db` to the `./app/controllers` directory
+7. Inspect the files starting from the `./config/routes.db` to the `./app/controllers` directory to make appropriate changes as needed.
 
-8. **Scoping the API and nested resource:** Update the routes file (in [./config/routes.rb](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w10d1/kahoot/kahoot-api/config/routes.rb)) to:
+8. **Scoping the API and nested resource:** Update the routes file (in [./config/routes.rb](https://github.com/hafbau/lecture_notes/blob/master/w10d1/demo/api/homoffBnb-api/config/routes.rb)) to:
 
 ```rb
 Rails.application.routes.draw do
@@ -90,22 +115,21 @@ Rails.application.routes.draw do
 end
 ```
 
-9: **Start the server:** `rails server -b localhost` The default port is `3000`
+9: **Start the server:** `rails server -b 0.0.0.0` The default port is `3000`
 
 10: Seed some data. *See our seed in `db/seed.rb` of this code repo*. To run the seed, do `rake db:seed`
 
 API altogether (without the seeding):
 
 ```sh
-gem install rails
-rails new fishSpace --api
-cd fishSpace
+gem install rails # if you do not already have rails installed
+rails new homoffBnb-api --api
+cd homoffBnb-api
 rails generate scaffold user first_name last_name email password avatar
-rails generate scaffold listing title photos description:text location price:decimal user:references
+rails generate scaffold listing title photos description:text address price:decimal user:references
 rails generate scaffold review rating:integer content:text user:references listing:references
 rake db:migrate
 rails s -b 0.0.0.0
-
 ```
 
 ### Errors you might encounter:
@@ -161,15 +185,21 @@ You must use Bundler 2 or greater with this lockfile. (Bundler::LockfileError)
 
 ### The GUI
 
-1. **Scaffold new app:** In the folder `kahoot`, do `npx create-react-app kahoot-gui`
+1. **Scaffold new app:** In the folder `gui`, do `npx create-react-app gui`
 
 2. **Set up proxy:**
+
+- add `"proxy": "http://localhost:3000",` to your `package.json`
+- this prevents **CORS** error for development
+- also allows you to use relative urls in your `axios` requests.
+
+  - E.g. `axios.get('/api/v1/listings')`, instead of `axios.get('http://localhost:3000/api/v1/listings')`
 
 3. **Install other dependencies:**
 
 *google these libraries*
 
-[React Masonry CSS](https://github.com/paulcollett/react-masonry-css)
+- [React Masonry CSS](https://github.com/paulcollett/react-masonry-css)
 - [react-router](https://lmgtfy.com/?q=react-router)
 - [material-ui](https://lmgtfy.com/?q=material-ui)
 
@@ -177,7 +207,7 @@ You must use Bundler 2 or greater with this lockfile. (Bundler::LockfileError)
 
 What we did is create a `components` directory and a `screens` directory to keep things tidy.
 
-Don't overthink this, find a boilerplate you're familiar with .. er.. Scheduler?
+Don't overthink this, find a boilerplate you're familiar / comfortable with .. er.. Scheduler?
 
 Thanks folks!
 
