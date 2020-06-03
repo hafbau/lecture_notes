@@ -1,7 +1,7 @@
 Networking with TCP and HTTP
 ===
 
-Hey crew! Sorry for the late notes - Compass was having some issues earlier. Thank you for sitting through today's lecture and for your attentiveness.
+Hey crew! Sorry for taking extra 20mins of your time today! Yikes!. Thank you for sitting through today's lecture and for your engagement.
 
 Today, we talked about networking and machine to machine communication, focusing on TCP and HTTP.
 
@@ -10,41 +10,47 @@ Today, we talked about networking and machine to machine communication, focusing
 
 [Video will be here once uploaded](https://us02web.zoom.us/rec/share/-pFpILrN5GNJH53TtGLhZJ85T6Tqeaa823VMrKcIz007qICuWkJUFlaXA6MuAbEP)
 
-For a refresher of HTTP, have a look at the `http.md` file on the Github repo liked above.
+For a refresher of HTTP, have a look at the `http.md` file on the Github repo linked above.
 
 [For another instructor's take on the topic, checkout Travis' notes here](https://web.compass.lighthouselabs.ca/activities/153/lectures/3413)
 
 The below are notes I wrote in class; enjoy.
 
-### What we learned [5m]
+### New things we learned today
 
-- Understanding how machine-machine protocol gleans from human social interaction
-- IP is the internet protocol for addressing machines for example like the phone numbers while TCP caters to PORT for example like the ext. to the phone numbers
-- Basic structure of HTTP requests and responses
+- `.on` sets up listeners for an event. And the signature is `whatever.on('event', functionToHandleThisEvent)
+- nesting server actions to clients within `server.on('connection')` to ascertain connection to the particular client
+- how to create server and connection to server
+- setting encoding is important.
+- In tcp communications happen through the server, two clients don’t directly talk
+- understanding that the callback passed to `.on` method runs asynchronously and so order of execution will depend on the particular event being triggered (*async sockets* in Brian M's words)
 
 ---
 
 ## Agenda today
 
-- [ ] Quick Review
-- [ ] Protocol
-- [ ] TCP
-- [ ] HTTP
+- [x] Quick Review
+- [x] Protocol
+- [x] TCP
+- [-] HTTP (we didn't cover this in depth; don't worry there's plenty of time.)
 
-### Review Async with Settimeout [10m]
+### Review Async with Settimeout
 
 
-### Hafiz's Hot tips for networking
+### About networking
+
+Hafiz's hot tips for networking
 
 - Introduce yourself
-- figure out if you speak their lang
+- Figure out you speak their language
 - handshake
-- make mutual to be their
-- listen while the speak and hopefully they repay the favour
-- end it cleanly
+- ensure they're woke and interested
+- find out what they do
+- take turns speaking / listening
+- end cleanly
 
 
-### What is a protocol? [10m]
+### What is a protocol?
 
 * It's a formalized way to communicate.
     - Spoken language is a communications protocol, as is body language! But we're getting philosophical here...
@@ -73,7 +79,7 @@ The below are notes I wrote in class; enjoy.
 - Applications that communicate over a network
 - Answer to requests on a specific IP address and port
 - For every IP, only **one** server can be listening on a given port
-    + You **can** have multiple servers listening on different ports on the same IP
+    + You **can** have multiple servers listening on **different ports** on the **same IP**
 - Different protocols use different ports
     + HTTP: 80 / HTTPS: 443
     + FTP: 21
@@ -133,6 +139,8 @@ The below are notes I wrote in class; enjoy.
 
 **HTTP clients**
 
+Examples of HTTP clients are:
+
 - Browsers
 - curl
 - postman
@@ -144,6 +152,7 @@ The below are notes I wrote in class; enjoy.
 
 
 **Requests** is made from clients and composed of:
+
 - url
 - method (GET POST PUT DELETE) CRUD / BREAD
 - headers
@@ -155,7 +164,11 @@ The below are notes I wrote in class; enjoy.
 - headers
 - body
 
-**Http Demo** [10m]
+**Http Demo**
+
+*(we did not get to this in class)*
+
+> Have a look in the `4_http.js` to see sample http request made to lighthouselabs.ca
 
 ### References
 
