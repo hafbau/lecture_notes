@@ -1,40 +1,31 @@
 // COPY PASTE A STUDENT'S SURVEY SOLUTION
-// Mikhail's survey.js
+// Rob's survey.js
 const readline = require('readline');
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
+rl.question('What\'s your name? Nicknames are also acceptable :)', (name) => {
+    rl.question('What\'s an activity you like doing? ', (activity) => {
+        rl.question('What do you listen to during that activity? ', (listen) => {
+            rl.question('Which meal is your favourite (eg: dinner, brunch, etc.) ', (meal) => {
+                rl.question('What\'s your favourite thing to eat for that meal? ', (food) => {
+                    rl.question('Which sport is your absolute favourite?) ', (sport) => {
+                        rl.question('What is your superpower? ', (power) => {
 
-let name = '';
-let activity = '';
-let music = '';
-let meal = '';
-let food = '';
-let sport = '';
-let superpower = '';
+                            console.log(`cool ${name}`, `You like to partake in ${activity}`, `My fave meal is: ${meal}.`, `My absolute fave sport is : ${sport}.`, `My superpower is : ${power}.`);
 
-rl.question("What's your name? ", (answer) => {
-    name = answer;
-    rl.question("What's an activity you like doing? ", (answer) => {
-        activity = answer;
-        rl.question("What do you listen to while doing that? ", (answer) => {
-            music = answer;
-            rl.question("Which meal is your favourite (eg: dinner, brunch, etc.)? ", (answer) => {
-                meal = answer;
-                rl.question("What's your favourite thing to eat for that meal? ", (answer) => {
-                    food = answer;
-                    rl.question("Which sport is your absolute favourite? ", (answer) => {
-                        sport = answer;
-                        rl.question("What is your superpower? In a few words, tell us what you are amazing at! ", (answer) => {
-                          superpower = answer;
-                          console.log(`${name} loves listening to ${music} while ${activity}, devouring ${food} for ${meal}, prefers ${sport} over any other sport, and is amazing at ${superpower}.`);
-                          rl.close();
+                            rl.close();
                         });
-                      });
+                    });
                 });
             });
         });
     });
 });
+console.log('all done');
+// Which meal is your favourite (eg: dinner, brunch, etc.)
+// What's your favourite thing to eat for that meal?
+// Which sport is your absolute favourite?
+// What is your superpower? In a few words, tell us what you are amazing at!

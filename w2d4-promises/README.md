@@ -10,10 +10,13 @@ _Video recording is being uploaded, I'll update once complete_
 
 ### What we learned
 
+- For promises, the return of first function gets put into next .then statement (chaining promises)
+- Saw the promises version of the `readline` library i.e. `readline-promise`
 - Promises have three states (pending, resolve, rejected)
-- They are valid JS objects. Created from a `Promise` blueprint different from object literals e.g. `{}`
+- Learned about method chaining; especially as it relates to promises.
 - We could include both `.then` and `.catch` calls in a `promise chain`
 - reviewed difference between async callbacks vs synchronous callbacks.
+- They are valid JS objects. Created from a `Promise` blueprint different from object literals e.g. `{}`
 
 
 ## Agenda Today
@@ -27,9 +30,9 @@ _Video recording is being uploaded, I'll update once complete_
 - [x] Intro to promises a.k.a would it not be cool, specifications [10m]
 - [x] Refactor Classwork Agile to Promises [15m]
 - [x] More Promises [20m]
-      + Error handling
-      + Make a promise
-      + Promise.all / Promise.race
+      + [x] Error handling
+      + [x] Promise.all / Promise.race
+      + [-] Make a promise
 - [x] [Quiz](https://gist.github.com/hafbau/d6a023b7aff7f0dae80c11d4c23ec026)[10m]
 
 
@@ -47,7 +50,7 @@ Lets review by reading the [Agile manifesto](https://agilemanifesto.org/) from d
 
 *Wouldn't it be cool to clean this ~hell~ waterfall up? Ideas?*
 
-We discussed an hypothetical `.then` (or `.next`?) function to deal with callback hell and these are specs we came up with:
+We discussed an hypothetical `.then` function to deal with callback hell and these are specs we discussed:
 
   - should take the return value of the current task and pass it to the next one
   - will have to be given (pass in) a function to execute next
@@ -207,6 +210,8 @@ Promise.race(promises)
 
 
 ### Creating Promises
+
+> *We did not get this in class; we did see it in quiz though*
 
 - A new promise can be created using the `Promise` class
 - The `Promise` constructor takes a callback that accepts two functions as arguments:

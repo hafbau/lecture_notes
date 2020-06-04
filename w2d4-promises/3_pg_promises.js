@@ -7,22 +7,39 @@ const rlp = readline.createInterface({
 
 const answers = [];
 
-const promise1 = rlp.questionAsync('What do you think of Node.js? ');
+const promise1 = rlp.questionAsync('What\'s your name? Nicknames are also acceptable :) ')
+// console.log('\npromise1 :>> ', promise1);
 
-const chain = promise1
-.then((resolvedP1) => {
-  answers.push(resolvedP1);
-  return rlp.questionAsync("What's your name? ");
+promise1
+// Promises are Thenable
+.then((name) => {
+  answers.push(name)
+  return rlp.questionAsync('What\'s an activity you like doing? ');
 })
-.then((somefn) => {
-  answers.push(somefn)
-  console.log('somefn', somefn)
-  return rlp.questionAsync("What's an activity you like doing?");
+.then((activity) => {
+  answers.push(activity)
+  return rlp.questionAsync('What do you listen to during that activity? ');
 })
-.then((answer3) => {
-  console.log('answer3', answer3)
-  return 'Lucas wuz ere'
+.then((listen) => {
+  answers.push(listen)
+  return rlp.questionAsync('Which meal is your favourite (eg: dinner, brunch, etc.) ');
 })
-.then(result => console.log('result', result))
+.then((meal) => {
+  answers.push(meal)
+  return rlp.questionAsync('What\'s your favourite thing to eat for that meal? ');
+})
+.then((food) => {
+  answers.push(food)
+  return rlp.questionAsync('Which sport is your absolute favourite?) ');
+})
+.then((food) => {
+  answers.push(food)
+  return rlp.questionAsync('What is your superpower? ');
+})
+.then(superpower => {
+  answers.push(superpower)
+  console.log('anwers :>> ', answers);
+  rlp.close(); 
+})
 
-console.log('all done', chain);
+// console.log('all done promise');
