@@ -1,0 +1,44 @@
+<h1>THE JOKE SHOW PAGE</h1>
+<article style="margin: 0px auto; width: 600px;">
+    <!-- Joke has: -->
+    <!-- an image -->
+    <img
+        style="width: 600px; height: 320px"
+        src="<%= joke.image %>"
+        alt=""
+    >
+    <!-- the text of the Joke -->
+    <p
+        style="margin-top: 60px;"
+    >
+        <%= joke.text %>
+    </p>
+    <em><%= commentCount %> comments</em>
+    <!-- footer actions: -->
+    <!-- Edit and delete -->
+    <footer
+        style="padding-top: 20px; margin-top: 20px; border-top: 0.5px solid gray;"
+    >
+        <a href="#">Edit</a>
+        <a href="#">Delete</a>
+    </footer>
+
+    <section>
+        <!-- comments section:
+        title
+        form to create new comment -->
+        <h2>Comments section</h2>
+        <!-- list of all the comments -->
+
+        <section>
+            <h4>All comments here</h4>
+
+            <% for(const comment of comments) { %>
+                <article>
+                    <p><%= comment.text %></p>
+                    <em><%= comment.userID %> 0 days ago</em>
+                </article>
+            <% } %>
+        </section>
+    </section>
+</article>

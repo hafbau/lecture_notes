@@ -1,78 +1,98 @@
 Component based UI with React
 ===
 
-<!-- Hafiz -->
 
-## About you [5m]
+## Agenda Today
+- [ ] Review
+- [ ] Passing Props
+- [ ] Passing children with JSX
+- [ ] Fragments
+- [ ] ES6 review in tandem
+    + [ ] destructuring
+- [ ] Handling DOM events
+- [ ] Managing state
+- [ ] Looping Pattern
+    + [ ] map
+- [ ] Conditional rendering
 
-- Imposter syndrome
-- Race to complete
-- Mentorship approach
-- Managing stress
+### Review
 
-## About me [5m]
+> What would this log to console??
 
-- An alumni
-- Accent is Nigerian
-- I'm funny
+**takeaways?**
 
-## About Lecture [5m]
+- data can be created internally or passed in as an argument
+- internally generated data can be called STATE
+- external data are called PROPS
+- state from parent can be props to a child
+- to allow a child component to modify a parent's state; the parent can pass the child a function props that the child can call.
 
-- Zoom interactions (e.g. Raise hands, yes/no) please
-- Talk
-- Chat for polling
+#### Why React?
 
-## Agenda
+- it more about performance
+- gives component based architecture
 
-- [ ] Review Reading - What is react and why? [10m]
-- [ ] Design to Components - Design breakdown excercise. [10m]
-  - [ ] Tweeter
-      + Nav
-        - Logo ??
-        - NewTweetToggler
-      + Profile
+#### Rules of JSX / React
 
-      + TweetsContainer
-        - Tweet
-      + TweetForm
-        - Composer
-        - ErrorComponent
+- Gotta close those tags
+- No HTML comments
+- camelCase for most DOM attributes
+- Child must close before Parent component
+- JS logic has to be wrapped in curly braces `{}`
+- className instead of class attribute on DOM elements
+- JSX expression limits us to returning a single node.
+- Use PascalCase for React components, or lowercase for HTML elements.
+- React components have to return something or `null`. `undefined` is NOT a valid return type
 
-- [ ] [React.pdf - component hierarchy design and data model.] [15m]
+## Demos
 
-```js
-function showCond(greeting) {
-  return greeting
-}
+### 1. Props and state - intro
 
-function greetVlad(condition) {
-  const greeting = condition == 'gucci' ? 'Hey sunshine'
-  showCond(greeting)
-  return `${greeting} my buddy`
-}
-```
+[codesandbox - props](https://codesandbox.io/s/props-ig1c6?file=/src/index.js)
 
-#### Demo
-
-- [ ] CRA
-`npx create-react-app empty_cra_storybook`
-- [ ] Storybook
-- [ ] Tweeter React
-  
-  Patterns to talk about
-
-    - [ ] Passing Props
-    - [ ] Looping Pattern
-    - [ ] Passing children with JSX
-    - [ ] Fragments
-    - [ ] ES6 review in tandem
-        + [ ] destructuring
-        + [ ] map
-    - [ ] Handling DOM events
-    - [ ] Managing state
-    - [ ] Conditional rendering
+- component 'always' get passed an argument which is an object. By conventions its called `props`
 
 
-## References
+### 2. Props and state - more
 
-- Atomic Design (google stuff)
+
+Questions??
+
+### 3. More children - the input child
+
+**Fork current codesandbox**
+
+- Goal is to:
+  + have internal state (onChange - controlled input)
+  + pass update to parent on button pressed
+
+
+
+### 4. Tweeter Demo
+
+- Goal rebuild Tweeter in React
+  + Starting with create-react-app
+  + Using Storybook
+  + and then coupling
+
+- what is CRA and what command will be run
+  + it makes starting react project easy and preconfigured
+    `npx create-react-app yourappname` then `cd yourappname`
+
+- what is storybook and what command
+  + it allows us to develop component in isolation
+  + independently reusable components; think of it as some form of test:
+    - guarantee that component does what it needs to do.
+  + run `npx -p @storybook/cli sb init`
+
+  Tweeter Components
+  - Nav
+    + Logo
+    + ToggleButton
+
+  - Header / ProfilePx
+
+  - Composer
+
+  - TweetsList
+    + Tweet

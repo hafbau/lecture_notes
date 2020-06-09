@@ -1,9 +1,0 @@
-<h1>EDITING A PARTICULAR BLOG</h1>
-
-<form action="/blogs/<%= blogID %>" method="POST">
-    <p>Title</p>
-    <input name="title" type="text" value="<%= blog.title %>">
-    <p>Content</p>
-    <input name="content" type="text" value="<%= blog.content %>">
-    <input type="submit" value="Edit Blog" />
-</form>

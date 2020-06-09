@@ -15,6 +15,7 @@ _Video recording is being uploaded, I'll update once complete_
 - Promises have three states (pending, resolve, rejected)
 - Learned about method chaining; especially as it relates to promises.
 - We could include both `.then` and `.catch` calls in a `promise chain`
+- learned about running promises in parallel while keeping the values in order (Promise.all)
 - reviewed difference between async callbacks vs synchronous callbacks.
 - They are valid JS objects. Created from a `Promise` blueprint different from object literals e.g. `{}`
 

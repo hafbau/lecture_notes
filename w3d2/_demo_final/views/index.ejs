@@ -1,0 +1,18 @@
+<h3>Why no jokes :( <a href="/jokes/new">add joke?</a></h3>
+<section>
+    <% for (const jokeID in jokes) { %>
+        <% const joke = jokes[jokeID] %>
+    <article style="box-shadow: 0px 0px 5px 0px gray; border-radius: 4px; padding: 20px 40px; margin: 40px auto; max-width: 600px;">
+        <p style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><%= joke.text %></p>
+        <em style="color: gray; font-size: 0.8rem"><%= getComments(jokeID).length %> comments</em>
+        <footer style="padding-top: 20px; margin-top: 20px; border-top: 0.5px solid gray;">
+            <a href="/jokes/<%= jokeID %>">VIEW</a>
+            <a href="/jokes/<%= jokeID %>/edit">EDIT </a>
+            <form action="/jokes/<%= jokeID %>/delete" method="POST">
+                <button>DELETE</button>
+            </form>
+        </footer>
+    </article>
+    <% } %>
+</section>
+
