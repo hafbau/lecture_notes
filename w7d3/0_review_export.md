@@ -16,11 +16,22 @@ export default Component;
 import { Component } from './Component';
 
 // 2.
-import MyComponent from './Component';
+import Wowza from './Component';
 
 // 3.
 import Component from './Component';
 ```
+
+
+
+
+
+
+
+
+
+
+
 
 ### named
 
@@ -46,7 +57,23 @@ export {
   TheComp
 }
 
-// export default () => console.log('defaule')
+// export default () => console.log('default')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Which is wrong
 // in anotherFile.js in the same directory as someFile.js

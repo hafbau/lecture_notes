@@ -21,7 +21,28 @@ import Component from './Component';
 const ParentComponent = () => {
   return <Component thing="is a fin" />
 }
+
+export default ParentComponent;
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 2.
 
@@ -30,13 +51,15 @@ const ParentComponent = () => {
 // in Component.js
 // ... imported dependencies properly;
 
-// const Component = ({prop1, prop2, prop3}) => {
-const Component = (props) => {
-  console.log(props.prop2)
-  return props.prop3 ? 'yay' : 'nay'
+// const Component = (prop1, prop2, prop3) => {
+  // const Component = (props) => {
+  const Component = ({ prop1, prop2, prop3 }) => {
+  console.log(prop2) // true
+  return prop3 ? 'yay' : 'nay'
 }
 
 export default Component;
+//
 // in ParentComp.js
 // ... imported dependencies properly;
 import Component from './Component';
