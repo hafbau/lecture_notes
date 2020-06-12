@@ -2,6 +2,10 @@
 
 Hey crew, thanks again for today! I'm grateful for the engagement.
 
+[Please look in the github repo for the code we wrote today.](https://github.com/hafbau/lecture_notes/tree/master/w7d3)
+
+[I've also added another Instructor's (Dominic from Montreal) notes here for perspective.](https://github.com/DominicTremblay/w7d3-react-lecture)
+
 Here are the notes I took in class:
 
 ### What we learned today?
@@ -12,10 +16,6 @@ Here are the notes I took in class:
 
 - Oh and the side effect of vaccines?? Getting to grow old ;P cheesy I know!
 
-
-Please look in the github repo for the code we wrote today.
-
-I've also added another Instructor's (Dominic from Montreal) notes here for perspective.
 
 ---
 
