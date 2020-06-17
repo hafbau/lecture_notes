@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   BrowserRouter as Router,
   Link,
@@ -6,41 +6,41 @@ import {
   Switch,
   useRouteMatch,
 } from "react-router-dom";
-import Product from './Product';
+import Product from "./Product";
 
 const products = [
-  { id: 1, name: 'My Precious' },
-  { id: 2, name: 'Fire Duckie' },
-  { id: 3, name: 'Magic Wand' },
-  { id: 4, name: 'Giant Map' }
-]
+  { id: 1, name: "Robotic Hairy Feet" },
+  { id: 2, name: "Product 2" },
+  { id: 3, name: "Product 3" },
+  { id: 4, name: "Product 4" },
+];
 export default function Products() {
   const match = useRouteMatch();
-  
+
+  console.log("match :>> ", match);
   return (
     <Router>
-      <h3>
-        Products Page
-      </h3>
+      <h2>Products</h2>
 
-      <div style={{ width: 600, display: 'flex', justifyContent: 'space-evenly'}}>
-        {products.map(p => <Link key={p.id} to={`${match.url}/${p.id}`}>{p.name}</Link>)}
-      </div>
-
-      {/* <Switch>
-        <Route path={`${match.url}/3`}>
-          <Product />
-        </Route>
-        <Route><h4>Choose your product</h4></Route>
-      </Switch> */}
+      <nav>
+        {products.map((product) => (
+          <Link key={product.id} to={`${match.url}/${product.id}`}>
+            {product.name}
+          </Link>
+        ))}
+        {/* <Link to="/products/1">Product 1</Link>
+        <Link to="/products/2">Product 2</Link>
+        <Link to="/products/3">Product 3</Link>
+        <Link to="/products/4">Product 4</Link>
+        <Link to="/products/5">Product 5</Link> */}
+      </nav>
 
       <Switch>
-        <Route path={`${match.url}/:id`}>
+        <Route path={`${match.path}/:id`}>
           <Product />
         </Route>
-        <Route><h4>Choose your product</h4></Route>
+        <Route>Choose your product!</Route>
       </Switch>
-      
     </Router>
-  )
+  );
 }

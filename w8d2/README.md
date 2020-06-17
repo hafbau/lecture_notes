@@ -9,19 +9,18 @@ Hey gang, thanks for an awesome class today. Here are the things we covered:
 
 ### Things we learned today
 
-- Styled Components looks pretty awesome. Dynamic styling is fun.
-- How useRef actually works. The name `ref` for `reference` makes more sense, since it is a reference to an object that persists through rerenders.
-- The process of creating routes seemed super easy (x2).
-- The ability to easily pass state values across components without props drilling.
+- use useRef when you have a stale state problem. It helps bind to the current value.
+- using react-router for routing in react; especially using `useRouteMatch` to generate flexible nested routes.
+- learned about component shopping with component ui libraries and customizing examples from their website.
 
 
 ### Agenda today
 - [x] Basic Routing (with React router)
 - [x] Advanced Routing (with React router)
 - [x] Styled Components
-- [x] `useContext`
-- [x] `useRef`
 - [x] Component Libraries
+- [x] `useRef`
+- [-] `useContext`
 
 
 

@@ -1,32 +1,33 @@
-import React from 'react';
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-} from "react-router-dom";
-import Home from './Home';
-import Products from './Products';
-
+import React from "react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import Products from "./Products";
+import Home from "./Home";
 
 const Routing = () => {
   return (
     <Router>
       <h1>Routing</h1>
+
       <nav>
-        <Link to="/">Home</Link> 
-        <Link to="/products">Products</Link> 
-        <Link to="/about">About</Link> 
-        <Link to="/policy">Privacy Policy</Link>
+        <Link to="/">menu 1</Link>
+        <Link to="/artist/products">menu 2</Link>
+        <Link to="/about">menu 3</Link>
+        <Link to="/privacy">menu 4</Link>
+
+        <Switch>
+          <Route path="/artist/products">
+            <Products />
+          </Route>
+
+          <Route path="/about">
+            <h2>About</h2>
+          </Route>
+          <Route path="/privacy">
+            <h2>Privacy</h2>
+          </Route>
+          <Route path="/" component={Home} />
+        </Switch>
       </nav>
-      <Switch>
-        <Route path='/products' component={Products} />
-        <Route path='/about'><h3>About Page</h3></Route>
-        <Route path='/policy'><h3>Policy Page</h3></Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
     </Router>
   );
 };

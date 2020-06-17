@@ -1,15 +1,12 @@
 import React from 'react';
-import ChildOne from './ChildOne';
-import ChildTwo from './ChildTwo';
-import { MessageContextProvider } from './MessageContext';
+// import ChildOne from './ChildOne';
+// import ChildTwo from './ChildTwo';
 
 const UseContext = () => {
   return (
-    <MessageContextProvider>
-      <h1>Use Context</h1>
-      <ChildOne />
-      <ChildTwo />
-    </MessageContextProvider>
+    <h1>Use Context</h1>
+      // <ChildOne />
+      // <ChildTwo />
   )
 };
 

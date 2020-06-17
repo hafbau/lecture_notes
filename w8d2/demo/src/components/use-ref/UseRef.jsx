@@ -1,21 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
+import { useState } from 'react';
 
 const UseRef = () => {
   const myRef = useRef();
+  console.log('myRef :>> ', myRef);
 
-  const clickHandler = () => {
-    // Implement me
-    myRef.current.value = 'Cameron is soo cool, eh?';
-  };
-
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0)
+  // const clickHandler = () => {
+  //   // Implement me
+  //   myRef.current.value = 'This is your value now'
+  // };
   const countRef = useRef();
-
   countRef.current = counter;
-  
   const showAlert = () => {
-    // any async ooperations
-    setTimeout(() => alert(countRef.current), 3000)
+    setTimeout(() => {
+      alert(`Counter is currently ${countRef.current}`)
+    }, 3000)
   }
 
   return (

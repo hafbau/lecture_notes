@@ -2,17 +2,17 @@ AJAX with jQuery
 ===
 
 ## Agenda Today
-- [x] AJAX
-- [x] XMLHttpRequest (XHR) Object
-- [x] Use AJAX to retrieve data from an API
-- [x] Use jQuery to update the DOM with the retrieved data
-- [x] Use AJAX to submit data to an API
+- [ ] AJAX
+- [ ] XMLHttpRequest (XHR) Object
+- [ ] Use AJAX to retrieve data from an API
+- [ ] Use jQuery to update the DOM with the retrieved data
+- [ ] Use AJAX to submit data to an API
 
 
 
 ## AJAX
 
-long polling
+Long polling
 
 Asynchronous Javascript and XML
 
@@ -47,8 +47,4 @@ Using AJAX
 
 ## What we've learrned
 
-- We learned how to fetch data from an API server using jQuery
-- We learned front end sanization of users input.
-- A show of using XMLHTTPRequests and as it compares to jQuery Ajax. jQuery is syntactically nicer and also `polyfills` browsers quirks.
-- XML and JSON are both data serialization formats used for data transfer. They are also both key/value pair datastructure
 

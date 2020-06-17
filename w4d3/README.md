@@ -8,7 +8,7 @@ Hey crew, thanks again for today's class. Today we used AJAX, to `GET` and `POST
 [Video will be here when upload is done](#)
 
 
-## What we learrned
+## What we learrned (from the last time I did this lecture)
 
 - We learned how to fetch data from an API server using jQuery
 - We learned front end sanization of users input.
@@ -39,7 +39,7 @@ npm start
     + make ajax get request to the server
 
     ```js
-    $.getJSON('/api/posts)
+    $.getJSON('/api/posts')
     .then(posts => {
       // first step done; second step begins
     })
