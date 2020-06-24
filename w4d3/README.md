@@ -117,7 +117,7 @@ _This uses a slightly different variation of the `$.ajax({})` input (settings) o
 $.ajax({
     url: 'https://jsonplaceholder.typicode.com/posts',
     method: 'GET',
-    dataType: "json",
+    dataType: 
     success: (data) => {
         console.log('this request succeeded and here\'s the data', data);
     },

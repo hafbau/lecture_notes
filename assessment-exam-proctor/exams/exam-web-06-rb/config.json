@@ -1,0 +1,15 @@
+{
+  "duration": 120,
+  "questionPoints": {
+    "00": 10,
+    "01": 10,
+    "02": 10,
+    "03": 20,
+    "04": 20,
+    "05": 20,
+    "06": 10
+  },
+  "supportingFiles": [],
+  "type": "rb",
+  "linting": false
+}

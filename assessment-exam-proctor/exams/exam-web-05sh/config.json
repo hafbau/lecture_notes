@@ -1,0 +1,17 @@
+{
+  "duration": 120,
+  "questionPoints": {
+    "00": 5,
+    "01": 10,
+    "02": 15,
+    "03": 20,
+    "04": 20,
+    "05": 20,
+    "06": 4,
+    "07": 4,
+    "08": 2
+  },
+  "supportingFiles": ["GETTING_STARTED.md", "test.sqlite3", "reset.sql"],
+  "type": "sql",
+  "linting": false
+}

@@ -16,25 +16,32 @@ const instructors = [
   kv
 ];
 
-// for (const { name, location, handle } of instructors) {
-//   console.log(`${name} lives in ${location} and goes by ${handle}`);
+// for(const instructor of instructors) {
+//   console.log(`${instructor.name} lives in ${instructor.location} with handle ${instructor.handle}`);
 // }
 
-// for (const instructor of instructors) {
-//   console.log(`${instructor.name} lives in ${location} and goes by ${handle}`);
+
+// for(const instructor of instructors) {
+//   const { name, location, handle } = instructor
+//   console.log(`${name} lives in ${location} with handle ${handle}`);
 // }
 
-// // accessing the values
-hs.name
-hs['name']
-
-// setting the values
+// ACCESSING PROPERTIES IN AN OBJECT
 const key = 'location'
-hs.name = 'H S'
-hs['name'] = 'The Best, seriously'
 
-hs.key = 'H S'
-hs['key'] = 'The Best, seriously'
-hs[key] = 'The Best, seriously'
+// console.log('hs.key :>> ', hs.key);
+// console.log('hs[key] :>> ', hs[key]);
+// console.log('hs[key] :>> ', hs['location']);
+// console.log('hs["key"] :>> ', hs["key"]);
+// console.log('hs.name :>> ', hs.name);
 
-console.log(hs['hobby']);
+// console.log('hs["name"] :>> ', hs["name"]);
+
+// SETTING PROP/VAL IN AN OBJECT
+console.log('hs :>> ', hs);
+hs.key = 'THIS IS LITERALLY K E Y';
+hs[key] = 'This leaves us guesing what key???'
+hs['location'] = 'Im changing location to nothing sensible'
+
+hs["key"] = 'the last value of the key K E Y'
+console.log('hs :>> ', hs);

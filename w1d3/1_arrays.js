@@ -1,31 +1,22 @@
-const arr = [1, 2, 3, 4, 'hello'];
+const arr = [1, 2, 3]
 
-// console.log('arr[2] :>> ', arr[2]);
+arr.push('hello, bye')
 
-arr.push('yo')
+arr[9] = 'kv'
 
-// console.log('arr :>> ', arr);
-
-arr.push(4, 'five')
-
-
-arr[20] = 'al';
-
-arr[0] = arr[7];
-// console.log('arr :>> ', arr);
+arr[0] = arr[9]
 
 arr[0] = 'abc'
 
-// console.log('arr :>> ', arr);
+arr[8] = [4, 5, 6]
 
-arr[6] = [9, 8, 7]
+arr[2] = arr[8]
 
-arr[1] = arr[6]
+// [4, 5, 6].push('wowzers')
+arr[2].push('wowzers!')
 
-arr.length // 21
+arr[8].push([9000])
 
-arr[1].push('you cant see me');
-// [9, 8, 7].push('you cant see me');
-//22
+// arr[8][0]
 
-console.log('arr :>> ', arr);
+console.log('arr :>> ', arr)

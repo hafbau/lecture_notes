@@ -23,6 +23,7 @@ You folks are ... THE BEST! Thanks for that fun class today. We went over the ag
 [Breakout gist is here, courtesy of KV - thanks KV ;)](https://gist.github.com/hafbau/ffc28b276c621127c4c6b80e51e86e69)
 
 [The files we worked on (commented with notes) are here.](https://github.com/hafbau/lecture_notes/w1d3)
+[Checkout solution of the classwork here.](https://github.com/hafbau/lecture_notes/w1d3/classwork)
 
 [Video will be here, when upload is ready](#)
 

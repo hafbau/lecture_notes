@@ -1,7 +1,7 @@
 // Example instructors with 3 key pieces of info.
 
 const hs = ['Hafiz Suara', '@hafbau', 'Calgary'];
-const kv = ['Khurram Virani', '@kvirani', ['Ruby', 'JS', 'Elixir', 'Python'], 'Vancouver'];
+const kv = ['Khurram Virani', '@kvirani', ['JS', 'Ruby', 'Elixir', 'Python'], 'Vancouver'];
 
 const instructors = [
   hs,
@@ -9,21 +9,5 @@ const instructors = [
 ];
 
 for(const instructor of instructors) {
-  const name = instructor[0]
-  const handle = instructor[1]
-  const location = instructor[2]
-  console.log(`${name} lives in ${location} and goes by ${handle}`);
+  console.log(`${instructor[0]} lives in ${instructor[2]} with handle ${instructor[1]}`);
 }
-
-// {
-//   const name = instructor[0]
-//   const handle = instructor[1]
-//   const location = instructor[2]
-//   console.log(`${name} lives in ${location} and goes by ${handle}`);
-// }
-// {
-//   const name = instructor[0]
-//   const handle = instructor[1]
-//   const location = instructor[2]
-//   console.log(`${name} lives in ${location} and goes by ${handle}`);
-// }

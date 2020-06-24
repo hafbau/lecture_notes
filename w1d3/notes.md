@@ -1,7 +1,13 @@
 W01D3 - Objects
 ===
 
-Hafiz Suara on May 27, 2020
+Hafiz Suara on June 24, 2020
+
+## Agenda
+- [ ] Check ins and Review
+- [ ] Arrays review
+- [ ] Objects
+- [ ] Classwork
 
 ## Today
 
@@ -11,16 +17,26 @@ Hafiz Suara on May 27, 2020
 ## Review [20m]
 
 - Reading Code
-  + working with legacy code
-  + refactoring and debugging
-  + using external library
+  + It helps understanding other people's solution to your problems when  researching (STO)
+  + It helps with debugging (by segmenting code to blocks)
+  + It helps with working with legacy code
+  + it helps with code reviews
+  + Might help with others presenting code
 - Arrays
-- Functions
 
 ## Objects Intro [15m]
 
 - Not yet doing OOP
 - Using them as key-value (kv) datastructure
+```js
+{
+  key: value,
+  key1: value,
+  key2: value,
+  key3: value,
+  key4: value,
+}
+```
 - Benefits of kv data structure?
 
 
@@ -29,13 +45,4 @@ Hafiz Suara on May 27, 2020
 - We take 15m
 - Come back when you're done
 - We'll do 10m takeup
-
-
-### Take aways today
-
-- learned that the `for .. in` can loop through both arrays and objects. In case of an array, we get indexes while for objects we get the keys
-- defining a function (method) inside an object.
-- do not define a variable without the keywords const / let. Even if you can. Not sure why? Please speak to a mentor.
-- console.log extension and commenting hotkeys (`CMD + /`)
-- arrays and objects within other arrays are referenced rather copied by value
 
