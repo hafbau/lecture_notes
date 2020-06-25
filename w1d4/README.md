@@ -8,8 +8,7 @@ Please leave your feedback -  thanks ;)
 - [x] Review Object / functions: Challenge
 - [x] Functions as values
 - [x] Callbacks
-- [x] forEachInReverse exercise
-- [x] map
+- [x] forEachObj (not in original agenda, but we did it!)
 
 ## Things we learned summary in our words
 
@@ -24,8 +23,7 @@ Please leave your feedback -  thanks ;)
 
 [Code we worked on are here.](https://github.com/hafbau/lecture_notes/tree/master/w1d4)
 
-The two classworks are in `0_object_challenge.js` and the `breakout/` folder.
-
+> We did not do this as classwork in class, but I want to add it here
 The forEachInReverse breakout question is also here:
 [forEachInReverse](https://gist.github.com/hafbau/895ce779fd3b74d51941159a7bf341ae)
 

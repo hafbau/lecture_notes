@@ -4,27 +4,22 @@ W1D4 with Hafiz Suara
 
 ## Intro [5m]
 
-- Bootcamp life
+### What is Software
+Logic Syntax Data
 
-- Software parts
- + Logic
- <!-- + Syntax -->
- + Data
+Behaviour = Logic Syntax
++
+Data
 
 ## Agenda Today
 
-- [x] Review Object / functions: Challenge
-- [x] Functions as values
-- [x] Callbacks
-- [x] forEachInReverse exercise
-- [x] map
+- [ ] Review Object / functions: Challenge
+- [ ] Functions as values
+- [ ] Callbacks
+- [ ] forEachInReverse exercise
 
-## Object Challenge [20m]
+## Object Challenge (Code together) [20m]
 
-- Paste question on slack
-- Put teams in breakrooms
-- 10mins to get done
-- 8mins to review (1min p grp)
 
 ## functions as values [20m]
 
@@ -53,17 +48,9 @@ No need to fork and/or clone this gist. Just copy / paste it into your VSCode
 Decide on who will present the answer when called upon for your group
 
 
-## map [15m]
-
 ## Questions [5m]
 
 ## Things we learned [10m]
 
-- forEach helps us abstract away the repeatable looping logic
-- Higher order functions are functions that takes in other functions as arguments
-- We can use inline callbacks especially if it's a one-time use case; otherwise it's better to define the callback function separately
-- Functions are first class citizens and can be treated as any other values in javascript
-- const / let are block scoped and are not hoisted
-- Callback functions caan have any number of arguments for example forEach passes in the index of the current item and the original array
 
 Thank you till next time!

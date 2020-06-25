@@ -3,8 +3,12 @@ const greet = function(name) {
   return 'Hello ' + name;
 }
 
-console.log(greet);
+const surrogateFunk = greet
 
-const saySomfn = greet;
+console.log(surrogateFunk('Graham'))
 
-console.log(saySomfn);
+// console.log('greet :>> ', greet);
+// console.log('greet() :>> ', greet());
+
+// first class citizens in JS
+// const bs = if (true) console.log('not work')
