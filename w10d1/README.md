@@ -10,9 +10,11 @@ Thanks crew! Here are some notes of things we covered today. As talked about, pa
 
 ### Some new things we learned
 
-- Learned about the `rails g scaffold` command that generates controllers, models, views(if not using the api flag), migrations and tests
-- learned about scafolding a new rails app with the `--api` flag
-- react / rails sample configuration, where we separate the frontend from the backend completely
+- How to repurpose material ui (component library in general) in our app
+- Learned about routes scoping in rails. In particular we scoped all api endpoints with '/api/v1' including versioning
+- We also learned the difference between scoping and nested resources.
+- Using faker to create dynamic (random) seed data.
+- Learned about `--api` flag to `rails new` which scaffolds json endpoints rather than rendering views
 
 
 ## Today's Agenda
@@ -44,7 +46,7 @@ What lessons have we learned about Rails?
 
 ### Lets build airBnB but for home office sharing.
 
-Name of our patent pending app: **homoffBnb**
+Name of our patent pending app: **officeBnB || deskStack**
 
 #### User stories
 

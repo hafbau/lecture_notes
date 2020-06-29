@@ -7,18 +7,14 @@ Rails review
 - [] Anatomy of a Rails App - a.k.a MVC [10m]
 - [] Build something with Rails API ..er .. and react?
 
-### Rails Lessons learned
+### Rails / Jungle Lessons learned
 
 What lessons have we learned about Rails?
-
-- Rails is too magic... incantations. Mixed feelings around likeness
-  + Easy to pick up
-- Ruby code is easy to read. `do stuff unless condition`
-- ActiveRecord is awesome. Makes data layer a breeze to work with
-- Generators makes scaffolding a lot faster.
-- Migrations are interesting. Makes DB Management easy - ability to rollback is awesome.
-  + it makes database structure easily scalable.
-- Working with legacy code can be daunting but it also helps to boilerplate pre-existing code base
+- learned about MVC and how to interact with it ... not sure how feels about it.
+- Like the fact that rails makes scaffolding easy
+- taking over a legacy code base without totally losing our minds
+  + pattern recognition
+- not conflating ruby with rails. Rails has the magic, ruby has the gem.
 
 ### Lets build airBnB but for home office sharing. [10m]
 
@@ -33,7 +29,7 @@ Any Questions?? Let's begin!
 
 ### Rails API [40m]
 
-Name: homoffBnB
+Name??: officeBnB // deskStack //
 
 - user should be able to see all listings
 - user should be able to list their home office
@@ -41,28 +37,43 @@ Name: homoffBnB
 - listings can have review
   + reviews will have ratings
   + reviews can have text content
+- listings must have at least on photo
 
 #### Entities
 
 - User
   + first_name, last_name, email, password, avatar
 
+  ```bash
+  rails generate scaffold user first_name last_name email password avatar
+  ```
+
 - Listings
-  + title, photos, description, address, price, post_date, pets_allowed, owner_id
-  `rails generate scaffold listing title photos description address price:decimal pets_allowed:boolean user:references`
+  + title, photos, description, location, price, post_date, is_pets-allowed?, owner_id
+    
+  ```bash
+  rails generate scaffold listing title photos location:text description:text price:decimal is_pets_allowed?:boolean user:references
+  ```
 
 - Reviews
-  + rating, content, author_id, property_id
-  `rails g scaffold review content:text rating:integer user:references listing:references`
+  + rating, content, listing_id, author_id
+    
+  ```bash
+  rails generate scaffold review rating:integer content:text listing:references user:references
+  ```
 
 ### The GUI
 
 
 ### Learned something?
 
-- Learned about the `rails g scaffold` command that generates controllers, models, views(if not using the api flag), migrations and tests
-- learned about scafolding a new rails app with the `--api` flag
-- react / rails sample configuration, where we separate the frontend from the backend completely
+- How to repurpose material ui (component library in general) in our app
+- Learned about routes scoping in rails. In particular we scoped all api endpoints with '/api/v1' including versioning
+- We also learned the difference between scoping and nested resources.
+- Using faker to create dynamic (random) seed data.
+- Learned about `--api` flag to `rails new` which scaffolds json endpoints rather than rendering views
+
+
 
 
 ### To rollback a scaffold
