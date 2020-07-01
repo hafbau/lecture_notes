@@ -3,27 +3,27 @@ Networking with TCP and HTTP
 
 ## Agenda today
 
-- [ ] Quick Review
-- [ ] Protocol
-- [ ] TCP
-- [ ] HTTP
+- [x] Quick Review
+- [x] Protocol
+- [x] TCP
+- [-] HTTP
 
-### Review Async with Settimeout [10m]
+### Review Async with Settimeout
 
 
 ### About networking
 
-Hafiz's hot tips for networking
+Hafiz's hot tips about networking
 
 - Introduce yourself
-- Figure out you speak their language
-- handshake
-- ensure they're woke and interested
-- find out what they do
-- take turns speaking / listening
+- Figure out if speaking the same lang
+- Handshake
+- figure out if they're not asleep
+- start a conversation
+- one speak, the other listens
 - end cleanly
 
-### What is a protocol? [10m]
+### What is a protocol?
 
 - it governs human communications as well machine to machine communication
 
@@ -40,8 +40,8 @@ Hafiz's hot tips for networking
     - **SSH** -> _Secure Shell_
     - ...and hundreds of others
 
-*Thing to google*
-- OSI model
+**Things to google**
+- OSI Model
 - TCP/IP model
 
 **Servers** [5m]
@@ -56,16 +56,14 @@ Hafiz's hot tips for networking
     + SMTP: 25
     + SSH: 22
 
-ports >1043 < ~65,535 can be randomly assigned
 
-
-### TCP - Demo [30m]
+### TCP - Demo
 
 - Goal is to create a console chat application. This include a server code and client code.
 
+Data flow for our chat app, if I were sending a message to Henry, is like: `Me -> server -> Henry`
 
-
-### HTTP [20m]
+### HTTP
 
 * It's the way browsers talk to servers
 * It's very simple: just some text structured in a specific way
@@ -78,32 +76,22 @@ ports >1043 < ~65,535 can be randomly assigned
 
 
 **Requests** is made from clients and composed of:
-- url
-- method
-- body?
-- header?
+
 
 **Responses** is from the server to a particular request. And includes:
 
-- status
-- header
-- body
 
 **Http Demo** [10m]
 
 ### New things we learned today
 
-- `.on` sets up listeners for an event. And the signature is `whatever.on('event', functionToHandleThisEvent)
-
-- nesting server actions to clients within `server.on('connection')` to ascertain connection to the particular client
-
-- how to create server and connection to server
-
-- setting encoding is important.
-
-- In tcp communications happen through the server, two clients don’t directly talk
-
-- understanding that the callback passed to `.on` method runs asynchronously and so order of execution will depend on the particular event being triggered (*async sockets* in Brian M's words)
+- setting up a TCP server with `net` module from node
+- how to setup server to listen on a port aka how to open a shoe a store
+- server and client need encoding to be set before communication
+- setting up data listeners for both server and client
+- how server responds to client's message by writing to the connection object
+- server listens on `connection` while client listens for on `connect`
+- Hafiz's hot tips for verbal communication and how it translates to machine2machiune protocol
 
 ### References
 

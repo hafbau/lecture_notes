@@ -1,26 +1,26 @@
 // What should the client do?
-// 1. establish (create) connection
-// 2. establish language of communication
-// 3. confirm you're being listened to
-// 4. send a message to the server
-// 5. listen for message
+// 1. create a connection
+// 2. talk / listen
 
-// 1. establish (create) connection
-const net = require('net');
-const client = net.createConnection({
-  port: 4337,
-  host: 'localhost'
+const net = require('net')
+
+const conn = net.createConnection({
+  host: 'localhost',// 127.0.0.1
+  port: 4337
 });
 
-client.setEncoding('utf-8');
+conn.setEncoding('utf-8')
 
-client.on('connect', () => console.log('Im connected to the server'))
+conn.on('data', (data) => {
+  console.log('I gat dat from serva >>', data)
+})
 
-client.on('data', (message) => {
-  console.log('message from Server :>> ', message);
+conn.on('connect', () => {
+  console.log('Im soo connected')
 })
 
 // process.stdin.setEncoding('utf-8')
-process.stdin.on('data', (typedStuff) => {
-  client.write(typedStuff)
+process.stdin.on('data', (typedDataByUser) => {
+  conn.write(typedDataByUser)
+  // console.log('typedDataByUser :>> ', typedDataByUser);
 })

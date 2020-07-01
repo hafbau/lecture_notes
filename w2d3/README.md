@@ -1,14 +1,14 @@
 Networking with TCP and HTTP
 ===
 
-Hey crew! Sorry for taking extra 20mins of your time today! Yikes!. Thank you for sitting through today's lecture and for your engagement.
+Hey crew! Sorry for taking extra 10mins of your time today and the tech issues! Yikes!. Thank you for sitting through today's lecture and for your engagement.
 
 Today, we talked about networking and machine to machine communication, focusing on TCP and HTTP.
 
 
 [The code we wrote is here](https://github.com/hafbau/lecture_notes/tree/master/w2d3)
 
-[Video will be here once uploaded](https://us02web.zoom.us/rec/share/-pFpILrN5GNJH53TtGLhZJ85T6Tqeaa823VMrKcIz007qICuWkJUFlaXA6MuAbEP)
+[Video will be updated once uploaded](https://us02web.zoom.us/rec/share/-pFpILrN5GNJH53TtGLhZJ85T6Tqeaa823VMrKcIz007qICuWkJUFlaXA6MuAbEP)
 
 For a refresher of HTTP, have a look at the `http.md` file on the Github repo linked above.
 
@@ -20,10 +20,14 @@ The below are notes I wrote in class; enjoy.
 
 - `.on` sets up listeners for an event. And the signature is `whatever.on('event', functionToHandleThisEvent)
 - nesting server actions to clients within `server.on('connection')` to ascertain connection to the particular client
-- how to create server and connection to server
-- setting encoding is important.
 - In tcp communications happen through the server, two clients don’t directly talk
-- understanding that the callback passed to `.on` method runs asynchronously and so order of execution will depend on the particular event being triggered (*async sockets* in Brian M's words)
+- setting up a TCP server with `net` module from node
+- how to setup server to listen on a port aka how to open a shoe a store
+- setting encoding is important. server and client need encoding to be set before communication
+- setting up data listeners for both server and client
+- how server responds to client's message by writing to the connection object
+- server listens on `connection` while client listens for on `connect`
+- Hafiz's hot tips for verbal communication and how it translates to machine2machiune protocol
 
 ---
 

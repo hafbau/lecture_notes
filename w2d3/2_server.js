@@ -1,36 +1,34 @@
 // What should happen in the server?
-// 1. server has to exist
-// 2. listening for communication/connection (handshake)
-// 2a. set lang of communication
-// 3a. Listen for message from clients
-// 3. respond to requests - by broadcasting message to connected clients
-// 4. handle disconnection gracefully
+// 1. Server has to exist i.e get a shop
+// 2. listen for connection on a host and a port i.e put a sign outside your door that you're open for business
+  // 2a. on client connection, we say welcome e.g. when customer walks in our shoe shop we say can I help with something
 
-
-// 1. server has to exist
 const net = require('net');
+
 const server = net.createServer();
 
 const allTheClients = [];
+server.on('connection', (client) => {
+  // console.log('yaysss our first client!')
+  allTheClients.push(client);
+  client.setEncoding('utf-8')
+  client.write('Welcome, to Jumanji 🥁')
 
-server.on('connection', (serverEndOfTinCan) => {
-  console.log('serverEndOfTinCan connected')
-  allTheClients.push(serverEndOfTinCan);
   console.log('allTheClients :>> ', allTheClients);
-  serverEndOfTinCan.setEncoding('utf-8')
-  // server listens
-  serverEndOfTinCan.on('data', (message) => {
-    console.log('message from client:>> ', message);
-    allTheClients.forEach((client) => {
-      if (client !== serverEndOfTinCan) {
-        client.write(message)
+
+  client.on('data', (data) => {
+    // broad this message to all connected client
+    console.log('data :>> ', data);
+    for(const existingClient of allTheClients) {
+      if (existingClient !== client) {
+        existingClient.write(data)
       }
-    })
+    }
   })
 
-  // server talks
-  serverEndOfTinCan.write('Welcome to Jumanji 🥁🥁🥁🥁🥁')
-
 })
-// 2. listening for communication/connection (handshake)
-server.listen(4337, () => console.log('server listeninig on port 4337'))
+
+// console.log('allTheClients External :>> ', allTheClients);
+server.listen(4337, () => { console.log('The server listening on port', 4337)});
+
+console.log('just another consolelog')

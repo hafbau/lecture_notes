@@ -38,6 +38,35 @@ What lessons have we learned about Rails?
   + it makes database structure easily scalable.
 - Working with legacy code can be daunting but it also helps to boilerplate pre-existing code base
 
+
+• use `===` instead of `==`
+
+• improve variable names
+
+• indent properly
+
+• don't use `if` without `{}`
+
+• the second `if` statement can be `else if`, and the third an `else`
+
+• remove unnecessary comments
+
+• scope variables using const or let (accordingly)
+
+• add whitespace around operators (`+=`)
+
+• use `for...of` instead of for
+
+• user functional expression instead of declaration (`const foo = function() { ... }`)
+
+• don't use a function before it's declared
+
+• ideally use function expressions (`const print = function()`)
+
+• have the print function receive the board as a parameter
+
+• have the function convert to string, but not `console.log` (easier to test, reuse)
+
 ## MVC Rails
 
 [!MVC Rails diagram](./mvc-rails.png)
