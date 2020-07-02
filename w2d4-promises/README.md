@@ -8,14 +8,12 @@ Hey crew, thanks for another awesome class today. Hopefully today was as fun for
 _Video recording is being uploaded, I'll update once complete_
 
 
-### What we learned
+### Quick summary
 
 - For promises, the return of first function gets put into next .then statement (chaining promises)
-- Saw the promises version of the `readline` library i.e. `readline-promise`
 - Promises have three states (pending, resolve, rejected)
 - Learned about method chaining; especially as it relates to promises.
 - We could include both `.then` and `.catch` calls in a `promise chain`
-- learned about running promises in parallel while keeping the values in order (Promise.all)
 - reviewed difference between async callbacks vs synchronous callbacks.
 - They are valid JS objects. Created from a `Promise` blueprint different from object literals e.g. `{}`
 
@@ -32,9 +30,9 @@ _Video recording is being uploaded, I'll update once complete_
 - [x] Refactor Classwork Agile to Promises [15m]
 - [x] More Promises [20m]
       + [x] Error handling
-      + [x] Promise.all / Promise.race
-      + [-] Make a promise
-- [x] [Quiz](https://gist.github.com/hafbau/d6a023b7aff7f0dae80c11d4c23ec026)[10m]
+      + [x] Make a promise
+      + [-] Promise.all / Promise.race
+- [-] [Quiz](https://gist.github.com/hafbau/d6a023b7aff7f0dae80c11d4c23ec026)[10m]
 
 
 ### Review
@@ -51,7 +49,7 @@ Lets review by reading the [Agile manifesto](https://agilemanifesto.org/) from d
 
 *Wouldn't it be cool to clean this ~hell~ waterfall up? Ideas?*
 
-We discussed an hypothetical `.then` function to deal with callback hell and these are specs we discussed:
+Imagine if there was an hypothetical `.then` function to deal with callback hell, what would it do:
 
   - should take the return value of the current task and pass it to the next one
   - will have to be given (pass in) a function to execute next
@@ -103,6 +101,50 @@ functionOneReturningPromise()
   - .then returns a (new) promise
   - Whatever our .then callback returns, will be fed into a subsequent .then callback
   - However, if we return a promise, then it actually passes the results/resolution of the promise into the next callback
+
+### Creating Promises
+
+> *We did not get this in class; we did see it in quiz though*
+
+- A new promise can be created using the `Promise` class
+- The `Promise` constructor takes a callback that accepts two functions as arguments:
+  - `resolve`: This callback is called when the operation has finished successfully
+  - `reject`: This callback is called if the operation failed (usually with the error)
+
+```js
+const myPromise = new Promise((resolve, reject) => {
+  // do something and resolve when finished or reject with an error
+});
+
+myPromise.then((data) => {
+  // do something with the resolved promises data
+});
+```
+
+Example for the `fs.readFile` method:
+
+```js
+const promiseP1 = new Promise((resolve, reject) => {
+  fs.readFile('data/p1.txt', 'utf-8', (err, file) => {
+    if (err) {
+      reject(err);
+    } else {
+      // no err, there should be file!
+      resolve(file);
+    }
+  })
+})
+
+promiseP1
+  .then((p1) => {
+    console.log('p1 :', p1);
+    // do other stuff
+  })
+  .catch((err) => {
+    console.log('Bad error :', err);
+  })
+
+```
 
 
 ### Error Handling
@@ -210,53 +252,9 @@ Promise.race(promises)
 ```
 
 
-### Creating Promises
-
-> *We did not get this in class; we did see it in quiz though*
-
-- A new promise can be created using the `Promise` class
-- The `Promise` constructor takes a callback that accepts two functions as arguments:
-  - `resolve`: This callback is called when the operation has finished successfully
-  - `reject`: This callback is called if the operation failed (usually with the error)
-
-```js
-const myPromise = new Promise((resolve, reject) => {
-  // do something and resolve when finished or reject with an error
-});
-
-myPromise.then((data) => {
-  // do something with the resolved promises data
-});
-```
-
-Example for the `fs.readFile` method:
-
-```js
-const promiseP1 = new Promise((resolve, reject) => {
-  fs.readFile('data/p1.txt', 'utf-8', (err, file) => {
-    if (err) {
-      reject(err);
-    } else {
-      // no err, there should be file!
-      resolve(file);
-    }
-  })
-})
-
-promiseP1
-  .then((p1) => {
-    console.log('p1 :', p1);
-    // do other stuff
-  })
-  .catch((err) => {
-    console.log('Bad error :', err);
-  })
-
-```
-
 ### Useful Links
 
 - [MDN: Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/prototype)
 - [Wikipedia: Futures and promises](https://en.wikipedia.org/wiki/Futures_and_promises)
 
-Thank you till next time!
+Thank you till next time 🤘🏿!

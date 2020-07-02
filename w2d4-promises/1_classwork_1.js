@@ -10,7 +10,7 @@ fs.readFile('data/p1.txt', 'utf8', (err, p1) => {
     }
     finalDoc += p1 + '\n'
 
-    fs.readFile('data/p23.txt', 'utf8', (err, p2) => {
+    fs.readFile('data/p2.txt', 'utf8', (err, p2) => {
         if (err) {
             return console.log('YIKES. Failed to read p2: ', err);
         }
