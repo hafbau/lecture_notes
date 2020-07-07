@@ -1,19 +1,19 @@
-import React from 'react'
-import doubleCaret from './angle-double-down.png'
+import React from 'react';
 import './nav.css'
 
-const Nav = () => {
+export const Nav = () => {
   return (
     <nav>
       <span className="logo">tweeter</span>
       <span className="write-tweet">
-        <strong>Write</strong>a new tweet
+        <strong>Write</strong>
+        a new tweet
       </span>
       <div className="arrow-bounce">
-        <img src={doubleCaret} />
+        <img src="/images/angle-double-down.png" />
       </div>
     </nav>
-  );
-};
+  )
+}
 
 export default Nav;

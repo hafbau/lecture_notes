@@ -1,23 +1,25 @@
-<h3>Why no jokes :( <a href="/jokes/new">add joke?</a></h3>
-<section>
-    Jokes so empty, its funny
-    <% for(const jokeID in locals.jokes) {%>
-        <% const joke = locals.jokes[jokeID] %>
-        <article
-            style="box-shadow: 0px 0px 5px 0px gray; border-radius: 4px; padding: 20px 40px; margin: 40px auto;
-            max-width: 600px;"
-        >
-            <p><%= joke.text %></p>
-            <em><%= users[joke.userID] %></em>
+<%- include('partials/_styles.ejs') %>
 
-            <footer>
-                <a href="/jokes/<%= jokeID %>">View</a>
-                <a href="#">Edit</a>
-                <form action="/jokes/<%= jokeID %>/delete" method="POST">
-                    <button>Delete</button>
-                </form>
-            </footer>
-        </article>
-    <% } %>
+<h3>
+    Why no jokes :( <a href="/jokes/new">add joke?</a>
+</h3>
+
+<section>
+    <% for (const jokeID in ourJokes) { %>
+        <% const joke = ourJokes[jokeID] %>
+    <article class="article-summary">
+        <p class="text"><%= joke.text %></p>
+
+        <em><%= getComments(jokeID).length %> comments</em>
+
+        <h5><em>jovially by: <%= users[joke.userID] %></em></h5>
+        
+        <footer>
+            <a href="/jokes/<%= jokeID %>">View</a>
+            <a href="/jokes/<%= jokeID %>/edit">Edit</a>
+            <button>Delete</button>
+        </footer>
+    </article>
+   <% } %>
 </section>
 

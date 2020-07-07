@@ -8,7 +8,7 @@ const ParentFunk = () => {
   }
 
   ChildFunk({
-    parentStateVar: parentStateVar,
+    text: parentStateVar,
     changeText: changeParentStateVar
   });
 

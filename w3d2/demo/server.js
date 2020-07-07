@@ -1,108 +1,93 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const {
+    users,
+    jokes,
+    comments,
+    generateRandomID,
+    getComments
+} = require('./dataHelpers')
 
 const app = express()
 const PORT = 3000
-const bodyParser = require('body-parser')
 
+// whenever we call response.render('blah'),
+// look for 'blah.ejs' in `views` folder
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true })) // this gives us req.body
 
-const users = {
-    'rnd-user-1': 'Tara Bull',
-    'rnd-user-2': 'Al Kohorlich',
-    'rnd-user-3': 'DJ Khaled'
-}
+// Server 2 server request:
+// this server is making a request to google.com's server
+// request.get('google.com', (err, response, body) => {
+    
+// })
 
-const jokes = {
-    'rnd-joke-1': {
-        id: 'rnd-joke-1',
-        text: 'If a child refuses to sleep during nap time, are they guilty of resisting a rest?',
-        image: 'https://parade.com/wp-content/uploads/2019/12/Corny-Jokes-5.jpg',
-        userID: 'rnd-user-1',
-    },
-    'rnd-joke-2': {
-        id: 'rnd-joke-2',
-        text: 'How do you make holy water? You boil the hell out of it.',
-        image: 'https://i.pinimg.com/474x/bd/59/5b/bd595b70360350a143cfb76cd15f1e42--mom-jokes-puns-jokes.jpg',
-        userID: 'rnd-user-2',
-    }
-}
-
-const comments = [
-    {
-        id: 'rnd-comment-1',
-        text: 'rad',
-        jokeID: 'rnd-joke-1',
-        userID: 'rnd-user-2',
-    },
-    {
-        id: 'rnd-comment-2',
-        text: 'ha ha ha',
-        jokeID: 'rnd-joke-1',
-        userID: 'rnd-user-3',
-    },
-    {
-        id: 'rnd-comment-3',
-        text: 'not funny 🙄',
-        jokeID: 'rnd-joke-2',
-        userID: 'rnd-user-3',
-    }
-]
-
-const getComments = (jokeID) => comments.filter(comment => comment.jokeID === jokeID)
-
-app.get('/', (request, response) => {
-    console.log('got to root path')
-    response.send('So jokes!!')
+// Express Middlewares: Routing + Controllers?
+app.get('/jokes', (request, response) => {
+    response.render('index', { ourJokes: jokes, getComments: getComments, users: users })
 })
 
-app.get('/jokes', (req, res) => {
-    res.render('index', {
-        jokes: jokes,
-        // users: users
-        users
-    })
-})
-
-app.get('/jokes/new', (req, res) => {
-    res.render('new_joke')
-})
-
-app.get('/jokes/:id', (req, res) => {
-    const jokeID = req.params.id
-    const joke = jokes[jokeID]
-    const thisJokeComments = getComments(jokeID);
-    const templateVars = {
-        joke: joke,
-        commentCount: thisJokeComments.length,
-        comments: thisJokeComments
-    }
-    res.render('show_joke', templateVars)
+app.get('/jokes/new', (request, response) => {
+    response.render('new_joke')
 })
 
 app.post('/jokes', (req, res) => {
-    console.log('hafiz is here', req.body)
-
+    // Goal: Create Joke - save a new joke in our data storage
+    // 1. get the submitted body of data from the request
+    const dataFromUser = req.body
+    console.log('dataFromUser', dataFromUser)
+    // 2. create the representation of a joke
     const newJoke = {
-        id: Math.random().toString(16).slice(2, 8),
-        text: req.body.text,
-        image: req.body.image,
-        userID: 'rnd-user-3'
+        id: generateRandomID(),
+        text: dataFromUser.text,
+        image: dataFromUser.image,
+        userID: 'rnd-user-1'
     }
+    // 3. add that newly formed joke to our data store
+    jokes[newJoke.id] = newJoke
 
-    jokes[newJoke.id] = newJoke;
-
-    console.log('jokes', jokes)
-    res.redirect('/');
+    // 4. respond to the request
+    res.redirect('/jokes')
 })
 
-app.post('/jokes/:id/delete', (req, res) => {
-    const jokeID = req.params.id;
 
-    delete jokes[jokeID];
-    res.redirect('/jokes');
+app.get('/jokes/:jokeID/edit', (request, response) => {
+    const theJokeID = request.params.jokeID
+    const jokeData = jokes[theJokeID]
+    response.render('edit_joke', { joke: jokeData })
 })
 
+app.post('/jokes/:jokeID', (req, res) => {
+    // Goal: Create Joke - save a new joke in our data storage
+    // 1. get the submitted body of data from the request
+    const editFromUser = req.body
+    console.log('editFromUser', editFromUser)
+    // 2. create the representation of a joke
+    const theJokeID = req.params.jokeID
+    const jokeData = jokes[theJokeID]
+
+    const updatedJoke = {
+        id: jokeData.id,
+        text: editFromUser.text,
+        image: editFromUser.image,
+        userID: jokeData.userID
+    }
+    // 3. add that newly formed joke to our data store
+    jokes[updatedJoke.id] = updatedJoke
+
+    // 4. respond to the request
+    res.redirect('/jokes/' + theJokeID)
+})
+
+app.get('/jokes/:jokeID', (request, response) => {
+    // Goal is to show a page with full details about a joke
+    // 1. Identify the joke that is being requested
+    const theJokeID = request.params.jokeID
+    const jokeData = jokes[theJokeID]
+
+    // 2. Render a joke template (ejs) with the joke data
+    response.render('show_joke', { joke: jokeData, getComments: getComments, users: users })
+})
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Listening on ${PORT}`)

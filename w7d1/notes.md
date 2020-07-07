@@ -19,30 +19,29 @@ Component based UI with React
 
 > What would this log to console??
 
-**takeaways?**
+**takeaways**
+- data can be created internally and / or passed in as arguments
+- internal data are called STATE
+- external data are PROPS
+- state for a parent can be the props to a child
+- to allow a child function (Component) to modify parent's state, the parent will need to pass in a function with which the child will change the state
 
-- data can be created internally or passed in as an argument
-- internally generated data can be called STATE
-- external data are called PROPS
-- state from parent can be props to a child
-- to allow a child component to modify a parent's state; the parent can pass the child a function props that the child can call.
 
 #### Why React?
 
-- it more about performance
-- gives component based architecture
+- its more about performance (https://reactjs.org/docs/rendering-elements.html#react-only-updates-whats-necessary)
+- uses component based architecture
 
 #### Rules of JSX / React
-
+- No HTML comments allowed
+- JS expression has to be wrpped in `{}`
+- No chaining elements must return one root
 - Gotta close those tags
-- No HTML comments
-- camelCase for most DOM attributes
-- Child must close before Parent component
-- JS logic has to be wrapped in curly braces `{}`
-- className instead of class attribute on DOM elements
-- JSX expression limits us to returning a single node.
-- Use PascalCase for React components, or lowercase for HTML elements.
-- React components have to return something or `null`. `undefined` is NOT a valid return type
+- Parent can't close before a child
+- use className instead of class attribute
+- Most html attributes are cameCased
+
+**what do we remember?**
 
 ## Demos
 
@@ -85,14 +84,13 @@ Questions??
     - guarantee that component does what it needs to do.
   + run `npx -p @storybook/cli sb init`
 
-  Tweeter Components
+  Tweeter Components??
+
   - Nav
     + Logo
-    + ToggleButton
-
-  - Header / ProfilePx
-
+    + ToggleComposerButton
+  - ProfilePx
   - Composer
-
   - TweetsList
-    + Tweet
+    - Tweet
+  

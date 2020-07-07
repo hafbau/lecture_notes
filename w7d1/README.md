@@ -1,15 +1,17 @@
 Component Based UI with React
 ===
 
-Hey crew, thanks for sitting through today's lecture. Sorry for rushing the last bits through! Please check the `./demo_tweeter` directory for a more complete version of our demo.
+Hey crew, thanks for sitting through today's lecture! Please check the `./react_tweeter` directory for a more complete version of our demo.
 
-[Videos for today is here:](https://zoom.us/rec/share/49AsMIDo_HhOT52Qq1GBS6R5IIfaaaa8hCUW-vUKzxwZGgkckKqW-FfHjvt2Chpv?startTime=1586795150000)
+[Past videos for today is here:](https://zoom.us/rec/share/49AsMIDo_HhOT52Qq1GBS6R5IIfaaaa8hCUW-vUKzxwZGgkckKqW-FfHjvt2Chpv?startTime=1586795150000)
 
 [Here's the code on github](https://github.com/hafbau/lecture_notes/tree/master/w7d1)
 
+[codesandbox - props](https://codesandbox.io/s/props-ig1c6?file=/src/index.js)
+
 The below is my past note for today's lecture.
 
-- [Live demo of react is in `demo_tweeter` folder](https://github.com/hafbau/lecture_notes/tree/master/w7d1/demo_tweeter)
+- [Live demo of react is in `react_tweeter` folder](https://github.com/hafbau/lecture_notes/tree/master/w7d1/react_tweeter)
 - [amyTweeter folder contains Amy's Tweeter project clone](https://github.com/hafbau/lecture_notes/tree/master/w7d1/amyTweeter)
 - [amyTweeterGUI folder](https://github.com/hafbau/lecture_notes/tree/master/w7d1/amyTweeterGUI) is an experiment to build component based UI that is separated from its back end, using jQuery and no react. This is only to drive home the fact that React is not just about modularization / composition with components.
 
@@ -45,19 +47,6 @@ Here are some of the points we talked about:
 - [x] CRA
 - [x] Storybook
 - [x] Tweeter React
-  
-  Patterns to talk about
-
-    - [x] Passing Props
-    - [x] Looping Pattern
-    - [x] Passing children with JSX
-    - [x] Fragments
-    - [x] ES6 review in tandem
-        + [x] destructuring
-        + [x] map
-    - [x] Handling DOM events
-    - [x] Managing state
-    - [x] Conditional rendering
 
 #### Resources
 

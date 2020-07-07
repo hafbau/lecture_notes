@@ -1,9 +1,12 @@
 import React from 'react';
-import Nav from './Nav';
+import { action } from '@storybook/addon-actions';
+import MyNav from './Nav';
+
 
 export default {
-  title: 'Nav',
-  component: Nav,
+  title: 'MyNav',
+  component: MyNav,
 };
 
-export const Default = () => <Nav />;
+export const Default = () => <MyNav>Hello MyNav</MyNav>;
+

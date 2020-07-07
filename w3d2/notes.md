@@ -12,13 +12,16 @@ a.k.a BREAD for jokes
 
 Let's create a dad jokes website where users can:
 
-- Browse a list of dad jokes
-- Read details of a particular dad joke
-- Edit (Update) a particular dad joke
-- Add (Create) a dad joke
-- Destroy (Delete) a dad particular joke
+- Browse through a list of jokes
+- Add our own good dad joke
+- Read more detail about a joke
+  - read comments on a particular joke
+  - add your own comment
+- Edit a dad joke
+- Delete a joke
 
-- Users can comment on a particular joke?
+Uniform **Resource** Locator
+
 
 ## Lets design our endpoints [5m]
 
@@ -33,7 +36,7 @@ We design design the following end points for our jokes app:
 | Display the new form                  | GET       | get '/jokes/new          |                          |
 | Create a new joke                     | POST      | post '/jokes             |                          |
 | Display the form for updating a joke  | GET       | get '/jokes/:id/edit'    |                          |
-| Update the jokes                      | PUT       | put '/jokes/:id          | post '/jokes/:id/edit    |
+| Update the jokes                      | PUT       | put '/jokes/:id          | post '/jokes/:id    |
 | Deleting a specific joke               | DELETE    | delete '/jokes/:id'      | post '/jokes/:id/delete' |
 
 #### Nested Resources
@@ -48,37 +51,35 @@ You may need to access a nested resources. For example, you need to create a new
 ## Where do we go from here - The Express! [5m]
 
 - Express is a Web framework for NodeJS
-  - Gives us Routing
-  - Layered on top of node HTTP server
-  - Can Use Template Engine
+- Gives us Routing
+- Layered on top of node HTTP server
+- Can Use Template Engine
 
+## Demo
 
-**Create a joke**
+### Browse jokes
+
+### Create a joke
 
 - [workflow reminder](https://s3.amazonaws.com/codecademy-content/projects/3/two-turns-post.svg)
 
-So:
+Soooo:
 
-What do we want to do? Show a form to create joke.
-
-```js
-app.get('/jokes/new', (req, res) => {
- res.render('new_joke')
-})
-```
 
 What attributes has a joke:
 
 - text, image, comments (not during creation)
 
 
-**Show joke**
-
-- endpoint `/jokes/:id`
 
 
 # B R E A K
 **RESUME RECORDING**
+
+
+### Show joke
+
+- endpoint GET `/jokes/:id`
 
 **What should a joke page look like?**
 
@@ -91,12 +92,10 @@ What attributes has a joke:
   + form to add comment
   + list of the comments
 
-**Edit Joke**
+### Edit Joke
 
-**Delete Joke**
+### Delete Joke
 
-**Post new comments?**
+### Post new comments?
 
 ### What we learned today
-
-- Learned that delete requests can be accomplished with post requests in html5
