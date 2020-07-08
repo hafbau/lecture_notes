@@ -9,10 +9,16 @@ Hey gang, thanks for sitting through today's lecture about user authentication a
 
 ## Things we learned.
 
+- Cookies are still not secure since the are stored in plain text on the browser
+- How to use cookies for protected routes e.g. /treasure based off our database record
+- do NOT forget bodyParser and /or cookieParser whenever needed e.g using req.cookies.
+- we used req.cookies to fetch a particular and cookie and res.cookie to set cookies
+
+> The below is from previous cohort, I think are good lessons as well.
+
 - Cookies are ways to deal with HTTP statelessness but they are not the only way and may not be right for all scenarios e.g. our lang preferences due to shareability.
-- Cookies are not secure
 - CookieParser (the library) just helps us to parse cookies. We would have to parse cookies manually without it.
-- `res.cookie...` for setting cookie. `req.cookies.` when fetching
+- `res.cookie(...)` for setting cookie. `req.cookies.` when fetching. Also, the cookies you set are the cookies you can get!
 - Don't just check cookie's existence, check if you(server) recognize what the cookie represents e.g. in your database
 - Get `morgan` for HTTP logging to console.
 - Nodemon is nice - it helps restarts `.js` files by default
@@ -71,7 +77,7 @@ Summary: We learned that while cookies are great (or yumm!), they might not be t
 + get credentials from req.body
 + check if user is in our db
 + check if user's password match submitted
-+ set cookie and redirect home
++ set cookie and redirect to treasure(could've been home)
 + ELSE show user some error e.g. res.send('error message')
 
 
@@ -85,13 +91,10 @@ Summary: We learned that while cookies are great (or yumm!), they might not be t
 
 ## 5 - Recap & Takeaways [5m]
 
-- Cookies are ways to deal with HTTP statelessness but they are not the only way and may not be right for all scenarios e.g. our lang preferences due to shareability.
-- Don't just check cookie's existence, check if you(server) recognize what the cookie represents e.g. in your database
-- Get `morgan` for HTTP logging to console.
-- Cookies are not secure
-- Nodemon is nice - it helps restarts `.js` files by default
-- Cookies just helps us to parse cookies. We would have to parse cookies manually without it.
-- `res.cookie...` for setting cookie. `req.cookies.` when fetching
+- Cookies are still not secure since the are stored in plain text on the browser
+- How to use cookies for protected routes e.g. /treasure based off our database record
+- do NOT forget bodyParser and /or cookiePasrser whenever needed e.g using req.cookies.
+- we used req.cookies to fetch a particular and cookie and res.cookie to set cookies
 
 ## 6 - Closing Comments [5m]
 

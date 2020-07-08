@@ -1,7 +1,9 @@
-<form method='POST' action="/login">
+<!-- // IDEMPOTENCY -->
+<span style="color: red;"><%= error %></span>
+<form method="POST" action="/login">
   <p>
     <label>Username</label>
-    <input type="text" name="username" value="" />
+    <input type="text" name="username" value="<%= username %>" />
   </p>
   <p>
     <label>Password</label>

@@ -7,7 +7,7 @@ const bodyParser   = require('body-parser');
 
 // logging to STDOUT
 const morgan = require('morgan');
-app.use(morgan('combined'))
+app.use(morgan('tiny'))
 
 app.use(cookieParser());
 
@@ -25,6 +25,8 @@ const users = {
 };
 
 
+
+
 // ALL THE ROUTES
 app.get('/', (req, res) => {
   res.render('home');
@@ -32,16 +34,10 @@ app.get('/', (req, res) => {
 
 // Any user can view the treasure (as long as you are logged in)
 app.get('/treasure', (req, res) => {
-  // check if cookie is set
-  const { username } = req.cookies;
-  if(username in users) {
-    const loggedInUser = users[username];
-
-    const templateVars = {
-      username: loggedInUser.username,
-      password: loggedInUser.password
-    }
-    res.render('treasure', loggedInUser);
+  // 1. do I know you? a.ka do you have matching cookie
+  const username = req.cookies.username;
+  if (username in users) {
+    res.render('treasure', { username });
   } else {
     res.redirect('/')
   }
@@ -49,51 +45,41 @@ app.get('/treasure', (req, res) => {
 
 // FORMS FOR AUTENTICATION
 app.get('/login', (req, res) => {
-  res.render('login');
+  res.render('login', { error: undefined, username: undefined });
 });
 
 app.post('/login', (req, res) => {
-  // extract the submitted credentials => username / password
-  const { username, password } = req.body;
+  // 1. extract the login credential being sent in the request; put in a variable
+  const { username, password } = req.body
+  // console.log('credential :>> ', credentials);
+  // 2. Check if we know this user by their username (email)
   const existingUser = users[username];
-
-  // THIS IS AN ALTERNATIVE WAY OF THINKING ABOUT THE WORKFLOW
-  // if (existingUser && existingUser.password === password) {
-  //   // set cookie and redirect
-  // } else {
-  //   // username or passwor error
-  // }
-
-  // check first if we know the username
+  // if (existingUser !== undefined) {
+  // if (existingUser) {
   if (username in users) {
-    // check second, if the password matches the db
-    // { username: 'kv', password: '123', firstName: 'Khurram' }
-    
-    if (existingUser.password === password) {
-      // set cookie
-      res.cookie('username', username);
-      // once cookie is set, redirect home
-      res.redirect('/')
+    // 2a. Yes username exists; check if password matches
+    if(password === existingUser.password) {
+      // 3. set cookie to the user's unique identifier ==> username
+      res.cookie('username', username)
+      // 4. pass to where you intended to go; redirect to treasure
+      res.redirect('/treasure')
     } else {
-      // ELSE send error = password mismatch; reset password?
-      res.status(401)
-      res.send('Password mismatch. <a href="/reset-password">Reset password</a>')
+      // 2b. send password doesn;t match error
+      // res.send('Wrong password, try again!')
+      res.render('login', { error: 'Password mismatch', username: username })
     }
+
   } else {
-    // ELSE send some error = user not found, register instead
-    res.status(401)
-    res.send('No account under your name. <a href="/signup">Sign up instead?</a>')
+    // 5. We do not have the username in our db, so send user does not exist error
+          // Ideal; send them to the login page again with appropriate error message
+    res.status(401).send('Username does not exist, sign up instead?')
   }
-
-
 
 })
 
+
+// STRETCH
 app.get('/signup', (req, res) => {
-  // const newUser = {
-  //   id: randlsadfjlksdhkf,
-  //   ksfk
-  // }
   res.render('signup');
 });
 
