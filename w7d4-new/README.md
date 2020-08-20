@@ -28,16 +28,18 @@ Here's some things we learned:
 - [x] Testing
   + [x] test useMousePosition
   + [x] useInput (TDD)
-- [x] Stretch (time permitting)
-  + [x] useForm
+- [-] Stretch (time permitting)
+  + [-] useForm
 
 
 ## Review of Hooks [10m]
 
 - **What are the most important things we know about hooks?**
 
-- Rule 1: only use inside of components
+- only use inside of components
 - Can’t be embedded a any statement e.g conditional or a loop
+- they are functions
+- they all start with `use`
 - They allow functional components to not be dumb anymore i.e to include state
 - No more class components :)
 - We've seen `useEffect` and `useState`
@@ -62,18 +64,16 @@ We can pull repetitive or complex code out of our components and move it into cu
 
 ## Custom Hooks Examples
 
-### useMousePosition [20m]
+> See the demo folder for all the code we wrote
 
+### useMousePosition [20m]
 
 ### useRequest [20m]
 
-
 ## Testing Hooks
-
 ### Test useMousePosition [25m]
 
 ### TDD
-
 #### useInput [25m]
 
 + takes a default value
@@ -82,6 +82,8 @@ We can pull repetitive or complex code out of our components and move it into cu
 
 
 ## useForm (STRETCH)
+
+> We did not get to this in class but this is how it might look.
 
 - Instead of tracking multiple inputs with `useInput`, can we create a `useForm` that tracks all the inputs we want? That's exactly what we did.
 
@@ -95,6 +97,9 @@ const useForm = (defaultVal) => {
     const { target: { value, name } } = event;
     // const newState = { ...formValues };
     // newState[name] = value;
+    // setFormVals(newState)'
+
+    // This is alternative to the commented three lines above
     setFormVals({
       ...formValues,
       [name]: value

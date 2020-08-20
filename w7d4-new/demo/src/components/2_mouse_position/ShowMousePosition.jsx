@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import useMousePosition from '../../hooks/useMousePosition'
 
-import useMousePosition from '../../hooks/useMousePosition';
 export default function ShowMousePosition() {
-  const [x , y] = useMousePosition();
+  const [x, y] = useMousePosition()
 
   return (
     <h1>

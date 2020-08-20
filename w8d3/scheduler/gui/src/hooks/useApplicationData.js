@@ -2,6 +2,10 @@ import { useReducer, useEffect } from "react";
 
 import axios from "axios";
 
+if (process.env.REACT_APP_API_URL) {
+  axios.defaults.baseURL = process.env.REACT_APP_API_URL
+}
+
 import reducer, {
   SET_DAY,
   SET_APPLICATION_DATA,

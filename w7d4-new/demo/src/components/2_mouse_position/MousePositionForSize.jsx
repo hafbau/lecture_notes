@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import useMousePosition from '../../hooks/useMousePosition';
 
 export default function ShowMousePosition() {
-  const [x, setX] = useState(0);
-
-  useEffect(() => {
-    document.addEventListener("mousemove", event => {
-      setX(event.clientX);
-    });
-  }, []);
+  const coords = useMousePosition();
 
   return (
     <h1
       style={{
-        fontSize: x
+        fontSize: coords[1]
       }}
     >
       Woah Dynamic Sizing!

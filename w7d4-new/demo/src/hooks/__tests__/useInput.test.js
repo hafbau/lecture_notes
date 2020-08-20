@@ -1,34 +1,41 @@
 // https://react-hooks-testing-library.com/
 import { renderHook, act } from '@testing-library/react-hooks';
-// import the hook
+
+// import the Hook
 import useInput from '../useInput';
 
-// should start with an initial value passed to it
-test('should start with an initial value passed to it', () => {
-  const initVal = 'hafiz';
+// starts with an initial input
+test('should starts with an initial input', () => {
+  const { result } = renderHook(() => useInput('Jake'))
 
-  const { result } = renderHook(() => useInput(initVal))
-
-  const value = result.current[0]
-
-  expect(value).toBe(initVal);
+  expect(result.current.inputValue).toBe('Jake')
 })
 
-// should return a function as the second element in array
+// the input value is updateable
+test('should input value is updateable', () => {
+  const { result } = renderHook(() => useInput('Jake'))
 
-// should be updateable with a new value from user
-test('should be updateable with a new value from user', () => {
-  const fakeEvent = { target: { value: 'this is sooo nu' }}
+  const fakeEvent = {
+    target: { value: 'new fake' }
+  }
 
-  const {
-    result
-  } = renderHook(() => useInput(''))
+  act(() => { result.current.onChange(fakeEvent) })
 
-  const onChangeFunk = result.current[1]
-  
-  act(() => { onChangeFunk(fakeEvent) })
 
-  const value = result.current[0]
-
-  expect(value).toBe('this is sooo nu');
+  expect(result.current.inputValue).toBe('new fake')
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

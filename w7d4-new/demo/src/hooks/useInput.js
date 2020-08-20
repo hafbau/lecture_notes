@@ -1,17 +1,14 @@
-import React from 'react';
+import { useState } from 'react';
 
-// takes a default value
-// return current value and a function that can change the value base on user typing
-
-const useInput = (defaultValue) => {
-  const [value, setVal] = React.useState(defaultValue)
-
-  const handleChange = (ev) => {
-    const { target: { value } } = ev;
-    setVal(value)
+const useInput = (initialValue) => {
+  const [value, setValue] =  useState(initialValue)
+  
+  const onChange = (evt) => {
+    const newVal = evt.target.value;
+    setValue(newVal)
   }
 
-  return [value, handleChange];
+  return { inputValue: value, onChange }
 }
 
 export default useInput;

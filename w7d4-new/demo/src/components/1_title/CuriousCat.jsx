@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import useDocumentTitle from '../../hooks/useDocumentTitle';
+import useTitle from '../../hooks/useTitle';
 
 export default function CuriousCat() {
-  useDocumentTitle('The Curious Cat page');
+  useTitle('The cats aare cool')
   
   return (
     <div style={{ margin: '0 auto', width: 550 }}>

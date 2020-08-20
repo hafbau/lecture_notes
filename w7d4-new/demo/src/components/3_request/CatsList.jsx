@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import React from 'react'
+import useRequests from '../../hooks/useRequests'
 import Masonry from '../0_helpers/Masonry';
 import CatCard from '../0_helpers/CatCard';
 
-axios.defaults.headers['x-api-key'] = 'DEMO-API-KEY';
-
 function Cats() {
-  const [cats, setCats] = useState([]);
-  const [loading, setLoading] = useState();
+  const { loading, error, data: cats } = useRequests('https://api.thecatapi.com/v1/images/search?limit=80&mime_types=&order=Random&size=small&page=1&sub_id=demo-63a491')
 
-  useEffect(() => {
-    setLoading(true)
-    axios.get('https://api.thecatapi.com/v1/images/search?limit=80&mime_types=&order=Random&size=small&page=1&sub_id=demo-63a491')
-    .then(({ data }) => {
-      setLoading(false)
-      setCats(data)
-    })
-  }, [])
+  if(error) {
+    return <h3>Oh snap! {error}</h3>
+  }
 
   return (
     <div style={{ textAlign: 'center' }}>

@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import useTitle from '../../hooks/useTitle';
 
 export default function DodgyDog() {
-  useEffect(() => {
-    document.title = 'The App - dodgy dog';
-  }, [])
+  useTitle('The App - this is cool dog');
+
   return (
     <div style={{ margin: '0 auto', width: 550 }}>
       <h2>Wazzaaa, I'm the dodgy dog, snoooop</h2>

@@ -1,31 +1,18 @@
 import React from 'react';
-import useInput from '../../hooks/useInput';
-
-const useForm = (defaultVal) => {
-  const [formValues, setFormVals] = React.useState(defaultVal);
-
-  const onChange = (event) => {
-    const { target: { value, name } } = event;
-    // const newState = { ...formValues };
-    // newState[name] = value;
-    setFormVals({
-      ...formValues,
-      [name]: value
-    })
-  }
-
-  return [formValues, onChange];
-}
 
 const Input = () => {
-  const [formValues, onChange] = useForm({
-    username: '',
-    password: '123'
-  })
-  
-  const { username, password } = formValues;
-  // const [username, onChangeUsername] = useInput('hafiz');
-  // const [password, onChangePassword] = useInput('');
+  const [username, setUsername] = React.useState('hafiz')
+  const onChangeUsername = (ev) => {
+    const { target: { value } } = ev;
+    setUsername(value)
+  }
+
+
+  const [password, setPassword] = React.useState('123secure')
+  const onChangePassword = (ev) => {
+    const { target: { value } } = ev;
+    setPassword(value)
+  }
 
   const onSubmit = () => {
     alert(`Thanks for logging in ${username} with password ${password}`);
@@ -40,7 +27,7 @@ const Input = () => {
           type="text"
           name="username"
           value={username}
-          onChange={onChange}
+          onChange={onChangeUsername}
           id="username"
         />
         <br/>
@@ -49,7 +36,7 @@ const Input = () => {
           type="password"
           name="password"
           value={password}
-          onChange={onChange}
+          onChange={onChangePassword}
           id="password"
         />
         <br/>

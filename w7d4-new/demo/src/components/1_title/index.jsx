@@ -10,7 +10,10 @@ export default function HasTitle() {
       <Button
         color='secondary'
         onClick={() => setPage(isCat => !isCat)}
-      >Switch Page</Button>
+      >
+        Switch Page
+      </Button>
+
       {isCatPage ? (
         <CuriousCat />
       ) : (
