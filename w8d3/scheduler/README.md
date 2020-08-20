@@ -42,15 +42,19 @@
 - let's view the logs
 - does that error make sense?
 
-- **Lets add Postgres database**
+#### Lets add Postgres database
 + under `Resources` search for 'postgres' in the 'Add-ons' and select HerokuPostgres
 + click through to Provision the database.
 
 - Seeding (scheduler-api specific)
 
-- CLI Seeding
-`heroku pg:psql --app <name_of_your_app> DATABASE < src/db/schema/create.sql`
-`heroku pg:psql --app <name_of_your_app> DATABASE < src/db/schema/production.sql`
+##### CLI Seeding
+
+> We did not use this approach in class
+
+- `heroku pg:psql --app <name_of_your_app> DATABASE < src/db/schema/create.sql`
+
+- `heroku pg:psql --app <name_of_your_app> DATABASE < src/db/schema/production.sql`
 
 
 ## Deploying scheduler gui to Netlify
@@ -59,16 +63,19 @@
 - Signup / Login with your GitHub account
 - Click on New site from git
   + choose Github
+  + follow the prompt to install Netlify (if this is your first time)
   + pick a repo
 
 **Two choices*
 
-GUI
+### GUI
 - click on Advance Build Settings
   + add environment variables
 
-Configuration File
+### Configuration File
 - create a `netlify.toml` at the root of project
+
+[See Example in the gui subdirectory here](./gui/netlify.toml)
 
 
 ## General deployment tips
