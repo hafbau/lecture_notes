@@ -1,9 +1,9 @@
 Rails review
 ===
 
-Thanks crew! Here are some notes of things we covered today. As talked about, paying attention to the process pays *(see what I did there? 😉👉👉)*
+Thanks crew! Here are my previous notes of things we covered today.
 
-[code here](https://github.com/hafbau/lecture_notes/w10d1/demo)
+[code here](https://github.com/hafbau/lecture_notes/tree/master/w10d1)
 
 [previous video link](https://us02web.zoom.us/rec/share/ucZHFYjK7nhOW6PryGX6U6kFWam5eaa82nIc-vcLykmJLHuLQtfKgMh7p_p5TMjs)
 
