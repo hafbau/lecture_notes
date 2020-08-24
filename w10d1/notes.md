@@ -11,7 +11,18 @@ Rails review
 
 What lessons have we learned about Rails?
 
-### Lets build airBnB but for home office sharing. [10m]
+- ruby is cool
+- the synchronous nature of ruby is more intuitive
+- had less time to get familiar with it aka Jungle
+- Active record is really cool. (ORM)
+- there's good /bad to rails magic
+
+Two options of using rails with react
+- react-rails
+- SPA (API + GUI)
+
+## DEMO 
+### Lets build a shoe store. [10m]
 
   - Setting expectations
 
@@ -24,23 +35,27 @@ Any Questions?? Let's do this??? Let's do this!
 
 ### Rails API [40m]
 
-Name??:
+Name??: ShoeJungle
 
-- user should be able to see all listings
-- user should be able to list their home office
-- user should be able to book a listing
-- listings can have review
-  + reviews will have ratings
+- user should be able to see all listings of shoes
+- user should be able to list their worn out shoes
+- user should be able to rent a shoe
+- shoe listings can have review
+  + reviews will have a smell ratings
   + reviews can have text content
-- listings must have at least on photo
+- shoes listings must have at least one photo
+-
 
 #### Entities and attributes
 
 - User
+  + email, password, avatar, first_name, last_name, superUser
 
 - Listings
+  + size, price, age, condition (free text), location, description, title, photos, owner, spy_level (1-10)
 
 - Reviews
+  + smell_rating, content, comfort_level, author_id, shoe_id
 
 
 ### The GUI
@@ -52,6 +67,10 @@ Name??:
 `rails destroy scaffold already-scafollded-entity`
 
 ### Learned something?
+
+- scaffold generator with rails api
+- looping through data in react to render jsx
+- Using sample code from material ui (or any component library for that matter)
 
 
 

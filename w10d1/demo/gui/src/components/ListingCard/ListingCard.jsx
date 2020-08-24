@@ -83,6 +83,7 @@ export default function ListingCard({ title, description, photos, user, reviews,
           <Typography variant='body2'>Avg. rating {avgRating}</Typography>
           <FavoriteIcon />
         </IconButton>
+        <Typography variant='body2'>View all {reviews.length} reviews</Typography>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded,
@@ -91,7 +92,6 @@ export default function ListingCard({ title, description, photos, user, reviews,
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <Typography variant='body2'>View all {reviews.length} reviews</Typography>
           <ExpandMoreIcon />
         </IconButton>
       </CardActions>

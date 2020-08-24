@@ -1,39 +1,36 @@
 import './masonry.css';
 import Masonry from 'react-masonry-css';
+import ShoeCard from '../../components/ListingCard/ListingCard'
 // import ListingCard from '../../components/ListingCard/ListingCard';
-// import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import MUICard from '../../components/MUICard/MUICard'
 
 const breakpointColumnsObj = {
-  default: 4,
+  default: 5,
   1100: 3,
   700: 2,
   500: 1
 };
 
 function Listings() {
-  const [listings, setListings] = useState([]);
-
+  const [shoes, setShoes] = useState([])
   useEffect(() => {
-    // 1. Fetch data from backend
-    axios.get('/api/v1/listings')
+    axios.get('/api/v1/shoes')
     .then(({ data }) => {
-      // a. parse from its JSON string to JS Object
-      // console.log('resp :>> ', resp.data);
-      console.log('resp :>> ', data);
-      setListings(data);
+      console.log('DATA back', data)
+      setShoes(data)
     })
   }, [])
 
+  console.log("SHOES", shoes)
+  if (shoes.length == 0) return <h2>Loading shoes, hang tight...</h2>
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>All Listings</h1>
+      <h1 style={{ textAlign: "center" }}>All Shoes</h1>
       <Masonry breakpointCols={breakpointColumnsObj}>
-        {listings.map(listing => (
-          <MUICard key={listing.id} { ...listing } />
-        ))}
+        {shoes.map(shoe => {
+          return (<ShoeCard key={shoe.id} {...shoe}/>)
+        })}
       </Masonry>
     </div>
   );

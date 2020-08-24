@@ -10,6 +10,8 @@ Thanks crew! Here are some notes of things we covered today. As talked about, pa
 
 ### Some new things we learned
 
+- scaffold generator with rails api
+- looping through data in react to render jsx
 - How to repurpose material ui (component library in general) in our app
 - Learned about routes scoping in rails. In particular we scoped all api endpoints with '/api/v1' including versioning
 - We also learned the difference between scoping and nested resources.
