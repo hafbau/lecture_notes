@@ -29,45 +29,20 @@ Thanks crew! Here are some notes of things we covered today. As talked about, pa
 
 ## Rails Lessons learned
 
-What lessons have we learned about Rails?
+What lessons have we learned about Ruby / Rails / Jungle?
 
+- ruby is cool
+- the synchronous nature of ruby is more intuitive
+- had less time to get familiar with it Ruby/Rails with Jungle
+- there's good /bad to rails magic
 - Rails is too magic... incantations. Mixed feelings around likeness
   + Easy to pick up
 - Ruby code is easy to read. `do stuff unless condition`
-- ActiveRecord is awesome. Makes data layer a breeze to work with
+- Active record is really cool. (ORM) Makes data layer a breeze to work with
 - Generators makes scaffolding a lot faster.
 - Migrations are interesting. Makes DB Management easy - ability to rollback is awesome.
   + it makes database structure easily scalable.
 - Working with legacy code can be daunting but it also helps to boilerplate pre-existing code base
-
-
-• use `===` instead of `==`
-
-• improve variable names
-
-• indent properly
-
-• don't use `if` without `{}`
-
-• the second `if` statement can be `else if`, and the third an `else`
-
-• remove unnecessary comments
-
-• scope variables using const or let (accordingly)
-
-• add whitespace around operators (`+=`)
-
-• use `for...of` instead of for
-
-• user functional expression instead of declaration (`const foo = function() { ... }`)
-
-• don't use a function before it's declared
-
-• ideally use function expressions (`const print = function()`)
-
-• have the print function receive the board as a parameter
-
-• have the function convert to string, but not `console.log` (easier to test, reuse)
 
 ## MVC Rails
 
