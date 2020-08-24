@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size: 9.99
+  price: 9.99
+  age: 9.99
+  condition: MyString
+  location: MyString
+  description: MyText
+  title: MyString
+  photos: MyString
+  user: one
+  spy_level: 9.99
+
+two:
+  size: 9.99
+  price: 9.99
+  age: 9.99
+  condition: MyString
+  location: MyString
+  description: MyText
+  title: MyString
+  photos: MyString
+  user: two
+  spy_level: 9.99
