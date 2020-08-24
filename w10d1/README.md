@@ -16,7 +16,7 @@ Thanks crew! Here are my previous notes of things we covered today.
 - Learned about routes scoping in rails. In particular we scoped all api endpoints with '/api/v1' including versioning
 - We also learned the difference between scoping and nested resources.
 - Using faker to create dynamic (random) seed data.
-- Learned about `--api` flag to `rails new` which scaffolds json endpoints rather than rendering views
+- Learned about `--api` flag to `rails new` which scaffolds json endpoints rather than rendering views.
 
 
 ## Today's Agenda
