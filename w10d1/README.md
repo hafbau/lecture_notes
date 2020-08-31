@@ -1,9 +1,9 @@
 Rails review
 ===
 
-Thanks crew! Here are my previous notes of things we covered today.
+Thanks crew! Here are some notes of things we covered today. As talked about, paying attention to the process pays *(see what I did there? 😉👉👉)*
 
-[code here](https://github.com/hafbau/lecture_notes/tree/master/w10d1)
+[code here](https://github.com/hafbau/lecture_notes/w10d1/demo)
 
 [previous video link](https://us02web.zoom.us/rec/share/ucZHFYjK7nhOW6PryGX6U6kFWam5eaa82nIc-vcLykmJLHuLQtfKgMh7p_p5TMjs)
 
@@ -16,7 +16,7 @@ Thanks crew! Here are my previous notes of things we covered today.
 - Learned about routes scoping in rails. In particular we scoped all api endpoints with '/api/v1' including versioning
 - We also learned the difference between scoping and nested resources.
 - Using faker to create dynamic (random) seed data.
-- Learned about `--api` flag to `rails new` which scaffolds json endpoints rather than rendering views.
+- Learned about `--api` flag to `rails new` which scaffolds json endpoints rather than rendering views
 
 
 ## Today's Agenda
@@ -29,20 +29,45 @@ Thanks crew! Here are my previous notes of things we covered today.
 
 ## Rails Lessons learned
 
-What lessons have we learned about Ruby / Rails / Jungle?
+What lessons have we learned about Rails?
 
-- ruby is cool
-- the synchronous nature of ruby is more intuitive
-- had less time to get familiar with it Ruby/Rails with Jungle
-- there's good /bad to rails magic
 - Rails is too magic... incantations. Mixed feelings around likeness
   + Easy to pick up
 - Ruby code is easy to read. `do stuff unless condition`
-- Active record is really cool. (ORM) Makes data layer a breeze to work with
+- ActiveRecord is awesome. Makes data layer a breeze to work with
 - Generators makes scaffolding a lot faster.
 - Migrations are interesting. Makes DB Management easy - ability to rollback is awesome.
   + it makes database structure easily scalable.
 - Working with legacy code can be daunting but it also helps to boilerplate pre-existing code base
+
+
+• use `===` instead of `==`
+
+• improve variable names
+
+• indent properly
+
+• don't use `if` without `{}`
+
+• the second `if` statement can be `else if`, and the third an `else`
+
+• remove unnecessary comments
+
+• scope variables using const or let (accordingly)
+
+• add whitespace around operators (`+=`)
+
+• use `for...of` instead of for
+
+• user functional expression instead of declaration (`const foo = function() { ... }`)
+
+• don't use a function before it's declared
+
+• ideally use function expressions (`const print = function()`)
+
+• have the print function receive the board as a parameter
+
+• have the function convert to string, but not `console.log` (easier to test, reuse)
 
 ## MVC Rails
 

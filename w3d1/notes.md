@@ -11,25 +11,37 @@ Web servers 101
   + [x] EJS
   + [x] Middleware (stretch!)
 
-> Promises have 3 states: Pending / resolved / rejected
+
+### Intro
+
+- Stress / Imposter syndrome is real
+- My style - adaptable
+- Decorum
+
 
 ### HTTP Review [10m]
 
 **What are the most important things about HTTP?**
+- it being protocol for hypertext transfer
+- the http library is packed into nodejs runtime - no need to import
+- http is language agnostic and works over tcp
 
-- HTTP is request / response cycle based. It cannot respond without a request
-- Request
-  + URL akas / Path / Address
-  + HTTP methods e.g. GET, POST
-  + They are asynchronous
-  + url + method === endpoints
+- it request response cycle based - only get response to a request
+- it a very popular protocol that domniates the web
+- http has a secure cousin called https
 
-- Response
-  + Status codes  e.g 200 / 300 / 400 / 500
-  + Body
-  + Headers
+**Request**
 
-- HTTP is stateless
+- methods - GET/POST/PUT/PATCH/DELETE
+- url
+
+**Response**
+- Status code (100s, 200, 300s, 400s, 500s)
+- Body (html, string, json)
+
+**HTTP Stateless**
+- Server's got amnesia
+
 
 
 ### HTTP Servers - Demo [40m]
@@ -55,14 +67,5 @@ Web servers 101
 
 
 
-#### Middleware
-
-
 
 ### Things we learned
-
-- Using Express module vs using the native `http` module. With its clean routing ..er.. middlewares
-- Using EJS for templating. Interspersing logic (JS code) with markup (html code). Makes dynamic templating smooth. This uses alligator tags `<% %>` and `<%= %>`
-- Learned that we could build web application with the `http` from scratch but routing was tedious.
-- Learned refactoring `routeHandlers` into their own files (module)
-- We saw `nodemon` for restarting our servers when we make changes. On vagrant, you'll be doing `npx nodemon -L`. Feel free to talk to a mentor about that.

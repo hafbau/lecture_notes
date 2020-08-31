@@ -1,0 +1,1995 @@
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Facebook Engineering - Facebook Engineering Blog">
+  <meta property="fb:app_id" content="1425766027653270">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="https://engineering.fb.com/xmlrpc.php">
+  <title>Rebuilding our tech stack for a new Facebook.com - Facebook Engineering</title>
+
+  <!-- This site is optimized with the Yoast SEO Premium plugin v13.0 - https://yoast.com/wordpress/plugins/seo/ -->
+  <meta name="description"
+    content="Building a new web app for today’s browsers, we completely rebuilt our tech stack to achieve our goals for performance and sustainable future growth.">
+  <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://engineering.fb.com/web/facebook-redesign/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Rebuilding our tech stack for a new Facebook.com - Facebook Engineering">
+  <meta property="og:description"
+    content="Building a new web app for today’s browsers, we completely rebuilt our tech stack to achieve our goals for performance and sustainable future growth.">
+  <meta property="og:url" content="https://engineering.fb.com/web/facebook-redesign/">
+  <meta property="og:site_name" content="Facebook Engineering">
+  <meta property="article:section" content="Web">
+  <meta property="article:published_time" content="2020-05-08T16:00:26+00:00">
+  <meta property="article:modified_time" content="2020-05-08T16:31:21+00:00">
+  <meta property="og:updated_time" content="2020-05-08T16:31:21+00:00">
+  <meta property="og:image" content="https://engineering.fb.com/wp-content/uploads/2020/05/Comet_hero.jpg">
+  <meta property="og:image:secure_url" content="https://engineering.fb.com/wp-content/uploads/2020/05/Comet_hero.jpg">
+  <meta property="og:image:width" content="2000">
+  <meta property="og:image:height" content="1133">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description"
+    content="Building a new web app for today’s browsers, we completely rebuilt our tech stack to achieve our goals for performance and sustainable future growth.">
+  <meta name="twitter:title" content="Rebuilding our tech stack for a new Facebook.com - Facebook Engineering">
+  <meta name="twitter:image" content="https://engineering.fb.com/wp-content/uploads/2020/05/Comet_hero.jpg">
+  <script src="https://connect.facebook.net/en_US/sdk.js?hash=9189cc27b1e1d3b01a3242c017e95115&amp;ua=modern_es6"
+    async="" crossorigin="anonymous"></script>
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script src="https://connect.facebook.net/signals/config/660742068067366?v=2.9.18&amp;r=stable" async=""></script>
+  <script src="https://connect.facebook.net/signals/plugins/identity.js?v=2.9.18" async=""></script>
+  <script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.6"></script>
+  <script async="" src="//static.ads-twitter.com/uwt.js"></script>
+  <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+  <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KZRLGZ8"></script>
+  <script type="application/ld+json"
+    class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://engineering.fb.com/#organization","name":"Facebook","url":"https://engineering.fb.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://engineering.fb.com/#logo","url":"https://engineering.fb.com/wp-content/uploads/2019/08/facebook-logo-2019.png","width":512,"height":512,"caption":"Facebook"},"image":{"@id":"https://engineering.fb.com/#logo"}},{"@type":"WebSite","@id":"https://engineering.fb.com/#website","url":"https://engineering.fb.com/","name":"Facebook Engineering","description":"Facebook Engineering Blog","publisher":{"@id":"https://engineering.fb.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://engineering.fb.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://engineering.fb.com/web/facebook-redesign/#primaryimage","url":"https://engineering.fb.com/wp-content/uploads/2020/05/Comet_hero.jpg","width":2000,"height":1133,"caption":"Rebuilding our tech stack for the new Facebook.com"},{"@type":"WebPage","@id":"https://engineering.fb.com/web/facebook-redesign/#webpage","url":"https://engineering.fb.com/web/facebook-redesign/","inLanguage":"en-US","name":"Rebuilding our tech stack for a new Facebook.com - Facebook Engineering","isPartOf":{"@id":"https://engineering.fb.com/#website"},"primaryImageOfPage":{"@id":"https://engineering.fb.com/web/facebook-redesign/#primaryimage"},"datePublished":"2020-05-08T16:00:26+00:00","dateModified":"2020-05-08T16:31:21+00:00","description":"Building a new web app for today\u2019s browsers, we completely rebuilt our tech stack to achieve our goals for performance and sustainable future growth."},{"@type":"Article","@id":"https://engineering.fb.com/web/facebook-redesign/#article","isPartOf":{"@id":"https://engineering.fb.com/web/facebook-redesign/#webpage"},"author":{"@id":"https://engineering.fb.com/web/facebook-redesign/#author","name":""},"headline":"Rebuilding our tech stack for the new Facebook.com","datePublished":"2020-05-08T16:00:26+00:00","dateModified":"2020-05-08T16:31:21+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://engineering.fb.com/web/facebook-redesign/#webpage"},"publisher":{"@id":"https://engineering.fb.com/#organization"},"image":{"@id":"https://engineering.fb.com/web/facebook-redesign/#primaryimage"},"articleSection":"Web"},{"@type":"Person","@id":"https://engineering.fb.com/web/facebook-redesign/#author","name":""}]}</script>
+  <!-- / Yoast SEO Premium plugin. -->
+
+  <link rel="dns-prefetch" href="//secure.gravatar.com">
+  <link rel="dns-prefetch" href="//use.typekit.net">
+  <link rel="dns-prefetch" href="//s.w.org">
+  <link rel="alternate" type="application/rss+xml" title="Facebook Engineering » Feed"
+    href="https://engineering.fb.com/feed/">
+  <link rel="alternate" type="application/rss+xml" title="Facebook Engineering » Comments Feed"
+    href="https://engineering.fb.com/comments/feed/">
+  <script type="text/javascript">
+    window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/engineering.fb.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.1" } };
+    /*! This file is auto-generated */
+    !function (e, a, t) { var r, n, o, i, p = a.createElement("canvas"), s = p.getContext && p.getContext("2d"); function c(e, t) { var a = String.fromCharCode; s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, e), 0, 0); var r = p.toDataURL(); return s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, t), 0, 0), r === p.toDataURL() } function l(e) { if (!s || !s.fillText) return !1; switch (s.textBaseline = "top", s.font = "600 32px Arial", e) { case "flag": return !c([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) && (!c([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !c([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447])); case "emoji": return !c([55357, 56424, 55356, 57342, 8205, 55358, 56605, 8205, 55357, 56424, 55356, 57340], [55357, 56424, 55356, 57342, 8203, 55358, 56605, 8203, 55357, 56424, 55356, 57340]) }return !1 } function d(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (i = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, o = 0; o < i.length; o++)t.supports[i[o]] = l(i[o]), t.supports.everything = t.supports.everything && t.supports[i[o]], "flag" !== i[o] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[i[o]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (r = t.source || {}).concatemoji ? d(r.concatemoji) : r.wpemoji && r.twemoji && (d(r.twemoji), d(r.wpemoji))) }(window, document, window._wpemojiSettings);
+  </script>
+  <script src="https://engineering.fb.com/wp-includes/js/wp-emoji-release.min.js?ver=5.4.1" type="text/javascript"
+    defer=""></script>
+  <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+      display: inline !important;
+      border: none !important;
+      box-shadow: none !important;
+      height: 1em !important;
+      width: 1em !important;
+      margin: 0 .07em !important;
+      vertical-align: -0.1em !important;
+      background: none !important;
+      padding: 0 !important;
+    }
+  </style>
+  <link rel="stylesheet" id="all-css-0"
+    href="https://engineering.fb.com/_static/??-eJxlzUsOwjAMRdENkVoZFGWCWEuTmNbC+Sh2hbr7JhWMmB776cKnGsqB94gCQQQiiYLnEt6GybelHSB6ME6J8tQfbtAXoWTFrFB5XynLoDXWNlyGLyKoAsO+9DfVDdNIlojm5TunKx824miu46/4TA87O2fdfXb2BPg2QHY="
+    type="text/css" media="all">
+  <style id="wp-block-library-inline-css">
+    .has-text-align-justify {
+      text-align: justify;
+    }
+  </style>
+  <link rel="stylesheet" id="typekit-freight-sans-css" href="https://use.typekit.net/mnd1swv.css?ver=0.5.1.3"
+    media="all">
+  <link rel="stylesheet" id="all-css-2"
+    href="https://engineering.fb.com/wp-content/mu-plugins/jetpack/css/jetpack.css?m=1588866334g" type="text/css"
+    media="all">
+  <script type="text/javascript"
+    src="https://engineering.fb.com/_static/??-eJyFjkEKwzAMBD/UxKSQ4kvpW0wsXJtYUSWZ0t/HAudcWFgYZmHdl6btQAVUR3tLGcV1lCKxcTEeREDFGRtoLnIzLeO2twjiSs+nAf9G/RWmmhMHhblmvOTrh76h9knDCCzKgWxNBxHw0F/1uazeL/6x+ns5AcXhSPM="></script>
+  <link rel="https://api.w.org/" href="https://engineering.fb.com/wp-json/">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://engineering.fb.com/xmlrpc.php?rsd">
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+    href="https://engineering.fb.com/wp-includes/wlwmanifest.xml">
+  <meta name="generator" content="WordPress 5.4.1">
+  <link rel="shortlink" href="https://wp.me/pa0Lhq-3U6">
+  <link rel="alternate" type="application/json+oembed"
+    href="https://engineering.fb.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.fb.com%2Fweb%2Ffacebook-redesign%2F">
+  <link rel="alternate" type="text/xml+oembed"
+    href="https://engineering.fb.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.fb.com%2Fweb%2Ffacebook-redesign%2F&amp;format=xml">
+
+  <link rel="dns-prefetch" href="//v0.wordpress.com">
+  <style type="text/css">
+    img#wpstats {
+      display: none
+    }
+  </style> <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-44373548-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-44373548-1');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KZRLGZ8');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Facebook Pixel Code -->
+  <script type="text/javascript">
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      }; if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  </script>
+  <!-- End Facebook Pixel Code -->
+  <script type="text/javascript">
+    fbq('init', '660742068067366', [], {
+      "agent": "wordpress-5.4.1-1.8.0"
+    });
+  </script>
+  <script type="text/javascript">
+    fbq('track', 'PageView', []);
+  </script>
+  <!-- Facebook Pixel Code -->
+  <noscript>
+    <img height="1" width="1" style="display:none" alt="fbpx"
+      src="https://www.facebook.com/tr?id=660742068067366&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+  <link rel="shortcut icon" href="https://engineering.fb.com/wp-content/themes/code-fb-com/favicon.ico">
+  <style type="text/css">
+    .fb_hidden {
+      position: absolute;
+      top: -10000px;
+      z-index: 10001
+    }
+
+    .fb_reposition {
+      overflow: hidden;
+      position: relative
+    }
+
+    .fb_invisible {
+      display: none
+    }
+
+    .fb_reset {
+      background: none;
+      border: 0;
+      border-spacing: 0;
+      color: #000;
+      cursor: auto;
+      direction: ltr;
+      font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+      font-size: 11px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      letter-spacing: normal;
+      line-height: 1;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      text-align: left;
+      text-decoration: none;
+      text-indent: 0;
+      text-shadow: none;
+      text-transform: none;
+      visibility: visible;
+      white-space: normal;
+      word-spacing: normal
+    }
+
+    .fb_reset>div {
+      overflow: hidden
+    }
+
+    @keyframes fb_transform {
+      from {
+        opacity: 0;
+        transform: scale(.95)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    .fb_animate {
+      animation: fb_transform .3s forwards
+    }
+
+    .fb_dialog {
+      background: rgba(82, 82, 82, .7);
+      position: absolute;
+      top: -10000px;
+      z-index: 10001
+    }
+
+    .fb_dialog_advanced {
+      border-radius: 8px;
+      padding: 10px
+    }
+
+    .fb_dialog_content {
+      background: #fff;
+      color: #373737
+    }
+
+    .fb_dialog_close_icon {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+      cursor: pointer;
+      display: block;
+      height: 15px;
+      position: absolute;
+      right: 18px;
+      top: 17px;
+      width: 15px
+    }
+
+    .fb_dialog_mobile .fb_dialog_close_icon {
+      left: 5px;
+      right: auto;
+      top: 5px
+    }
+
+    .fb_dialog_padding {
+      background-color: transparent;
+      position: absolute;
+      width: 1px;
+      z-index: -1
+    }
+
+    .fb_dialog_close_icon:hover {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+    }
+
+    .fb_dialog_close_icon:active {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+    }
+
+    .fb_dialog_iframe {
+      line-height: 0
+    }
+
+    .fb_dialog_content .dialog_title {
+      background: #6d84b4;
+      border: 1px solid #365899;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0
+    }
+
+    .fb_dialog_content .dialog_title>span {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+      float: left;
+      padding: 5px 0 7px 26px
+    }
+
+    body.fb_hidden {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      overflow: visible;
+      position: absolute;
+      top: -10000px;
+      transform: none;
+      width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+      min-height: 100%;
+      min-width: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      z-index: 10001
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered {
+      background: none;
+      height: auto;
+      min-height: initial;
+      min-width: initial;
+      width: auto
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+      width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+      background: none
+    }
+
+    .loading.centered #fb_dialog_loader_close {
+      clear: both;
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      padding-top: 20px
+    }
+
+    #fb-root #fb_dialog_ipad_overlay {
+      background: rgba(0, 0, 0, .4);
+      bottom: 0;
+      left: 0;
+      min-height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 10000
+    }
+
+    #fb-root #fb_dialog_ipad_overlay.hidden {
+      display: none
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading iframe {
+      visibility: hidden
+    }
+
+    .fb_dialog_mobile .fb_dialog_iframe {
+      position: sticky;
+      top: 0
+    }
+
+    .fb_dialog_content .dialog_header {
+      background: linear-gradient(from(#738aba), to(#2c4987));
+      border-bottom: 1px solid;
+      border-color: #043b87;
+      box-shadow: white 0 1px 1px -1px inset;
+      color: #fff;
+      font: bold 14px Helvetica, sans-serif;
+      text-overflow: ellipsis;
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+      vertical-align: middle;
+      white-space: nowrap
+    }
+
+    .fb_dialog_content .dialog_header table {
+      height: 43px;
+      width: 100%
+    }
+
+    .fb_dialog_content .dialog_header td.header_left {
+      font-size: 12px;
+      padding-left: 5px;
+      vertical-align: middle;
+      width: 60px
+    }
+
+    .fb_dialog_content .dialog_header td.header_right {
+      font-size: 12px;
+      padding-right: 5px;
+      vertical-align: middle;
+      width: 60px
+    }
+
+    .fb_dialog_content .touchable_button {
+      background: linear-gradient(from(#4267B2), to(#2a4887));
+      background-clip: padding-box;
+      border: 1px solid #29487d;
+      border-radius: 3px;
+      display: inline-block;
+      line-height: 18px;
+      margin-top: 3px;
+      max-width: 85px;
+      padding: 4px 12px;
+      position: relative
+    }
+
+    .fb_dialog_content .dialog_header .touchable_button input {
+      background: none;
+      border: none;
+      color: #fff;
+      font: bold 12px Helvetica, sans-serif;
+      margin: 2px -12px;
+      padding: 2px 6px 3px 6px;
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog_content .dialog_header .header_center {
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 18px;
+      text-align: center;
+      vertical-align: middle
+    }
+
+    .fb_dialog_content .dialog_content {
+      background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+      border: 1px solid #4a4a4a;
+      border-bottom: 0;
+      border-top: 0;
+      height: 150px
+    }
+
+    .fb_dialog_content .dialog_footer {
+      background: #f5f6f7;
+      border: 1px solid #4a4a4a;
+      border-top-color: #ccc;
+      height: 40px
+    }
+
+    #fb_dialog_loader_close {
+      float: left
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+      text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+      visibility: hidden
+    }
+
+    #fb_dialog_loader_spinner {
+      animation: rotateSpinner 1.2s linear infinite;
+      background-color: transparent;
+      background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      height: 24px;
+      width: 24px
+    }
+
+    @keyframes rotateSpinner {
+      0% {
+        transform: rotate(0deg)
+      }
+
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+
+    .fb_iframe_widget {
+      display: inline-block;
+      position: relative
+    }
+
+    .fb_iframe_widget span {
+      display: inline-block;
+      position: relative;
+      text-align: justify
+    }
+
+    .fb_iframe_widget iframe {
+      position: absolute
+    }
+
+    .fb_iframe_widget_fluid_desktop,
+    .fb_iframe_widget_fluid_desktop span,
+    .fb_iframe_widget_fluid_desktop iframe {
+      max-width: 100%
+    }
+
+    .fb_iframe_widget_fluid_desktop iframe {
+      min-width: 220px;
+      position: relative
+    }
+
+    .fb_iframe_widget_lift {
+      z-index: 1
+    }
+
+    .fb_iframe_widget_fluid {
+      display: inline
+    }
+
+    .fb_iframe_widget_fluid span {
+      width: 100%
+    }
+  </style>
+</head>
+
+<body class="post-template-default single single-post postid-15010 single-format-standard group-blog">
+
+  <div class="hfeed site" id="page">
+
+    <!-- ******************* The Navbar Area ******************* -->
+    <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+      <a class="skip-link screen-reader-text sr-only" href="#content">
+        Skip to content </a>
+
+      <nav class="navbar navbar-expand-std">
+
+        <div class="nav-container">
+
+
+          <!-- Your site title as branding in the menu -->
+
+          <div class="nav-top-row">
+
+            <h1 class="navbar-brand mb-0">
+              <a rel="home" href="https://engineering.fb.com/" title="Facebook Engineering">
+                <img class="navbar-brand-logo"
+                  src="https://engineering.fb.com/wp-content/themes/code-fb-com/img/fb-engineering-logo.svg"
+                  alt="Facebook Engineering">
+              </a>
+            </h1>
+
+            <!-- end custom logo -->
+            <label for="search" class="screen-reader-text">Search this site</label>
+            <input type="text" id="search" name="search" class="form-control-lg navbar-search" autocomplete="off">
+
+            <button class="navbar-toggler navbar-searchbar-toggler" type="button" data-toggle="collapse"
+              data-target="#searchbarDropdown" aria-controls="searchbarDropdown" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <img src="https://engineering.fb.com/wp-content/themes/code-fb-com/img/search-icon.png"
+                class="navbar-mobile-search-icon">
+            </button>
+
+            <!-- desktop language menu (mobile language menu is implemented via jQuery)-->
+            <div class="notranslate nice-select navbar-language form-control">
+            </div>
+
+            <button class="navbar-toggler collapsed navbar-menu-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <!-- The WordPress Menu goes here -->
+          <div id="navbarNavDropdown" class="collapse navbar-collapse">
+            <ul id="main-menu" class="navbar-nav">
+              <li id="menu-item-60"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-60 dropdown">
+                <a title="Open Source" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Open Source
+                  <span class="caret"></span><svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129"
+                    enable-background="new 0 0 129 129" width="12px" height="15px">
+                    <polyline points="40 50 80 90 120 50" stroke="#adb1b8" stroke-width="10" stroke-linecap="butt"
+                      fill="none" stroke-linejoin="miter"></polyline>
+                  </svg></a>
+                <ul class=" dropdown-menu" role="menu">
+                  <li id="menu-item-12330"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-12330"><a
+                      title="Open Source" href="https://engineering.fb.com/category/open-source/" class="nav-link">Open
+                      Source</a></li>
+                  <li id="menu-item-12331"
+                    class="menu-item menu-item-type-custom menu-item-object-custom nav-item menu-item-12331"><a
+                      title="Facebook Open Source" href="https://opensource.facebook.com" class="nav-link"
+                      target="_blank" rel="noopener">Facebook Open Source</a></li>
+                </ul>
+              </li>
+              <li id="menu-item-2686"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-2686 dropdown">
+                <a title="Platforms" href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Platforms <span
+                    class="caret"></span><svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 129 129"
+                    enable-background="new 0 0 129 129" width="12px" height="15px">
+                    <polyline points="40 50 80 90 120 50" stroke="#adb1b8" stroke-width="10" stroke-linecap="butt"
+                      fill="none" stroke-linejoin="miter"></polyline>
+                  </svg></a>
+                <ul class=" dropdown-menu" role="menu">
+                  <li id="menu-item-65"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-65"><a
+                      title="Android" href="https://engineering.fb.com/category/android/" class="nav-link">Android</a>
+                  </li>
+                  <li id="menu-item-66"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-66"><a
+                      title="iOS" href="https://engineering.fb.com/category/ios/" class="nav-link">iOS</a></li>
+                  <li id="menu-item-67"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent nav-item menu-item-67">
+                    <a title="Web" href="https://engineering.fb.com/category/web/" class="nav-link">Web</a></li>
+                </ul>
+              </li>
+              <li id="menu-item-2682"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-2682 dropdown">
+                <a title="Infrastructure Systems" href="#" data-toggle="dropdown"
+                  class="nav-link dropdown-toggle">Infrastructure Systems <span class="caret"></span><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="12px" height="15px">
+                    <polyline points="40 50 80 90 120 50" stroke="#adb1b8" stroke-width="10" stroke-linecap="butt"
+                      fill="none" stroke-linejoin="miter"></polyline>
+                  </svg></a>
+                <ul class=" dropdown-menu" role="menu">
+                  <li id="menu-item-218"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-218"><a
+                      title="Core Data" href="https://engineering.fb.com/category/core-data/" class="nav-link">Core
+                      Data</a></li>
+                  <li id="menu-item-219"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-219"><a
+                      title="Data Infrastructure" href="https://engineering.fb.com/category/data-infrastructure/"
+                      class="nav-link">Data Infrastructure</a></li>
+                  <li id="menu-item-220"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-220"><a
+                      title="Developer Tools" href="https://engineering.fb.com/category/developer-tools/"
+                      class="nav-link">Developer Tools</a></li>
+                  <li id="menu-item-226"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-226"><a
+                      title="Production Engineering" href="https://engineering.fb.com/category/production-engineering/"
+                      class="nav-link">Production Engineering</a></li>
+                  <li id="menu-item-227"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-227"><a
+                      title="Security" href="https://engineering.fb.com/category/security/"
+                      class="nav-link">Security</a></li>
+                </ul>
+              </li>
+              <li id="menu-item-2683"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-2683 dropdown">
+                <a title="Physical Infrastructure" href="#" data-toggle="dropdown"
+                  class="nav-link dropdown-toggle">Physical Infrastructure <span class="caret"></span><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="12px" height="15px">
+                    <polyline points="40 50 80 90 120 50" stroke="#adb1b8" stroke-width="10" stroke-linecap="butt"
+                      fill="none" stroke-linejoin="miter"></polyline>
+                  </svg></a>
+                <ul class=" dropdown-menu" role="menu">
+                  <li id="menu-item-215"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-215"><a
+                      title="Connectivity" href="https://engineering.fb.com/category/connectivity/"
+                      class="nav-link">Connectivity</a></li>
+                  <li id="menu-item-216"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-216"><a
+                      title="Data Center Engineering"
+                      href="https://engineering.fb.com/category/data-center-engineering/" class="nav-link">Data Center
+                      Engineering</a></li>
+                  <li id="menu-item-217"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-217"><a
+                      title="Networking &amp; Traffic" href="https://engineering.fb.com/category/networking-traffic/"
+                      class="nav-link">Networking &amp; Traffic</a></li>
+                </ul>
+              </li>
+              <li id="menu-item-2684"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-2684 dropdown">
+                <a title="Video Engineering &amp; AR/VR" href="#" data-toggle="dropdown"
+                  class="nav-link dropdown-toggle">Video Engineering &amp; AR/VR <span class="caret"></span><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="12px" height="15px">
+                    <polyline points="40 50 80 90 120 50" stroke="#adb1b8" stroke-width="10" stroke-linecap="butt"
+                      fill="none" stroke-linejoin="miter"></polyline>
+                  </svg></a>
+                <ul class=" dropdown-menu" role="menu">
+                  <li id="menu-item-225"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-225"><a
+                      title="Video Engineering" href="https://engineering.fb.com/category/video-engineering/"
+                      class="nav-link">Video Engineering</a></li>
+                  <li id="menu-item-223"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-223"><a
+                      title="Virtual Reality" href="https://engineering.fb.com/category/virtual-reality/"
+                      class="nav-link">Virtual Reality</a></li>
+                  <li id="menu-item-13388"
+                    class="menu-item menu-item-type-custom menu-item-object-custom nav-item menu-item-13388"><a
+                      title="Research Publications" href="https://research.fb.com/publications/?cat=11" class="nav-link"
+                      target="_blank" rel="noopener">Research Publications</a></li>
+                </ul>
+              </li>
+              <li id="menu-item-2685"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-2685 dropdown">
+                <a title="Artificial Intelligence" href="#" data-toggle="dropdown"
+                  class="nav-link dropdown-toggle">Artificial Intelligence <span class="caret"></span><svg
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    viewBox="0 0 129 129" enable-background="new 0 0 129 129" width="12px" height="15px">
+                    <polyline points="40 50 80 90 120 50" stroke="#adb1b8" stroke-width="10" stroke-linecap="butt"
+                      fill="none" stroke-linejoin="miter"></polyline>
+                  </svg></a>
+                <ul class=" dropdown-menu" role="menu">
+                  <li id="menu-item-222"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-222"><a
+                      title="ML Applications" href="https://engineering.fb.com/category/ml-applications/"
+                      class="nav-link">ML Applications</a></li>
+                  <li id="menu-item-221"
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item menu-item-221"><a
+                      title="AI Research" href="https://engineering.fb.com/category/ai-research/" class="nav-link">AI
+                      Research</a></li>
+                  <li id="menu-item-13387"
+                    class="menu-item menu-item-type-custom menu-item-object-custom nav-item menu-item-13387"><a
+                      title="Research Publications" href="https://research.fb.com/publications/?cat=13" class="nav-link"
+                      target="_blank" rel="noopener">Research Publications</a></li>
+                </ul>
+              </li>
+              <li id="menu-item-228"
+                class="menu-item menu-item-type-custom menu-item-object-custom nav-item menu-item-228"><a
+                  title="Watch Videos" href="/videos" class="nav-link">Watch Videos</a></li>
+            </ul>
+          </div>
+        </div><!-- .container -->
+
+        <div class="search-container collapse" id="searchbarDropdown">
+          <div class="searchbar-search">
+            <div class="searchbar-container">
+
+              <div class="navbar-mobile-search-margin"></div>
+              <input type="text" name="search" placeholder="Search" class="form-control-lg navbar-mobile-search"
+                autofocus="" autocomplete="off">
+              <button class="searchbar-clear">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav><!-- .site-navigation -->
+
+    </div><!-- .wrapper-navbar end -->
+
+    <div class="wrapper" id="single-wrapper">
+
+      <div class="single-container row" id="content" tabindex="-1">
+
+        <!-- Do the left sidebar check. -->
+
+
+
+        <div class="content-area col-lg-8_75" id="primary">
+          <main class="site-main" id="main">
+
+
+
+            <article
+              class="post-15010 post type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+              id="post-15010">
+
+              <header class="entry-header">
+                <div class="entry-meta">
+                  POSTED ON <span class="posted-on"><time class="entry-date published" datetime="MAY 8, 2020">MAY 8,
+                      2020</time></span> TO <span class="cat-links"><a href="https://engineering.fb.com/category/web/"
+                      rel="category tag">Web</a></span>
+                  <h1 class="entry-title">
+                    <div>Rebuilding our tech stack for the new Facebook.com</div>
+                  </h1>
+                </div><!-- .entry-meta -->
+
+              </header><!-- .entry-header -->
+
+              <div id="post-feat-image-container">
+                <img src="https://engineering.fb.com/wp-content/uploads/2020/05/Comet_hero.jpg"
+                  class="wp-post-image loaded" data-was-processed="true"> </div>
+
+              <div class="entry-authors-social">
+                <div class="entry-authors">
+                  By <a href="https://engineering.fb.com/author/ashley-watkins/" title="Posts by Ashley Watkins"
+                    class="author url fn" rel="author">Ashley Watkins</a>, <a
+                    href="https://engineering.fb.com/author/royi-hagigi/" title="Posts by Royi Hagigi"
+                    class="author url fn" rel="author">Royi Hagigi</a> </div>
+                <div class="entry-social">
+                  <div class="entry-facebook">
+                    <button onclick="return fbShare()" aria-label="Share this post on Facebook">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                          d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="entry-twitter">
+                    <button onclick="return twitterSharePopup('https://engineering.fb.com/web/facebook-redesign/')"
+                      aria-label="Share this post on Twitter">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path
+                          d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="entry-hacker-news">
+                    <button onclick="return shareHackerNews('https://engineering.fb.com/web/facebook-redesign/')"
+                      aria-label="Share this post on Hacker News">
+                      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.693 14.659L21.507 0h-3.29l-4.612 9.165c-.47.94-.901 1.841-1.293 2.703l-1.234-2.703L6.525 0H3l7.726 14.482V24h2.967v-9.341z"
+                          fill-rule="nonzero"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="entry-content">
+
+                <p><span style="font-weight: 400;">Facebook.com launched in 2004 as a simple, server-rendered PHP
+                    website. Over time, we’ve added layer upon layer of new technology to deliver more interactive
+                    features. Each of these new features and technologies incrementally slowed the site down and made it
+                    harder to maintain. This made it harder to introduce new experiences. Features like dark mode and
+                    saving your place in News Feed had no straightforward technical implementation. We needed to take a
+                    step back to rethink our architecture.</span></p>
+                <p><span style="font-weight: 400;">When we thought about how we would build a new web app — one designed
+                    for today’s browsers, with the features people expect from Facebook — we realized that our existing
+                    tech stack wasn’t able to support the app-like feel and performance we needed. A complete rewrite is
+                    extremely rare, but in this case, since so much has changed on the web over the course of the past
+                    decade, we knew it was the only way we’d be able to achieve our goals for performance and
+                    sustainable future growth. Today, we’re sharing the lessons we’ve learned while rearchitecting
+                    Facebook.com, </span>using <a href="https://reactjs.org/" target="_blank" rel="noopener">React</a>
+                  (a declarative JavaScript library for building user interfaces) and <a href="https://relay.dev/"
+                    target="_blank" rel="noopener">Relay</a> (a GraphQL client for React).</p>
+                <h2><span style="font-weight: 400;">Getting started</span></h2>
+                <p><span style="font-weight: 400;">We knew we wanted Facebook.com to start up fast, respond fast, and
+                    provide a highly interactive experience. Although a server-driven app could deliver a fast startup
+                    time, we weren’t convinced we could make it as interactive and delightful as a client-driven app.
+                    However, we believed we could build a client-driven app with a competitively fast startup
+                    time.</span></p>
+                <p><span style="font-weight: 400;">But starting from the ground up with a client-first app brought a new
+                    set of problems. We needed to rebuild the site quickly while also addressing speed and other user
+                    experience issues — and we needed to do it in such a way that it would be sustainable for years to
+                    come.</span></p>
+                <p><span style="font-weight: 400;">Throughout the process, we anchored our work around two technical
+                    mantras:</span></p>
+                <ol>
+                  <li style="font-weight: 400;"><b>As little as possible, as early as possible.</b><span
+                      style="font-weight: 400;"> We should deliver only the resources we need, and we should strive to
+                      have them arrive right before we need them.</span></li>
+                  <li style="font-weight: 400;"><b>Engineering experience in service of user experience.</b><span
+                      style="font-weight: 400;"> The end goal of our development is all about the people using our
+                      website. As we think about the UX challenges on our site, we can adapt the experience to guide
+                      engineers to do the right thing by default.</span></li>
+                </ol>
+                <p><span style="font-weight: 400;">We applied these same principles to improve four main elements of the
+                    site: CSS, JavaScript, data, and navigation.</span></p>
+                <h2><span style="font-weight: 400;">Rethinking CSS to unlock new capabilities</span></h2>
+                <p><span style="font-weight: 400;">First, we reduced the CSS on the homepage by 80 percent by changing
+                    how we write and build our styles. On the new site, the CSS we write is different from what gets
+                    sent to the browser. While we write familiar CSS-like JavaScript in the same files as our
+                    components, a build tool splits these styles into separate, optimized bundles. As a result, the new
+                    site ships less CSS, supports dark mode and dynamic font sizes for accessibility, and has improved
+                    image rendering performance — all while making it easier for engineers to work with.</span></p>
+                <h3><span style="font-weight: 400;">Generating atomic CSS to reduce homepage CSS by 80 percent</span>
+                </h3>
+                <p><span style="font-weight: 400;">On our old site, we were loading more than 400 KB of compressed CSS
+                    (2 MB uncompressed) when loading the homepage, but only 10 percent of that was actually used for the
+                    initial render. We didn’t start out with that much CSS; it just grew over time and rarely decreased.
+                    This happened in part because every new feature meant adding new CSS.&nbsp;</span></p>
+                <p><span style="font-weight: 400;">We addressed this by generating atomic CSS at build time. Atomic CSS
+                    has a logarithmic growth curve because it’s proportional to the number of unique style declarations
+                    rather than to the number of styles and features we write. This lets us combine the generated atomic
+                    CSS from across our site into a single, small, shared stylesheet. As a result, the new homepage
+                    downloads less than 20 percent of the CSS the old site downloaded.</span></p>
+                <h3><span style="font-weight: 400;">Colocating styles to reduce unused CSS and make it easier to
+                    maintain</span></h3>
+                <p><span style="font-weight: 400;">Another reason our CSS grew over time was that it was difficult to
+                    identify whether various CSS rules were still in use. Atomic CSS helps mitigate the performance
+                    impact of this, but unique styles still add unnecessary bytes, and the unused CSS in our source code
+                    adds engineering overhead. Now, we colocate our styles with our components so they can be deleted in
+                    tandem, and only split them into separate bundles at build time.</span></p>
+                <p><span style="font-weight: 400;">We also addressed another issue we were facing: CSS precedence
+                    depends on ordering, which is especially difficult to manage when using automated packaging that can
+                    change over time. It was previously possible for changes in one file to break the styles in another
+                    without the author realizing it. Instead, we now author styles using a familiar syntax inspired by
+                  </span><a href="https://reactnative.dev/" target="_blank" rel="noopener"><span
+                      style="font-weight: 400;">React Native</span></a><span style="font-weight: 400;"> styling APIs: We
+                    guarantee that the styles are applied in a stable order, and we don’t support CSS descendant
+                    selectors.</span></p>
+                <h3><span style="font-weight: 400;">Changing font sizes for better accessibility</span></h3>
+                <p><span style="font-weight: 400;">We’ve taken advantage of our offline build step to make accessibility
+                    updates as well. On many websites today, people enlarge text by using their browser’s zoom function.
+                    This can accidentally trigger a tablet or mobile layout or increase the size of things they didn’t
+                    need to enlarge, such as images.</span></p>
+                <p><span style="font-weight: 400;">By using </span><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size" target="_blank"
+                    rel="noopener"><span style="font-weight: 400;">rems</span></a><span style="font-weight: 400;">, we
+                    can respect user-specified defaults and are able to provide controls for customizing font size
+                    without requiring changes to the stylesheet. Designs, however, are usually created using CSS pixel
+                    values. Manually converting to rems adds engineering overhead and the potential for bugs, so we have
+                    our build tool do this conversion for us.</span></p>
+                <h3><span style="font-weight: 400;">Sample build-time handling</span></h3>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">const</span> styles <span class="token operator">=</span> stylex<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  emphasis<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    fontWeight<span class="token punctuation">:</span> <span class="token string">'bold'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  text<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    fontSize<span class="token punctuation">:</span> <span class="token string">'16px'</span><span class="token punctuation">,</span>
+    fontWeight<span class="token punctuation">:</span> <span class="token string">'normal'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">styles</span><span class="token punctuation">(</span><span class="token string">'text'</span><span class="token punctuation">,</span> props<span class="token punctuation">.</span>isEmphasized <span class="token operator">&amp;&amp;</span> <span class="token string">'emphasis'</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 42px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">Example of source code.</span></i></p>
+                <pre
+                  class="line-numbers language-css"><code class=" language-css"><span class="token selector">.c0</span> <span class="token punctuation">{</span> <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.c1</span> <span class="token punctuation">{</span> <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token selector">.c2</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 0.9rem<span class="token punctuation">;</span> <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">Example of generated CSS.</span></i></p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">MyComponent</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>isEmphasized <span class="token operator">?</span> <span class="token string">'c0 '</span> <span class="token punctuation">:</span> <span class="token string">'c1 '</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'c2 '</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 42px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">Example of generated JavaScript.</span></i></p>
+                <h3><span style="font-weight: 400;">CSS variables for theming (dark mode)</span></h3>
+                <p><span style="font-weight: 400;">On the old site, we used to attempt to apply themes by adding a class
+                    name to the body element and then using that class name to override existing styles with rules that
+                    had a higher specificity. This approach has issues, and it no longer works with our new atomic
+                    CSS-in-JavaScript approach, so we have switched to </span><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank"
+                    rel="noopener"><span style="font-weight: 400;">CSS variables</span></a><span
+                    style="font-weight: 400;"> for theming.</span></p>
+                <p><span style="font-weight: 400;">CSS variables are defined under a class, and when that class is
+                    applied to a DOM element, its values are applied to the styles within its DOM subtree. This lets us
+                    combine the themes into a single stylesheet, meaning toggling different themes doesn’t require
+                    reloading the page, different pages can have different themes without downloading additional CSS,
+                    and different products can use different themes side by side on the same page.</span></p>
+                <pre
+                  class="line-numbers language-css"><code class=" language-css"><span class="token selector">.light-theme</span> <span class="token punctuation">{</span>
+  <span class="token property">--card-bg</span><span class="token punctuation">:</span> #eee<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.dark-theme</span> <span class="token punctuation">{</span>
+  <span class="token property">--card-bg</span><span class="token punctuation">:</span> #111<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.card</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--card-bg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><span style="font-weight: 400;">This made the performance impact of a theme proportional to the size
+                    of the color palette rather than to the size or complexity of the component library. A single atomic
+                    CSS bundle also includes the dark mode implementation.</span></p>
+                <h3><span style="font-weight: 400;">SVGs in JavaScript for fast, single-render performance</span></h3>
+                <p><span style="font-weight: 400;">To prevent flickering as icons come in after the rest of the content,
+                    we inline SVGs into the HTML using React rather than passing SVG files to </span><span
+                    style="font-weight: 400;">&lt;img&gt;</span><span style="font-weight: 400;"> tags. Because these
+                    SVGs are now effectively JavaScript, they can be bundled and delivered together with their
+                    surrounding components for a clean one-pass render. We’ve found that the upside of loading these at
+                    the same time as the JavaScript was greater than the cost of SVG painting performance. By inlining,
+                    there’s no flickering of icons that pop in afterward.</span></p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">function</span> <span class="token function">MyIcon</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>svg <span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span> className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">styles</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token comment">/*...*/</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+       <span class="token operator">&lt;</span>path d<span class="token operator">=</span><span class="token string">"M17.5 ... 25.479Z"</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>svg<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><span style="font-weight: 400;">Additionally, these icons can change colors smoothly at runtime
+                    without requiring further downloads. We’re able to style the icon according to its props and use our
+                    CSS variables to theme certain types of icons, especially ones that are monochrome.</span></p>
+                <p><img class="alignnone wp-image-15039 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png"
+                    alt="New Facebook.com design in light mode " width="2732" height="1536"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png 2732w, https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png?resize=916,515 916w, https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png?resize=1024,576 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png?resize=1536,864 1536w, https://engineering.fb.com/wp-content/uploads/2020/05/1.-Home-Setting-Light-Mode.png?resize=2048,1151 2048w"
+                    sizes="(max-width: 992px) 100vw, 62vw" style="margin-bottom: 1rem;"></p>
+                <p><img class="alignnone wp-image-15040 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png"
+                    alt="Facebook.com redesign in dark mode" width="2732" height="1536"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png 2732w, https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png?resize=916,515 916w, https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png?resize=1024,576 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png?resize=1536,864 1536w, https://engineering.fb.com/wp-content/uploads/2020/05/2.-Home-Setting-Dark-Mode.png?resize=2048,1151 2048w"
+                    sizes="(max-width: 992px) 100vw, 62vw" style="margin-bottom: 1rem;"></p>
+                <h2><span style="font-weight: 400;">Code-splitting JavaScript for faster performance</span></h2>
+                <p><span style="font-weight: 400;">Code size is one of the biggest concerns with a JavaScript-based
+                    single-page app because it has a large influence on page load performance. We knew that if we wanted
+                    a client-side React app for Facebook.com, we’d need to solve for this. We introduced several new
+                    APIs that work in line with our “as little as possible, as early as possible” mantra.</span></p>
+                <h3><span style="font-weight: 400;">Incremental code download to deliver just what we need, when we need
+                    it</span></h3>
+                <p><span style="font-weight: 400;">When someone is waiting for a page to load, our goal is to give
+                    immediate feedback by rendering UI “skeletons” of what the page is going to look like. This skeleton
+                    needs minimal resources, but we can’t render it early if our code is packaged in a single bundle, so
+                    we need to code-split into bundles based on the order in which the page should be displayed.
+                    However, if we do this naively (i.e., by using </span><a
+                    href="https://github.com/tc39/proposal-dynamic-import" target="_blank" rel="noopener"><span
+                      style="font-weight: 400;">dynamic imports</span></a><span style="font-weight: 400;"> that are
+                    fetched during render), we could hurt performance instead of helping it. This is the basis of our
+                    code-splitting design of JavaScript Loading Tiers: We split the JavaScript needed for the initial
+                    load into three tiers, using a declarative, statically analyzable API.</span></p>
+                <p><span style="font-weight: 400;">Tier 1</span> <span style="font-weight: 400;">is the basic layout
+                    needed to display the first paint for the above-the-fold content, including UI skeletons for initial
+                    loading states.</span><span style="font-weight: 400;"><br>
+                  </span></p>
+                <p class="fig" style="text-align: center;">
+                <figure id="attachment_15041" aria-describedby="caption-attachment-15041" style="width: 2732px"
+                  class="wp-caption alignnone"><img class="wp-image-15041 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png"
+                    alt="Tier 1 is the basic layout needed to display the first paint for the above-the-fold content, including UI skeletons for initial loading states."
+                    width="2732" height="1536"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png 2732w, https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png?resize=916,515 916w, https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png?resize=1024,576 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png?resize=1536,864 1536w, https://engineering.fb.com/wp-content/uploads/2020/05/3.-Tier-1.png?resize=2048,1151 2048w"
+                    sizes="(max-width: 992px) 100vw, 62vw">
+                  <figcaption id="caption-attachment-15041" class="wp-caption-text"
+                    style="text-align: left; max-width: 729px;">The page after Tier 1 code loads and renders.
+                  </figcaption>
+                </figure>
+                </p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">import</span> ModuleA <span class="token keyword">from</span> <span class="token string">'ModuleA'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">Tier 1 uses regular <code>import</code>syntax.</span></i></p>
+                <p><span style="font-weight: 400;">Tier 2 includes all the JavaScript needed to fully render all
+                    above-the-fold content. After Tier 2, nothing on the screen should still be visually changing as a
+                    result of code loading.</span></p>
+                <p class="fig" style="text-align: center;">
+                <figure id="attachment_15042" aria-describedby="caption-attachment-15042" style="width: 2732px"
+                  class="wp-caption alignnone"><img class="wp-image-15042 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png"
+                    alt="Tier 2 includes all the JavaScript needed to fully render all above-the-fold content. After Tier 2, nothing on the screen should still be visually changing as a result of code loading."
+                    width="2732" height="1536"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png 2732w, https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png?resize=916,515 916w, https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png?resize=1024,576 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png?resize=1536,864 1536w, https://engineering.fb.com/wp-content/uploads/2020/05/4.-Tier-2.png?resize=2048,1151 2048w"
+                    sizes="(max-width: 992px) 100vw, 62vw">
+                  <figcaption id="caption-attachment-15042" class="wp-caption-text"
+                    style="text-align: left; max-width: 729px;">The page after Tier 2 code loads and renders.
+                  </figcaption>
+                </figure>
+                </p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript">importForDisplay ModuleBDeferred <span class="token keyword">from</span> <span class="token string">'ModuleB'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">Once an <code>importForDisplay</code> is encountered, it and its
+                      dependencies are moved into Tier 2. This returns a promise-based wrapper to access the module once
+                      it’s loaded.</span></i></p>
+                <p class="fig" style="text-align: center;">
+                <figure id="attachment_15043" aria-describedby="caption-attachment-15043" style="width: 2732px"
+                  class="wp-caption alignnone"><img class="wp-image-15043 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png"
+                    alt="Tier 3 includes everything that is only needed after display that doesn’t affect the current pixels on the screen, including logging code and subscriptions for live-updating data."
+                    width="2732" height="1536"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png 2732w, https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png?resize=916,515 916w, https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png?resize=1024,576 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png?resize=1536,864 1536w, https://engineering.fb.com/wp-content/uploads/2020/05/5.-Tier-2-after-Interaction.png?resize=2048,1151 2048w"
+                    sizes="(max-width: 992px) 100vw, 62vw">
+                  <figcaption id="caption-attachment-15043" class="wp-caption-text"
+                    style="text-align: left; max-width: 729px;">Tier 2 needs to be fully interactive. If someone clicks
+                    on a menu after Tier 2 code loads and renders, they get immediate feedback about the interaction,
+                    even if the contents of the menu are not ready to render.</figcaption>
+                </figure>
+                </p>
+                <p>Tier 3 includes everything that is only needed after display that doesn’t affect the current pixels
+                  on the screen, including logging code and subscriptions for live-updating data.</p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript">importForAfterDisplay ModuleCDeferred <span class="token keyword">from</span> <span class="token string">'ModuleC'</span><span class="token punctuation">;</span>
+ 
+<span class="token comment">// ...</span>
+ 
+<span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  ModuleCDeferred<span class="token punctuation">.</span><span class="token function">onReady</span><span class="token punctuation">(</span><span class="token parameter">ModuleC</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    ModuleC<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Click happened! '</span><span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">Once an <code>importForAfterDisplay</code> is encountered, it and
+                      its dependencies are moved into Tier 3. This returns a promise-based wrapper to access the module
+                      once it’s loaded.</span></i></p>
+                <p><span style="font-weight: 400;">A 500 KB JavaScript page can become 50 KB in Tier 1, 150 KB in Tier
+                    2, and 300 KB in Tier 3. Splitting our code this way enables us to improve time to first paint and
+                    time to visual completion by reducing the amount of code that needs to be downloaded to hit each
+                    milestone. Because Tier 3 doesn’t affect the pixels on the screen, it isn’t really a render, and the
+                    final paint finishes earlier. Most significantly, the loading screen is able to render much
+                    earlier.</span></p>
+                <h3><span style="font-weight: 400;">Delivering experiment-driven dependencies only when they’re
+                    needed</span></h3>
+                <p><span style="font-weight: 400;">We often need to render two variations of the same UI, e.g., in an
+                    A/B test. The simplest way to do this is to download both versions for all people, but this means we
+                    often download code that is never executed. A slightly better approach is to use dynamic imports on
+                    render, but this can be slow.</span></p>
+                <p><span style="font-weight: 400;">Instead, in keeping with our “as little as possible, as early as
+                    possible” mantra, we built a declarative API that alerts us to these decisions early and encodes
+                    them in our dependency graph. As the page is loading, the server is able to check the experiment and
+                    send down only the required version of the code.</span></p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript"><span class="token keyword">const</span> Composer <span class="token operator">=</span> <span class="token function">importCond</span><span class="token punctuation">(</span><span class="token string">'NewComposerExperiment'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token boolean">true</span><span class="token punctuation">:</span> <span class="token string">'NewComposer'</span><span class="token punctuation">,</span>
+  <span class="token boolean">false</span><span class="token punctuation">:</span> <span class="token string">'OldComposer'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><span style="font-weight: 400;">This works well when the conditions we split on are static across
+                    page loads for that person, such as A/B tests, locales, or device classes.</span></p>
+                <h3><span style="font-weight: 400;">Delivering data-driven dependencies only when they’re needed</span>
+                </h3>
+                <p><span style="font-weight: 400;">What about code branches that are not static across page loads? For
+                    example, sending down all the rendering code for all the different types and combinations of
+                    components for News Feed posts would considerably bloat the page’s JavaScript size.</span></p>
+                <p><span style="font-weight: 400;">These dependencies are decided at runtime, based on which data is
+                    returned from the back end. This allows us to use a new feature of </span><a
+                    href="https://github.com/facebook/relay" target="_blank" rel="noopener"><span
+                      style="font-weight: 400;">Relay</span></a><span style="font-weight: 400;"> to express which
+                    rendering code is needed, depending on what type of data is returned. If the post has a special
+                    attachment, such as a photo, we describe that we need the </span><span
+                    style="font-weight: 400;">PhotoComponent</span><span style="font-weight: 400;"> in order to render
+                    that photo.</span></p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript"><span class="token operator">...</span> on Post <span class="token punctuation">{</span>
+  <span class="token operator">...</span> on PhotoPost <span class="token punctuation">{</span>
+    @<span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'PhotoComponent.js'</span><span class="token punctuation">)</span>
+    photo_data
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span> on VideoPost <span class="token punctuation">{</span>
+    @<span class="token function">module</span><span class="token punctuation">(</span><span class="token string">'VideoComponent.js'</span><span class="token punctuation">)</span>
+    video_data
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <p><i><span style="font-weight: 400;">We express the dependencies needed to render each post type as
+                      part of the query.</span></i></p>
+                <p><span style="font-weight: 400;">Even better, the <code>PhotoComponent</code> itself describes exactly
+                    which data on the photo attachment type it needs as a fragment, which means we can even split out
+                    the query logic.</span></p>
+                <h3><span style="font-weight: 400;">Using JavaScript budgets to prevent code creep</span></h3>
+                <p><span style="font-weight: 400;">Tiers and conditional dependencies help us deliver just the code
+                    necessary for each phase, but we also need to make sure the size of each tier stays under control
+                    over time. To manage this, we’ve introduced per-product JavaScript budgets.</span></p>
+                <p><span style="font-weight: 400;">We set budgets based on performance goals, technical constraints, and
+                    product considerations. We allocated page-level budgets and subdivide the page based on product
+                    boundaries and team boundaries. Shared infra is added to a carefully curated list and given its own
+                    budget. Shared infra counts against all pages’ budgets, but modules within it are free for product
+                    teams to use. We also have budgets for code that’s deferred, conditionally loaded, or loaded on
+                    interaction.</span></p>
+                <p><span style="font-weight: 400;">We’ve created additional tooling for each step of the process:</span>
+                </p>
+                <ul>
+                  <li style="font-weight: 400;"><span style="font-weight: 400;">A dependency graph tool makes it easier
+                      to understand where bytes are coming from and identify opportunities to decrease code size.</span>
+                  </li>
+                  <li style="font-weight: 400;"><span style="font-weight: 400;">Size monitoring on merge requests
+                      displays size regressions/improvements and triggers customizable alerts.</span></li>
+                  <li style="font-weight: 400;"><span style="font-weight: 400;">Interactive graphs show historical size
+                      and how things have changed between revisions.</span></li>
+                  <li style="font-weight: 400;"><span style="font-weight: 400;">Dashboards help us understand the
+                      current state of sizes in relation to budgets.</span></li>
+                </ul>
+                <h2><span style="font-weight: 400;">Modernizing data-fetching to get it as early as
+                    possible&nbsp;</span></h2>
+                <p><span style="font-weight: 400;">As part of this rebuild, we modernized our data-fetching infra on the
+                    web. While some features of the old site used Relay and </span><a href="https://graphql.org/"
+                    target="_blank" rel="noopener"><span style="font-weight: 400;">GraphQL</span></a><span
+                    style="font-weight: 400;"> for data-fetching, most fetched data ad-hoc as part of their server-side
+                    PHP rendering. With the new site, we were able to standardize with our mobile apps and ensure that
+                    all data-fetching goes through GraphQL. Since Relay and GraphQL already handle the “as little as
+                    possible” work for us, we just needed to make some changes to support getting the data we needed as
+                    early as possible.</span></p>
+                <h3><span style="font-weight: 400;">Preloading data on the initial server request to improve
+                    startup</span></h3>
+                <p><span style="font-weight: 400;">Many web apps need to wait until all their JavaScript is downloaded
+                    and executed before fetching data from the server. With Relay, we know statically what data the page
+                    needs. This means that as soon as our server receives the request for a page, it can immediately
+                    start preparing the necessary data and download it in parallel with the required code. We stream
+                    this data with the page as it becomes available so the client can avoid additional round trips and
+                    render the final page content sooner.</span></p>
+                <h3><span style="font-weight: 400;">Streaming data for fewer round trips and better interactivity</span>
+                </h3>
+                <p><span style="font-weight: 400;">On the initial load of Facebook.com, some content may initially be
+                    hidden or rendered outside of the viewport. For example, most screens fit one or two News Feed
+                    posts, but we don’t know in advance how many will fit. Additionally, it’s very likely the user will
+                    scroll, and it would take time to fetch each story individually in a serial round trip. On the other
+                    hand, the more stories we fetch in one query, the slower that query gets, which leads to longer
+                    query times and a longer Visually Complete time for even the first story.</span></p>
+                <p><span style="font-weight: 400;">To solve this, we use an internal GraphQL extension,
+                    <code>@stream</code>, to stream the feed connection to the client both for initial load and
+                    subsequent pagination on scroll. This allows us to send each feed story as soon it’s ready, one by
+                    one, with just a single query operation.</span></p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript">fragment HomepageData on User <span class="token punctuation">{</span>
+  <span class="token function">newsFeed</span><span class="token punctuation">(</span><span class="token parameter">first<span class="token punctuation">:</span> <span class="token number">10</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    edges @stream
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>AdditionalData
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <h3></h3>
+                <h3><span style="font-weight: 400;">Deferring data that’s not needed right away</span></h3>
+                <p><span style="font-weight: 400;">Different parts of certain queries take longer to compute than
+                    others. For example, when viewing a profile, it’s relatively quick to fetch a person’s name and
+                    profile photo, but it takes a bit longer to fetch the contents of their Timeline.</span></p>
+                <p><span style="font-weight: 400;">To fetch both types of data with a single query, we use
+                    <code>@defer</code>, which enables different sections of the response to be streamed as soon as
+                    they’re ready. This lets us render the bulk of the UI with initial data as quickly as possible, and
+                    render loading states for the rest. With </span><a
+                    href="https://reactjs.org/docs/concurrent-mode-suspense.html" target="_blank" rel="noopener"><span
+                      style="font-weight: 400;">React Suspense</span></a><span style="font-weight: 400;">, this is even
+                    easier, as we can explicitly craft our loading states to ensure a smooth, top-down page load
+                    experience.</span></p>
+                <pre
+                  class="line-numbers language-javascript"><code class=" language-javascript">fragment ProfileData on User <span class="token punctuation">{</span>
+  name
+  profile_picture <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+  <span class="token operator">...</span>AdditionalData @defer
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span><span style="height: 21px;"></span></span><span class="line-numbers-sizer" style="display: none;"></span></code></pre>
+                <h2></h2>
+                <h2><span style="font-weight: 400;">Route maps and definitions for faster navigation</span></h2>
+                <p><span style="font-weight: 400;">Fast navigation is an important feature of single-page applications.
+                    When navigating to a new route, we need to fetch various code and data from the server to render the
+                    destination page. To reduce the number of network round trips required when loading a new page, the
+                    client needs to know which resources will be needed for each route ahead of time. We call this a
+                    route map and each entry a route definition.</span></p>
+                <h3><span style="font-weight: 400;">Getting route definitions as early as possible</span></h3>
+                <p><span style="font-weight: 400;">For Facebook, this route map is too large to send all at once.
+                    Instead, we dynamically add route definitions to the route map during the session, as new links are
+                    rendered. The route map and the router live at the very top of the application, allowing the
+                    combination of current application and router state to drive app-level state decisions, such as the
+                    behavior of the top navigation bar or chat tabs based on the current route.</span></p>
+                <h3><span style="font-weight: 400;">Prefetching resources as early as possible</span></h3>
+                <p><span style="font-weight: 400;">It’s common for client-side applications to wait until a page is
+                    being rendered by React to download the code and data needed for that page. Often this is done using
+                  </span><a href="https://reactjs.org/docs/code-splitting.html#reactlazy" target="_blank"
+                    rel="noopener"><span style="font-weight: 400;">React.lazy</span></a><span style="font-weight: 400;">
+                    or a similar primitive. Since this can make page navigation slow, we instead start our first request
+                    for some of the necessary resources even before a link is clicked:</span></p>
+                <p class="fig" style="text-align: center;">
+                <figure id="attachment_15026" aria-describedby="caption-attachment-15026" style="width: 2000px"
+                  class="wp-caption alignnone"><img class="wp-image-15026 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg"
+                    alt="We kick off fetches early, preloading on hover or focus, and fetching on mousedown. This example is specific to desktop, but other heuristics can be used for touch devices."
+                    width="2000" height="1126"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg 2000w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg?resize=916,516 916w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg?resize=1024,577 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-01.jpg?resize=1536,865 1536w"
+                    sizes="(max-width: 992px) 100vw, 62vw">
+                  <figcaption id="caption-attachment-15026" class="wp-caption-text"
+                    style="text-align: left; max-width: 729px;">We kick off fetches early, preloading on hover or focus,
+                    and fetching on mousedown. This example is specific to desktop, but other heuristics can be used for
+                    touch devices.</figcaption>
+                </figure>
+                </p>
+                <p><span style="font-weight: 400;">To provide a more fluid experience than just showing a blank screen
+                    when navigating, we use </span><a
+                    href="https://reactjs.org/docs/concurrent-mode-patterns.html#transitions" target="_blank"
+                    rel="noopener"><span style="font-weight: 400;">React Suspense transitions</span></a><span
+                    style="font-weight: 400;"> to continue rendering the previous route until the next route is either
+                    fully rendered or suspends into a “good” loading state with UI skeletons for the next page. This is
+                    much less jarring, and it mimics standard browser behavior.</span></p>
+                <h3><span style="font-weight: 400;">Parallelizing code and data download</span></h3>
+                <p><span style="font-weight: 400;">We do a lot of </span><a
+                    href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading" target="_blank"
+                    rel="noopener"><span style="font-weight: 400;">lazy loading</span></a><span
+                    style="font-weight: 400;"> of code on the new site, but if we lazy load the code for a route and the
+                    data-fetching code for that route lives inside of that code, we end up with a serial load.</span>
+                </p>
+                <p class="fig" style="text-align: center;">
+                <figure id="attachment_15031" aria-describedby="caption-attachment-15031" style="width: 2000px"
+                  class="wp-caption alignnone"><img class="wp-image-15031 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/Comet-02.jpg"
+                    alt="A “traditional” React/Relay app with lazy loaded routes results in two round trips."
+                    width="2000" height="570"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/Comet-02.jpg 2000w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-02.jpg?resize=916,261 916w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-02.jpg?resize=768,219 768w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-02.jpg?resize=1024,292 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-02.jpg?resize=1536,438 1536w"
+                    sizes="(max-width: 992px) 100vw, 62vw">
+                  <figcaption id="caption-attachment-15031" class="wp-caption-text"
+                    style="text-align: left; max-width: 613px;">A “traditional” React/Relay app with lazy loaded routes
+                    results in two round trips.</figcaption>
+                </figure>
+                </p>
+                <p><span style="font-weight: 400;">To solve this problem, we came up with EntryPoints, which are files
+                    that wrap a code-split point and transform inputs into queries. These files are very small and are
+                    downloaded in advance for any reachable code-split point.</span><span style="font-weight: 400;"><br>
+                  </span></p>
+                <p class="fig" style="text-align: center;">
+                <figure id="attachment_15033" aria-describedby="caption-attachment-15033" style="width: 2000px"
+                  class="wp-caption alignnone"><img class="wp-image-15033 size-full"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/Comet-03-1.jpg"
+                    alt="Code and data are fetched in parallel, allowing us to download these in a single network round trip."
+                    width="2000" height="776"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/Comet-03-1.jpg 2000w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-03-1.jpg?resize=916,355 916w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-03-1.jpg?resize=768,298 768w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-03-1.jpg?resize=1024,397 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/Comet-03-1.jpg?resize=1536,596 1536w"
+                    sizes="(max-width: 992px) 100vw, 62vw">
+                  <figcaption id="caption-attachment-15033" class="wp-caption-text"
+                    style="text-align: left; max-width: 729px;">Code and data are fetched in parallel, allowing us to
+                    download these in a single network round trip.</figcaption>
+                </figure>
+                </p>
+                <p><span style="font-weight: 400;">The GraphQL query is still colocated with the view, but the
+                    EntryPoint encapsulates when that query is needed and how to transform the inputs into the correct
+                    variables. The app uses these EntryPoints to automatically decide when to fetch the resources,
+                    making sure the right thing happens by default. This has the added benefit of creating a single
+                    JavaScript function that contains all the data-fetching needs for any given point in the app, which
+                    can be used for the server preloading discussed earlier.</span></p>
+                <p><span style="font-weight: 400;">Many of the changes we’ve discussed here are not specific to
+                    Facebook. These concepts and patterns can be applied to any client-side app using any framework or
+                    library. By standardizing our tech stack, we have been able to rethink how we introduce
+                    functionality that people want in a performant, sustainable way — even as we operate at engineering
+                    and product scale.&nbsp;</span></p>
+                <p><span style="font-weight: 400;">Engineering experience improvements and user experience improvements
+                    must go hand in hand, and performance and accessibility cannot be viewed as a tax on shipping
+                    features. With great APIs, tools, and automation, we can help engineers move faster and ship better,
+                    more performant code at the same time. The work done to improve performance for the new Facebook.com
+                    was extensive and we expect to share more on this work soon. To check out the redesign, visit <a
+                      href="https://www.facebook.com/" target="_blank" rel="noopener">facebook.com</a> from your
+                    desktop. It’s rolling out gradually and will be available to everyone soon.</span></p>
+                <p>&nbsp;</p>
+
+
+              </div><!-- .entry-content -->
+
+
+            </article><!-- #post-## -->
+
+            <footer class="entry-footer">
+
+
+            </footer><!-- .entry-footer -->
+
+            <iframe
+              src="https://www.facebook.com/plugins/like.php?href=https://engineering.fb.com/web/facebook-redesign/&amp;width=450&amp;layout=standard&amp;action=like&amp;size=small&amp;show_faces=false&amp;share=true&amp;height=35&amp;appId=250208035192"
+              width="450" height="35" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+              allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+            <div class="more-articles">
+              <a class="prev" href="https://engineering.fb.com/connectivity/discover/"
+                aria-label="View the previous article: Implementing a secure web-based proxy service for Discover">
+                <div class="prev__thumb-wrapper">
+                  <img width="2000" height="1125"
+                    data-src="https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=2000"
+                    class="prev__thumb wp-post-image" alt="Implementing a secure web-based proxy service for Discover"
+                    data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg 2000w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?resize=580,326 580w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?resize=916,515 916w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?resize=768,432 768w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?resize=1024,576 1024w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?resize=1536,864 1536w"
+                    sizes="(max-width: 992px) 100vw, 62vw"> </div>
+                <div class="prev__details">
+                  <span class="prev__details__btn">Prev</span>
+                  <br>
+                  <span class="prev__details__title">Implementing a secure web-based proxy service for Discover</span>
+                </div>
+              </a>
+
+            </div><!-- /.more-articles -->
+
+            <div class="related-articles">
+              <div class="related-articles__header">
+                <h3 class="related-articles__header__headline">Read More in Web</h3>
+                <a aria-label="View all articles in this Web" class="related-articles__header__link"
+                  href="https://engineering.fb.com/category/web/">
+                  View All </a>
+              </div>
+
+              <div class="article-grids related-articles__grid">
+                <div class="row">
+                  <div class="article-grid col-12 col-md-4">
+
+                    <article
+                      class="post post-15010 type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+                      id="post-13163">
+                      <header class="entry-header">
+                        <div class="entry-header__top">
+                          <span class="posted-on">
+                            <time class="entry-date published" datetime="2019-06-20T14:00:42-07:00">
+                              JUN 20, 2019 </time>
+                          </span>
+                        </div>
+
+                        <div class="entry-title">
+                          <div>
+                            <a href="https://engineering.fb.com/web/browser-contributions/" rel="bookmark"
+                              aria-label="Read More about Facebook’s open source browser contributions">
+                              Facebook’s open source browser contributions </a>
+                          </div>
+                        </div>
+
+                      </header><!-- .entry-header -->
+                      <img width="580" height="326"
+                        data-src="https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1"
+                        class="attachment-thumbnail size-thumbnail wp-post-image"
+                        alt="Facebook’s open source browser contributions, including isInputPending, the JavaScript Self-Profiling API, and BinAST.">
+                    </article><!-- #post-## -->
+                  </div><!-- /.article-grid -->
+                  <div class="article-grid col-12 col-md-4">
+
+                    <article
+                      class="post post-15010 type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+                      id="post-12894">
+                      <header class="entry-header">
+                        <div class="entry-header__top">
+                          <span class="posted-on">
+                            <time class="entry-date published" datetime="2019-04-22T05:00:20-07:00">
+                              APR 22, 2019 </time>
+                          </span>
+                        </div>
+
+                        <div class="entry-title">
+                          <div>
+                            <a href="https://engineering.fb.com/developer-tools/isinputpending-api/" rel="bookmark"
+                              aria-label="Read More about Faster input events with Facebook’s first browser API contribution">
+                              Faster input events with Facebook’s first browser API contribution </a>
+                          </div>
+                        </div>
+
+                      </header><!-- .entry-header -->
+                      <img width="580" height="326"
+                        data-src="https://engineering.fb.com/wp-content/uploads/2019/04/isinputpendinghero.jpg?w=580&amp;h=326&amp;crop=1"
+                        class="attachment-thumbnail size-thumbnail wp-post-image"
+                        alt="isInputPending Faster input events with Facebook's first browser API contribution">
+                    </article><!-- #post-## -->
+                  </div><!-- /.article-grid -->
+                  <div class="article-grid col-12 col-md-4">
+
+                    <article
+                      class="post post-15010 type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+                      id="post-12823">
+                      <header class="entry-header">
+                        <div class="entry-header__top">
+                          <span class="posted-on">
+                            <time class="entry-date published" datetime="2019-04-05T02:00:30-07:00">
+                              APR 5, 2019 </time>
+                          </span>
+                        </div>
+
+                        <div class="entry-title">
+                          <div>
+                            <a href="https://engineering.fb.com/production-engineering/facebook-london-engineering-fair/"
+                              rel="bookmark" aria-label="Read More about Facebook Engineering Fair, London recap">
+                              Facebook Engineering Fair, London recap </a>
+                          </div>
+                        </div>
+
+                      </header><!-- .entry-header -->
+                      <img width="580" height="326"
+                        data-src="https://engineering.fb.com/wp-content/uploads/2019/04/UKEng.jpg?w=580&amp;h=326&amp;crop=1"
+                        class="attachment-thumbnail size-thumbnail wp-post-image"
+                        alt="Kyle McGinn kicked off the Facebook London Engineering Fair.">
+                    </article><!-- #post-## -->
+                  </div><!-- /.article-grid -->
+                  <div class="article-grid col-12 col-md-4">
+
+                    <article
+                      class="post post-15010 type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+                      id="post-12472">
+                      <header class="entry-header">
+                        <div class="entry-header__top">
+                          <span class="posted-on">
+                            <time class="entry-date published" datetime="2019-02-25T03:59:13-08:00">
+                              FEB 25, 2019 </time>
+                          </span>
+                        </div>
+
+                        <div class="entry-title">
+                          <div>
+                            <a href="https://engineering.fb.com/open-source/magma/" rel="bookmark"
+                              aria-label="Read More about Open-sourcing Magma to extend mobile networks">
+                              Open-sourcing Magma to extend mobile networks </a>
+                          </div>
+                        </div>
+
+                      </header><!-- .entry-header -->
+                      <img width="580" height="326"
+                        data-src="https://engineering.fb.com/wp-content/uploads/2019/02/OSIBgreen.jpg?w=580&amp;h=326&amp;crop=1"
+                        class="attachment-thumbnail size-thumbnail wp-post-image"
+                        alt="PyTorch-BigGraph: Faster embeddings of extremely large graphs">
+                    </article><!-- #post-## -->
+                  </div><!-- /.article-grid -->
+                  <div class="article-grid col-12 col-md-4">
+
+                    <article
+                      class="post post-15010 type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+                      id="post-12446">
+                      <header class="entry-header">
+                        <div class="entry-header__top">
+                          <span class="posted-on">
+                            <time class="entry-date published" datetime="2019-02-22T05:00:07-08:00">
+                              FEB 22, 2019 </time>
+                          </span>
+                        </div>
+
+                        <div class="entry-title">
+                          <div>
+                            <a href="https://engineering.fb.com/open-source/react-hooks/" rel="bookmark"
+                              aria-label="Read More about Releasing Hooks for React 16.8">
+                              Releasing Hooks for React 16.8 </a>
+                          </div>
+                        </div>
+
+                      </header><!-- .entry-header -->
+                      <img width="580" height="326"
+                        data-src="https://engineering.fb.com/wp-content/uploads/2019/02/OSIBPurple.jpg?w=580&amp;h=326&amp;crop=1"
+                        class="attachment-thumbnail size-thumbnail wp-post-image"
+                        alt="Releasing Hooks for React 16.8 on Facebook's Engineering blog">
+                    </article><!-- #post-## -->
+                  </div><!-- /.article-grid -->
+                  <div class="article-grid col-12 col-md-4">
+
+                    <article
+                      class="post post-15010 type-post status-publish format-standard has-post-thumbnail hentry category-web fb_content_type-article"
+                      id="post-10694">
+                      <header class="entry-header">
+                        <div class="entry-header__top">
+                          <span class="posted-on">
+                            <time class="entry-date published" datetime="2018-11-02T09:31:40-07:00">
+                              NOV 2, 2018 </time>
+                          </span>
+                        </div>
+
+                        <div class="entry-title">
+                          <div>
+                            <a href="https://engineering.fb.com/web/react-conf/" rel="bookmark"
+                              aria-label="Read More about React Conf recap: Hooks, Suspense, and Concurrent Rendering">
+                              React Conf recap: Hooks, Suspense, and Concurrent Rendering </a>
+                          </div>
+                        </div>
+
+                      </header><!-- .entry-header -->
+                      <img width="580" height="326"
+                        data-src="https://engineering.fb.com/wp-content/uploads/2018/11/ReactConfx1125.png?w=580&amp;h=326&amp;crop=1"
+                        class="attachment-thumbnail size-thumbnail wp-post-image"
+                        alt="React Conf recap: Hooks, Suspense, and Concurrent Rendering on engineering.fb.com, Facebook's Engineering blog">
+                    </article><!-- #post-## -->
+                  </div><!-- /.article-grid -->
+                </div><!-- /.row -->
+              </div>
+              <!--/.article-grids -->
+
+            </div><!-- /.related-articles -->
+
+
+            <!-- include the carousel nav here. -->
+
+
+
+
+          </main><!-- #main -->
+
+        </div><!-- #primary -->
+
+        <!-- Do the right sidebar check. -->
+
+
+
+
+        <div class="widget-area col-lg-3 offset-lg-0_25" id="right-sidebar" role="complementary">
+          <aside id="fb_related_post_widget-4" class="widget widget_fb_related_post_widget">
+            <h3 class="widget-title">Related Posts</h3>
+            <hr>
+            <div class="aside-related-projects">
+              <div class="article-grid-redesign">
+                <article class="post-14975 post type-post status-publish has-post-thumbnail hentry" id="post-14975">
+                  <a href="https://engineering.fb.com/connectivity/discover/" rel="bookmark"
+                    aria-label="Read More about Implementing a secure web-based proxy service for Discover">
+                    <img width="580" height="326"
+                      data-src="https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=580&amp;h=326&amp;crop=1"
+                      class="wp-post-image loaded" alt=""
+                      data-srcset="https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=580&amp;h=326&amp;crop=1 580w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=580&amp;h=326&amp;crop=1 326w"
+                      sizes="(max-width: 580px) 100vw, 580px"
+                      srcset="https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=580&amp;h=326&amp;crop=1 580w, https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=580&amp;h=326&amp;crop=1 326w"
+                      src="https://engineering.fb.com/wp-content/uploads/2020/05/Discover_hero.jpg?w=580&amp;h=326&amp;crop=1"
+                      data-was-processed="true">
+                    <header class="entry-header">
+                      <span class="posted-on"><time class="entry-date published" datetime="May 05, 2020">May 05,
+                          2020</time></span>
+                      <h4 class="entry-title">Implementing a secure web-based proxy service for Discover</h4>
+                    </header><!-- .entry-header -->
+                  </a>
+                </article><!-- #post-## -->
+              </div>
+              <div class="article-grid-redesign">
+                <article class="post-14063 post type-post status-publish has-post-thumbnail hentry" id="post-14063">
+                  <a href="https://engineering.fb.com/data-infrastructure/messenger/" rel="bookmark"
+                    aria-label="Read More about Project LightSpeed: Rewriting the Messenger codebase for a faster, smaller, and simpler messaging app">
+                    <img width="580" height="326"
+                      data-src="https://engineering.fb.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg?w=580&amp;h=326&amp;crop=1"
+                      class="wp-post-image loaded" alt=""
+                      data-srcset="https://engineering.fb.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg?w=580&amp;h=326&amp;crop=1 580w, https://engineering.fb.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg?w=580&amp;h=326&amp;crop=1 326w"
+                      sizes="(max-width: 580px) 100vw, 580px"
+                      srcset="https://engineering.fb.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg?w=580&amp;h=326&amp;crop=1 580w, https://engineering.fb.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg?w=580&amp;h=326&amp;crop=1 326w"
+                      src="https://engineering.fb.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg?w=580&amp;h=326&amp;crop=1"
+                      data-was-processed="true">
+                    <header class="entry-header">
+                      <span class="posted-on"><time class="entry-date published" datetime="Mar 02, 2020">Mar 02,
+                          2020</time></span>
+                      <h4 class="entry-title">Project LightSpeed: Rewriting the Messenger codebase for a faster,
+                        smaller, and simpler messaging app</h4>
+                    </header><!-- .entry-header -->
+                  </a>
+                </article><!-- #post-## -->
+              </div>
+              <div class="article-grid-redesign">
+                <article class="post-13163 post type-post status-publish has-post-thumbnail hentry" id="post-13163">
+                  <a href="https://engineering.fb.com/web/browser-contributions/" rel="bookmark"
+                    aria-label="Read More about Facebook’s open source browser contributions">
+                    <img width="580" height="326"
+                      data-src="https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1"
+                      class="wp-post-image loaded" alt=""
+                      data-srcset="https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1 580w, https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1 326w"
+                      sizes="(max-width: 580px) 100vw, 580px"
+                      srcset="https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1 580w, https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1 326w"
+                      src="https://engineering.fb.com/wp-content/uploads/2019/06/web_browser4.jpg?w=580&amp;h=326&amp;crop=1"
+                      data-was-processed="true">
+                    <header class="entry-header">
+                      <span class="posted-on"><time class="entry-date published" datetime="Jun 20, 2019">Jun 20,
+                          2019</time></span>
+                      <h4 class="entry-title">Facebook’s open source browser contributions</h4>
+                    </header><!-- .entry-header -->
+                  </a>
+                </article><!-- #post-## -->
+              </div>
+            </div>
+          </aside>
+          <aside id="wpb_widget-3" class="widget widget_wpb_widget">
+            <h3 class="widget-title">Related Positions</h3>
+            <hr>
+            <ul class="available-positions-list">
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007rkhZUAQ?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Software Engineer, Streaming
+                  </div>
+                  <div class="job-location">
+                    REDMOND, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007sw9nUAA?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Software Engineering Manager
+                  </div>
+                  <div class="job-location">
+                    MENLO PARK, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K0000033YaFUAU?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Research Scientist, Systems and Infrastructure (PhD)
+                  </div>
+                  <div class="job-location">
+                    MENLO PARK, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007sY0bUAE?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Engineering Manager - Malware Analysis Infrastructure
+                  </div>
+                  <div class="job-location">
+                    MENLO PARK, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007sYY3UAM?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Machine Learning Infrastructure Engineer
+                  </div>
+                  <div class="job-location">
+                    BELLEVUE, US
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a href="https://www.facebook.com/careers/" target="_blank" rel="noopener">
+              <div class="btn available-positions-btn">
+                See All Jobs </div>
+            </a>
+          </aside>
+        </div><!-- #secondary -->
+
+
+
+        <!-- <php get_template_part('content-single-side-bar'); ?> -->
+
+        <!-- Do the right sidebar check. -->
+
+      </div><!-- Container end -->
+
+    </div><!-- Wrapper end -->
+
+
+
+    <!-- ******************* The Footer Full-width Widget Area ******************* -->
+
+    <div class="wrapper wrapper-community">
+
+
+      <div class="community" tabindex="-1">
+
+        <h3 class="community-title">Join Our Engineering Community</h3>
+
+        <div class="row">
+          <!-- community section is generated through WordPress widget -->
+          <div id="wpb_widget-2" class="footer-widget widget_wpb_widget widget-count-3 col-md-4">
+            <h3 class="widget-title">Available Positions</h3>
+            <hr>
+            <ul class="available-positions-list">
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007rkhZUAQ?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Software Engineer, Streaming
+                  </div>
+                  <div class="job-location">
+                    REDMOND, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007sw9nUAA?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Software Engineering Manager
+                  </div>
+                  <div class="job-location">
+                    MENLO PARK, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K0000033YaFUAU?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Research Scientist, Systems and Infrastructure (PhD)
+                  </div>
+                  <div class="job-location">
+                    MENLO PARK, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007sY0bUAE?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Engineering Manager - Malware Analysis Infrastructure
+                  </div>
+                  <div class="job-location">
+                    MENLO PARK, US
+                  </div>
+                </a>
+              </li>
+              <li class="available-positions-item">
+                <a href="https://www.facebook.com/careers/department?req=a1K2K000007sYY3UAM?utm_source=fb_engineering&amp;utm_medium=homepage_feed&amp;utm_campaign=available_positions"
+                  target="_blank" rel="noopener">
+                  <div class="job-description">
+                    Machine Learning Infrastructure Engineer
+                  </div>
+                  <div class="job-location">
+                    BELLEVUE, US
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a href="https://www.facebook.com/careers/" target="_blank" rel="noopener">
+              <div class="btn available-positions-btn">
+                See All Jobs </div>
+            </a>
+          </div><!-- .footer-widget -->
+          <div id="custom_html-2" class="widget_text footer-widget widget_custom_html widget-count-3 col-md-4">
+            <h3 class="widget-title">Stay Connected</h3>
+            <div class="textwidget custom-html-widget">
+              <ul class="stay-connected-lists">
+                <li class="stay-connected-item">
+                  <img class="stay-connected-item-left"
+                    src="/wp-content/themes/code-fb-com/img/facebook-engineering.png" alt="footer-fb-engineering">
+                  <div class="stay-connected-item-right">
+                    <div class="stay-connected-label">
+                      Facebook Engineering
+                    </div>
+                    <a href="https://www.facebook.com/Engineering/" target="_blank" rel="noopener">
+                      <button class="btn stay-connected-btn">
+                        Like
+                      </button>
+                    </a>
+                  </div>
+                </li>
+                <li class="stay-connected-item">
+                  <img class="stay-connected-item-left" src="/wp-content/themes/code-fb-com/img/fbopensource.png"
+                    alt="footer-fbopensource">
+                  <div class="stay-connected-item-right">
+                    <div class="stay-connected-label">
+                      @fbOpenSource
+                    </div>
+                    <a onclick="return twitterFollow(&quot;fbOpenSource&quot;)" target="_blank" rel="noopener">
+                      <button class="btn stay-connected-btn">
+                        Follow
+                      </button>
+                    </a>
+                  </div>
+                </li>
+                <li class="stay-connected-item">
+                  <img class="stay-connected-item-left facebook-research"
+                    src="/wp-content/themes/code-fb-com/img/facebook-research.png" alt="footer-research">
+                  <div class="stay-connected-item-right">
+                    <div class="stay-connected-label">
+                      Facebook Research
+                    </div>
+                    <a href="https://research.fb.com/" target="_blank" rel="noopener">
+                      <button class="btn stay-connected-btn">
+                        Like
+                      </button>
+                    </a>
+                  </div>
+                </li>
+                <li class="stay-connected-item">
+                  <img class="stay-connected-item-left facebook-developers"
+                    src="/wp-content/themes/code-fb-com/img/facebook-developers.png" alt="footer-developers">
+                  <div class="stay-connected-item-right">
+                    <div class="stay-connected-label">
+                      Facebook Developers
+                    </div>
+                    <a href="https://developers.facebook.com/" target="_blank" rel="noopener">
+                      <button class="btn stay-connected-btn">
+                        Like
+                      </button>
+                    </a>
+                  </div>
+                </li>
+                <li class="stay-connected-item">
+                  <img class="stay-connected-item-left" src="/wp-content/themes/code-fb-com/img/rss.png"
+                    alt="footer-rss">
+                  <div class="stay-connected-item-right">
+                    <div class="stay-connected-label">
+                      RSS
+                    </div>
+                    <a href="https://code.facebook.com/posts/rss/" target="_blank" rel="noopener">
+                      <button class="btn stay-connected-btn">
+                        Subscribe
+                      </button>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div><!-- .footer-widget -->
+          <div id="custom_html-3" class="widget_text footer-widget widget_custom_html widget-count-3 col-md-4">
+            <h3 class="widget-title">Open Source</h3>
+            <div class="textwidget custom-html-widget">
+              <p class="opensource-desc">
+                Facebook believes in building community through open source technology. Explore our latest projects in
+                Artificial Intelligence, Data Infrastructure, Development Tools, Front End, Languages, Platforms,
+                Security, Virtual Reality, and more.
+              </p>
+              <ul class="opensource-cats">
+                <li class="opensource-cat">
+                  <img src="/wp-content/themes/code-fb-com/img/android.png" alt="android">
+                  <div class="opensource-cap">
+                    ANDROID
+                  </div>
+                </li>
+                <li class="opensource-cat">
+                  <img src="/wp-content/themes/code-fb-com/img/ios.png" alt="ios">
+                  <div class="opensource-cap">
+                    iOS
+                  </div>
+                </li>
+                <li class="opensource-cat">
+                  <img src="/wp-content/themes/code-fb-com/img/web.png" alt="web">
+                  <div class="opensource-cap">
+                    WEB
+                  </div>
+                </li>
+                <li class="opensource-cat">
+                  <img src="/wp-content/themes/code-fb-com/img/backend.png" alt="backend">
+                  <div class="opensource-cap">
+                    BACKEND
+                  </div>
+                </li>
+                <li class="opensource-cat">
+                  <img src="/wp-content/themes/code-fb-com/img/hardware.png" alt="hardware">
+                  <div class="opensource-cap">
+                    HARDWARE
+                  </div>
+                </li>
+              </ul>
+
+              <button class="btn opensource-btn" onclick="window.location.href='https://opensource.fb.com/'">
+                Learn More
+              </button>
+
+            </div>
+          </div><!-- .footer-widget -->
+        </div>
+
+      </div>
+
+    </div><!-- #wrapper-footer-full -->
+
+
+    <!-- <php get_sidebar( 'footerfull' ); ?> -->
+
+    <div class="wrapper-footer" id="wrapper-footer">
+
+      <div class="footer">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <footer class="site-footer" id="colophon">
+
+              <div class="site-info row justify-content-between">
+
+                <div class="col-md-4 copyright-container">
+                  <div class="copyright"> Facebook © 2020 </div>
+                </div>
+
+                <!-- static footer -->
+                <div class="col-md-5 footer-links-container">
+                  <ul class="footer-links">
+                    <li class="footer-link"><a href="https://www.facebook.com/facebook" target="_blank"
+                        rel="noopener">About</a></li>
+                    <li class="footer-link"><a href="https://www.facebook.com/careers" target="_blank"
+                        rel="noopener">Careers</a></li>
+                    <li class="footer-link"><a href="https://www.facebook.com/about/privacy" target="_blank"
+                        rel="noopener">Privacy</a></li>
+                    <li class="footer-link"><a href="https://www.facebook.com/help/cookies" target="_blank"
+                        rel="noopener">Cookies</a></li>
+                    <li class="footer-link"><a href="https://www.facebook.com/policies" target="_blank"
+                        rel="noopener">Terms</a></li>
+                    <li class="footer-link"><a href="https://www.facebook.com/help" target="_blank"
+                        rel="noopener">Help</a></li>
+                  </ul>
+                </div>
+
+              </div><!-- .site-info -->
+
+            </footer><!-- #colophon -->
+
+          </div>
+          <!--col end -->
+
+        </div><!-- row end -->
+
+      </div><!-- container end -->
+
+    </div><!-- wrapper end -->
+
+  </div><!-- #page we need this extra closing tag here -->
+
+  <div class="gdprconsent-container" id="GDPRConsentBar" style="display: none;">
+    <div class="gdprconsent-wrapper">
+      <div class="gdprconsent-content">
+        <p>To help personalize content, tailor and measure ads, and provide a safer experience, we use cookies. By
+          clicking or navigating the site, you agree to allow our collection of information on and off Facebook through
+          cookies. Learn more, including about available controls: <a href="https://www.facebook.com/policies/cookies/"
+            target="_blank" rel="noopener">Cookies Policy</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Twitter universal website tag code -->
+  <script>
+    !function (e, t, n, s, u, a) {
+    e.twq || (s = e.twq = function () {
+      s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+    }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = '//static.ads-twitter.com/uwt.js',
+      a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
+    }(window, document, 'script');
+    // Insert Twitter Pixel ID and Standard Event data below
+    twq('init', 'o31u0');
+    twq('track', 'PageView');
+  </script>
+  <!-- End Twitter universal website tag code -->
+  <script>
+    var loadmore_params = { "restfulURL": "https:\/\/engineering.fb.com\/wp-json\/fb\/v1\/loadmore", "searchText": "", "posts": "{\"page\":0,\"name\":\"facebook-redesign\",\"category_name\":\"web\",\"error\":\"\",\"m\":\"\",\"p\":0,\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"pagename\":\"\",\"page_id\":0,\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":false,\"update_post_term_cache\":true,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":12,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}", "current_page": "1", "max_page": "0", "post_type": "post" };
+    var search_params = { "ajaxurl": "https:\/\/engineering.fb.com\/wp-admin\/admin-ajax.php", "posts": "{\"page\":0,\"name\":\"facebook-redesign\",\"category_name\":\"web\",\"error\":\"\",\"m\":\"\",\"p\":0,\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"pagename\":\"\",\"page_id\":0,\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":false,\"update_post_term_cache\":true,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":12,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}", "current_page": "1", "max_page": "0", "article_filter": "9501578785" };
+  </script>
+  <script type="text/javascript"
+    src="https://engineering.fb.com/_static/??/wp-content/themes/code-fb-com/js/child-theme.min.js,/wp-includes/js/wp-embed.min.js?m=1588186583j"></script>
+  <script type="text/javascript" src="https://stats.wp.com/e-202020.js" async="async" defer="defer"></script>
+  <script type="text/javascript">
+    _stq = window._stq || [];
+    _stq.push(['view', { v: 'ext', j: '1:8.5', blog: '147945108', post: '15010', tz: '-7', srv: 'engineering.fb.com' }]);
+    _stq.push(['clickTrackerInit', '147945108', '15010']);
+  </script>
+
+
+
+
+  <img
+    src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A8.5&amp;blog=147945108&amp;post=15010&amp;tz=-7&amp;srv=engineering.fb.com&amp;host=engineering.fb.com&amp;ref=&amp;fcp=2983&amp;rand=0.0637603501286419"
+    alt=":)" width="6" height="5" id="wpstats">
+  <script type="text/javascript"
+    id="">(function () { var a = document.querySelectorAll('a[href*\x3d"facebook.com/careers/department"]'), c = "?utm_source\x3dfb_engineering\x26utm_medium\x3dhomepage_feed\x26utm_campaign\x3davailable_positions"; a.forEach(function (b) { var a = b.getAttribute("href"); b.setAttribute("href", a + c) }) })();</script>
+  <script
+    src="https://analytics.twitter.com/i/adsct?p_id=Twitter&amp;p_user_id=0&amp;txn_id=o31u0&amp;events=%5B%5B%22pageview%22%2Cnull%5D%5D&amp;tw_sale_amount=0&amp;tw_order_quantity=0&amp;tw_iframe_status=0&amp;tpx_cb=twttr.conversion.loadPixels&amp;tw_document_href=https%3A%2F%2Fengineering.fb.com%2Fweb%2Ffacebook-redesign%2F"
+    type="text/javascript"></script>
+  <div id="fb-root" class=" fb_reset">
+    <div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+      <div></div>
+    </div>
+  </div>
+</body>
+
+</html>

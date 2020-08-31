@@ -1,46 +1,31 @@
-// create http server
-// server needs to start listening for connection
-  // on a PORT
-// handle incoming requests
-  // respond
-
-console.log('Start of file')
+// get server set up
 const http = require('http');
-const fs = require('fs')
-
-const createDanielPage = require('./daniel.js');
-
-const indexContent = fs.readFileSync('index.html', 'utf8')
-
-const routesTable = {
-  'GET /': function (request, response) {
-    response.end(indexContent)
-  },
-  'GET /daniel': function (request, response) {
-    response.setHeader('Content-type', 'text/html')
-    response.end(createDanielPage())
-  }
-}
-
+const render = require('./indexPage')
 const server = http.createServer((request, response) => {
-  console.log('Incomming!!', request.method, request.url)
-  const endpoint = request.method + ' ' + request.url;
-  if (endpoint in routesTable) {
-    const handler = routesTable[endpoint]
-    handler(request, response);
-    // routesTable[endpoint](request, response);
+  const { url, method } = request;
+  if (url === '/' && method === 'GET') {
+    response.end(render('Keagan'))
+  } else if (url === '/rand' && method === 'GET') {
+    response.end(`${Math.random()}`)
   } else {
-    response.statusCode = 404;
-    response.end('Not found ' + Math.random())
+    response.end("Not found")
   }
+  // response.end("Response from the server!")
 });
 
-// Could also do the below as an alternative to passing a callback into http.createServer
-// server.on('request', () => {
-
+// get it (server) listening for request
+// obj.on("event", functionToHandleEvent)
+// server.on("request", (request, response) => {
+//   const { url, method } = request;
+//   if (url === '/' && method === 'GET') {
+//     response.end("Home")
+//   } else if (url === '/rand' && method === 'GET') {
+//     response.end(`${Math.random()}`)
+//   } else {
+//     response.end("Not found")
+//   }
+//   // response.end("Response from the server!")
 // })
+server.listen(4337, () => console.log("Opened to sell shoes"))
 
-// localhost:3000
-server.listen(3000, () => console.log('Listening on port 3000'))
-
-console.log('end of file')
+// get it to respond to request
