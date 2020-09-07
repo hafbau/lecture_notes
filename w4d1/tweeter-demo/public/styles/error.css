@@ -1,0 +1,17 @@
+.error-container {
+  border: 4px solid #f13c20;
+  padding: 10px 20px;
+  margin: 30px auto;
+  display:none;
+  font-weight: 600;
+  color: #f13c20; 
+}
+
+.error-container h4 {
+  font-weight: 300;
+  display: inline;
+}
+
+.fa-exclamation-triangle {
+  margin: 0 4px;
+}

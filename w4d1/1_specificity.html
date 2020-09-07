@@ -6,30 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-      /* SPECIFICITY */
-      #input-id {
+      /* SPECIFICITY AND CASCADING*/
+      /* A */
+      /* #input-id {
         background-color: lightgreen;
-      }
-      input[type='text'] {
+      } */
+      /* B */
+      /* input[type='text'] {
         background-color: blue;
-      }
-
-      .input-class {
+      } */
+      /* C */
+      /* .input-class {
         background-color: rebeccapurple;
-      }
-
-      body > input {
-        background-color: black;
-      }
-
-      body input {
-        background-color: red;
-      }
-      
+      } */
+      /* F */
+      /* Sibling (NEXT) selector */
       label + input {
         background-color: green;
       }
-
+      
+      /* E */
+      /* General Descendent */
+      body, input {
+        background-color: red;
+      }
+      /* D */
+      /* Direct Descendant */
+      body > input {
+        background-color: black;
+      }
+      /* G */
       input {
         background-color: tomato;
         width: 500px;
@@ -37,13 +43,17 @@
       }
 
       body {
-        /* background-color: blue; */
+        background-color: hotpink;
       }
      
     </style>
   </head>
   <body>
-    <label for="">The label</label>
-    <input type="text" name="input-name" id="input-id" class="input-class" style="background-color: aliceblue;">
+    <label for="input-id">What's ya colour?</label>
+    <!-- H -->
+    <input type="text" name="input-name" id="input-id" class="input-class"
+    >
+    <div><input type="text" name="input-name" id="input-id" class="input-class"
+    ></div>
   </body>
 </html>

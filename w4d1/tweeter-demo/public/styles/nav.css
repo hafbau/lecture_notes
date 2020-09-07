@@ -1,0 +1,106 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 120px;
+  background: #4056A1;
+  padding: 1.5em 1.5em;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.nav--text {
+  margin-left: 10px;
+  font-size: 1.5em;
+  font-family: 'Bungee', cursive;
+  color: #FFF;
+}
+
+.btn__text {
+  position: fixed;
+  top: 1.5em;
+  right: 2.5em;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn--borderless {
+  text-align: center;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.btn__icon {
+  font-size: 1.0em;
+  color: #F13C20;
+  margin-top: .2em;
+  animation: float 2s infinite ease;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(.5rem);
+    -webkit-transform: translateY(.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+}
+
+.btn--bold {
+  font-weight: 600;
+}
+
+.btn--scroll {
+  display: block;
+}
+
+.round-btn {
+  background-color: #F13C20;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  height: 90px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  outline: 0;
+  display: none;
+  margin: 250px 0px 0px 20px;
+  color: #fff;
+  border-radius: 100%;
+  width: 90px;
+  /*Cursor change to show it's a clickable button*/
+  cursor: pointer;
+  box-shadow: 0 3px 5px #ccc
+}
+
+.round-btn__icon {
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+
+
+@media only screen and (max-width: 1025px) {
+  nav {
+    background: none;
+  }
+}
+

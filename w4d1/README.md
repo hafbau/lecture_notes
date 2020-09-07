@@ -1,12 +1,12 @@
 # Intro to CSS
 
-Today's notes is courtesy of Dominic from Montreal and Karl from Vancouver. Check out some of the resources below and enjoy styling!
+Thank you all for checking out CSS with me today, it can be quite rewarding / motivating discover the CSS gems. Check out some of the resources below and enjoy styling!
 
 [notes and code are here](https://github.com/hafbau/lecture_notes/tree/master/w4d1)
 
 [Video will be here](#)
 
-## What we learned [5m]
+## What we learned
 
 - Learned about the Cascading nature of CSS - i.e. it inherits parents' styles and file is read top down
 
@@ -118,12 +118,17 @@ selector, selector1 {
 
 ### Selector Specificity
 
-- The more specific selector gets applied
-- A score is attributed to a selector
+- The more specific selector gets applied regardless of cascade effect.
 
-  - num of ids x 100 pts
-  - num of classes x 10 pts
-  - num of elements x 1pt
+Heirarchy of selectors from our demo:
+
+  - ID selector (#input-id)
+    - Attribute selector (input[type='text'])
+      - Class selector (.input-class)
+        - General Descendant selector (body input)
+        - Direct Descendant selector (body > input)
+        - Sibling (next) selector (label + input)
+          - Tag name selector (input)
 
 ### What can we style?
 
@@ -306,7 +311,7 @@ There are a lot of resources for CSS. It is very easy to fall into the habit of 
 Just like anything it will take time, and just like anything it feels more complicated than it actually is.
 
 - [Karl Jensen's CSS PDF](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w4d1/karl_jensen_css.pdf)
-- https://css-tricks.com/
+- [Emmet Cheatsheet for writing HTML faster](https://docs.emmet.io/cheat-sheet/)
   + https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - http://guyroutledge.github.io/box-model/
 - http://www.codeanalogies.com
@@ -324,4 +329,6 @@ You are going to notice that when you search for HTML, CSS and JavaScript keywor
 
 Good search engine optimization doesn't mean good documentation. The W3Schools material is likely to include the information you need. In my opinion it doesn't provide the same quality of information and provides a dated user experience.
 
-Google helps us find a lot of good information. It is important to start recognizing the difference between good and bad documentation. Clicking on the first returned result without considering the source is a good habit to __break__.
+Google helps us find a lot of good information. It is important to start recognizing the difference between good and bad documentation. Clicking on the first returned result without considering the source is a good habit to __break__ `<br/>`.
+
+Thank you till next time 🤘🏿!

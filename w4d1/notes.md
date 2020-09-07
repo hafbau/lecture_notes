@@ -2,13 +2,13 @@
 
 ## Agenda today
 
-- [] Tips / Housekeeping [5m]
-- [] Demo final App [5m]
-- [] HTML review [10m]
-- [] CSS review [15m]
-- [] The Box Model [10m]
-- [] Flexbox Intro - CSS Tricks [10m]
-- [] Flexbox layout - Every Funny Website Ever [30m]
+- [] Tips / Housekeeping
+- [] Demo final App
+- [] HTML review
+- [] CSS review
+- [] The Box Model
+- [] Flexbox Intro - CSS Tricks
+- [] Flexbox layout - Every Funny Website Ever (Walkthrough html code)
 
 
 ## Tips / Housekeeping
@@ -42,6 +42,7 @@
   <figure>
   <footer>
   <header>
+  h1 - h6
   <main>
   <mark>
   <nav>
@@ -85,8 +86,8 @@
   
   ```css
   selector, selector2 {
-    prop: val,
-    property2: value2,
+    prop: val;
+    property2: value2;
     ..
   }
   ```
@@ -109,12 +110,14 @@
 - Karl's slide
 
 
-# B R E A K [5-10m]
+# B R E A K [10m]
 
 
-## Demo 2 - Intro to Flexbox [10m]
+## Demo 2 - Intro to Flexbox [30m]
 
-## Demo 3 - Flexbox layout - Every fucking website [40m]
+## Walkthrough - Flexbox layout - Every fucking website [10m]
+
+- Walkthrough of the HTML
 
 
 ## Closing remarks [5m]
@@ -122,13 +125,3 @@
   - IRL we always use a reset or normalize css (and therefore border-box)
   - MDN > W3Schools ... CSS-Tricks is also great
   Add MDN to all of your search queries in Google to get MDN-focused results
-
-## What we learned [5m]
-
-- Learned about the Cascading nature of CSS - i.e. it inherits and file is read top down
-
-- Specificity and how different selectors fair on the spectrum
-
-- We learned about CSS Box model and how we might style them using the TRBL shorthand
-
-- Learned about flexbox and the properties we could set on a parent element

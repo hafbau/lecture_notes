@@ -1,0 +1,69 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout 
+ */
+
+body {
+  /*Custom font, loaded via Google */
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+}
+
+aside {
+  background-color: #d79922;
+  /* Using an image as a background */
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  height: 400px;
+}
+
+
+/* Tablet and mobile layout*/
+
+@media only screen and (max-width: 1025px) {
+  aside {
+    width: 100%;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+}
+
+/*Desktop layout*/
+
+@media only screen and (min-width : 1025px) {
+  
+  .body-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  aside {
+    flex: 1;
+    margin: 220px 0px 220px 60px;
+   }
+  
+  .container {
+    flex: 2;
+    margin: 160px 60px
+   }
+
+}
+
+
+

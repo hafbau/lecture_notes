@@ -6,35 +6,39 @@
   <title>Layout One</title>
 
 <style>
+  * {
+    margin: 0;
+  }
   body {
     background-color: lightyellow;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
-    /* align-items: center; */
     height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   header {
     background-color: lightpink;
+    flex-basis: 100%;
   }
 
-  /* .container {
-
-  } */
+  .container {
+    display: flex;
+  }
 
   aside {
     background-color: lightsteelblue;
+    flex: 1;
   }
 
   main {
     background-color: lightgreen;
+    flex: 2;
   }
 
   h2 {
-    height: 20vh;
-    width: 40px;
+    height: 200px;
+    line-height: 200px; /* can be any size units*/
+    text-align: center;
   }
 </style>
 
@@ -43,17 +47,14 @@
 
 <body>
   <header>
-    <h2>A first</h2>
+    <h2>A</h2>
   </header>
-
 
   <!-- <div class="container"> -->
     <aside>
       <h2>B</h2>
     </aside>
-    <!-- <aside>
-      <h2>B</h2>
-    </aside> -->
+  
     <main>
       <h2>C</h2>
     </main>
