@@ -5,13 +5,13 @@ const render = require('./indexPage')
 const app = express();
 
 // SEtting up ejs with express
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 // get it (server) listening for request
 
 // app.[method](/url, (request, response) => {})
 app.get('/', (req, res) => {
   // res.render(filenameOfTemplateToRender, variablesToBeAvailableForTemplatetoUse)
-  return res.render('index')
+  return res.render('index.html')
   res.render('shoes')
   // res.send("Home from express")
 })

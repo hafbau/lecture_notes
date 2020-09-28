@@ -44,7 +44,6 @@ Here's some things we learned:
 - No more class components :)
 - We've seen `useEffect` and `useState`
 
-
 ## Why Custom Hooks [15m]
 
 From React Docs (https://reactjs.org/docs/hooks-custom.html):

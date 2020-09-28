@@ -1,2 +1,11 @@
-<h2>From EJS</h2>
-<a href="/rand">Go figure</a>
+<h1>Hey from EJS + Express</h1>
+<h2>
+  <%= Math.random() * 100 %>
+  <%= name %>
+</h2>
+
+<% for(const shoe of shoes) { %>
+  <p><%= shoe %></p>
+  <h3><%= shoe.name %></h3>
+  <img src="<%= shoe.url %>" alt="<%= shoe.name %>">
+<% } %>
