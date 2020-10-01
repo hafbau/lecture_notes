@@ -1,38 +1,22 @@
 const express = require('express');
-
-// const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session')
-const bcrypt   = require('bcrypt');
-const saltRounds = 10;
-
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000; // default port 8080
+
+const cookieParser = require('cookie-parser');
+const bodyParser   = require('body-parser');
+
 // logging to STDOUT
 const morgan = require('morgan');
 app.use(morgan('tiny'))
 
-app.use(cookieSession({
-  name: 'session',
-  keys: [
-    'supersecretstringthatshouldideallybesavednotincodebutforsuresuperlong',
-    'anotherlongone'
-  ]
-}));
+app.use(cookieParser());
 
-// SET SESSION / COOKIE
-// res.cookie('username', username) ===> req.session.username = username
-
-// GET SESSION
-// req.cookies.username ===> req.session.username
-// const { username } = req.session ===> const { username } = req.session
-
-// clearing session
-// req.clearCookie() ===> req.session.username = null;
-
-// app.use(cookieParser());
+// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.set('view engine', 'ejs');
+
+// APP LOGIC STARTS
 
 // FAKE USER DB
 const users = {
@@ -46,7 +30,7 @@ app.get('/admin/users', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  const { username } = req.session;
+  const { username } = req.cookies;
   if(username in users) {
     res.redirect('/treasure')
   } else {
@@ -58,7 +42,7 @@ app.get('/', (req, res) => {
 app.get('/treasure', (req, res) => {
   // check if cookie is set
   // 'username=kv; lang=en'
-  const { username } = req.session;
+  const { username } = req.cookies;
 
   if(username in users) {
     const loggedInUser = users[username];
@@ -78,31 +62,25 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
+  // 1. extract the login credential being sent in the request;
+  const { username, password } = req.body
+  // 2. Check if we know this user by their username (email)
   const existingUser = users[username];
+  if (username in users) {
+    // 2a. Yes username exists; check if password matches
+    if(password === existingUser.password) {
+      // 3. set cookie to the user's unique identifier ==> username
+      res.cookie('username', username)
+      // 4. pass to where you intended to go; redirect to treasure
+      res.redirect('/treasure')
+    } else {
+      // 2b. send password doesn;t match error
+      // res.send('Wrong password, try again!')
+      res.render('login', { error: 'Password mismatch', username: username })
+    }
 
-  // if (username in users) {
-  if (existingUser) {
-    bcrypt.compare(password, existingUser.password, function (err, isPasswordMatch) {
-      // Store hash in your password DB.
-      // newHash = hash the submitted password
-      // compare the already existinghashed password to the newhash password
-      if (isPasswordMatch) {
-        req.session.username = username;
-
-        res.redirect('/')
-      } else {
-        res.status(401)
-        res.render(
-          'login', {
-            error: 'Password mismatch. Reset password?'
-          }
-        )
-      }
-    });
-
-    
   } else {
+    // 5. We do not have the username in our db, so send user does not exist error
     res.status(401)
     res.render(
       'login', { error: 'No account under your name. Sign up instead?' }
@@ -111,7 +89,7 @@ app.post('/login', (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
-  res.render('signup', { error: undefined, submittedData: null });
+  res.render('signup', { error: undefined, submittedData: {} });
 });
 
 app.post('/signup', (req, res) => {
@@ -120,31 +98,19 @@ app.post('/signup', (req, res) => {
     password,
     firstName
   } = req.body;
-  console.log('password :>> ', password);
   
   if (username in users) {
     res.status(400)
     res.render('signup', { error: 'Username already exist', submittedData: {} })
   } else {
-    // hashedPassword will be undefined since bycrypt.hash is async
-    // const hashedPassword = bcrypt.hash(password, saltRounds, function (err, hash) {
-      //  DO NOT USE THE BELOW SYNC VERSION OF BCRYPT
-    // bcrypt.hashSync(password, saltRounds, function (err, hash) {
-    bcrypt.hash(password, saltRounds, function (err, hash) {
-      // Store hash in your password DB.
-      console.log('hashedPassword :>> ', hash);
       users[username] = {
         username,
-        password: hash,
+        password,
         firstName
       };
 
-      req.session.username = username;
+      res.cookie('username', username);
       res.redirect('/')
-    });
-
-    // req.session.username = username;
-    // res.redirect('/')
   }
 })
 

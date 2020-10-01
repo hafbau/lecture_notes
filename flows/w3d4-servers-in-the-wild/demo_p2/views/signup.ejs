@@ -1,0 +1,18 @@
+<form method="POST" action="/signup">
+  <span style="color: red"><%= error %></span>
+  <p>
+    <label>First Name</label>
+    <input type="text" value="<%= submittedData && submittedData.firstName %>" name="firstName" />
+  </p>
+  <p>
+    <label>Username</label>
+    <input type="text" value="<%= submittedData && submittedData.username %>" name="username" />
+  </p>
+  <p>
+    <label>Password</label>
+    <input type="password" value="<%= submittedData && submittedData.password %>" name="password" />
+  </p>
+  <p>
+    <button type="submit">Create Account</button>
+  </p>
+</form>

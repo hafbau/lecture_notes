@@ -1,0 +1,17 @@
+<form method='POST' action="/login">
+  <span style="color: red"><%= error %></span>
+  <p>
+    <label>Username</label>
+    <input type="text" name="username" value="" />
+  </p>
+  <p>
+    <label>Password</label>
+    <input type="password" name="password" />
+  </p>
+  <p>
+    <button type="submit">Login</button>
+  </p>
+
+</form>
+
+<p>Don't have an account? <a href="/signup">Signup</a></p>

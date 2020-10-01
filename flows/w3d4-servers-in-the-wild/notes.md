@@ -6,15 +6,55 @@
 - [ ] More HTTP methods
 - [ ] Method Override
 - [ ] Express Middleware
-- [ ] Modular Routing (stretch)
-- [ ] JSON API's (notes)
-- [ ] Alternatives to ExpressJS (notes)
+- [ ] Modular Routing
+- [ ] JSON API's
+- [ ] Alternatives to ExpressJS
 
 ### Security Issues
 
-**Three loopholes of the demo:**
+- Ideas on fixing storing passowrd
+
++ store a reference to the password rather the password
++ also paybe encrypt the database
+
+- Hashing
+  + username = jl
+  + password = 'password'
+  hash = hashing(password)// one-encryption
+
+  hakhdfakhdfo98ewqh3rk9yadfhkr39
 
 
+- Why not hashing for cookies
+  + Performance
+  + You will now have to save cookies in some db
+
+- Encryption Cookie
+  - encryption at rest
+
+- pub/private key pair encryption
+TLS // encryption in trasit
+lets Encrypt
+
+```js
+const hash = (str, salt) => {
+  hashStr = AES(str)
+  for ( i < salt)
+  hash(hashStr)
+}
+```
+- using bcrypt
+
+
+### What we learn today
+
+- Using bcrypt to hash password; especially the async workflow
+- Better to store hashed password vs in plain sight
+- plain text cookies can be changed to easilly login as anothre user
+- Hashing gets slowers with higher salt
+- dont use bcrypt synchronously
+
+Put a link to rainbow attack
 
 
 
@@ -45,13 +85,6 @@
   * Similar to hashing, the string is scrambled/transformed by a function
   * This is a two-way process: encrypted strings can be decrypted by the intended recipient
 
-##### When to use...
-- plain cookies:
-
-
-- encrypted cookies
-
-
 #### HTTP Secure (HTTPS)
 
 [](./Man-In-The-Middle-Attack.png)
@@ -59,6 +92,9 @@
 * Encrypted using asymmetric cryptography which uses a public key and private key system
 * The public key is available to anyone who wants it and is used to encrypt the communication
 * The private key is known only to the receiver and is used to decrypt the communication
+
+#### When to use...
+
 
 
 

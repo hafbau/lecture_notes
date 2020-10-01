@@ -1,32 +1,24 @@
-# W3D4 Security & Real World HTTP Servers
+Real World HTTP Servers with Hafiz
+===
+
+Hey crew! Congrats! You're becoming web developers. Thanks for an awesome class today.
+
+<a href="https://github.com/hafbau/lecture_notes/tree/master/w3d4-servers-in-the-wild">Link to code and notes repo here.</a>
+
+
+### What we learn today
+
+- Using bcrypt to hash password; especially the async workflow
+- Better to store hashed password vs in plain sight
+- plain text cookies can be changed to easilly login as anothre user
+- Hashing gets slowers with higher salt rounds -  we used 10 in the demo.
+- Prefer using bcrypt asynchronously
+
+- also, its Deb and Dexter MORGAN ;) (I'm a fake fan!)
 
 ### To Do
-- [ ] Security issues
-- [ ] REST
-- [ ] More HTTP methods
-- [ ] Method Override
-- [ ] Express Middleware
-- [ ] Modular Routing (stretch)
-- [ ] JSON API's (notes)
-- [ ] Alternatives to ExpressJS (notes)
-
-### Security Issues
-
-**Three loopholes of the demo:**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [x] Security issues (demo_p1)
+- [-] REST and Advanced Express (demo_p2)
 
 
 #### Storing Passwords
@@ -45,67 +37,56 @@
   * Similar to hashing, the string is scrambled/transformed by a function
   * This is a two-way process: encrypted strings can be decrypted by the intended recipient
 
-##### When to use...
-- plain cookies:
-
-
-- encrypted cookies
-
-
 #### HTTP Secure (HTTPS)
 
 [](./Man-In-The-Middle-Attack.png)
+
 * HTTPS uses Transport Layer Security (TLS) to encrypt communication between client and server
 * Encrypted using asymmetric cryptography which uses a public key and private key system
 * The public key is available to anyone who wants it and is used to encrypt the communication
 * The private key is known only to the receiver and is used to decrypt the communication
 
+#### When to use...
+- plain cookies:
+    - *almost never use plain cookies*
+    - maybe for:
+      - language selection
+      - shopping cart for non-logged in users
+      - analytics
+  - encrypted cookies:
+    - *do this by default*
+    - only store user_id (rest can go in database)
+  - server-side sessions
+    - *not worth hassle for small projects*
+    - if you need to store lots of session data
+    - if you frequently change session data
+    - you want the ability to invalidate specific users' sessions
 
+- Types of Cryptography:
+  - Hashing (one way): Password Encryption
+  - Encryption (two way): Cookie Encryption
+  - Public Key Crypto: HTTPS
 
-### Class Quiz
+#### REST and Advanced Express
 
-https://gist.github.com/hafbau/661e2f961184cc2fe18714dfddc54cc6
+## REST
 
-photo => *see* all photos
-photo => *see* one photo of all photos
-photo => *add* one photo
-photo => *edit* one photo of all photos
-photo => *delete* one photo of all photos
-photo => *share* one photo of all photos
+Representational State Transfer
 
-albums => *create* an album
-albums => *add*
+- REST is a pattern, a convention to organize our url structure
 
-Each of these things can be mapped to the HTTP verbs!
+  - Resource based routes convention
 
-#### RESTful routes (endpoints) for our app
-By following REST principles, which really answers two simple questions we can generate _most_ of the routes that our application should have.
+  - The key abstraction of information in REST is a resource.
 
-1. What resources are we dealing with?
-2. What are we doing to those resources?
+  - REST uses a resource identifier to identify the particular resource involved in an interaction between components.
 
-Here's what we came up with for the design of our end points:
-
-| Action                                  | http verb | end point                 |
-| --------------------------------------- | --------- | ------------------------- |
-| List all photos                         | GET       | get '/photos'             |
-| Get a specific photo                     | GET       | get '/photos/:id'         |
-| Display the new form                    | GET       | get '/photos/new         |
-| Create a new photo                      | POST      | post '/photos           |
-| Display the form for updating a photo   | GET       | get '/photos/:id/update'  |
-| Update the photos                       | PUT       | put '/photos/:id          |
-| Deleting a specific photo                | DELETE    | delete '/photos:id'       |
-
-##### Nested Resources
-
-We needed to access a nested resources. For example, add a photo to an album.
-
-| Action                  | http verb | end point                  |
-| ----------------------- | --------- | -------------------------- |
-| Add a photo to an album | POST      | post '/albums/:albumId/photos  |
-
-
-### REST (Representational State Transfer)
+  - It should use http verbs to express what the request wants to accomplish
+  - Resource information must be part of the url
+  - It uses common data formats (JSON for API)
+  - Communication is stateless
+  - Each request must pass all information needed to fulfill the request
+  - Idempotency of requests
 
 * REST means that the path that we are going to should represent the data being transferred
 * An API that uses the REST convention is said to be RESTful
@@ -128,10 +109,14 @@ We needed to access a nested resources. For example, add a photo to an album.
 * Selectors are always plural (eg. `/resources`, `/users`)
 * Actions are always singular (eg. `/login`, `/register`)
 
+### Express Alternatives
+- [Restify (JS)](http://restify.com/)
+- [Koa (JS)](https://koajs.com/)
+- [Hapi (JS)](https://hapi.dev/api/?v=19.0.5)
+- [Sinatra (Ruby)](http://sinatrarb.com/documentation.html)
+- [Django (Python)](https://www.djangoproject.com/)
+
 ### Express Middleware
-
-[](./middleware.png)
-
 - We can bring in third-party middleware (functions) or we can define our own
 
   ```js
@@ -190,10 +175,28 @@ We needed to access a nested resources. For example, add a photo to an album.
 - So far, our servers have been returning server-side rendered templates, but our Express server can be configured to return different types of information including strings/objects (`res.send`), files (`res.sendFile`), and JSON (`res.json`)
 - JSON API's are concerned only with sending data (as opposed to HTML), so they are typically consumed with AJAX requests
 
+## Back-End API
 
-### Express Alternatives
-- [Restify (JS)](http://restify.com/)
-- [Koa (JS)](https://koajs.com/)
-- [Hapi (JS)](https://hapi.dev/api/?v=19.0.5)
-- [Sinatra (Ruby)](http://sinatrarb.com/documentation.html)
-- [Django (Python)](https://www.djangoproject.com/)
+- An API will only deliver data, typically in JSON
+- The routes will add a version of the API
+
+For example, if we were building an API, our routes would be modified.
+
+- `GET /api/1.0/posts`
+- `GET /api/1.0/posts/1`
+  ...
+
+## References
+
+Interesting links
+About REST and naming convention : https://restfulapi.net/resource-naming/
+Express modular routing (end of document) : http://expressjs.com/en/guide/routing.html#routing
+Method override : https://www.npmjs.com/package/method-override
+Express middleware : https://expressjs.com/en/guide/using-middleware.html
+JSON APIs responses : https://jsonapi.org/examples
+WordPress REST API : https://developer.wordpress.org/rest-api/
+https://restfulapi.net/
+
+This note is an adaptaion of Andy's note - Thanks Andy.
+
+Thank you till next time 🤘🏿!

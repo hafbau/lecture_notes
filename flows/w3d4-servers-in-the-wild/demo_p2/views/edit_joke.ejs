@@ -1,0 +1,9 @@
+<h1>YOU CAME HERE TO EDIT A JOKE</h1>
+
+<form action="/jokes/<%= joke.id %>" method="POST">
+    <label>Image Url</label>
+    <input name="image" type="text" value="<%= joke.image %>" />
+    <label>Joke's Text</label>
+    <textarea name="text" type="text"><%= joke.text %></textarea>
+    <button type="submit">EDIT JOKE</button>
+</form>

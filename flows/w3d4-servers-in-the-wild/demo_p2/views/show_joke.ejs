@@ -1,0 +1,30 @@
+<article style="margin: 0px auto; width: 600px;">
+    <img style="width: 600px; height: 420px"
+        src="<%= joke.image %>" />
+    <p style="margin-top: 60px;"><%= joke.text %></p>
+    <em style="color: gray; font-size: 0.8rem"><%= comments.length %> comments</em>
+    <footer style="padding-top: 20px; margin-top: 20px; border-top: 0.5px solid gray;">
+        <a href="/jokes/<%= joke.id %>/edit">EDIT</a>
+        <form action="/jokes/<%= joke.id %>/delete" method="POST">
+            <button>DELETE</button>
+        </form>
+    </footer>
+
+    <section>
+        <h2>Comment Section</h3>
+
+        <form method="POST" action="/jokes/<%= joke.id %>/comments" style="padding: 0px 0px 20px">
+            <textarea style="width: 100%;" name="text" type="text"
+                placeholder="add your rad comment here..."></textarea><br />
+            <button type="submit">Add comment</button>
+        </form>
+
+        <h4>All the comments!</h4>
+        <% for(const comment of comments) { %>
+        <article style="padding: 20px; border-bottom: 0.5px solid gray;">
+            <p><%= comment.text%></p>
+            <em style="color: gray; font-size: 0.8rem"><%= users[comment.username].firstName%> &nbsp;&nbsp;&nbsp;1 day ago</em>
+        </article>
+       <% } %>
+    </section>
+</article>
