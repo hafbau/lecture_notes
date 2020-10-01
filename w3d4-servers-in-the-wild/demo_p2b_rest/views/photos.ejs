@@ -1,0 +1,6 @@
+<h1>All the photos</h1>
+
+<% photos.forEach(photo => { %>
+ <a href="/photos/<%= photo.id %> "><%= photo.text %> </a>
+ <br />
+<% }) %>

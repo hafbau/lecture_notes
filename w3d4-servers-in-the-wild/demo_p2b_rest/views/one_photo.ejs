@@ -1,0 +1,8 @@
+<h1>One photo page</h1>
+
+<h3><%= photo.text %> </h3>
+<form method="POST" action="/photos/<%= photo.id %>?_method=DELETE">
+  <button type="submit">Delete resource</button>
+</form>
+
+<img src="<%= photo.url %> " alt="photo.text">

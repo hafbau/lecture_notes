@@ -1,33 +1,33 @@
 # W3D4 Security & Real World HTTP Servers
 
+Hey folks, thanks for putting up with me today. The lecture ran long - sorry about that 😐. Here are notes about the things we covered today and others we didn't get to.
+
 ### To Do
-- [ ] Security issues
-- [ ] REST
-- [ ] More HTTP methods
-- [ ] Method Override
-- [ ] Express Middleware
-- [ ] Modular Routing (stretch)
-- [ ] JSON API's (notes)
-- [ ] Alternatives to ExpressJS (notes)
+- [x] Security issues
+- [x] REST
+- [x] More HTTP methods
+- [x] Method Override
+- [x] Express Middleware
+- [-] Modular Routing (stretch)
+- [-] JSON API's (notes)
+- [-] Alternatives to ExpressJS (notes)
 
 ### Security Issues
 
 **Three loopholes of the demo:**
+- Password in plain text
+- Cookies not secure
+- Unencrypted data across network (http)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```js
+const hashWithSaltround = (sltRnd, password) => {
+  let hash = password
+  for(let i = 0; i < sltRnd; i++) {
+    hash = hashFn(hash)
+  }
+  return hash
+}
+```
 
 #### Storing Passwords
 * We **never** want to store passwords as plain text
@@ -54,7 +54,7 @@
 
 #### HTTP Secure (HTTPS)
 
-[](./Man-In-The-Middle-Attack.png)
+[See Image](./Man-In-The-Middle-Attack.png)
 * HTTPS uses Transport Layer Security (TLS) to encrypt communication between client and server
 * Encrypted using asymmetric cryptography which uses a public key and private key system
 * The public key is available to anyone who wants it and is used to encrypt the communication
@@ -91,9 +91,9 @@ Here's what we came up with for the design of our end points:
 | Get a specific photo                     | GET       | get '/photos/:id'         |
 | Display the new form                    | GET       | get '/photos/new         |
 | Create a new photo                      | POST      | post '/photos           |
-| Display the form for updating a photo   | GET       | get '/photos/:id/update'  |
+| Display the form for updating a photo   | GET       | get '/photos/:id/edit'  |
 | Update the photos                       | PUT       | put '/photos/:id          |
-| Deleting a specific photo                | DELETE    | delete '/photos:id'       |
+| Deleting a specific photo                | DELETE    | delete '/photos/:id'       |
 
 ##### Nested Resources
 
@@ -103,46 +103,6 @@ We needed to access a nested resources. For example, add a photo to an album.
 | ----------------------- | --------- | -------------------------- |
 | Add a photo to an album | POST      | post '/albums/:albumId/photos  |
 
-
-### REST (Representational State Transfer)
-
-* REST means that the path that we are going to should represent the data being transferred
-* An API that uses the REST convention is said to be RESTful
-* RESTful routes look like:
-
-  | **Method** | **Path** | **Purpose** |
-  |:---:|:---|:---|
-  | GET | /resources | Retrieve all of a resource (Browse) |
-  | GET | /resources/:id | Retrieve a particular resource (Read) |
-  | POST | /resources/:id | Update a resource (Edit) |
-  | POST | /resources | Create a new resource (Add) |
-  | POST | /resources/:id/delete | Delete an existing resource (Delete) |
-
-* RESTful API's have some advantages:
-  * If I know that your API is RESTful, then I can easily guess at what endpoints you have defined and I don't need to read your documentation to figure it out
-  * Results in clean URLs (ie. `/resource` instead of `/get-my-resource`)
-  * The desired action is implied by the HTTP verb
-  * This method of specifying URLs is chainable (eg. `/user/123`, `/user/123/resource` or `/user/123/resource/456`)
-
-* Selectors are always plural (eg. `/resources`, `/users`)
-* Actions are always singular (eg. `/login`, `/register`)
-
-### Express Middleware
-
-[](./middleware.png)
-
-- We can bring in third-party middleware (functions) or we can define our own
-
-  ```js
-  app.use((req, res, next) => {
-    // do something (eg. console.log the current time)
-    console.log('Time:', Date.now());
-    // call next() when the middleware is finished
-    next();
-  });
-  ```
-
-- Frequently used Express middleware includes loggers (`morgan`) and parsers (`cookie-parser` or `body-parser`)
 
 ### More HTTP Methods
 - We have more [*verbs*](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) available to us than just `GET` and `POST`
@@ -161,6 +121,25 @@ We needed to access a nested resources. For example, add a photo to an album.
   | PATCH | /resources/:id | Update a resource (Edit) |
   | POST | /resources | Create a new resource (Add) |
   | DELETE | /resources/:id | Delete an existing resource (Delete) |
+
+
+### Express Middleware
+
+[See Image](./middleware.png)
+
+- We can bring in third-party middleware (functions) or we can define our own
+
+  ```js
+  app.use((req, res, next) => {
+    // do something (eg. console.log the current time)
+    console.log('Time:', Date.now());
+    // call next() when the middleware is finished
+    next();
+  });
+  ```
+
+- Frequently used Express middleware includes loggers (`morgan`) and parsers (`cookie-parser` or `body-parser`)
+
 
 ### Modular Routing
 - Store routes in multiple files to keep them organized
