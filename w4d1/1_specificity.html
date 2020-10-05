@@ -7,35 +7,37 @@
     <title>Document</title>
     <style>
       /* SPECIFICITY AND CASCADING*/
-      /* A */
-      /* #input-id {
+      /* A: ID Selector */
+      #input-id {
         background-color: lightgreen;
-      } */
-      /* B */
-      /* input[type='text'] {
+      }
+
+      /* B: Attribute Selector */
+      input[type='text'] {
         background-color: blue;
-      } */
-      /* C */
-      /* .input-class {
+      }
+
+      /* C: Class Selector */
+      .input-class {
         background-color: rebeccapurple;
-      } */
-      /* F */
-      /* Sibling (NEXT) selector */
+      }
+
+      /* D: Direct Descendant */
+      body > input {
+        background-color: black;
+      }
+
+      /* E: General Descendent */
+      body input {
+        background-color: red;
+      }
+
+      /* F: Sibling (NEXT) selector */
       label + input {
         background-color: green;
       }
       
-      /* E */
-      /* General Descendent */
-      body, input {
-        background-color: red;
-      }
-      /* D */
-      /* Direct Descendant */
-      body > input {
-        background-color: black;
-      }
-      /* G */
+      /* G: Tag Selector */
       input {
         background-color: tomato;
         width: 500px;
@@ -50,10 +52,13 @@
   </head>
   <body>
     <label for="input-id">What's ya colour?</label>
-    <!-- H -->
-    <input type="text" name="input-name" id="input-id" class="input-class"
+    <!-- H: Inline Style -->
+    <input
+      type="text"
+      name="input-name"
+      id="input-id"
+      class="input-class"
+      style="background-color: yellow;"
     >
-    <div><input type="text" name="input-name" id="input-id" class="input-class"
-    ></div>
   </body>
 </html>

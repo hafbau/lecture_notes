@@ -18,18 +18,23 @@
   body {
     background-color: lightyellow;
     height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   header {
     background-color: lightpink;
+    flex-basis: 100%;
   }
   
   aside {
     background-color: lightsteelblue;
+    flex-grow: 1;
   }
 
   main {
     background-color: lightgreen;
+    flex: 2;
   }
 
   h2 {
@@ -44,6 +49,9 @@
     height: 100px;
     width: 100%;
     background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
   button {
     min-width: 180px;
@@ -61,6 +69,7 @@
     <h2>A</h2>
   </header>
 
+  <!-- <div class="container"> -->
   <aside>
     <h2>B</h2>
   </aside>
@@ -68,8 +77,7 @@
   <main>
     <h2>C</h2>
   </main>
-
-  <!-- Bottom Navigation -->
+  <!-- </div> -->
   <nav>
     <button>👈 prev</button>
     <button>👆🏿 menu</button>

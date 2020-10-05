@@ -5,10 +5,10 @@
 - [] Tips / Housekeeping
 - [] Demo final App
 - [] HTML review
-- [] CSS review
-- [] The Box Model
+- [] CSS review (slides)
+- [] Specificity
 - [] Flexbox Intro - CSS Tricks
-- [] Flexbox layout - Every Funny Website Ever (Walkthrough html code)
+- [] Flexbox layout - Every
 
 
 ## Tips / Housekeeping
@@ -18,22 +18,20 @@
 - Focus is on plain vanilla CSS for now
 - CSS is ~~frustrating~~ awesome; visual feedback and declarative!
 
-## Demo final app
 
-- [Tweeter Project](https://web.compass.lighthouselabs.ca/projects/w3-tweeter?day_number=w04d1)
+## Demo final app [5m]
+https://web.compass.lighthouselabs.ca/projects/w3-tweeter?day_number=w04d1
 
 
-## HTML - review
+## HTML - review? [5m]
 
-**Why do HTML?**
-  + context over content
-
-**Why semantic tags?**
-  - accessibility
-  - developer readability
-  - SEO e.g. google page summary; what's the most vital part of a website
-
-**Examples of semantic tags:**
+- **Why do HTML?**
+  + Context to content
+- **Why semantic tags?**
+  + accessibility e.g. screen readers
+  + developer readability
+  + SEO e.g. google page summary; what's the most important text on the page - content hierarchy
+- **Examples of semantic tags:**
   ```html
   <article>
   <aside>
@@ -42,57 +40,34 @@
   <figure>
   <footer>
   <header>
-  h1 - h6
   <main>
   <mark>
   <nav>
+  <output>
   <section>
   <summary>
   <time>
   ```
 
 
-## CSS - review
+## CSS - review [15m]
 
-**What does Cascade mean?**
-  - top down
-  - inheritance
+### Slide review
 
+- **What does Cascade mean?**
+  + top down
+  + inheritance
 
-**What are default styles? And how do we inspect them?**
+- **The Box Model - what?**
+  + Interactive Boxmodel: http://guyroutledge.github.io/box-model/
 
-- aka user agent stylesheet
+- **reset.css** why?
+  + [**reset.css**](https://meyerweb.com/eric/tools/css/reset/index.html) / **normalize.css** helps reset browser (user-agent) styles, so we can style elements with more reliable expectations e.g. 8px margin on body
 
-**reset.css** why?
-  + [**reset.css**](https://meyerweb.com/eric/tools/css/reset/index.html) / **normalize.css** helps reset browser (user-agent) styles, so we can style elements with more reliable expectations
-
-**What are the 3 ways to add styling to an HTML document?**
-  + which one is most specific?
-    - inline with style attribute `style=""`
-    - link from external css file
-    - internal with style tags usually in the `head`
-
-### CSS Syntax
-
-- style attribute for inline styles
-  ```html
-  <main style="property: value; another-property: another-value;">
-    some main content
-  </main>
-  ```
-  + hard to reuse and maintain
-
-- selector + style block
-  
-  ```css
-  selector, selector2 {
-    prop: val;
-    property2: value2;
-    ..
-  }
-  ```
 
 ### Types of Selectors and their specificity
+
+**Use `specificity.html`**
 
 - Basic / tag Selector
 - Class Selector
@@ -103,25 +78,35 @@
   - Adjacent Sibling
   - more ...
 
-#### Demo 1 - Selectors and specificity review
-
-## Box Model
-
-- Karl's slide
+> Remark about selection consistency. I use classes for the most part
 
 
 # B R E A K [10m]
 
+**RESUME RECORDING**
 
-## Demo 2 - Intro to Flexbox [30m]
+## Intro to Flexbox [30m]
 
-## Walkthrough - Flexbox layout - Every fucking website [10m]
+- Open CSS Tricks flexbox
+- open flexbox.html
+- walkthrough parent properties
 
-- Walkthrough of the HTML
 
+## Flexbox layout - Every fucking website [20m]
+
+- Show them the goal - dagusa.com
+- create layout.html emmet
+  + nav emmet: `nav.nav>div.nav-logo{The Logo}+ul.menu>li.menu-item*4{menu $}`
+  + header emmet: `header#header.one-column>h1.one-column_title{Hey Look!}+div.divider{___}+p.one-column_text+a[href='#first'].button{Button that makes the page scroll}`
+  + first section emmet: `section#first.one-column>h2.one-column_title+div.divider{___}+p.one-column_text+a[href='#second'].button{Google that shit}`
+  + second section emmet: `section#second.one-column>h2.one-column_title+div.divider{___}+ul.four-columns>(li.one-fourth>i.icon+h3+p)*4`
+
+- style layout first, then background then colour
 
 ## Closing remarks [5m]
 
   - IRL we always use a reset or normalize css (and therefore border-box)
   - MDN > W3Schools ... CSS-Tricks is also great
   Add MDN to all of your search queries in Google to get MDN-focused results
+
+## What we learned [5m]
