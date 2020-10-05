@@ -2,13 +2,13 @@
 
 ## Agenda today
 
-- [] Tips / Housekeeping
-- [] Demo final App
-- [] HTML review
-- [] CSS review (slides)
-- [] Specificity
-- [] Flexbox Intro - CSS Tricks
-- [] Flexbox layout - Every
+- [x] Tips / Housekeeping
+- [x] Demo final App
+- [x] HTML review
+- [x] CSS review (slides)
+- [x] Specificity
+- [x] Flexbox Intro - CSS Tricks
+- [x] Flexbox layout - Every
 
 
 ## Tips / Housekeeping
@@ -48,6 +48,8 @@ https://web.compass.lighthouselabs.ca/projects/w3-tweeter?day_number=w04d1
   <summary>
   <time>
   ```
+
+> To google: 'div soup'
 
 
 ## CSS - review [15m]
@@ -110,3 +112,9 @@ https://web.compass.lighthouselabs.ca/projects/w3-tweeter?day_number=w04d1
   Add MDN to all of your search queries in Google to get MDN-focused results
 
 ## What we learned [5m]
+
+- Inheritance hierarchy of CSS, and how some properties are inheritable while others aren't
+- Learn to use `flex-wrap` and wrappin'
+- Learned about direct child selector (`>`) and Next sibling selector `+`
+- Display property in general and in context to flex
+- Where the C in CSS comes from and why

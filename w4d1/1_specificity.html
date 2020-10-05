@@ -8,38 +8,38 @@
     <style>
       /* SPECIFICITY AND CASCADING*/
       /* A: ID Selector */
-      #input-id {
+      /* #input-id {
         background-color: lightgreen;
-      }
+      } */
 
       /* B: Attribute Selector */
-      input[type='text'] {
+      /* input[type='text'] {
         background-color: blue;
-      }
+      } */
 
       /* C: Class Selector */
-      .input-class {
+      /* .input-class {
         background-color: rebeccapurple;
-      }
-
-      /* D: Direct Descendant */
-      body > input {
-        background-color: black;
-      }
+      } */
 
       /* E: General Descendent */
-      body input {
+      /* body input {
         background-color: red;
-      }
-
+      } */
       /* F: Sibling (NEXT) selector */
       label + input {
         background-color: green;
       }
+      /* D: Direct Descendant */
+      /* body > input {
+        background-color: black;
+      } */
+
+
       
       /* G: Tag Selector */
       input {
-        background-color: tomato;
+        /* background-color: tomato; */
         width: 500px;
         height: 40px;
       }
@@ -53,12 +53,22 @@
   <body>
     <label for="input-id">What's ya colour?</label>
     <!-- H: Inline Style -->
+    <div></div>
+    <div>
+      <input
+        type="text"
+        name="input-name"
+    >
+    </div>
     <input
       type="text"
       name="input-name"
-      id="input-id"
-      class="input-class"
-      style="background-color: yellow;"
     >
+    <div>
+      <input
+        type="text"
+        name="input-name"
+    >
+    </div>
   </body>
 </html>

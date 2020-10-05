@@ -8,6 +8,17 @@ Thank you all for checking out CSS with me today, it can be quite rewarding / mo
 
 ## What we learned
 
+- Inheritance hierarchy of CSS, and how some properties are inheritable while others aren't
+
+- Learn to use `flex-wrap` and wrappin'
+
+- Learned about direct child selector (`>`) and Next sibling selector `+`
+
+- Display property in general and in context to flex
+
+- Where the C in CSS comes from and why
+
+> more from past lectures?
 - Learned about the Cascading nature of CSS - i.e. it inherits parents' styles and file is read top down
 
 - Specificity and how different selectors fair on the spectrum
@@ -310,7 +321,7 @@ There are a lot of resources for CSS. It is very easy to fall into the habit of 
 
 Just like anything it will take time, and just like anything it feels more complicated than it actually is.
 
-- [Karl Jensen's CSS PDF](https://github.com/hafbau/lecture_notes/blob/master/02_14_oct_19/w4d1/karl_jensen_css.pdf)
+- [Karl Jensen's CSS PDF](./karl_jensen_css.pdf)
 - [Emmet Cheatsheet for writing HTML faster](https://docs.emmet.io/cheat-sheet/)
   + https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - http://guyroutledge.github.io/box-model/
