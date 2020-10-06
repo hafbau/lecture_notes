@@ -1,7 +1,7 @@
 // Events
 // [x] 1. Create a farts button element
 // [x] 2. prepend to body
-// [ ] 3. Write an handler function
+// [ ] 3. Write an handler function / console.log
 // [ ] 4. Attach the handler to button's click listener
 // [ ] 5. Improve the handler to manipulate DOM
 
