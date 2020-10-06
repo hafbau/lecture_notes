@@ -13,10 +13,21 @@
 Context matters.
 
 process (and all methods e.g process.argv), setTimeout, require, window, fs, console, navigator,
-document, module, exports, npm, location
+document, module, exports, export, npm, location
 
 | Backend (NodeJS) | Frontend (Browser) | Both |
 |:----------------:|:------------------:|:----:|
+| process | | setTimeout |
+| require | Window |
+| fs |
+| | | console |
+| | Navigator |
+| | Document |
+| Module |
+| Export(s) |
+| npm |
+| | location |
+
 
 ### What is the DOM
 
@@ -80,4 +91,3 @@ https://jsfiddle.net/vpdmbfb9/4/
 #### Demo articles array
 https://jsfiddle.net/x41fbsaq/
 
-## What we learned

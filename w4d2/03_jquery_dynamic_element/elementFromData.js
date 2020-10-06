@@ -26,3 +26,25 @@ const pets = [
 ]
 
 const $container = $('#pets-container');
+
+{/* <article>
+  Dingo is a dog and is 1 year old
+</article> */}
+
+const createPetEl = (petData) => {
+  return `
+  <article class='pet'>
+    ${petData.name} is a ${petData.type} and is ${petData.age} year old
+  </article>`
+
+}
+
+const Dingo = {
+  name: 'Dingo',
+  type: 'dog',
+  age: 1
+}
+
+pets.forEach(pet => {
+  $container.append(createPetEl(pet))
+})
