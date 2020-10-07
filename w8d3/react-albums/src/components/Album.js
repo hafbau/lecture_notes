@@ -8,7 +8,7 @@ export default function Album(props) {
   });
 
   return (
-    <article className="album">
+    <article className="album" data-cy="submit">
       <img className="album__thumbnail" src={props.artworkUrl100} alt="Album" />
       <div className={albumInfoClass}>
         <div className="album__name">{props.collectionName}</div>
