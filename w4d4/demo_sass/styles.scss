@@ -1,0 +1,51 @@
+$brand: #2E73c0;
+$border: 1px solid $brand;
+
+header {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3em;
+  color: aquamarine;
+  background-color: #2E86C1;
+  border: $border;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+
+  li {
+    margin-right: 2em;
+    padding: 0.5em 1em;
+    background-color: $brand;
+// li:hover
+    &:hover {
+      background-color: whitesmoke;
+    }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+
+ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+  @extend .center
+}
+
+ul li:hover a {
+  color: $brand;
+}

@@ -4,18 +4,8 @@ Hi crew, thanks for sitting through today's lecture on Responsive web design, fl
 
 [Code repo is here](https://github.com/hafbau/lecture_notes/tree/master/w4d4)
 
-[Video is here](https://zoom.us/rec/share/7MVcBIDx-0pJTp3y9hzmaL8mJbb9X6a81yBIqKILzkZM8vuxjnhCuLJ8IqV3scZ_)
+[Video is here .. when ready](#)
 
-## What we learned today
-
-- We learned about the awesome .scss where we could create variables, extend and mixins (like a function)
-- Flexbox especially about how to create proportions on chioldren elements with `flex` shorthand. To read up more on CSS tricks
-- Learned about media queries and how to set views based the device (medium e.g screen, print etc)
-- Always ... ALWAYS add the viewport meta tag for device-width and scaling.
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
 
 Notes below covers the things we talked about. No, not TigerKing!
 
@@ -179,6 +169,22 @@ h1 {
 }
 ```
 
+#### `@extend`
+* When you have two or more elements that have very similar styles, you could style one and use it as the basis for the other element(s)
+* Styles can be combined into other styles using `@extend`
+
+```scss
+.header-text {
+  font-size: 2em;
+  font-family: 'sans-serif';
+}
+
+.heading {
+  @extend .header-text;
+  color: rebeccapurple;
+}
+```
+
 #### Partials and `@import`
 * We can use partials to store small amounts of code
 * The convention for naming partials is to prepend the filename with an underscore (eg. `_variables.scss` or `_nav.scss`)
@@ -194,22 +200,6 @@ $border-color: red;
 @import 'variables';
 p {
   border: $border-width solid $border-color;
-}
-```
-
-#### `@extend`
-* When you have two or more elements that have very similar styles, you could style one and use it as the basis for the other element(s)
-* Styles can be combined into other styles using `@extend`
-
-```scss
-.header-text {
-  font-size: 2em;
-  font-family: 'sans-serif';
-}
-
-.heading {
-  @extend .header-text;
-  color: rebeccapurple;
 }
 ```
 
@@ -258,4 +248,5 @@ header {
 * [Sass Cheatsheet](https://devhints.io/sass)
 * [Sass CLI](https://sass-lang.com/documentation/cli/dart-sass)
 
-Thanks to Andy for the awesome notes above!
+
+Thanks to till next time 🤘🏿!

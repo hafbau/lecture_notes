@@ -89,15 +89,14 @@ https://static01.nyt.com/images/2020/04/07/us/07xp-newtigerking/merlin_171122598
 - [] Variables
 - [] Nesting / Namespacing
 - [] @extend
+
+> Time permitting, will do
+
 - [] @mixin
 - [] modularization with partials / @import
 
 ## What we learned today
 
-- We learned about the awesome .scss where we could create variables, extend and mixins (like a function)
-- Flexbox especially about how to create proportions on chioldren elements with `flex` shorthand. To read up more on CSS tricks
-- Learned about media queries and how to set views based the device (medium e.g screen, print etc)
-- Always ... ALWAYS add the viewport meta tag for device-width and scaling.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

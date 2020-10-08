@@ -28,7 +28,9 @@ header {
 
 section {
   display: inline-block;
-  width: 950px;
+  width: 49vw;
+  min-width: 150px;
+  max-width: 960px;
 }
 section > h2 { padding: 40px 0px;}
 section div { padding: 10px 20px;}
@@ -39,3 +41,21 @@ section div { padding: 10px 20px;}
 
 .em { background-color: #c0ffee;}
 footer { background-color: darkseagreen;}
+
+@media screen and (max-width: 750px) {
+  section {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    position: fixed;
+    bottom: 0px;
+    background-color: lightsalmon;
+  }
+
+  footer {
+    display: none;
+  }
+}
