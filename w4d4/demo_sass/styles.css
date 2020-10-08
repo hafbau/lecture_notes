@@ -1,0 +1,42 @@
+header {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3em;
+  color: aquamarine;
+  background-color: #2E86C1;
+  border: 3px solid darkturquoise;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+ul li {
+  margin-right: 2em;
+  padding: 0.5em 1em;
+  background-color: #2E73c0;
+}
+
+ul li:hover {
+  background-color: whitesmoke;
+}
+
+ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+ul li:hover a {
+  color: #2E73c0;
+}

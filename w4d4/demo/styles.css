@@ -1,67 +1,41 @@
 * {
   margin: 0;
+  padding: 0px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
-header {
-  background-color: aliceblue;
-  height: 80px;
-}
+header,
+section,
+footer,
+nav,
+.nav-item > a { padding: 20px;}
 
-@media screen and (max-width: 500px) {
-  header {
-    background-color: hotpink;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-  }
-}
-
-
-@media screen and (max-width: 560px) {
-  main > div:last-child {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  header {
-    background-color: hotpink;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 501px) {
-  header {
-    background-color: brown;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-  }
-}
-
-main {
-  width: 100%;
-  background-color: gray;
-  height: 500px;
-}
-main div {
-  height: 100px;
-  width: 30%;
-  min-width: 100px;
-  max-width: 200px;
-  background-color: rebeccapurple;
-  text-align: center;
-  font-size: 32px;
-  border: 2px solid white;
+.logo { width: 500px;}
+.nav-item { width: 150px;}
+ul, .logo, .nav-item {
   display: inline-block;
 }
 
-section > div {
-  font-size: 16px;
+nav { height: 75px;}
+ul { list-style: none;}
+
+header {
+  background-color: purple;
+  color: azure;
+  height: 540px;
 }
+
+section {
+  display: inline-block;
+  width: 950px;
+}
+section > h2 { padding: 40px 0px;}
+section div { padding: 10px 20px;}
+
+.outer { border: 2px solid lightslategray;}
+.inner { border: 2px dashed lightsalmon;}
+.innermost { border: 2px dotted lightseagreen;}
+
+.em { background-color: #c0ffee;}
+footer { background-color: darkseagreen;}

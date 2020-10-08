@@ -5,10 +5,10 @@
   + [] Classwork
 - [] CSS Preprocessors and Sass
 
-## What is resonsive design?
+## What is responsive design?
 
 - Mobile accounts for over 50% of web traffic worldwide.
-- [Ref.: statista](https://www.statista.com/statistics/277125/share-of-website-traffic-coming-from-mobile-devices/)
+- [Ref.: google](https://www.google.com/search?q=share+of+website+traffic+coming+from+mobile+2020)
 
 - A multitude of different screen sizes exist across phones, "phablets," tablets, desktops, game consoles, TVs, and even wearables.
 - Responsive design means that your Web app can adapt to any screen size and provide a good user-experience
@@ -70,11 +70,27 @@
 [Image list here](https://gist.github.com/hafbau/fdcbfd45afdfb7e3f030931dbf3db585)
 
 - create a Tiger King ImageGridList as seen on google.com
-- make it responsive (reduce the picture shown at 500px)
+- make it responsive (reduce the picture shown at 800px)
+
+https://www.gstatic.com/tv/thumb/tvbanners/18008931/p18008931_b_v8_aa.jpg
+https://i.ytimg.com/vi/acTdxsoa428/maxresdefault.jpg
+https://cnet4.cbsistatic.com/img/SHf-mha0zOZYHE1hab7dKpUKQ9Y=/940x0/2020/03/31/7cdc930c-12f2-4360-9a6f-0c2cbf7a987f/screen-shot-2020-03-31-at-12-37-47-pm.png
+https://media.newyorker.com/photos/5e87b6bd391eb000086a4536/master/w_2560%2Cc_limit/200413_r36193web.jpg
+https://cdn.vox-cdn.com/uploads/chorus_image/image/66564865/TigerKingExitSurvey_Getty_Netflix_Ringer.0.jpg
+https://i.ytimg.com/vi/T3vQM5jNQ_I/maxresdefault.jpg
+https://static01.nyt.com/images/2020/04/07/us/07xp-newtigerking/merlin_171122598_a64a8924-51f2-4010-a7a3-892b3e94513d-superJumbo.jpg
 
 ## Sass
 
 - CSS Preprocessor (thing to google on MDN)
+
+### Features
+
+- [] Variables
+- [] Nesting / Namespacing
+- [] @extend
+- [] @mixin
+- [] modularization with partials / @import
 
 ## What we learned today
 

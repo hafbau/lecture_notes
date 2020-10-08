@@ -23,3 +23,9 @@ img {
   border-radius: 5px;
   border: 1px solid white;
 }
+
+@media screen and (max-width: 800px) {
+  .sub-section .two {
+    display: none;
+  }
+}
