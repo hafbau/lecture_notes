@@ -11,48 +11,96 @@
 - [ ] `LIMIT` and `OFFSET`
 
 
+### 3 pillars
+- Webserver
+- client js
+- database
+
+
+### Relational Database Management System
+
+- Postgres
+- Server + Client
+- psql
+
+### Relational Data model
+
+- tabular => columns + rows
+- tables == entity
+- columns == fields (properties of entity)
+-rows == records
+
+### Think in JS
+- Array of objects
+- records === object
+- fields == keys in object
+
+
 
 
 
 
 ### SELECT Challenges
 
-For the first 5 queries, we'll be using the `users` table.
+For the first 6 queries, we'll be using the `users` table.
 
 1. List total number of users
 
 ```sql
-
+SELECT COUNT(*)
+FROM users;
 ```
 
-2. List users over the age of 18
+2. List users over the age of 28
 
 ```sql
-
+SELECT *
+FROM users
+WHERE age > 28;
 ```
 
-3. List users who are over the age of 18 and have the last name 'Barrows'
+3. List users who are over the age of 28 and have the last name 'Barrows'
 
 ```sql
-
+SELECT *
+FROM users
+WHERE age > 28 AND last_name = 'Barrows';
 ```
 
-4. List users over the age of 18 who live in Canada sorted by age from oldest to youngest and then last name alphabetically
+4. List users over the age of 28 who live in Canada sorted by age from oldest to youngest and then last name alphabetically
 
 ```sql
-
+SELECT *
+FROM users
+WHERE age > 28 AND country = 'Canada'
+ORDER BY age DESC, last_name;
 ```
 
 5. List users who live in Canada and whose accounts are overdue
 
 ```sql
-
+SELECT *
+FROM users
+-- Whatever here is a comment
+WHERE country = 'Canada' AND payment_due_date < '2020-10-12';
+-- using CURRENT_DATE
+SELECT *, NOW(), CURRENT_DATE
+FROM users
+WHERE country = 'Canada' AND payment_due_date < CURRENT_DATE;
 ```
 
 6. List all the countries users live in; don't repeat any countries
 
 ```sql
+SELECT DISTINCT country
+FROM users
+ORDER BY country;
 
+-- using Group By
+SELECT country
+FROM users
+GROUP BY country
+ORDER BY country;
 ```
 
 # B R E A K
