@@ -1,7 +1,6 @@
 
 const { Pool } = require('pg');
-const connectionString = 'postgres://sbrj-ezir:RujFzcFaBazRkFro4bIsc_aHgKhJNN9j@ruby.db.elephantsql.com:5432/sbrjezir';
-// const connectionString = 'postgres://pkdjsjxx:zJZe0UsbKUvERF7r6FTHazX_7kH2WjQ8@ruby.db.elephantsql.com:5432/pkdjsjxx';
+const connectionString = process.env.DATABASE_URL;
 
 exports.pool = new Pool({
   connectionString: connectionString,
